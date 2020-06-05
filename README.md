@@ -1,6 +1,6 @@
 # finnhub-js
 
-Official JavaScript client for finnhub
+Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
 - Package version: 1.0.0
