@@ -1,6 +1,6 @@
 {
   "name": "finnhub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official Javascript Client for Finnhub",
   "license": "Apache License",
   "main": "dist/index.js",
