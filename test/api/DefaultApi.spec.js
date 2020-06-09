@@ -148,6 +148,16 @@
         done();
       });
     });
+    describe('country', function() {
+      it('should call country successfully', function(done) {
+        //uncomment below and update the code to test country
+        //instance.country(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('covid19', function() {
       it('should call covid19 successfully', function(done) {
         //uncomment below and update the code to test covid19
@@ -192,6 +202,26 @@
       it('should call earningsCalendar successfully', function(done) {
         //uncomment below and update the code to test earningsCalendar
         //instance.earningsCalendar(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('economicCode', function() {
+      it('should call economicCode successfully', function(done) {
+        //uncomment below and update the code to test economicCode
+        //instance.economicCode(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('economicData', function() {
+      it('should call economicData successfully', function(done) {
+        //uncomment below and update the code to test economicData
+        //instance.economicData(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

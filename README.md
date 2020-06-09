@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.0.1
+- Package version: 1.1.0
 
 ## Installation
 
@@ -71,11 +71,14 @@ Class | Method | HTTP request | Description
 *finnhub.DefaultApi* | [**companyProfile**](docs/DefaultApi.md#companyProfile) | **GET** /stock/profile | Company Profile
 *finnhub.DefaultApi* | [**companyProfile2**](docs/DefaultApi.md#companyProfile2) | **GET** /stock/profile2 | Company Profile 2
 *finnhub.DefaultApi* | [**companyRevenueEstimates**](docs/DefaultApi.md#companyRevenueEstimates) | **GET** /stock/revenue-estimate | Revenue Estimates
+*finnhub.DefaultApi* | [**country**](docs/DefaultApi.md#country) | **GET** /country | Country Metadata
 *finnhub.DefaultApi* | [**covid19**](docs/DefaultApi.md#covid19) | **GET** /covid19/us | COVID-19
 *finnhub.DefaultApi* | [**cryptoCandles**](docs/DefaultApi.md#cryptoCandles) | **GET** /crypto/candle | Crypto Candles
 *finnhub.DefaultApi* | [**cryptoExchanges**](docs/DefaultApi.md#cryptoExchanges) | **GET** /crypto/exchange | Crypto Exchanges
 *finnhub.DefaultApi* | [**cryptoSymbols**](docs/DefaultApi.md#cryptoSymbols) | **GET** /crypto/symbol | Crypto Symbol
 *finnhub.DefaultApi* | [**earningsCalendar**](docs/DefaultApi.md#earningsCalendar) | **GET** /calendar/earnings | Earnings Calendar
+*finnhub.DefaultApi* | [**economicCode**](docs/DefaultApi.md#economicCode) | **GET** /economic/code | Economic Code
+*finnhub.DefaultApi* | [**economicData**](docs/DefaultApi.md#economicData) | **GET** /economic | Economic Data
 *finnhub.DefaultApi* | [**filings**](docs/DefaultApi.md#filings) | **GET** /stock/filings | Filings
 *finnhub.DefaultApi* | [**financials**](docs/DefaultApi.md#financials) | **GET** /stock/financials | Financial Statements
 *finnhub.DefaultApi* | [**financialsReported**](docs/DefaultApi.md#financialsReported) | **GET** /stock/financials-reported | Financials As Reported
@@ -125,6 +128,9 @@ Class | Method | HTTP request | Description
  - [finnhub.EarningsCallTranscripts](docs/EarningsCallTranscripts.md)
  - [finnhub.EarningsCallTranscriptsList](docs/EarningsCallTranscriptsList.md)
  - [finnhub.EarningsEstimates](docs/EarningsEstimates.md)
+ - [finnhub.EconomicCode](docs/EconomicCode.md)
+ - [finnhub.EconomicData](docs/EconomicData.md)
+ - [finnhub.EconomicEvent](docs/EconomicEvent.md)
  - [finnhub.Estimate](docs/Estimate.md)
  - [finnhub.Filing](docs/Filing.md)
  - [finnhub.FinancialStatements](docs/FinancialStatements.md)

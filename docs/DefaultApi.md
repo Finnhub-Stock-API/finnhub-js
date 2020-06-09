@@ -14,11 +14,14 @@ Method | HTTP request | Description
 [**companyProfile**](DefaultApi.md#companyProfile) | **GET** /stock/profile | Company Profile
 [**companyProfile2**](DefaultApi.md#companyProfile2) | **GET** /stock/profile2 | Company Profile 2
 [**companyRevenueEstimates**](DefaultApi.md#companyRevenueEstimates) | **GET** /stock/revenue-estimate | Revenue Estimates
+[**country**](DefaultApi.md#country) | **GET** /country | Country Metadata
 [**covid19**](DefaultApi.md#covid19) | **GET** /covid19/us | COVID-19
 [**cryptoCandles**](DefaultApi.md#cryptoCandles) | **GET** /crypto/candle | Crypto Candles
 [**cryptoExchanges**](DefaultApi.md#cryptoExchanges) | **GET** /crypto/exchange | Crypto Exchanges
 [**cryptoSymbols**](DefaultApi.md#cryptoSymbols) | **GET** /crypto/symbol | Crypto Symbol
 [**earningsCalendar**](DefaultApi.md#earningsCalendar) | **GET** /calendar/earnings | Earnings Calendar
+[**economicCode**](DefaultApi.md#economicCode) | **GET** /economic/code | Economic Code
+[**economicData**](DefaultApi.md#economicData) | **GET** /economic | Economic Data
 [**filings**](DefaultApi.md#filings) | **GET** /stock/filings | Filings
 [**financials**](DefaultApi.md#financials) | **GET** /stock/financials | Financial Statements
 [**financialsReported**](DefaultApi.md#financialsReported) | **GET** /stock/financials-reported | Financials As Reported
@@ -443,7 +446,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let opts = {
-  'symbol': "symbol_example", // String | Symbol of the company: AAPL, SBIN.NS e.g.
+  'symbol': "symbol_example", // String | Symbol of the company: AAPL e.g.
   'isin': "isin_example", // String | ISIN
   'cusip': "cusip_example" // String | CUSIP
 };
@@ -461,7 +464,7 @@ apiInstance.companyProfile(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **String**| Symbol of the company: AAPL, SBIN.NS e.g. | [optional] 
+ **symbol** | **String**| Symbol of the company: AAPL e.g. | [optional] 
  **isin** | **String**| ISIN | [optional] 
  **cusip** | **String**| CUSIP | [optional] 
 
@@ -500,7 +503,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let opts = {
-  'symbol': "symbol_example", // String | Symbol of the company: AAPL, SBIN.NS e.g.
+  'symbol': "symbol_example", // String | Symbol of the company: AAPL e.g.
   'isin': "isin_example", // String | ISIN
   'cusip': "cusip_example" // String | CUSIP
 };
@@ -518,7 +521,7 @@ apiInstance.companyProfile2(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **String**| Symbol of the company: AAPL, SBIN.NS e.g. | [optional] 
+ **symbol** | **String**| Symbol of the company: AAPL e.g. | [optional] 
  **isin** | **String**| ISIN | [optional] 
  **cusip** | **String**| CUSIP | [optional] 
 
@@ -591,6 +594,53 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## country
+
+> [EconomicCode] country()
+
+Country Metadata
+
+List all countries and metadata.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+apiInstance.country((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[EconomicCode]**](EconomicCode.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## covid19
 
 > COVID19 covid19()
@@ -640,7 +690,7 @@ This endpoint does not need any parameter.
 
 ## cryptoCandles
 
-> CryptoCandles cryptoCandles(symbol, resolution, opts)
+> CryptoCandles cryptoCandles(symbol, resolution, from, to, opts)
 
 Crypto Candles
 
@@ -660,13 +710,12 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | Use symbol returned in <code>/crypto/symbol</code> endpoint for this field.
 let resolution = "resolution_example"; // String | Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
+let from = 789; // Number | UNIX timestamp. Interval initial value.
+let to = 789; // Number | UNIX timestamp. Interval end value.
 let opts = {
-  'from': 789, // Number | UNIX timestamp. Interval initial value. If count is not provided, this field is required
-  'to': 789, // Number | UNIX timestamp. Interval end value. If count is not provided, this field is required
-  'format': "format_example", // String | By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
-  'count': 789 // Number | Shortcut to set <code>to=Unix.Now</code> and <code>from=Unix.Now - count * resolution_second</code>.
+  'format': "format_example" // String | By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
 };
-apiInstance.cryptoCandles(symbol, resolution, opts, (error, data, response) => {
+apiInstance.cryptoCandles(symbol, resolution, from, to, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -682,10 +731,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Use symbol returned in &lt;code&gt;/crypto/symbol&lt;/code&gt; endpoint for this field. | 
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
- **from** | **Number**| UNIX timestamp. Interval initial value. If count is not provided, this field is required | [optional] 
- **to** | **Number**| UNIX timestamp. Interval end value. If count is not provided, this field is required | [optional] 
+ **from** | **Number**| UNIX timestamp. Interval initial value. | 
+ **to** | **Number**| UNIX timestamp. Interval end value. | 
  **format** | **String**| By default, &lt;code&gt;format&#x3D;json&lt;/code&gt;. Strings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;csv&lt;/code&gt; are accepted. | [optional] 
- **count** | **Number**| Shortcut to set &lt;code&gt;to&#x3D;Unix.Now&lt;/code&gt; and &lt;code&gt;from&#x3D;Unix.Now - count * resolution_second&lt;/code&gt;. | [optional] 
 
 ### Return type
 
@@ -847,6 +895,104 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[EarningRelease]**](EarningRelease.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## economicCode
+
+> [EconomicCode] economicCode()
+
+Economic Code
+
+List codes of supported economic data.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+apiInstance.economicCode((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**[EconomicCode]**](EconomicCode.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## economicData
+
+> EconomicData economicData(code)
+
+Economic Data
+
+Get economic data.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let code = "code_example"; // String | Economic code.
+apiInstance.economicData(code, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **String**| Economic code. | 
+
+### Return type
+
+[**EconomicData**](EconomicData.md)
 
 ### Authorization
 
@@ -1037,7 +1183,7 @@ Name | Type | Description  | Notes
 
 ## forexCandles
 
-> ForexCandles forexCandles(symbol, resolution, opts)
+> ForexCandles forexCandles(symbol, resolution, from, to, opts)
 
 Forex Candles
 
@@ -1057,12 +1203,12 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | Use symbol returned in <code>/forex/symbol</code> endpoint for this field.
 let resolution = "resolution_example"; // String | Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
+let from = 789; // Number | UNIX timestamp. Interval initial value.
+let to = 789; // Number | UNIX timestamp. Interval end value.
 let opts = {
-  'from': 789, // Number | UNIX timestamp. Interval initial value. If count is not provided, this field is required
-  'to': 789, // Number | UNIX timestamp. Interval end value. If count is not provided, this field is required
   'format': "format_example" // String | By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
 };
-apiInstance.forexCandles(symbol, resolution, opts, (error, data, response) => {
+apiInstance.forexCandles(symbol, resolution, from, to, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1078,8 +1224,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Use symbol returned in &lt;code&gt;/forex/symbol&lt;/code&gt; endpoint for this field. | 
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
- **from** | **Number**| UNIX timestamp. Interval initial value. If count is not provided, this field is required | [optional] 
- **to** | **Number**| UNIX timestamp. Interval end value. If count is not provided, this field is required | [optional] 
+ **from** | **Number**| UNIX timestamp. Interval initial value. | 
+ **to** | **Number**| UNIX timestamp. Interval end value. | 
  **format** | **String**| By default, &lt;code&gt;format&#x3D;json&lt;/code&gt;. Strings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;csv&lt;/code&gt; are accepted. | [optional] 
 
 ### Return type
@@ -1683,7 +1829,7 @@ Name | Type | Description  | Notes
 
 Quote
 
-&lt;p&gt;Get quote data for stocks. Constant polling is not recommended. Use websocket if you need real-time update.&lt;/p&gt;&lt;p&gt; Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;p&gt;Get quote data for stocks. Constant polling is not recommended. Use websocket if you need real-time update.&lt;/p&gt;&lt;p&gt; This endpoint only provide real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
 
 ### Example
 
@@ -1781,11 +1927,11 @@ Name | Type | Description  | Notes
 
 ## stockCandles
 
-> StockCandles stockCandles(symbol, resolution, opts)
+> StockCandles stockCandles(symbol, resolution, from, to, opts)
 
 Stock Candles
 
-&lt;p&gt;Get candlestick data for stocks going back 25 years.&lt;/p&gt;&lt;p&gt; Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;p&gt;Get candlestick data for stocks going back 25 years.&lt;/p&gt;&lt;p&gt; This endpoint only provides real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
 
 ### Example
 
@@ -1801,13 +1947,13 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | Symbol.
 let resolution = "resolution_example"; // String | Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
+let from = 789; // Number | UNIX timestamp. Interval initial value.
+let to = 789; // Number | UNIX timestamp. Interval end value.
 let opts = {
-  'from': 789, // Number | UNIX timestamp. Interval initial value. If count is not provided, this field is required
-  'to': 789, // Number | UNIX timestamp. Interval end value. If count is not provided, this field is required
   'format': "format_example", // String | By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
   'adjusted': "adjusted_example" // String | By default, <code>adjusted=false</code>. Use <code>true</code> to get adjusted data.
 };
-apiInstance.stockCandles(symbol, resolution, opts, (error, data, response) => {
+apiInstance.stockCandles(symbol, resolution, from, to, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1823,8 +1969,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Symbol. | 
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
- **from** | **Number**| UNIX timestamp. Interval initial value. If count is not provided, this field is required | [optional] 
- **to** | **Number**| UNIX timestamp. Interval end value. If count is not provided, this field is required | [optional] 
+ **from** | **Number**| UNIX timestamp. Interval initial value. | 
+ **to** | **Number**| UNIX timestamp. Interval end value. | 
  **format** | **String**| By default, &lt;code&gt;format&#x3D;json&lt;/code&gt;. Strings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;csv&lt;/code&gt; are accepted. | [optional] 
  **adjusted** | **String**| By default, &lt;code&gt;adjusted&#x3D;false&lt;/code&gt;. Use &lt;code&gt;true&lt;/code&gt; to get adjusted data. | [optional] 
 
@@ -2131,8 +2277,8 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | symbol
 let resolution = "resolution_example"; // String | Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
-let from = 789; // Number | UNIX timestamp. Interval initial value. If count is not provided, this field is required
-let to = 789; // Number | UNIX timestamp. Interval end value. If count is not provided, this field is required
+let from = 789; // Number | UNIX timestamp. Interval initial value.
+let to = 789; // Number | UNIX timestamp. Interval end value.
 let indicator = "indicator_example"; // String | Indicator name. Full list can be found <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">here</a>.
 let opts = {
   'indicatorSpecificFields': null // Object | Check out <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">this page</a> to see which indicators and params are supported.
@@ -2153,8 +2299,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| symbol | 
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
- **from** | **Number**| UNIX timestamp. Interval initial value. If count is not provided, this field is required | 
- **to** | **Number**| UNIX timestamp. Interval end value. If count is not provided, this field is required | 
+ **from** | **Number**| UNIX timestamp. Interval initial value. | 
+ **to** | **Number**| UNIX timestamp. Interval end value. | 
  **indicator** | **String**| Indicator name. Full list can be found &lt;a href&#x3D;\&quot;https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp&#x3D;sharing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. | 
  **indicatorSpecificFields** | [**Object**](.md)| Check out &lt;a href&#x3D;\&quot;https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp&#x3D;sharing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; to see which indicators and params are supported. | [optional] 
 
