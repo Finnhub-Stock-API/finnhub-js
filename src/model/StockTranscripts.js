@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StockTranscripts model module.
  * @module model/StockTranscripts
- * @version 0.0.1
+ * @version 1.1.0
  */
 class StockTranscripts {
     /**

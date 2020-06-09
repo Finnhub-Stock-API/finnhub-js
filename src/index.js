@@ -31,6 +31,9 @@ import EarningResult from './model/EarningResult';
 import EarningsCallTranscripts from './model/EarningsCallTranscripts';
 import EarningsCallTranscriptsList from './model/EarningsCallTranscriptsList';
 import EarningsEstimates from './model/EarningsEstimates';
+import EconomicCode from './model/EconomicCode';
+import EconomicData from './model/EconomicData';
+import EconomicEvent from './model/EconomicEvent';
 import Estimate from './model/Estimate';
 import Filing from './model/Filing';
 import FinancialStatements from './model/FinancialStatements';
@@ -95,7 +98,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 0.0.1
+* @version 1.1.0
 */
 export {
     /**
@@ -211,6 +214,24 @@ export {
      * @property {module:model/EarningsEstimates}
      */
     EarningsEstimates,
+
+    /**
+     * The EconomicCode model constructor.
+     * @property {module:model/EconomicCode}
+     */
+    EconomicCode,
+
+    /**
+     * The EconomicData model constructor.
+     * @property {module:model/EconomicData}
+     */
+    EconomicData,
+
+    /**
+     * The EconomicEvent model constructor.
+     * @property {module:model/EconomicEvent}
+     */
+    EconomicEvent,
 
     /**
      * The Estimate model constructor.

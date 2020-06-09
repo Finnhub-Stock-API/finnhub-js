@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The Trend model module.
- * @module model/Trend
+ * The EconomicData model module.
+ * @module model/EconomicData
  * @version 1.1.0
  */
-class Trend {
+class EconomicData {
     /**
-     * Constructs a new <code>Trend</code>.
-     * @alias module:model/Trend
+     * Constructs a new <code>EconomicData</code>.
+     * @alias module:model/EconomicData
      */
     constructor() { 
         
-        Trend.initialize(this);
+        EconomicData.initialize(this);
     }
 
     /**
@@ -37,18 +37,21 @@ class Trend {
     }
 
     /**
-     * Constructs a <code>Trend</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EconomicData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Trend} obj Optional instance to populate.
-     * @return {module:model/Trend} The populated <code>Trend</code> instance.
+     * @param {module:model/EconomicData} obj Optional instance to populate.
+     * @return {module:model/EconomicData} The populated <code>EconomicData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Trend();
+            obj = obj || new EconomicData();
 
-            if (data.hasOwnProperty('adx')) {
-                obj['adx'] = ApiClient.convertToType(data['adx'], 'Number');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+            }
+            if (data.hasOwnProperty('code')) {
+                obj['code'] = ApiClient.convertToType(data['code'], 'String');
             }
         }
         return obj;
@@ -58,15 +61,21 @@ class Trend {
 }
 
 /**
- * ADX reading
- * @member {Number} adx
+ * Array of economic data for requested code.
+ * @member {Array.<Object>} data
  */
-Trend.prototype['adx'] = undefined;
+EconomicData.prototype['data'] = undefined;
+
+/**
+ * Finnhub economic code
+ * @member {String} code
+ */
+EconomicData.prototype['code'] = undefined;
 
 
 
 
 
 
-export default Trend;
+export default EconomicData;
 

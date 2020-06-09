@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ForexSymbol model module.
  * @module model/ForexSymbol
- * @version 0.0.1
+ * @version 1.1.0
  */
 class ForexSymbol {
     /**

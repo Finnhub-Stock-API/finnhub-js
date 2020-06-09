@@ -27,6 +27,8 @@ import EarningResult from '../model/EarningResult';
 import EarningsCallTranscripts from '../model/EarningsCallTranscripts';
 import EarningsCallTranscriptsList from '../model/EarningsCallTranscriptsList';
 import EarningsEstimates from '../model/EarningsEstimates';
+import EconomicCode from '../model/EconomicCode';
+import EconomicData from '../model/EconomicData';
 import Filing from '../model/Filing';
 import FinancialStatements from '../model/FinancialStatements';
 import FinancialsAsReported from '../model/FinancialsAsReported';
@@ -53,7 +55,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 0.0.1
+* @version 1.1.0
 */
 export default class DefaultApi {
 
@@ -414,7 +416,7 @@ export default class DefaultApi {
      * Company Profile
      * Get general information of a company. You can query by symbol, ISIN or CUSIP
      * @param {Object} opts Optional parameters
-     * @param {String} opts.symbol Symbol of the company: AAPL, SBIN.NS e.g.
+     * @param {String} opts.symbol Symbol of the company: AAPL e.g.
      * @param {String} opts.isin ISIN
      * @param {String} opts.cusip CUSIP
      * @param {module:api/DefaultApi~companyProfileCallback} callback The callback function, accepting three arguments: error, data, response
@@ -459,7 +461,7 @@ export default class DefaultApi {
      * Company Profile 2
      * Get general information of a company. You can query by symbol, ISIN or CUSIP. This is the free version of <a href=\"#company-profile\">Company Profile</a>.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.symbol Symbol of the company: AAPL, SBIN.NS e.g.
+     * @param {String} opts.symbol Symbol of the company: AAPL e.g.
      * @param {String} opts.isin ISIN
      * @param {String} opts.cusip CUSIP
      * @param {module:api/DefaultApi~companyProfile2Callback} callback The callback function, accepting three arguments: error, data, response
@@ -540,6 +542,43 @@ export default class DefaultApi {
     }
 
     /**
+     * Callback function to receive the result of the country operation.
+     * @callback module:api/DefaultApi~countryCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/EconomicCode>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Country Metadata
+     * List all countries and metadata.
+     * @param {module:api/DefaultApi~countryCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/EconomicCode>}
+     */
+    country(callback) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [EconomicCode];
+      return this.apiClient.callApi(
+        '/country', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the covid19 operation.
      * @callback module:api/DefaultApi~covid19Callback
      * @param {String} error Error message, if any.
@@ -589,15 +628,14 @@ export default class DefaultApi {
      * Get candlestick data for crypto symbols.
      * @param {String} symbol Use symbol returned in <code>/crypto/symbol</code> endpoint for this field.
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
+     * @param {Number} from UNIX timestamp. Interval initial value.
+     * @param {Number} to UNIX timestamp. Interval end value.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.from UNIX timestamp. Interval initial value. If count is not provided, this field is required
-     * @param {Number} opts.to UNIX timestamp. Interval end value. If count is not provided, this field is required
      * @param {String} opts.format By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
-     * @param {Number} opts.count Shortcut to set <code>to=Unix.Now</code> and <code>from=Unix.Now - count * resolution_second</code>.
      * @param {module:api/DefaultApi~cryptoCandlesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CryptoCandles}
      */
-    cryptoCandles(symbol, resolution, opts, callback) {
+    cryptoCandles(symbol, resolution, from, to, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
@@ -608,16 +646,23 @@ export default class DefaultApi {
       if (resolution === undefined || resolution === null) {
         throw new Error("Missing the required parameter 'resolution' when calling cryptoCandles");
       }
+      // verify the required parameter 'from' is set
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling cryptoCandles");
+      }
+      // verify the required parameter 'to' is set
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling cryptoCandles");
+      }
 
       let pathParams = {
       };
       let queryParams = {
         'symbol': symbol,
         'resolution': resolution,
-        'from': opts['from'],
-        'to': opts['to'],
-        'format': opts['format'],
-        'count': opts['count']
+        'from': from,
+        'to': to,
+        'format': opts['format']
       };
       let headerParams = {
       };
@@ -757,6 +802,86 @@ export default class DefaultApi {
       let returnType = [EarningRelease];
       return this.apiClient.callApi(
         '/calendar/earnings', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the economicCode operation.
+     * @callback module:api/DefaultApi~economicCodeCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/EconomicCode>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Economic Code
+     * List codes of supported economic data.
+     * @param {module:api/DefaultApi~economicCodeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/EconomicCode>}
+     */
+    economicCode(callback) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [EconomicCode];
+      return this.apiClient.callApi(
+        '/economic/code', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the economicData operation.
+     * @callback module:api/DefaultApi~economicDataCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EconomicData} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Economic Data
+     * Get economic data.
+     * @param {String} code Economic code.
+     * @param {module:api/DefaultApi~economicDataCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EconomicData}
+     */
+    economicData(code, callback) {
+      let postBody = null;
+      // verify the required parameter 'code' is set
+      if (code === undefined || code === null) {
+        throw new Error("Missing the required parameter 'code' when calling economicData");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'code': code
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EconomicData;
+      return this.apiClient.callApi(
+        '/economic', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -928,14 +1053,14 @@ export default class DefaultApi {
      * Get candlestick data for forex symbols.
      * @param {String} symbol Use symbol returned in <code>/forex/symbol</code> endpoint for this field.
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
+     * @param {Number} from UNIX timestamp. Interval initial value.
+     * @param {Number} to UNIX timestamp. Interval end value.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.from UNIX timestamp. Interval initial value. If count is not provided, this field is required
-     * @param {Number} opts.to UNIX timestamp. Interval end value. If count is not provided, this field is required
      * @param {String} opts.format By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
      * @param {module:api/DefaultApi~forexCandlesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ForexCandles}
      */
-    forexCandles(symbol, resolution, opts, callback) {
+    forexCandles(symbol, resolution, from, to, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
@@ -946,14 +1071,22 @@ export default class DefaultApi {
       if (resolution === undefined || resolution === null) {
         throw new Error("Missing the required parameter 'resolution' when calling forexCandles");
       }
+      // verify the required parameter 'from' is set
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling forexCandles");
+      }
+      // verify the required parameter 'to' is set
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling forexCandles");
+      }
 
       let pathParams = {
       };
       let queryParams = {
         'symbol': symbol,
         'resolution': resolution,
-        'from': opts['from'],
-        'to': opts['to'],
+        'from': from,
+        'to': to,
         'format': opts['format']
       };
       let headerParams = {
@@ -1477,7 +1610,7 @@ export default class DefaultApi {
 
     /**
      * Quote
-     * <p>Get quote data for stocks. Constant polling is not recommended. Use websocket if you need real-time update.</p><p> Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
+     * <p>Get quote data for stocks. Constant polling is not recommended. Use websocket if you need real-time update.</p><p> This endpoint only provide real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Symbol
      * @param {module:api/DefaultApi~quoteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Quote}
@@ -1563,18 +1696,18 @@ export default class DefaultApi {
 
     /**
      * Stock Candles
-     * <p>Get candlestick data for stocks going back 25 years.</p><p> Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
+     * <p>Get candlestick data for stocks going back 25 years.</p><p> This endpoint only provides real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Symbol.
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
+     * @param {Number} from UNIX timestamp. Interval initial value.
+     * @param {Number} to UNIX timestamp. Interval end value.
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.from UNIX timestamp. Interval initial value. If count is not provided, this field is required
-     * @param {Number} opts.to UNIX timestamp. Interval end value. If count is not provided, this field is required
      * @param {String} opts.format By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
      * @param {String} opts.adjusted By default, <code>adjusted=false</code>. Use <code>true</code> to get adjusted data.
      * @param {module:api/DefaultApi~stockCandlesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/StockCandles}
      */
-    stockCandles(symbol, resolution, opts, callback) {
+    stockCandles(symbol, resolution, from, to, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
@@ -1585,14 +1718,22 @@ export default class DefaultApi {
       if (resolution === undefined || resolution === null) {
         throw new Error("Missing the required parameter 'resolution' when calling stockCandles");
       }
+      // verify the required parameter 'from' is set
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling stockCandles");
+      }
+      // verify the required parameter 'to' is set
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling stockCandles");
+      }
 
       let pathParams = {
       };
       let queryParams = {
         'symbol': symbol,
         'resolution': resolution,
-        'from': opts['from'],
-        'to': opts['to'],
+        'from': from,
+        'to': to,
         'format': opts['format'],
         'adjusted': opts['adjusted']
       };
@@ -1876,8 +2017,8 @@ export default class DefaultApi {
      * Return technical indicator with price data. List of supported indicators can be found <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">here</a>.
      * @param {String} symbol symbol
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
-     * @param {Number} from UNIX timestamp. Interval initial value. If count is not provided, this field is required
-     * @param {Number} to UNIX timestamp. Interval end value. If count is not provided, this field is required
+     * @param {Number} from UNIX timestamp. Interval initial value.
+     * @param {Number} to UNIX timestamp. Interval end value.
      * @param {String} indicator Indicator name. Full list can be found <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
      * @param {Object} opts.indicatorSpecificFields Check out <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">this page</a> to see which indicators and params are supported.
