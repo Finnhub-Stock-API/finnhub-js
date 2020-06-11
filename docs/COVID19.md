@@ -1,4 +1,4 @@
-# finnhub.COVID19
+# finnhub.Covid19
 
 ## Properties
 

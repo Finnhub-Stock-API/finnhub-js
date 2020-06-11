@@ -15,15 +15,15 @@
 import ApiClient from "../ApiClient";
 import AggregateIndicators from '../model/AggregateIndicators';
 import BasicFinancials from '../model/BasicFinancials';
-import COVID19 from '../model/COVID19';
 import CompanyExecutive from '../model/CompanyExecutive';
 import CompanyProfile from '../model/CompanyProfile';
 import CompanyProfile2 from '../model/CompanyProfile2';
+import Covid19 from '../model/Covid19';
 import CryptoCandles from '../model/CryptoCandles';
 import CryptoSymbol from '../model/CryptoSymbol';
 import Dividends from '../model/Dividends';
-import EarningRelease from '../model/EarningRelease';
 import EarningResult from '../model/EarningResult';
+import EarningsCalendar from '../model/EarningsCalendar';
 import EarningsCallTranscripts from '../model/EarningsCallTranscripts';
 import EarningsCallTranscriptsList from '../model/EarningsCallTranscriptsList';
 import EarningsEstimates from '../model/EarningsEstimates';
@@ -36,16 +36,18 @@ import ForexCandles from '../model/ForexCandles';
 import ForexSymbol from '../model/ForexSymbol';
 import Forexrates from '../model/Forexrates';
 import FundOwnership from '../model/FundOwnership';
-import IPOEvent from '../model/IPOEvent';
+import IPOCalendar from '../model/IPOCalendar';
 import InvestorsOwnership from '../model/InvestorsOwnership';
 import MajorDevelopments from '../model/MajorDevelopments';
 import News from '../model/News';
 import NewsSentiment from '../model/NewsSentiment';
+import PatternRecognition from '../model/PatternRecognition';
 import PriceTarget from '../model/PriceTarget';
 import Quote from '../model/Quote';
-import RecommendationTrends from '../model/RecommendationTrends';
+import RecommendationTrend from '../model/RecommendationTrend';
+import Resistance from '../model/Resistance';
 import RevenueEstimates from '../model/RevenueEstimates';
-import Splits from '../model/Splits';
+import Split from '../model/Split';
 import Stock from '../model/Stock';
 import StockCandles from '../model/StockCandles';
 import TechnicalIndicators from '../model/TechnicalIndicators';
@@ -55,7 +57,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.1.0
+* @version 1.1.1
 */
 export default class DefaultApi {
 
@@ -582,7 +584,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the covid19 operation.
      * @callback module:api/DefaultApi~covid19Callback
      * @param {String} error Error message, if any.
-     * @param {module:model/COVID19} data The data returned by the service call.
+     * @param {Array.<module:model/Covid19>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -590,7 +592,7 @@ export default class DefaultApi {
      * COVID-19
      * Get real-time updates on the number of COVID-19 (Corona virus) cases in the US with a state-by-state breakdown. Data is sourced from CDC and reputable sources. You can also access this API <a href=\"https://rapidapi.com/Finnhub/api/finnhub-real-time-covid-19\" target=\"_blank\" rel=\"nofollow\">here</a>
      * @param {module:api/DefaultApi~covid19Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/COVID19}
+     * data is of type: {@link Array.<module:model/Covid19>}
      */
     covid19(callback) {
       let postBody = null;
@@ -607,7 +609,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = COVID19;
+      let returnType = [Covid19];
       return this.apiClient.callApi(
         '/covid19/us', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -764,7 +766,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the earningsCalendar operation.
      * @callback module:api/DefaultApi~earningsCalendarCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/EarningRelease>} data The data returned by the service call.
+     * @param {module:model/EarningsCalendar} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -777,7 +779,7 @@ export default class DefaultApi {
      * @param {String} opts.symbol Filter by symbol: AAPL.
      * @param {module:model/AnyType} opts.international Set to <code>true</code> to include international markets. Default value is <code>false</code>
      * @param {module:api/DefaultApi~earningsCalendarCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/EarningRelease>}
+     * data is of type: {@link module:model/EarningsCalendar}
      */
     earningsCalendar(opts, callback) {
       opts = opts || {};
@@ -799,7 +801,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [EarningRelease];
+      let returnType = EarningsCalendar;
       return this.apiClient.callApi(
         '/calendar/earnings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1371,7 +1373,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the ipoCalendar operation.
      * @callback module:api/DefaultApi~ipoCalendarCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IPOEvent>} data The data returned by the service call.
+     * @param {module:model/IPOCalendar} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1381,7 +1383,7 @@ export default class DefaultApi {
      * @param {Date} from From date: 2020-03-15.
      * @param {Date} to To date: 2020-03-16.
      * @param {module:api/DefaultApi~ipoCalendarCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IPOEvent>}
+     * data is of type: {@link module:model/IPOCalendar}
      */
     ipoCalendar(from, to, callback) {
       let postBody = null;
@@ -1408,7 +1410,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [IPOEvent];
+      let returnType = IPOCalendar;
       return this.apiClient.callApi(
         '/calendar/ipo', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1512,7 +1514,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the patternRecognition operation.
      * @callback module:api/DefaultApi~patternRecognitionCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<Object>} data The data returned by the service call.
+     * @param {module:model/PatternRecognition} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1522,7 +1524,7 @@ export default class DefaultApi {
      * @param {String} symbol Symbol
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {module:api/DefaultApi~patternRecognitionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<Object>}
+     * data is of type: {@link module:model/PatternRecognition}
      */
     patternRecognition(symbol, resolution, callback) {
       let postBody = null;
@@ -1549,7 +1551,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Object];
+      let returnType = PatternRecognition;
       return this.apiClient.callApi(
         '/scan/pattern', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1647,7 +1649,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the recommendationTrends operation.
      * @callback module:api/DefaultApi~recommendationTrendsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/RecommendationTrends} data The data returned by the service call.
+     * @param {Array.<module:model/RecommendationTrend>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1656,7 +1658,7 @@ export default class DefaultApi {
      * Get latest analyst recommendation trends for a company.
      * @param {String} symbol Symbol of the company: AAPL.
      * @param {module:api/DefaultApi~recommendationTrendsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RecommendationTrends}
+     * data is of type: {@link Array.<module:model/RecommendationTrend>}
      */
     recommendationTrends(symbol, callback) {
       let postBody = null;
@@ -1678,7 +1680,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = RecommendationTrends;
+      let returnType = [RecommendationTrend];
       return this.apiClient.callApi(
         '/stock/recommendation', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1757,7 +1759,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the stockDividends operation.
      * @callback module:api/DefaultApi~stockDividendsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Dividends} data The data returned by the service call.
+     * @param {Array.<module:model/Dividends>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1768,7 +1770,7 @@ export default class DefaultApi {
      * @param {Date} from YYYY-MM-DD.
      * @param {Date} to YYYY-MM-DD.
      * @param {module:api/DefaultApi~stockDividendsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Dividends}
+     * data is of type: {@link Array.<module:model/Dividends>}
      */
     stockDividends(symbol, from, to, callback) {
       let postBody = null;
@@ -1800,7 +1802,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Dividends;
+      let returnType = [Dividends];
       return this.apiClient.callApi(
         '/stock/dividend', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1812,7 +1814,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the stockSplits operation.
      * @callback module:api/DefaultApi~stockSplitsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Splits} data The data returned by the service call.
+     * @param {Array.<module:model/Split>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1823,7 +1825,7 @@ export default class DefaultApi {
      * @param {Date} from YYYY-MM-DD.
      * @param {Date} to YYYY-MM-DD.
      * @param {module:api/DefaultApi~stockSplitsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Splits}
+     * data is of type: {@link Array.<module:model/Split>}
      */
     stockSplits(symbol, from, to, callback) {
       let postBody = null;
@@ -1855,7 +1857,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Splits;
+      let returnType = [Split];
       return this.apiClient.callApi(
         '/stock/split', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1959,7 +1961,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the supportResistance operation.
      * @callback module:api/DefaultApi~supportResistanceCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<Number>} data The data returned by the service call.
+     * @param {module:model/Resistance} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1969,7 +1971,7 @@ export default class DefaultApi {
      * @param {String} symbol Symbol
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {module:api/DefaultApi~supportResistanceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<Number>}
+     * data is of type: {@link module:model/Resistance}
      */
     supportResistance(symbol, resolution, callback) {
       let postBody = null;
@@ -1996,7 +1998,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ['Number'];
+      let returnType = Resistance;
       return this.apiClient.callApi(
         '/scan/support-resistance', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

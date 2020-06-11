@@ -643,7 +643,7 @@ This endpoint does not need any parameter.
 
 ## covid19
 
-> COVID19 covid19()
+> [Covid19] covid19()
 
 COVID-19
 
@@ -676,7 +676,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**COVID19**](COVID19.md)
+[**[Covid19]**](Covid19.md)
 
 ### Authorization
 
@@ -849,7 +849,7 @@ Name | Type | Description  | Notes
 
 ## earningsCalendar
 
-> [EarningRelease] earningsCalendar(opts)
+> EarningsCalendar earningsCalendar(opts)
 
 Earnings Calendar
 
@@ -894,7 +894,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[EarningRelease]**](EarningRelease.md)
+[**EarningsCalendar**](EarningsCalendar.md)
 
 ### Authorization
 
@@ -1560,7 +1560,7 @@ Name | Type | Description  | Notes
 
 ## ipoCalendar
 
-> [IPOEvent] ipoCalendar(from, to)
+> IPOCalendar ipoCalendar(from, to)
 
 IPO Calendar
 
@@ -1599,7 +1599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[IPOEvent]**](IPOEvent.md)
+[**IPOCalendar**](IPOCalendar.md)
 
 ### Authorization
 
@@ -1721,7 +1721,7 @@ Name | Type | Description  | Notes
 
 ## patternRecognition
 
-> [Object] patternRecognition(symbol, resolution)
+> PatternRecognition patternRecognition(symbol, resolution)
 
 Pattern Recognition
 
@@ -1760,7 +1760,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[Object]**
+[**PatternRecognition**](PatternRecognition.md)
 
 ### Authorization
 
@@ -1876,7 +1876,7 @@ Name | Type | Description  | Notes
 
 ## recommendationTrends
 
-> RecommendationTrends recommendationTrends(symbol)
+> [RecommendationTrend] recommendationTrends(symbol)
 
 Recommendation Trends
 
@@ -1913,7 +1913,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RecommendationTrends**](RecommendationTrends.md)
+[**[RecommendationTrend]**](RecommendationTrend.md)
 
 ### Authorization
 
@@ -1990,7 +1990,7 @@ Name | Type | Description  | Notes
 
 ## stockDividends
 
-> Dividends stockDividends(symbol, from, to)
+> [Dividends] stockDividends(symbol, from, to)
 
 Dividends
 
@@ -2031,7 +2031,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Dividends**](Dividends.md)
+[**[Dividends]**](Dividends.md)
 
 ### Authorization
 
@@ -2045,7 +2045,7 @@ Name | Type | Description  | Notes
 
 ## stockSplits
 
-> Splits stockSplits(symbol, from, to)
+> [Split] stockSplits(symbol, from, to)
 
 Splits
 
@@ -2086,7 +2086,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Splits**](Splits.md)
+[**[Split]**](Split.md)
 
 ### Authorization
 
@@ -2204,7 +2204,7 @@ Name | Type | Description  | Notes
 
 ## supportResistance
 
-> [Number] supportResistance(symbol, resolution)
+> Resistance supportResistance(symbol, resolution)
 
 Support/Resistance
 
@@ -2243,7 +2243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[Number]**
+[**Resistance**](Resistance.md)
 
 ### Authorization
 
