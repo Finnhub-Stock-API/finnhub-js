@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TechnicalIndicators model module.
  * @module model/TechnicalIndicators
- * @version 1.1.0
+ * @version 1.1.1
  */
 class TechnicalIndicators {
     /**

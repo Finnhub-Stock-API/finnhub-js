@@ -15,12 +15,12 @@
 import ApiClient from './ApiClient';
 import AggregateIndicators from './model/AggregateIndicators';
 import BasicFinancials from './model/BasicFinancials';
-import COVID19 from './model/COVID19';
 import Company from './model/Company';
 import CompanyExecutive from './model/CompanyExecutive';
 import CompanyNewsStatistics from './model/CompanyNewsStatistics';
 import CompanyProfile from './model/CompanyProfile';
 import CompanyProfile2 from './model/CompanyProfile2';
+import Covid19 from './model/Covid19';
 import CryptoCandles from './model/CryptoCandles';
 import CryptoSymbol from './model/CryptoSymbol';
 import Development from './model/Development';
@@ -28,9 +28,11 @@ import Dividends from './model/Dividends';
 import EarningEstimate from './model/EarningEstimate';
 import EarningRelease from './model/EarningRelease';
 import EarningResult from './model/EarningResult';
+import EarningsCalendar from './model/EarningsCalendar';
 import EarningsCallTranscripts from './model/EarningsCallTranscripts';
 import EarningsCallTranscriptsList from './model/EarningsCallTranscriptsList';
 import EarningsEstimates from './model/EarningsEstimates';
+import EconomicCalendar from './model/EconomicCalendar';
 import EconomicCode from './model/EconomicCode';
 import EconomicData from './model/EconomicData';
 import EconomicEvent from './model/EconomicEvent';
@@ -42,6 +44,7 @@ import ForexCandles from './model/ForexCandles';
 import ForexSymbol from './model/ForexSymbol';
 import Forexrates from './model/Forexrates';
 import FundOwnership from './model/FundOwnership';
+import IPOCalendar from './model/IPOCalendar';
 import IPOEvent from './model/IPOEvent';
 import Indicator from './model/Indicator';
 import Investor from './model/Investor';
@@ -49,16 +52,18 @@ import InvestorsOwnership from './model/InvestorsOwnership';
 import MajorDevelopments from './model/MajorDevelopments';
 import News from './model/News';
 import NewsSentiment from './model/NewsSentiment';
+import PatternRecognition from './model/PatternRecognition';
 import PriceTarget from './model/PriceTarget';
 import Quote from './model/Quote';
-import RecommendationTrends from './model/RecommendationTrends';
+import RecommendationTrend from './model/RecommendationTrend';
 import Report from './model/Report';
 import RevenueEstimates from './model/RevenueEstimates';
 import Sentiment from './model/Sentiment';
-import Splits from './model/Splits';
+import Split from './model/Split';
 import Stock from './model/Stock';
 import StockCandles from './model/StockCandles';
 import StockTranscripts from './model/StockTranscripts';
+import SupportResistance from './model/SupportResistance';
 import TechnicalAnalysis from './model/TechnicalAnalysis';
 import TechnicalIndicators from './model/TechnicalIndicators';
 import TickData from './model/TickData';
@@ -98,7 +103,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.1.0
+* @version 1.1.1
 */
 export {
     /**
@@ -118,12 +123,6 @@ export {
      * @property {module:model/BasicFinancials}
      */
     BasicFinancials,
-
-    /**
-     * The COVID19 model constructor.
-     * @property {module:model/COVID19}
-     */
-    COVID19,
 
     /**
      * The Company model constructor.
@@ -154,6 +153,12 @@ export {
      * @property {module:model/CompanyProfile2}
      */
     CompanyProfile2,
+
+    /**
+     * The Covid19 model constructor.
+     * @property {module:model/Covid19}
+     */
+    Covid19,
 
     /**
      * The CryptoCandles model constructor.
@@ -198,6 +203,12 @@ export {
     EarningResult,
 
     /**
+     * The EarningsCalendar model constructor.
+     * @property {module:model/EarningsCalendar}
+     */
+    EarningsCalendar,
+
+    /**
      * The EarningsCallTranscripts model constructor.
      * @property {module:model/EarningsCallTranscripts}
      */
@@ -214,6 +225,12 @@ export {
      * @property {module:model/EarningsEstimates}
      */
     EarningsEstimates,
+
+    /**
+     * The EconomicCalendar model constructor.
+     * @property {module:model/EconomicCalendar}
+     */
+    EconomicCalendar,
 
     /**
      * The EconomicCode model constructor.
@@ -282,6 +299,12 @@ export {
     FundOwnership,
 
     /**
+     * The IPOCalendar model constructor.
+     * @property {module:model/IPOCalendar}
+     */
+    IPOCalendar,
+
+    /**
      * The IPOEvent model constructor.
      * @property {module:model/IPOEvent}
      */
@@ -324,6 +347,12 @@ export {
     NewsSentiment,
 
     /**
+     * The PatternRecognition model constructor.
+     * @property {module:model/PatternRecognition}
+     */
+    PatternRecognition,
+
+    /**
      * The PriceTarget model constructor.
      * @property {module:model/PriceTarget}
      */
@@ -336,10 +365,10 @@ export {
     Quote,
 
     /**
-     * The RecommendationTrends model constructor.
-     * @property {module:model/RecommendationTrends}
+     * The RecommendationTrend model constructor.
+     * @property {module:model/RecommendationTrend}
      */
-    RecommendationTrends,
+    RecommendationTrend,
 
     /**
      * The Report model constructor.
@@ -360,10 +389,10 @@ export {
     Sentiment,
 
     /**
-     * The Splits model constructor.
-     * @property {module:model/Splits}
+     * The Split model constructor.
+     * @property {module:model/Split}
      */
-    Splits,
+    Split,
 
     /**
      * The Stock model constructor.
@@ -382,6 +411,12 @@ export {
      * @property {module:model/StockTranscripts}
      */
     StockTranscripts,
+
+    /**
+     * The SupportResistance model constructor.
+     * @property {module:model/SupportResistance}
+     */
+    SupportResistance,
 
     /**
      * The TechnicalAnalysis model constructor.

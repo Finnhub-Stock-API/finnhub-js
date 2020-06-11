@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new finnhub.COVID19();
+    instance = new finnhub.Covid19();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,34 @@
       object[property] = value;
   }
 
-  describe('COVID19', function() {
-    it('should create an instance of COVID19', function() {
-      // uncomment below and update the code to test COVID19
-      //var instane = new finnhub.COVID19();
-      //expect(instance).to.be.a(finnhub.COVID19);
+  describe('Covid19', function() {
+    it('should create an instance of Covid19', function() {
+      // uncomment below and update the code to test Covid19
+      //var instane = new finnhub.Covid19();
+      //expect(instance).to.be.a(finnhub.Covid19);
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new finnhub.COVID19();
+      //var instane = new finnhub.Covid19();
       //expect(instance).to.be();
     });
 
     it('should have the property _case (base name: "case")', function() {
       // uncomment below and update the code to test the property _case
-      //var instane = new finnhub.COVID19();
+      //var instane = new finnhub.Covid19();
       //expect(instance).to.be();
     });
 
     it('should have the property death (base name: "death")', function() {
       // uncomment below and update the code to test the property death
-      //var instane = new finnhub.COVID19();
+      //var instane = new finnhub.Covid19();
       //expect(instance).to.be();
     });
 
     it('should have the property updated (base name: "updated")', function() {
       // uncomment below and update the code to test the property updated
-      //var instane = new finnhub.COVID19();
+      //var instane = new finnhub.Covid19();
       //expect(instance).to.be();
     });
 

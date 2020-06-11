@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The COVID19 model module.
- * @module model/COVID19
- * @version 1.1.0
+ * The Covid19 model module.
+ * @module model/Covid19
+ * @version 1.1.1
  */
-class COVID19 {
+class Covid19 {
     /**
-     * Constructs a new <code>COVID19</code>.
-     * @alias module:model/COVID19
+     * Constructs a new <code>Covid19</code>.
+     * @alias module:model/Covid19
      */
     constructor() { 
         
-        COVID19.initialize(this);
+        Covid19.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class COVID19 {
     }
 
     /**
-     * Constructs a <code>COVID19</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Covid19</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/COVID19} obj Optional instance to populate.
-     * @return {module:model/COVID19} The populated <code>COVID19</code> instance.
+     * @param {module:model/Covid19} obj Optional instance to populate.
+     * @return {module:model/Covid19} The populated <code>Covid19</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new COVID19();
+            obj = obj || new Covid19();
 
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -70,30 +70,30 @@ class COVID19 {
  * State.
  * @member {String} state
  */
-COVID19.prototype['state'] = undefined;
+Covid19.prototype['state'] = undefined;
 
 /**
  * Number of confirmed cases.
  * @member {Number} case
  */
-COVID19.prototype['case'] = undefined;
+Covid19.prototype['case'] = undefined;
 
 /**
  * Number of confirmed deaths.
  * @member {Number} death
  */
-COVID19.prototype['death'] = undefined;
+Covid19.prototype['death'] = undefined;
 
 /**
  * Updated time.
  * @member {Date} updated
  */
-COVID19.prototype['updated'] = undefined;
+Covid19.prototype['updated'] = undefined;
 
 
 
 
 
 
-export default COVID19;
+export default Covid19;
 
