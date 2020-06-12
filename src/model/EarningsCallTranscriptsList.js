@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningsCallTranscriptsList model module.
  * @module model/EarningsCallTranscriptsList
- * @version 1.1.1
+ * @version 1.1.3
  */
 class EarningsCallTranscriptsList {
     /**

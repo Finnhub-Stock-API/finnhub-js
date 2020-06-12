@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RevenueEstimates model module.
  * @module model/RevenueEstimates
- * @version 1.1.1
+ * @version 1.1.3
  */
 class RevenueEstimates {
     /**

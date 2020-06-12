@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpgradeDowngrade model module.
  * @module model/UpgradeDowngrade
- * @version 1.1.1
+ * @version 1.1.3
  */
 class UpgradeDowngrade {
     /**
@@ -59,8 +59,8 @@ class UpgradeDowngrade {
             if (data.hasOwnProperty('toGrade')) {
                 obj['toGrade'] = ApiClient.convertToType(data['toGrade'], 'String');
             }
-            if (data.hasOwnProperty('Company')) {
-                obj['Company'] = ApiClient.convertToType(data['Company'], 'String');
+            if (data.hasOwnProperty('company')) {
+                obj['company'] = ApiClient.convertToType(data['company'], 'String');
             }
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
@@ -98,9 +98,9 @@ UpgradeDowngrade.prototype['toGrade'] = undefined;
 
 /**
  * Company/analyst who did the upgrade/downgrade.
- * @member {String} Company
+ * @member {String} company
  */
-UpgradeDowngrade.prototype['Company'] = undefined;
+UpgradeDowngrade.prototype['company'] = undefined;
 
 /**
  * Action can take any of the following values: <code>up(upgrade), down(downgrade), main(maintains), init(initiate), reit(reiterate)</code>.

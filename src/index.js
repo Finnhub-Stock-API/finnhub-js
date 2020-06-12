@@ -20,7 +20,8 @@ import CompanyExecutive from './model/CompanyExecutive';
 import CompanyNewsStatistics from './model/CompanyNewsStatistics';
 import CompanyProfile from './model/CompanyProfile';
 import CompanyProfile2 from './model/CompanyProfile2';
-import Covid19 from './model/Covid19';
+import CountryMetadata from './model/CountryMetadata';
+import CovidInfo from './model/CovidInfo';
 import CryptoCandles from './model/CryptoCandles';
 import CryptoSymbol from './model/CryptoSymbol';
 import Development from './model/Development';
@@ -65,7 +66,6 @@ import StockCandles from './model/StockCandles';
 import StockTranscripts from './model/StockTranscripts';
 import SupportResistance from './model/SupportResistance';
 import TechnicalAnalysis from './model/TechnicalAnalysis';
-import TechnicalIndicators from './model/TechnicalIndicators';
 import TickData from './model/TickData';
 import TranscriptContent from './model/TranscriptContent';
 import TranscriptParticipant from './model/TranscriptParticipant';
@@ -103,7 +103,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.1.1
+* @version 1.1.3
 */
 export {
     /**
@@ -155,10 +155,16 @@ export {
     CompanyProfile2,
 
     /**
-     * The Covid19 model constructor.
-     * @property {module:model/Covid19}
+     * The CountryMetadata model constructor.
+     * @property {module:model/CountryMetadata}
      */
-    Covid19,
+    CountryMetadata,
+
+    /**
+     * The CovidInfo model constructor.
+     * @property {module:model/CovidInfo}
+     */
+    CovidInfo,
 
     /**
      * The CryptoCandles model constructor.
@@ -423,12 +429,6 @@ export {
      * @property {module:model/TechnicalAnalysis}
      */
     TechnicalAnalysis,
-
-    /**
-     * The TechnicalIndicators model constructor.
-     * @property {module:model/TechnicalIndicators}
-     */
-    TechnicalIndicators,
 
     /**
      * The TickData model constructor.

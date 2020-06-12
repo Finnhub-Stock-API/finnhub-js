@@ -18,7 +18,8 @@ import BasicFinancials from '../model/BasicFinancials';
 import CompanyExecutive from '../model/CompanyExecutive';
 import CompanyProfile from '../model/CompanyProfile';
 import CompanyProfile2 from '../model/CompanyProfile2';
-import Covid19 from '../model/Covid19';
+import CountryMetadata from '../model/CountryMetadata';
+import CovidInfo from '../model/CovidInfo';
 import CryptoCandles from '../model/CryptoCandles';
 import CryptoSymbol from '../model/CryptoSymbol';
 import Dividends from '../model/Dividends';
@@ -45,19 +46,18 @@ import PatternRecognition from '../model/PatternRecognition';
 import PriceTarget from '../model/PriceTarget';
 import Quote from '../model/Quote';
 import RecommendationTrend from '../model/RecommendationTrend';
-import Resistance from '../model/Resistance';
 import RevenueEstimates from '../model/RevenueEstimates';
 import Split from '../model/Split';
 import Stock from '../model/Stock';
 import StockCandles from '../model/StockCandles';
-import TechnicalIndicators from '../model/TechnicalIndicators';
+import SupportResistance from '../model/SupportResistance';
 import TickData from '../model/TickData';
 import UpgradeDowngrade from '../model/UpgradeDowngrade';
 
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.1.1
+* @version 1.1.3
 */
 export default class DefaultApi {
 
@@ -547,7 +547,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the country operation.
      * @callback module:api/DefaultApi~countryCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/EconomicCode>} data The data returned by the service call.
+     * @param {Array.<module:model/CountryMetadata>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -555,7 +555,7 @@ export default class DefaultApi {
      * Country Metadata
      * List all countries and metadata.
      * @param {module:api/DefaultApi~countryCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/EconomicCode>}
+     * data is of type: {@link Array.<module:model/CountryMetadata>}
      */
     country(callback) {
       let postBody = null;
@@ -572,7 +572,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [EconomicCode];
+      let returnType = [CountryMetadata];
       return this.apiClient.callApi(
         '/country', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -584,7 +584,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the covid19 operation.
      * @callback module:api/DefaultApi~covid19Callback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Covid19>} data The data returned by the service call.
+     * @param {Array.<module:model/CovidInfo>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -592,7 +592,7 @@ export default class DefaultApi {
      * COVID-19
      * Get real-time updates on the number of COVID-19 (Corona virus) cases in the US with a state-by-state breakdown. Data is sourced from CDC and reputable sources. You can also access this API <a href=\"https://rapidapi.com/Finnhub/api/finnhub-real-time-covid-19\" target=\"_blank\" rel=\"nofollow\">here</a>
      * @param {module:api/DefaultApi~covid19Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Covid19>}
+     * data is of type: {@link Array.<module:model/CovidInfo>}
      */
     covid19(callback) {
       let postBody = null;
@@ -609,7 +609,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Covid19];
+      let returnType = [CovidInfo];
       return this.apiClient.callApi(
         '/covid19/us', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -632,13 +632,10 @@ export default class DefaultApi {
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {Number} from UNIX timestamp. Interval initial value.
      * @param {Number} to UNIX timestamp. Interval end value.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.format By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
      * @param {module:api/DefaultApi~cryptoCandlesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CryptoCandles}
      */
-    cryptoCandles(symbol, resolution, from, to, opts, callback) {
-      opts = opts || {};
+    cryptoCandles(symbol, resolution, from, to, callback) {
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -663,8 +660,7 @@ export default class DefaultApi {
         'symbol': symbol,
         'resolution': resolution,
         'from': from,
-        'to': to,
-        'format': opts['format']
+        'to': to
       };
       let headerParams = {
       };
@@ -1057,13 +1053,10 @@ export default class DefaultApi {
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {Number} from UNIX timestamp. Interval initial value.
      * @param {Number} to UNIX timestamp. Interval end value.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.format By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
      * @param {module:api/DefaultApi~forexCandlesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ForexCandles}
      */
-    forexCandles(symbol, resolution, from, to, opts, callback) {
-      opts = opts || {};
+    forexCandles(symbol, resolution, from, to, callback) {
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -1088,8 +1081,7 @@ export default class DefaultApi {
         'symbol': symbol,
         'resolution': resolution,
         'from': from,
-        'to': to,
-        'format': opts['format']
+        'to': to
       };
       let headerParams = {
       };
@@ -1612,7 +1604,7 @@ export default class DefaultApi {
 
     /**
      * Quote
-     * <p>Get quote data for stocks. Constant polling is not recommended. Use websocket if you need real-time update.</p><p> This endpoint only provide real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
+     * <p>Get real-time quote data for US stocks. Constant polling is not recommended. Use websocket if you need real-time update.</p><p>Bulk download EOD international markets: <a href=\"https://www.metastock.com/products/endofday/DataLink/?ref=fih\" target=\"_blank\" rel=\"nofollow\">Metastock Datalink</a></p><p>Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Symbol
      * @param {module:api/DefaultApi~quoteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Quote}
@@ -1698,13 +1690,12 @@ export default class DefaultApi {
 
     /**
      * Stock Candles
-     * <p>Get candlestick data for stocks going back 25 years.</p><p> This endpoint only provides real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
+     * <p>Get candlestick data for stocks going back 25 years for US stocks.</p><p>Bulk download EOD international markets: <a href=\"https://www.metastock.com/products/endofday/DataLink/?ref=fih\" target=\"_blank\" rel=\"nofollow\">Metastock Datalink</a></p><p>Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Symbol.
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {Number} from UNIX timestamp. Interval initial value.
      * @param {Number} to UNIX timestamp. Interval end value.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.format By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
      * @param {String} opts.adjusted By default, <code>adjusted=false</code>. Use <code>true</code> to get adjusted data.
      * @param {module:api/DefaultApi~stockCandlesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/StockCandles}
@@ -1736,7 +1727,6 @@ export default class DefaultApi {
         'resolution': resolution,
         'from': from,
         'to': to,
-        'format': opts['format'],
         'adjusted': opts['adjusted']
       };
       let headerParams = {
@@ -1948,7 +1938,7 @@ export default class DefaultApi {
 
       let authNames = ['api_key'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['text/csv'];
       let returnType = TickData;
       return this.apiClient.callApi(
         '/stock/tick', 'GET',
@@ -1961,7 +1951,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the supportResistance operation.
      * @callback module:api/DefaultApi~supportResistanceCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Resistance} data The data returned by the service call.
+     * @param {module:model/SupportResistance} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1971,7 +1961,7 @@ export default class DefaultApi {
      * @param {String} symbol Symbol
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {module:api/DefaultApi~supportResistanceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Resistance}
+     * data is of type: {@link module:model/SupportResistance}
      */
     supportResistance(symbol, resolution, callback) {
       let postBody = null;
@@ -1998,7 +1988,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Resistance;
+      let returnType = SupportResistance;
       return this.apiClient.callApi(
         '/scan/support-resistance', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2010,7 +2000,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the technicalIndicator operation.
      * @callback module:api/DefaultApi~technicalIndicatorCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TechnicalIndicators} data The data returned by the service call.
+     * @param {Object} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -2025,7 +2015,7 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Object} opts.indicatorSpecificFields Check out <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">this page</a> to see which indicators and params are supported.
      * @param {module:api/DefaultApi~technicalIndicatorCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TechnicalIndicators}
+     * data is of type: {@link Object}
      */
     technicalIndicator(symbol, resolution, from, to, indicator, opts, callback) {
       opts = opts || {};
@@ -2069,7 +2059,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = TechnicalIndicators;
+      let returnType = Object;
       return this.apiClient.callApi(
         '/indicator', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

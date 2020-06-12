@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.1.0
+- Package version: 1.1.3
 
 ## Installation
 
@@ -117,7 +117,8 @@ Class | Method | HTTP request | Description
  - [finnhub.CompanyNewsStatistics](docs/CompanyNewsStatistics.md)
  - [finnhub.CompanyProfile](docs/CompanyProfile.md)
  - [finnhub.CompanyProfile2](docs/CompanyProfile2.md)
- - [finnhub.Covid19](docs/Covid19.md)
+ - [finnhub.CountryMetadata](docs/CountryMetadata.md)
+ - [finnhub.CovidInfo](docs/CovidInfo.md)
  - [finnhub.CryptoCandles](docs/CryptoCandles.md)
  - [finnhub.CryptoSymbol](docs/CryptoSymbol.md)
  - [finnhub.Development](docs/Development.md)
@@ -162,7 +163,6 @@ Class | Method | HTTP request | Description
  - [finnhub.StockTranscripts](docs/StockTranscripts.md)
  - [finnhub.SupportResistance](docs/SupportResistance.md)
  - [finnhub.TechnicalAnalysis](docs/TechnicalAnalysis.md)
- - [finnhub.TechnicalIndicators](docs/TechnicalIndicators.md)
  - [finnhub.TickData](docs/TickData.md)
  - [finnhub.TranscriptContent](docs/TranscriptContent.md)
  - [finnhub.TranscriptParticipant](docs/TranscriptParticipant.md)

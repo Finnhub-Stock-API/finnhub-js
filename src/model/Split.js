@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Split model module.
  * @module model/Split
- * @version 1.1.1
+ * @version 1.1.3
  */
 class Split {
     /**
@@ -50,8 +50,8 @@ class Split {
             if (data.hasOwnProperty('symbol')) {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
-            if (data.hasOwnProperty('Date')) {
-                obj['Date'] = ApiClient.convertToType(data['Date'], 'Date');
+            if (data.hasOwnProperty('date')) {
+                obj['date'] = ApiClient.convertToType(data['date'], 'Date');
             }
             if (data.hasOwnProperty('fromFactor')) {
                 obj['fromFactor'] = ApiClient.convertToType(data['fromFactor'], 'Number');
@@ -74,9 +74,9 @@ Split.prototype['symbol'] = undefined;
 
 /**
  * Split date.
- * @member {Date} Date
+ * @member {Date} date
  */
-Split.prototype['Date'] = undefined;
+Split.prototype['date'] = undefined;
 
 /**
  * From factor.

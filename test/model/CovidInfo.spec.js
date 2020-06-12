@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new finnhub.EconomicCode();
+    instance = new finnhub.CovidInfo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,34 @@
       object[property] = value;
   }
 
-  describe('EconomicCode', function() {
-    it('should create an instance of EconomicCode', function() {
-      // uncomment below and update the code to test EconomicCode
-      //var instane = new finnhub.EconomicCode();
-      //expect(instance).to.be.a(finnhub.EconomicCode);
+  describe('CovidInfo', function() {
+    it('should create an instance of CovidInfo', function() {
+      // uncomment below and update the code to test CovidInfo
+      //var instane = new finnhub.CovidInfo();
+      //expect(instance).to.be.a(finnhub.CovidInfo);
     });
 
-    it('should have the property code (base name: "code")', function() {
-      // uncomment below and update the code to test the property code
-      //var instane = new finnhub.EconomicCode();
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instane = new finnhub.CovidInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property country (base name: "country")', function() {
-      // uncomment below and update the code to test the property country
-      //var instane = new finnhub.EconomicCode();
+    it('should have the property _case (base name: "case")', function() {
+      // uncomment below and update the code to test the property _case
+      //var instane = new finnhub.CovidInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new finnhub.EconomicCode();
+    it('should have the property death (base name: "death")', function() {
+      // uncomment below and update the code to test the property death
+      //var instane = new finnhub.CovidInfo();
       //expect(instance).to.be();
     });
 
-    it('should have the property unit (base name: "unit")', function() {
-      // uncomment below and update the code to test the property unit
-      //var instane = new finnhub.EconomicCode();
+    it('should have the property updated (base name: "updated")', function() {
+      // uncomment below and update the code to test the property updated
+      //var instane = new finnhub.CovidInfo();
       //expect(instance).to.be();
     });
 
