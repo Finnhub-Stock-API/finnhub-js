@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PriceTarget model module.
  * @module model/PriceTarget
- * @version 1.1.1
+ * @version 1.1.3
  */
 class PriceTarget {
     /**

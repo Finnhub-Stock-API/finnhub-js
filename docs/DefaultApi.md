@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 
 ## country
 
-> [EconomicCode] country()
+> [CountryMetadata] country()
 
 Country Metadata
 
@@ -629,7 +629,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[EconomicCode]**](EconomicCode.md)
+[**[CountryMetadata]**](CountryMetadata.md)
 
 ### Authorization
 
@@ -643,7 +643,7 @@ This endpoint does not need any parameter.
 
 ## covid19
 
-> [Covid19] covid19()
+> [CovidInfo] covid19()
 
 COVID-19
 
@@ -676,7 +676,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[Covid19]**](Covid19.md)
+[**[CovidInfo]**](CovidInfo.md)
 
 ### Authorization
 
@@ -690,7 +690,7 @@ This endpoint does not need any parameter.
 
 ## cryptoCandles
 
-> CryptoCandles cryptoCandles(symbol, resolution, from, to, opts)
+> CryptoCandles cryptoCandles(symbol, resolution, from, to)
 
 Crypto Candles
 
@@ -712,10 +712,7 @@ let symbol = "symbol_example"; // String | Use symbol returned in <code>/crypto/
 let resolution = "resolution_example"; // String | Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
 let from = 789; // Number | UNIX timestamp. Interval initial value.
 let to = 789; // Number | UNIX timestamp. Interval end value.
-let opts = {
-  'format': "format_example" // String | By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
-};
-apiInstance.cryptoCandles(symbol, resolution, from, to, opts, (error, data, response) => {
+apiInstance.cryptoCandles(symbol, resolution, from, to, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -733,7 +730,6 @@ Name | Type | Description  | Notes
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
  **from** | **Number**| UNIX timestamp. Interval initial value. | 
  **to** | **Number**| UNIX timestamp. Interval end value. | 
- **format** | **String**| By default, &lt;code&gt;format&#x3D;json&lt;/code&gt;. Strings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;csv&lt;/code&gt; are accepted. | [optional] 
 
 ### Return type
 
@@ -1183,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ## forexCandles
 
-> ForexCandles forexCandles(symbol, resolution, from, to, opts)
+> ForexCandles forexCandles(symbol, resolution, from, to)
 
 Forex Candles
 
@@ -1205,10 +1201,7 @@ let symbol = "symbol_example"; // String | Use symbol returned in <code>/forex/s
 let resolution = "resolution_example"; // String | Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
 let from = 789; // Number | UNIX timestamp. Interval initial value.
 let to = 789; // Number | UNIX timestamp. Interval end value.
-let opts = {
-  'format': "format_example" // String | By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
-};
-apiInstance.forexCandles(symbol, resolution, from, to, opts, (error, data, response) => {
+apiInstance.forexCandles(symbol, resolution, from, to, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1226,7 +1219,6 @@ Name | Type | Description  | Notes
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
  **from** | **Number**| UNIX timestamp. Interval initial value. | 
  **to** | **Number**| UNIX timestamp. Interval end value. | 
- **format** | **String**| By default, &lt;code&gt;format&#x3D;json&lt;/code&gt;. Strings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;csv&lt;/code&gt; are accepted. | [optional] 
 
 ### Return type
 
@@ -1829,7 +1821,7 @@ Name | Type | Description  | Notes
 
 Quote
 
-&lt;p&gt;Get quote data for stocks. Constant polling is not recommended. Use websocket if you need real-time update.&lt;/p&gt;&lt;p&gt; This endpoint only provide real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;p&gt;Get real-time quote data for US stocks. Constant polling is not recommended. Use websocket if you need real-time update.&lt;/p&gt;&lt;p&gt;Bulk download EOD international markets: &lt;a href&#x3D;\&quot;https://www.metastock.com/products/endofday/DataLink/?ref&#x3D;fih\&quot; target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;nofollow\&quot;&gt;Metastock Datalink&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
 
 ### Example
 
@@ -1931,7 +1923,7 @@ Name | Type | Description  | Notes
 
 Stock Candles
 
-&lt;p&gt;Get candlestick data for stocks going back 25 years.&lt;/p&gt;&lt;p&gt; This endpoint only provides real-time data for US stocks. Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;p&gt;Get candlestick data for stocks going back 25 years for US stocks.&lt;/p&gt;&lt;p&gt;Bulk download EOD international markets: &lt;a href&#x3D;\&quot;https://www.metastock.com/products/endofday/DataLink/?ref&#x3D;fih\&quot; target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;nofollow\&quot;&gt;Metastock Datalink&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Real-time stock prices for international markets are supported for Enterprise clients via our partner&#39;s feed. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact Us&lt;/a&gt; to learn more.&lt;/p&gt;
 
 ### Example
 
@@ -1950,7 +1942,6 @@ let resolution = "resolution_example"; // String | Supported resolution includes
 let from = 789; // Number | UNIX timestamp. Interval initial value.
 let to = 789; // Number | UNIX timestamp. Interval end value.
 let opts = {
-  'format': "format_example", // String | By default, <code>format=json</code>. Strings <code>json</code> and <code>csv</code> are accepted.
   'adjusted': "adjusted_example" // String | By default, <code>adjusted=false</code>. Use <code>true</code> to get adjusted data.
 };
 apiInstance.stockCandles(symbol, resolution, from, to, opts, (error, data, response) => {
@@ -1971,7 +1962,6 @@ Name | Type | Description  | Notes
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
  **from** | **Number**| UNIX timestamp. Interval initial value. | 
  **to** | **Number**| UNIX timestamp. Interval end value. | 
- **format** | **String**| By default, &lt;code&gt;format&#x3D;json&lt;/code&gt;. Strings &lt;code&gt;json&lt;/code&gt; and &lt;code&gt;csv&lt;/code&gt; are accepted. | [optional] 
  **adjusted** | **String**| By default, &lt;code&gt;adjusted&#x3D;false&lt;/code&gt;. Use &lt;code&gt;true&lt;/code&gt; to get adjusted data. | [optional] 
 
 ### Return type
@@ -2199,12 +2189,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/csv
 
 
 ## supportResistance
 
-> Resistance supportResistance(symbol, resolution)
+> SupportResistance supportResistance(symbol, resolution)
 
 Support/Resistance
 
@@ -2243,7 +2233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Resistance**](Resistance.md)
+[**SupportResistance**](SupportResistance.md)
 
 ### Authorization
 
@@ -2257,7 +2247,7 @@ Name | Type | Description  | Notes
 
 ## technicalIndicator
 
-> TechnicalIndicators technicalIndicator(symbol, resolution, from, to, indicator, opts)
+> Object technicalIndicator(symbol, resolution, from, to, indicator, opts)
 
 Technical Indicators
 
@@ -2306,7 +2296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TechnicalIndicators**](TechnicalIndicators.md)
+**Object**
 
 ### Authorization
 

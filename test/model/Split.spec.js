@@ -60,7 +60,7 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property _date (base name: "Date")', function() {
+    it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
       //var instane = new finnhub.Split();
       //expect(instance).to.be();

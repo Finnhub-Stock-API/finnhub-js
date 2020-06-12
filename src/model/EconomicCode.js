@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EconomicCode model module.
  * @module model/EconomicCode
- * @version 1.1.1
+ * @version 1.1.3
  */
 class EconomicCode {
     /**
@@ -47,23 +47,17 @@ class EconomicCode {
         if (data) {
             obj = obj || new EconomicCode();
 
+            if (data.hasOwnProperty('code')) {
+                obj['code'] = ApiClient.convertToType(data['code'], 'String');
+            }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
             }
-            if (data.hasOwnProperty('code2')) {
-                obj['code2'] = ApiClient.convertToType(data['code2'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('code3')) {
-                obj['code3'] = ApiClient.convertToType(data['code3'], 'String');
-            }
-            if (data.hasOwnProperty('codeNo')) {
-                obj['codeNo'] = ApiClient.convertToType(data['codeNo'], 'String');
-            }
-            if (data.hasOwnProperty('currency')) {
-                obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
-            }
-            if (data.hasOwnProperty('currencyCode')) {
-                obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
+            if (data.hasOwnProperty('unit')) {
+                obj['unit'] = ApiClient.convertToType(data['unit'], 'String');
             }
         }
         return obj;
@@ -73,40 +67,28 @@ class EconomicCode {
 }
 
 /**
- * Country name
+ * Finnhub economic code used to get historical data
+ * @member {String} code
+ */
+EconomicCode.prototype['code'] = undefined;
+
+/**
+ * Country
  * @member {String} country
  */
 EconomicCode.prototype['country'] = undefined;
 
 /**
- * Alpha 2 code
- * @member {String} code2
+ * Indicator name
+ * @member {String} name
  */
-EconomicCode.prototype['code2'] = undefined;
+EconomicCode.prototype['name'] = undefined;
 
 /**
- * Alpha 3 code
- * @member {String} code3
+ * Unit
+ * @member {String} unit
  */
-EconomicCode.prototype['code3'] = undefined;
-
-/**
- * UN code
- * @member {String} codeNo
- */
-EconomicCode.prototype['codeNo'] = undefined;
-
-/**
- * Currency name
- * @member {String} currency
- */
-EconomicCode.prototype['currency'] = undefined;
-
-/**
- * Currency code
- * @member {String} currencyCode
- */
-EconomicCode.prototype['currencyCode'] = undefined;
+EconomicCode.prototype['unit'] = undefined;
 
 
 

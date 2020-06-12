@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new finnhub.UpgradeDowngrade();
+    instance = new finnhub.CountryMetadata();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,46 +47,46 @@
       object[property] = value;
   }
 
-  describe('UpgradeDowngrade', function() {
-    it('should create an instance of UpgradeDowngrade', function() {
-      // uncomment below and update the code to test UpgradeDowngrade
-      //var instane = new finnhub.UpgradeDowngrade();
-      //expect(instance).to.be.a(finnhub.UpgradeDowngrade);
+  describe('CountryMetadata', function() {
+    it('should create an instance of CountryMetadata', function() {
+      // uncomment below and update the code to test CountryMetadata
+      //var instane = new finnhub.CountryMetadata();
+      //expect(instance).to.be.a(finnhub.CountryMetadata);
     });
 
-    it('should have the property symbol (base name: "symbol")', function() {
-      // uncomment below and update the code to test the property symbol
-      //var instane = new finnhub.UpgradeDowngrade();
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
+      //var instane = new finnhub.CountryMetadata();
       //expect(instance).to.be();
     });
 
-    it('should have the property gradeTime (base name: "gradeTime")', function() {
-      // uncomment below and update the code to test the property gradeTime
-      //var instane = new finnhub.UpgradeDowngrade();
+    it('should have the property code2 (base name: "code2")', function() {
+      // uncomment below and update the code to test the property code2
+      //var instane = new finnhub.CountryMetadata();
       //expect(instance).to.be();
     });
 
-    it('should have the property fromGrade (base name: "fromGrade")', function() {
-      // uncomment below and update the code to test the property fromGrade
-      //var instane = new finnhub.UpgradeDowngrade();
+    it('should have the property code3 (base name: "code3")', function() {
+      // uncomment below and update the code to test the property code3
+      //var instane = new finnhub.CountryMetadata();
       //expect(instance).to.be();
     });
 
-    it('should have the property toGrade (base name: "toGrade")', function() {
-      // uncomment below and update the code to test the property toGrade
-      //var instane = new finnhub.UpgradeDowngrade();
+    it('should have the property codeNo (base name: "codeNo")', function() {
+      // uncomment below and update the code to test the property codeNo
+      //var instane = new finnhub.CountryMetadata();
       //expect(instance).to.be();
     });
 
-    it('should have the property company (base name: "company")', function() {
-      // uncomment below and update the code to test the property company
-      //var instane = new finnhub.UpgradeDowngrade();
+    it('should have the property currency (base name: "currency")', function() {
+      // uncomment below and update the code to test the property currency
+      //var instane = new finnhub.CountryMetadata();
       //expect(instance).to.be();
     });
 
-    it('should have the property action (base name: "action")', function() {
-      // uncomment below and update the code to test the property action
-      //var instane = new finnhub.UpgradeDowngrade();
+    it('should have the property currencyCode (base name: "currencyCode")', function() {
+      // uncomment below and update the code to test the property currencyCode
+      //var instane = new finnhub.CountryMetadata();
       //expect(instance).to.be();
     });
 
