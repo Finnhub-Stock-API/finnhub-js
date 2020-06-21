@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EconomicCalendar model module.
  * @module model/EconomicCalendar
- * @version 1.1.3
+ * @version 1.1.4
  */
 class EconomicCalendar {
     /**

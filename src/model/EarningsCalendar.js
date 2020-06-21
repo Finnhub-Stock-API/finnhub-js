@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningsCalendar model module.
  * @module model/EarningsCalendar
- * @version 1.1.3
+ * @version 1.1.4
  */
 class EarningsCalendar {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TickData model module.
  * @module model/TickData
- * @version 1.1.3
+ * @version 1.1.4
  */
 class TickData {
     /**
@@ -47,14 +47,26 @@ class TickData {
         if (data) {
             obj = obj || new TickData();
 
-            if (data.hasOwnProperty('timestamp')) {
-                obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Number');
+            if (data.hasOwnProperty('s')) {
+                obj['s'] = ApiClient.convertToType(data['s'], 'String');
             }
-            if (data.hasOwnProperty('price')) {
-                obj['price'] = ApiClient.convertToType(data['price'], 'Number');
+            if (data.hasOwnProperty('skip')) {
+                obj['skip'] = ApiClient.convertToType(data['skip'], 'Number');
             }
-            if (data.hasOwnProperty('volume')) {
-                obj['volume'] = ApiClient.convertToType(data['volume'], 'Number');
+            if (data.hasOwnProperty('count')) {
+                obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+            }
+            if (data.hasOwnProperty('v')) {
+                obj['v'] = ApiClient.convertToType(data['v'], ['Number']);
+            }
+            if (data.hasOwnProperty('p')) {
+                obj['p'] = ApiClient.convertToType(data['p'], ['Number']);
+            }
+            if (data.hasOwnProperty('t')) {
+                obj['t'] = ApiClient.convertToType(data['t'], ['Number']);
+            }
+            if (data.hasOwnProperty('x')) {
+                obj['x'] = ApiClient.convertToType(data['x'], ['String']);
             }
         }
         return obj;
@@ -64,22 +76,46 @@ class TickData {
 }
 
 /**
- * UNIX milliseconds timestamp.
- * @member {Number} timestamp
+ * Symbol.
+ * @member {String} s
  */
-TickData.prototype['timestamp'] = undefined;
+TickData.prototype['s'] = undefined;
 
 /**
- * Price.
- * @member {Number} price
+ * Number of ticks skipped.
+ * @member {Number} skip
  */
-TickData.prototype['price'] = undefined;
+TickData.prototype['skip'] = undefined;
 
 /**
- * Volume of the trade.
- * @member {Number} volume
+ * Number of ticks returned. If <code>count</code> < <code>limit</code>, all data for that date has been returned.
+ * @member {Number} count
  */
-TickData.prototype['volume'] = undefined;
+TickData.prototype['count'] = undefined;
+
+/**
+ * List of volume data.
+ * @member {Array.<Number>} v
+ */
+TickData.prototype['v'] = undefined;
+
+/**
+ * List of price data.
+ * @member {Array.<Number>} p
+ */
+TickData.prototype['p'] = undefined;
+
+/**
+ * List of timestamp in UNIX ms.
+ * @member {Array.<Number>} t
+ */
+TickData.prototype['t'] = undefined;
+
+/**
+ * List of venues/exchanges.
+ * @member {Array.<String>} x
+ */
+TickData.prototype['x'] = undefined;
 
 
 

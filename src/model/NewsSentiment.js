@@ -18,7 +18,7 @@ import Sentiment from './Sentiment';
 /**
  * The NewsSentiment model module.
  * @module model/NewsSentiment
- * @version 1.1.3
+ * @version 1.1.4
  */
 class NewsSentiment {
     /**

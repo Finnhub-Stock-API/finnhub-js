@@ -39,6 +39,7 @@ Method | HTTP request | Description
 [**priceTarget**](DefaultApi.md#priceTarget) | **GET** /stock/price-target | Price Target
 [**quote**](DefaultApi.md#quote) | **GET** /quote | Quote
 [**recommendationTrends**](DefaultApi.md#recommendationTrends) | **GET** /stock/recommendation | Recommendation Trends
+[**stockBidask**](DefaultApi.md#stockBidask) | **GET** /stock/bidask | Last Bid-Ask
 [**stockCandles**](DefaultApi.md#stockCandles) | **GET** /stock/candle | Stock Candles
 [**stockDividends**](DefaultApi.md#stockDividends) | **GET** /stock/dividend | Dividends
 [**stockSplits**](DefaultApi.md#stockSplits) | **GET** /stock/split | Splits
@@ -325,7 +326,7 @@ Name | Type | Description  | Notes
 
 Company News
 
-List latest company news by symbol. This endpoint is only available for US companies.
+List latest company news by symbol. This endpoint is only available for North American companies.
 
 ### Example
 
@@ -1917,6 +1918,57 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## stockBidask
+
+> LastBidAsk stockBidask(symbol)
+
+Last Bid-Ask
+
+Get last bid/ask data for US stocks.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol.
+apiInstance.stockBidask(symbol, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. | 
+
+### Return type
+
+[**LastBidAsk**](LastBidAsk.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## stockCandles
 
 > StockCandles stockCandles(symbol, resolution, from, to, opts)
@@ -2141,7 +2193,7 @@ Name | Type | Description  | Notes
 
 ## stockTick
 
-> TickData stockTick(symbol, _date)
+> TickData stockTick(symbol, _date, limit, skip)
 
 Tick Data
 
@@ -2161,7 +2213,9 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | Symbol.
 let _date = new Date("2013-10-20"); // Date | Date: 2020-04-02.
-apiInstance.stockTick(symbol, _date, (error, data, response) => {
+let limit = 789; // Number | Limit number of ticks returned. Maximum value: <code>25000</code>
+let skip = 789; // Number | Number of ticks to skip. Use this parameter to loop through the entire data.
+apiInstance.stockTick(symbol, _date, limit, skip, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2177,6 +2231,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Symbol. | 
  **_date** | **Date**| Date: 2020-04-02. | 
+ **limit** | **Number**| Limit number of ticks returned. Maximum value: &lt;code&gt;25000&lt;/code&gt; | 
+ **skip** | **Number**| Number of ticks to skip. Use this parameter to loop through the entire data. | 
 
 ### Return type
 
@@ -2189,7 +2245,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/csv
+- **Accept**: application/json
 
 
 ## supportResistance
