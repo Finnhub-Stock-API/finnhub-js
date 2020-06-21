@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new finnhub.TickData();
+    instance = new finnhub.Trade();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,52 +47,34 @@
       object[property] = value;
   }
 
-  describe('TickData', function() {
-    it('should create an instance of TickData', function() {
-      // uncomment below and update the code to test TickData
-      //var instane = new finnhub.TickData();
-      //expect(instance).to.be.a(finnhub.TickData);
+  describe('Trade', function() {
+    it('should create an instance of Trade', function() {
+      // uncomment below and update the code to test Trade
+      //var instane = new finnhub.Trade();
+      //expect(instance).to.be.a(finnhub.Trade);
     });
 
     it('should have the property s (base name: "s")', function() {
       // uncomment below and update the code to test the property s
-      //var instane = new finnhub.TickData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property skip (base name: "skip")', function() {
-      // uncomment below and update the code to test the property skip
-      //var instane = new finnhub.TickData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property count (base name: "count")', function() {
-      // uncomment below and update the code to test the property count
-      //var instane = new finnhub.TickData();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property v (base name: "v")', function() {
-      // uncomment below and update the code to test the property v
-      //var instane = new finnhub.TickData();
+      //var instane = new finnhub.Trade();
       //expect(instance).to.be();
     });
 
     it('should have the property p (base name: "p")', function() {
       // uncomment below and update the code to test the property p
-      //var instane = new finnhub.TickData();
+      //var instane = new finnhub.Trade();
       //expect(instance).to.be();
     });
 
     it('should have the property t (base name: "t")', function() {
       // uncomment below and update the code to test the property t
-      //var instane = new finnhub.TickData();
+      //var instane = new finnhub.Trade();
       //expect(instance).to.be();
     });
 
-    it('should have the property x (base name: "x")', function() {
-      // uncomment below and update the code to test the property x
-      //var instane = new finnhub.TickData();
+    it('should have the property v (base name: "v")', function() {
+      // uncomment below and update the code to test the property v
+      //var instane = new finnhub.Trade();
       //expect(instance).to.be();
     });
 

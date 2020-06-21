@@ -50,6 +50,7 @@ import IPOEvent from './model/IPOEvent';
 import Indicator from './model/Indicator';
 import Investor from './model/Investor';
 import InvestorsOwnership from './model/InvestorsOwnership';
+import LastBidAsk from './model/LastBidAsk';
 import MajorDevelopments from './model/MajorDevelopments';
 import News from './model/News';
 import NewsSentiment from './model/NewsSentiment';
@@ -103,7 +104,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.1.3
+* @version 1.1.4
 */
 export {
     /**
@@ -333,6 +334,12 @@ export {
      * @property {module:model/InvestorsOwnership}
      */
     InvestorsOwnership,
+
+    /**
+     * The LastBidAsk model constructor.
+     * @property {module:model/LastBidAsk}
+     */
+    LastBidAsk,
 
     /**
      * The MajorDevelopments model constructor.

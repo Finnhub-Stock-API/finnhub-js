@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The FinancialsAsReported model module.
- * @module model/FinancialsAsReported
+ * The TradesLastPriceUpdates model module.
+ * @module model/TradesLastPriceUpdates
  * @version 1.1.4
  */
-class FinancialsAsReported {
+class TradesLastPriceUpdates {
     /**
-     * Constructs a new <code>FinancialsAsReported</code>.
-     * @alias module:model/FinancialsAsReported
+     * Constructs a new <code>TradesLastPriceUpdates</code>.
+     * @alias module:model/TradesLastPriceUpdates
      */
     constructor() { 
         
-        FinancialsAsReported.initialize(this);
+        TradesLastPriceUpdates.initialize(this);
     }
 
     /**
@@ -37,21 +37,18 @@ class FinancialsAsReported {
     }
 
     /**
-     * Constructs a <code>FinancialsAsReported</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>TradesLastPriceUpdates</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/FinancialsAsReported} obj Optional instance to populate.
-     * @return {module:model/FinancialsAsReported} The populated <code>FinancialsAsReported</code> instance.
+     * @param {module:model/TradesLastPriceUpdates} obj Optional instance to populate.
+     * @return {module:model/TradesLastPriceUpdates} The populated <code>TradesLastPriceUpdates</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new FinancialsAsReported();
+            obj = obj || new TradesLastPriceUpdates();
 
-            if (data.hasOwnProperty('symbol')) {
-                obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
-            }
-            if (data.hasOwnProperty('cik')) {
-                obj['cik'] = ApiClient.convertToType(data['cik'], 'String');
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [Object]);
@@ -64,27 +61,21 @@ class FinancialsAsReported {
 }
 
 /**
- * Symbol
- * @member {String} symbol
+ * Message type.
+ * @member {String} type
  */
-FinancialsAsReported.prototype['symbol'] = undefined;
+TradesLastPriceUpdates.prototype['type'] = undefined;
 
 /**
- * CIK
- * @member {String} cik
- */
-FinancialsAsReported.prototype['cik'] = undefined;
-
-/**
- * Array of filings.
+ * List of trades or price updates.
  * @member {Array.<Object>} data
  */
-FinancialsAsReported.prototype['data'] = undefined;
+TradesLastPriceUpdates.prototype['data'] = undefined;
 
 
 
 
 
 
-export default FinancialsAsReported;
+export default TradesLastPriceUpdates;
 

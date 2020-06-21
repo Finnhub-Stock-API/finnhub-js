@@ -39,6 +39,7 @@ import Forexrates from '../model/Forexrates';
 import FundOwnership from '../model/FundOwnership';
 import IPOCalendar from '../model/IPOCalendar';
 import InvestorsOwnership from '../model/InvestorsOwnership';
+import LastBidAsk from '../model/LastBidAsk';
 import MajorDevelopments from '../model/MajorDevelopments';
 import News from '../model/News';
 import NewsSentiment from '../model/NewsSentiment';
@@ -57,7 +58,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.1.3
+* @version 1.1.4
 */
 export default class DefaultApi {
 
@@ -318,7 +319,7 @@ export default class DefaultApi {
 
     /**
      * Company News
-     * List latest company news by symbol. This endpoint is only available for US companies.
+     * List latest company news by symbol. This endpoint is only available for North American companies.
      * @param {String} symbol Company symbol.
      * @param {Date} from From date <code>YYYY-MM-DD</code>.
      * @param {Date} to To date <code>YYYY-MM-DD</code>.
@@ -1681,6 +1682,49 @@ export default class DefaultApi {
     }
 
     /**
+     * Callback function to receive the result of the stockBidask operation.
+     * @callback module:api/DefaultApi~stockBidaskCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LastBidAsk} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Last Bid-Ask
+     * Get last bid/ask data for US stocks.
+     * @param {String} symbol Symbol.
+     * @param {module:api/DefaultApi~stockBidaskCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LastBidAsk}
+     */
+    stockBidask(symbol, callback) {
+      let postBody = null;
+      // verify the required parameter 'symbol' is set
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling stockBidask");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'symbol': symbol
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = LastBidAsk;
+      return this.apiClient.callApi(
+        '/stock/bidask', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the stockCandles operation.
      * @callback module:api/DefaultApi~stockCandlesCallback
      * @param {String} error Error message, if any.
@@ -1911,10 +1955,12 @@ export default class DefaultApi {
      * <p>Get historical tick data for US stocks from all 13 exchanges. Return csv format. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server. Data is updated at the end of each trading day.</p><p>Tick data from 1985 is available for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact us</a> to learn more.</p>
      * @param {String} symbol Symbol.
      * @param {Date} _date Date: 2020-04-02.
+     * @param {Number} limit Limit number of ticks returned. Maximum value: <code>25000</code>
+     * @param {Number} skip Number of ticks to skip. Use this parameter to loop through the entire data.
      * @param {module:api/DefaultApi~stockTickCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/TickData}
      */
-    stockTick(symbol, _date, callback) {
+    stockTick(symbol, _date, limit, skip, callback) {
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -1924,12 +1970,22 @@ export default class DefaultApi {
       if (_date === undefined || _date === null) {
         throw new Error("Missing the required parameter '_date' when calling stockTick");
       }
+      // verify the required parameter 'limit' is set
+      if (limit === undefined || limit === null) {
+        throw new Error("Missing the required parameter 'limit' when calling stockTick");
+      }
+      // verify the required parameter 'skip' is set
+      if (skip === undefined || skip === null) {
+        throw new Error("Missing the required parameter 'skip' when calling stockTick");
+      }
 
       let pathParams = {
       };
       let queryParams = {
         'symbol': symbol,
-        'date': _date
+        'date': _date,
+        'limit': limit,
+        'skip': skip
       };
       let headerParams = {
       };
@@ -1938,7 +1994,7 @@ export default class DefaultApi {
 
       let authNames = ['api_key'];
       let contentTypes = [];
-      let accepts = ['text/csv'];
+      let accepts = ['application/json'];
       let returnType = TickData;
       return this.apiClient.callApi(
         '/stock/tick', 'GET',
