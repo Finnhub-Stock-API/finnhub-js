@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**companyRevenueEstimates**](DefaultApi.md#companyRevenueEstimates) | **GET** /stock/revenue-estimate | Revenue Estimates
 [**country**](DefaultApi.md#country) | **GET** /country | Country Metadata
 [**covid19**](DefaultApi.md#covid19) | **GET** /covid19/us | COVID-19
-[**cryptoCandles**](DefaultApi.md#cryptoCandles) | **GET** /crypto/candle | Crypto Candles
+[**cryptoCandles**](DefaultApi.md#cryptoCandles) | **GET** /crypto/candle?format&#x3D;json | Crypto Candles
 [**cryptoExchanges**](DefaultApi.md#cryptoExchanges) | **GET** /crypto/exchange | Crypto Exchanges
 [**cryptoSymbols**](DefaultApi.md#cryptoSymbols) | **GET** /crypto/symbol | Crypto Symbol
 [**earningsCalendar**](DefaultApi.md#earningsCalendar) | **GET** /calendar/earnings | Earnings Calendar
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 [**filings**](DefaultApi.md#filings) | **GET** /stock/filings | Filings
 [**financials**](DefaultApi.md#financials) | **GET** /stock/financials | Financial Statements
 [**financialsReported**](DefaultApi.md#financialsReported) | **GET** /stock/financials-reported | Financials As Reported
-[**forexCandles**](DefaultApi.md#forexCandles) | **GET** /forex/candle | Forex Candles
+[**forexCandles**](DefaultApi.md#forexCandles) | **GET** /forex/candle?format&#x3D;json | Forex Candles
 [**forexExchanges**](DefaultApi.md#forexExchanges) | **GET** /forex/exchange | Forex Exchanges
 [**forexRates**](DefaultApi.md#forexRates) | **GET** /forex/rates | Forex rates
 [**forexSymbols**](DefaultApi.md#forexSymbols) | **GET** /forex/symbol | Forex Symbol
@@ -40,11 +40,11 @@ Method | HTTP request | Description
 [**quote**](DefaultApi.md#quote) | **GET** /quote | Quote
 [**recommendationTrends**](DefaultApi.md#recommendationTrends) | **GET** /stock/recommendation | Recommendation Trends
 [**stockBidask**](DefaultApi.md#stockBidask) | **GET** /stock/bidask | Last Bid-Ask
-[**stockCandles**](DefaultApi.md#stockCandles) | **GET** /stock/candle | Stock Candles
+[**stockCandles**](DefaultApi.md#stockCandles) | **GET** /stock/candle?format&#x3D;json | Stock Candles
 [**stockDividends**](DefaultApi.md#stockDividends) | **GET** /stock/dividend | Dividends
 [**stockSplits**](DefaultApi.md#stockSplits) | **GET** /stock/split | Splits
 [**stockSymbols**](DefaultApi.md#stockSymbols) | **GET** /stock/symbol | Stock Symbol
-[**stockTick**](DefaultApi.md#stockTick) | **GET** /stock/tick | Tick Data
+[**stockTick**](DefaultApi.md#stockTick) | **GET** /stock/tick?format&#x3D;json | Tick Data
 [**supportResistance**](DefaultApi.md#supportResistance) | **GET** /scan/support-resistance | Support/Resistance
 [**technicalIndicator**](DefaultApi.md#technicalIndicator) | **GET** /indicator | Technical Indicators
 [**transcripts**](DefaultApi.md#transcripts) | **GET** /stock/transcripts | Earnings Call Transcripts

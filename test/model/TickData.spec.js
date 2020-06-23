@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property total (base name: "total")', function() {
+      // uncomment below and update the code to test the property total
+      //var instane = new finnhub.TickData();
+      //expect(instance).to.be();
+    });
+
     it('should have the property v (base name: "v")', function() {
       // uncomment below and update the code to test the property v
       //var instane = new finnhub.TickData();

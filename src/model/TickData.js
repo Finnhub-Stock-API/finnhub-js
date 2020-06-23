@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TickData model module.
  * @module model/TickData
- * @version 1.1.4
+ * @version 1.1.5
  */
 class TickData {
     /**
@@ -56,6 +56,9 @@ class TickData {
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
             }
+            if (data.hasOwnProperty('total')) {
+                obj['total'] = ApiClient.convertToType(data['total'], 'Number');
+            }
             if (data.hasOwnProperty('v')) {
                 obj['v'] = ApiClient.convertToType(data['v'], ['Number']);
             }
@@ -92,6 +95,12 @@ TickData.prototype['skip'] = undefined;
  * @member {Number} count
  */
 TickData.prototype['count'] = undefined;
+
+/**
+ * Total number of ticks for that date.
+ * @member {Number} total
+ */
+TickData.prototype['total'] = undefined;
 
 /**
  * List of volume data.
