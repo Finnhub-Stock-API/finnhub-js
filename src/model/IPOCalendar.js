@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IPOCalendar model module.
  * @module model/IPOCalendar
- * @version 1.1.5
+ * @version 1.1.6
  */
 class IPOCalendar {
     /**

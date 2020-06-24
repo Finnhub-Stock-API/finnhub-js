@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Stock model module.
  * @module model/Stock
- * @version 1.1.5
+ * @version 1.1.6
  */
 class Stock {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EconomicEvent model module.
  * @module model/EconomicEvent
- * @version 1.1.5
+ * @version 1.1.6
  */
 class EconomicEvent {
     /**

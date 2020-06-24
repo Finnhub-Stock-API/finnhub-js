@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SupportResistance model module.
  * @module model/SupportResistance
- * @version 1.1.5
+ * @version 1.1.6
  */
 class SupportResistance {
     /**
