@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyExecutive model module.
  * @module model/CompanyExecutive
- * @version 1.1.5
+ * @version 1.1.6
  */
 class CompanyExecutive {
     /**

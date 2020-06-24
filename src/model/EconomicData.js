@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EconomicData model module.
  * @module model/EconomicData
- * @version 1.1.5
+ * @version 1.1.6
  */
 class EconomicData {
     /**

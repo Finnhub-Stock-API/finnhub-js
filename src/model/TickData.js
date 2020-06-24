@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TickData model module.
  * @module model/TickData
- * @version 1.1.5
+ * @version 1.1.6
  */
 class TickData {
     /**

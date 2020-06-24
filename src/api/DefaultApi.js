@@ -58,7 +58,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.1.5
+* @version 1.1.6
 */
 export default class DefaultApi {
 
@@ -673,7 +673,7 @@ export default class DefaultApi {
       let accepts = ['application/json'];
       let returnType = CryptoCandles;
       return this.apiClient.callApi(
-        '/crypto/candle?format=json', 'GET',
+        '/crypto/candle', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -1094,7 +1094,7 @@ export default class DefaultApi {
       let accepts = ['application/json'];
       let returnType = ForexCandles;
       return this.apiClient.callApi(
-        '/forex/candle?format=json', 'GET',
+        '/forex/candle', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -1783,7 +1783,7 @@ export default class DefaultApi {
       let accepts = ['application/json'];
       let returnType = StockCandles;
       return this.apiClient.callApi(
-        '/stock/candle?format=json', 'GET',
+        '/stock/candle', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -1997,7 +1997,7 @@ export default class DefaultApi {
       let accepts = ['application/json'];
       let returnType = TickData;
       return this.apiClient.callApi(
-        '/stock/tick?format=json', 'GET',
+        '/stock/tick', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
