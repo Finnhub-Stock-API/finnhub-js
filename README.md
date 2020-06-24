@@ -250,6 +250,11 @@ finnhubClient.transcriptsList("AAPL", (error, data, response) => {
 finnhubClient.upgradeDowngrade({"symbol": "AAPL"}, (error, data, response) => {
     console.log(data)
 });
+
+// Tick Data
+api.stockTick("AAPL", "2020-03-25", 500, 0, (error, data, response) => {
+    console.error(data);
+});
 ```
 ## License
 
