@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MajorDevelopments model module.
  * @module model/MajorDevelopments
- * @version 1.1.6
+ * @version 1.1.7
  */
 class MajorDevelopments {
     /**

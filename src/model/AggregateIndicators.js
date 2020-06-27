@@ -18,7 +18,7 @@ import Trend from './Trend';
 /**
  * The AggregateIndicators model module.
  * @module model/AggregateIndicators
- * @version 1.1.6
+ * @version 1.1.7
  */
 class AggregateIndicators {
     /**
