@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ForexCandles model module.
  * @module model/ForexCandles
- * @version 1.1.6
+ * @version 1.1.7
  */
 class ForexCandles {
     /**

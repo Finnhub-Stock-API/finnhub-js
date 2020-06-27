@@ -58,7 +58,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.1.6
+* @version 1.1.7
 */
 export default class DefaultApi {
 
@@ -1605,7 +1605,7 @@ export default class DefaultApi {
 
     /**
      * Quote
-     * <p>Get real-time quote data for US stocks. Constant polling is not recommended. Use websocket if you need real-time update.</p><p>Bulk download EOD international markets: <a href=\"https://www.metastock.com/products/endofday/DataLink/?ref=fih\" target=\"_blank\" rel=\"nofollow\">Metastock Datalink</a></p><p>Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
+     * <p>Get real-time quote data for US stocks. Constant polling is not recommended. Use websocket if you need real-time update.</p><p>Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Symbol
      * @param {module:api/DefaultApi~quoteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Quote}
@@ -1734,7 +1734,7 @@ export default class DefaultApi {
 
     /**
      * Stock Candles
-     * <p>Get candlestick data for stocks going back 25 years for US stocks.</p><p>Bulk download EOD international markets: <a href=\"https://www.metastock.com/products/endofday/DataLink/?ref=fih\" target=\"_blank\" rel=\"nofollow\">Metastock Datalink</a></p><p>Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
+     * <p>Get candlestick data for stocks going back 25 years for US stocks.</p><p>Real-time stock prices for international markets are supported for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Symbol.
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {Number} from UNIX timestamp. Interval initial value.
@@ -1952,7 +1952,7 @@ export default class DefaultApi {
 
     /**
      * Tick Data
-     * <p>Get historical tick data for US stocks from all 13 exchanges. Return csv format. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server. Data is updated at the end of each trading day.</p><p>Tick data from 1985 is available for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact us</a> to learn more.</p>
+     * <p>Get historical tick data for US stocks from all 13 exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server. Data is updated at the end of each trading day.</p><p>Tick data from 1985 is available for Enterprise clients. <a href=\"mailto:support@finnhub.io\">Contact us</a> to learn more.</p>
      * @param {String} symbol Symbol.
      * @param {Date} _date Date: 2020-04-02.
      * @param {Number} limit Limit number of ticks returned. Maximum value: <code>25000</code>
@@ -2069,13 +2069,13 @@ export default class DefaultApi {
      * @param {Number} to UNIX timestamp. Interval end value.
      * @param {String} indicator Indicator name. Full list can be found <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.indicatorSpecificFields Check out <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">this page</a> to see which indicators and params are supported.
+     * @param {Object} opts.indicatorFields Check out <a href=\"https://docs.google.com/spreadsheets/d/1ylUvKHVYN2E87WdwIza8ROaCpd48ggEl1k5i5SgA29k/edit?usp=sharing\" target=\"_blank\">this page</a> to see which indicators and params are supported.
      * @param {module:api/DefaultApi~technicalIndicatorCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object}
      */
     technicalIndicator(symbol, resolution, from, to, indicator, opts, callback) {
       opts = opts || {};
-      let postBody = null;
+      let postBody = opts['indicatorFields'];
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
         throw new Error("Missing the required parameter 'symbol' when calling technicalIndicator");
@@ -2104,8 +2104,7 @@ export default class DefaultApi {
         'resolution': resolution,
         'from': from,
         'to': to,
-        'indicator': indicator,
-        'Indicator specific fields': opts['indicatorSpecificFields']
+        'indicator': indicator
       };
       let headerParams = {
       };
@@ -2113,11 +2112,11 @@ export default class DefaultApi {
       };
 
       let authNames = ['api_key'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
-        '/indicator', 'GET',
+        '/indicator', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -2133,7 +2132,7 @@ export default class DefaultApi {
 
     /**
      * Earnings Call Transcripts
-     * <p>Get earnings call transcripts, audio and participants' list. This endpoint is only available for US companies. Earnings call transcripts for international markets are available for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact us</a> to learn more.</p><p>17+ years of data is available with 170,000+ audio which add up to 6TB in size.</p>
+     * <p>Get earnings call transcripts, audio and participants' list. This endpoint is only available for US companies. <p>17+ years of data is available with 170,000+ audio which add up to 6TB in size.</p>
      * @param {String} id Transcript's id obtained with <a href=\"#transcripts-list\">Transcripts List endpoint</a>.
      * @param {module:api/DefaultApi~transcriptsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EarningsCallTranscripts}
@@ -2176,7 +2175,7 @@ export default class DefaultApi {
 
     /**
      * Earnings Call Transcripts List
-     * List earnings call transcripts' metadata. This endpoint is only available for US companies. Earnings call transcripts for international markets are available for Enterprise clients via our partner's feed. <a href=\"mailto:support@finnhub.io\">Contact us</a> to learn more.
+     * List earnings call transcripts' metadata. This endpoint is only available for US companies.
      * @param {String} symbol Company symbol: AAPL. Leave empty to list the latest transcripts
      * @param {module:api/DefaultApi~transcriptsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EarningsCallTranscriptsList}
