@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property holdings (base name: "holdings")', function() {
-      // uncomment below and update the code to test the property holdings
+    it('should have the property countryExposure (base name: "countryExposure")', function() {
+      // uncomment below and update the code to test the property countryExposure
       //var instane = new finnhub.ETFsCountryExposure();
       //expect(instance).to.be();
     });

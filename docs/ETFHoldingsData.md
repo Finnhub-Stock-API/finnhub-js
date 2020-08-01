@@ -1,4 +1,4 @@
-# finnhub.ETFHoldings
+# finnhub.ETFHoldingsData
 
 ## Properties
 

@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The ETFSectorExposure model module.
- * @module model/ETFSectorExposure
- * @version 1.2.0
+ * The ETFSectorExposureData model module.
+ * @module model/ETFSectorExposureData
+ * @version 1.2.1
  */
-class ETFSectorExposure {
+class ETFSectorExposureData {
     /**
-     * Constructs a new <code>ETFSectorExposure</code>.
-     * @alias module:model/ETFSectorExposure
+     * Constructs a new <code>ETFSectorExposureData</code>.
+     * @alias module:model/ETFSectorExposureData
      */
     constructor() { 
         
-        ETFSectorExposure.initialize(this);
+        ETFSectorExposureData.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class ETFSectorExposure {
     }
 
     /**
-     * Constructs a <code>ETFSectorExposure</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ETFSectorExposureData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ETFSectorExposure} obj Optional instance to populate.
-     * @return {module:model/ETFSectorExposure} The populated <code>ETFSectorExposure</code> instance.
+     * @param {module:model/ETFSectorExposureData} obj Optional instance to populate.
+     * @return {module:model/ETFSectorExposureData} The populated <code>ETFSectorExposureData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ETFSectorExposure();
+            obj = obj || new ETFSectorExposureData();
 
             if (data.hasOwnProperty('industry')) {
                 obj['industry'] = ApiClient.convertToType(data['industry'], 'String');
@@ -64,18 +64,18 @@ class ETFSectorExposure {
  * Industry
  * @member {String} industry
  */
-ETFSectorExposure.prototype['industry'] = undefined;
+ETFSectorExposureData.prototype['industry'] = undefined;
 
 /**
  * Percent of exposure.
  * @member {String} exposure
  */
-ETFSectorExposure.prototype['exposure'] = undefined;
+ETFSectorExposureData.prototype['exposure'] = undefined;
 
 
 
 
 
 
-export default ETFSectorExposure;
+export default ETFSectorExposureData;
 

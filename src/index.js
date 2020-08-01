@@ -26,9 +26,9 @@ import CryptoCandles from './model/CryptoCandles';
 import CryptoSymbol from './model/CryptoSymbol';
 import Development from './model/Development';
 import Dividends from './model/Dividends';
-import ETFCountryExposure from './model/ETFCountryExposure';
-import ETFHoldings from './model/ETFHoldings';
-import ETFSectorExposure from './model/ETFSectorExposure';
+import ETFCountryExposureData from './model/ETFCountryExposureData';
+import ETFHoldingsData from './model/ETFHoldingsData';
+import ETFSectorExposureData from './model/ETFSectorExposureData';
 import ETFsCountryExposure from './model/ETFsCountryExposure';
 import ETFsHoldings from './model/ETFsHoldings';
 import ETFsIndustryExposure from './model/ETFsIndustryExposure';
@@ -115,7 +115,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.0
+* @version 1.2.1
 */
 export {
     /**
@@ -203,22 +203,22 @@ export {
     Dividends,
 
     /**
-     * The ETFCountryExposure model constructor.
-     * @property {module:model/ETFCountryExposure}
+     * The ETFCountryExposureData model constructor.
+     * @property {module:model/ETFCountryExposureData}
      */
-    ETFCountryExposure,
+    ETFCountryExposureData,
 
     /**
-     * The ETFHoldings model constructor.
-     * @property {module:model/ETFHoldings}
+     * The ETFHoldingsData model constructor.
+     * @property {module:model/ETFHoldingsData}
      */
-    ETFHoldings,
+    ETFHoldingsData,
 
     /**
-     * The ETFSectorExposure model constructor.
-     * @property {module:model/ETFSectorExposure}
+     * The ETFSectorExposureData model constructor.
+     * @property {module:model/ETFSectorExposureData}
      */
-    ETFSectorExposure,
+    ETFSectorExposureData,
 
     /**
      * The ETFsCountryExposure model constructor.

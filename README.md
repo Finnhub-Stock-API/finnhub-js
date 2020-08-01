@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.2.0
+- Package version: 1.2.1
 
 ## Installation
 

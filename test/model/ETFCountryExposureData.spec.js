@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new finnhub.ETFHoldings();
+    instance = new finnhub.ETFCountryExposureData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,22 @@
       object[property] = value;
   }
 
-  describe('ETFHoldings', function() {
-    it('should create an instance of ETFHoldings', function() {
-      // uncomment below and update the code to test ETFHoldings
-      //var instane = new finnhub.ETFHoldings();
-      //expect(instance).to.be.a(finnhub.ETFHoldings);
+  describe('ETFCountryExposureData', function() {
+    it('should create an instance of ETFCountryExposureData', function() {
+      // uncomment below and update the code to test ETFCountryExposureData
+      //var instane = new finnhub.ETFCountryExposureData();
+      //expect(instance).to.be.a(finnhub.ETFCountryExposureData);
     });
 
-    it('should have the property symbol (base name: "symbol")', function() {
-      // uncomment below and update the code to test the property symbol
-      //var instane = new finnhub.ETFHoldings();
+    it('should have the property country (base name: "country")', function() {
+      // uncomment below and update the code to test the property country
+      //var instane = new finnhub.ETFCountryExposureData();
       //expect(instance).to.be();
     });
 
-    it('should have the property share (base name: "share")', function() {
-      // uncomment below and update the code to test the property share
-      //var instane = new finnhub.ETFHoldings();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property percent (base name: "percent")', function() {
-      // uncomment below and update the code to test the property percent
-      //var instane = new finnhub.ETFHoldings();
+    it('should have the property exposure (base name: "exposure")', function() {
+      // uncomment below and update the code to test the property exposure
+      //var instane = new finnhub.ETFCountryExposureData();
       //expect(instance).to.be();
     });
 

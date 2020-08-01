@@ -1,10 +1,10 @@
-# finnhub.ETFCountryExposure
+# finnhub.ETFSectorExposureData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**country** | **String** | Country | [optional] 
+**industry** | **String** | Industry | [optional] 
 **exposure** | **String** | Percent of exposure. | [optional] 
 
 

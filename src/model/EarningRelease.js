@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRelease model module.
  * @module model/EarningRelease
- * @version 1.2.0
+ * @version 1.2.1
  */
 class EarningRelease {
     /**

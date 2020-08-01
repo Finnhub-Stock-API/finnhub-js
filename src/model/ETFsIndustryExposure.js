@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ETFsIndustryExposure model module.
  * @module model/ETFsIndustryExposure
- * @version 1.2.0
+ * @version 1.2.1
  */
 class ETFsIndustryExposure {
     /**
@@ -50,8 +50,8 @@ class ETFsIndustryExposure {
             if (data.hasOwnProperty('symbol')) {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
-            if (data.hasOwnProperty('holdings')) {
-                obj['holdings'] = ApiClient.convertToType(data['holdings'], [Object]);
+            if (data.hasOwnProperty('sectorExposure')) {
+                obj['sectorExposure'] = ApiClient.convertToType(data['sectorExposure'], [Object]);
             }
         }
         return obj;
@@ -68,9 +68,9 @@ ETFsIndustryExposure.prototype['symbol'] = undefined;
 
 /**
  * Array of industries and exposure levels.
- * @member {Array.<Object>} holdings
+ * @member {Array.<Object>} sectorExposure
  */
-ETFsIndustryExposure.prototype['holdings'] = undefined;
+ETFsIndustryExposure.prototype['sectorExposure'] = undefined;
 
 
 

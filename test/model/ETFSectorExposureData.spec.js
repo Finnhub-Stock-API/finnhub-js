@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new finnhub.ETFSectorExposure();
+    instance = new finnhub.ETFSectorExposureData();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,22 @@
       object[property] = value;
   }
 
-  describe('ETFSectorExposure', function() {
-    it('should create an instance of ETFSectorExposure', function() {
-      // uncomment below and update the code to test ETFSectorExposure
-      //var instane = new finnhub.ETFSectorExposure();
-      //expect(instance).to.be.a(finnhub.ETFSectorExposure);
+  describe('ETFSectorExposureData', function() {
+    it('should create an instance of ETFSectorExposureData', function() {
+      // uncomment below and update the code to test ETFSectorExposureData
+      //var instane = new finnhub.ETFSectorExposureData();
+      //expect(instance).to.be.a(finnhub.ETFSectorExposureData);
     });
 
     it('should have the property industry (base name: "industry")', function() {
       // uncomment below and update the code to test the property industry
-      //var instane = new finnhub.ETFSectorExposure();
+      //var instane = new finnhub.ETFSectorExposureData();
       //expect(instance).to.be();
     });
 
     it('should have the property exposure (base name: "exposure")', function() {
       // uncomment below and update the code to test the property exposure
-      //var instane = new finnhub.ETFSectorExposure();
+      //var instane = new finnhub.ETFSectorExposureData();
       //expect(instance).to.be();
     });
 

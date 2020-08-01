@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** | ETF symbol. | [optional] 
-**holdings** | **[Object]** | Array of countries and and exposure levels. | [optional] 
+**countryExposure** | **[Object]** | Array of countries and and exposure levels. | [optional] 
 
 
