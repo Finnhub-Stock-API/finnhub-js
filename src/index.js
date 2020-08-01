@@ -26,6 +26,13 @@ import CryptoCandles from './model/CryptoCandles';
 import CryptoSymbol from './model/CryptoSymbol';
 import Development from './model/Development';
 import Dividends from './model/Dividends';
+import ETFCountryExposure from './model/ETFCountryExposure';
+import ETFHoldings from './model/ETFHoldings';
+import ETFSectorExposure from './model/ETFSectorExposure';
+import ETFsCountryExposure from './model/ETFsCountryExposure';
+import ETFsHoldings from './model/ETFsHoldings';
+import ETFsIndustryExposure from './model/ETFsIndustryExposure';
+import ETFsProfile from './model/ETFsProfile';
 import EarningEstimate from './model/EarningEstimate';
 import EarningRelease from './model/EarningRelease';
 import EarningResult from './model/EarningResult';
@@ -47,7 +54,10 @@ import Forexrates from './model/Forexrates';
 import FundOwnership from './model/FundOwnership';
 import IPOCalendar from './model/IPOCalendar';
 import IPOEvent from './model/IPOEvent';
+import IndexHistoricalConstituent from './model/IndexHistoricalConstituent';
 import Indicator from './model/Indicator';
+import IndicesConstituents from './model/IndicesConstituents';
+import IndicesHistoricalConstituents from './model/IndicesHistoricalConstituents';
 import Investor from './model/Investor';
 import InvestorsOwnership from './model/InvestorsOwnership';
 import LastBidAsk from './model/LastBidAsk';
@@ -61,6 +71,7 @@ import RecommendationTrend from './model/RecommendationTrend';
 import Report from './model/Report';
 import RevenueEstimates from './model/RevenueEstimates';
 import Sentiment from './model/Sentiment';
+import SimilarityIndex from './model/SimilarityIndex';
 import Split from './model/Split';
 import Stock from './model/Stock';
 import StockCandles from './model/StockCandles';
@@ -104,7 +115,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.1.7
+* @version 1.2.0
 */
 export {
     /**
@@ -190,6 +201,48 @@ export {
      * @property {module:model/Dividends}
      */
     Dividends,
+
+    /**
+     * The ETFCountryExposure model constructor.
+     * @property {module:model/ETFCountryExposure}
+     */
+    ETFCountryExposure,
+
+    /**
+     * The ETFHoldings model constructor.
+     * @property {module:model/ETFHoldings}
+     */
+    ETFHoldings,
+
+    /**
+     * The ETFSectorExposure model constructor.
+     * @property {module:model/ETFSectorExposure}
+     */
+    ETFSectorExposure,
+
+    /**
+     * The ETFsCountryExposure model constructor.
+     * @property {module:model/ETFsCountryExposure}
+     */
+    ETFsCountryExposure,
+
+    /**
+     * The ETFsHoldings model constructor.
+     * @property {module:model/ETFsHoldings}
+     */
+    ETFsHoldings,
+
+    /**
+     * The ETFsIndustryExposure model constructor.
+     * @property {module:model/ETFsIndustryExposure}
+     */
+    ETFsIndustryExposure,
+
+    /**
+     * The ETFsProfile model constructor.
+     * @property {module:model/ETFsProfile}
+     */
+    ETFsProfile,
 
     /**
      * The EarningEstimate model constructor.
@@ -318,10 +371,28 @@ export {
     IPOEvent,
 
     /**
+     * The IndexHistoricalConstituent model constructor.
+     * @property {module:model/IndexHistoricalConstituent}
+     */
+    IndexHistoricalConstituent,
+
+    /**
      * The Indicator model constructor.
      * @property {module:model/Indicator}
      */
     Indicator,
+
+    /**
+     * The IndicesConstituents model constructor.
+     * @property {module:model/IndicesConstituents}
+     */
+    IndicesConstituents,
+
+    /**
+     * The IndicesHistoricalConstituents model constructor.
+     * @property {module:model/IndicesHistoricalConstituents}
+     */
+    IndicesHistoricalConstituents,
 
     /**
      * The Investor model constructor.
@@ -400,6 +471,12 @@ export {
      * @property {module:model/Sentiment}
      */
     Sentiment,
+
+    /**
+     * The SimilarityIndex model constructor.
+     * @property {module:model/SimilarityIndex}
+     */
+    SimilarityIndex,
 
     /**
      * The Split model constructor.

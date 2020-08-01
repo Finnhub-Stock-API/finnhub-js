@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property trending (base name: "trending")', function() {
+      // uncomment below and update the code to test the property trending
+      //var instane = new finnhub.Trend();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

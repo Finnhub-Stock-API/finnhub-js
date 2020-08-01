@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Sentiment model module.
  * @module model/Sentiment
- * @version 1.1.7
+ * @version 1.2.0
  */
 class Sentiment {
     /**

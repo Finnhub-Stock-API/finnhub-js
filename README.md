@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.1.7
+- Package version: 1.2.0
 
 ## Installation
 
@@ -253,6 +253,36 @@ finnhubClient.upgradeDowngrade({"symbol": "AAPL"}, (error, data, response) => {
 
 // Tick Data
 api.stockTick("AAPL", "2020-03-25", 500, 0, (error, data, response) => {
+    console.error(data);
+});
+
+// Indices Constituents
+api.indicesConstituents("^GSPC", (error, data, response) => {
+    console.error(data);
+});
+
+// Indices Historical Constituents
+api.indicesHistoricalConstituents("^GSPC", (error, data, response) => {
+    console.error(data);
+});
+
+// ETFs Profile
+api.etfsProfile('SPY', (error, data, response) => {
+    console.error(data);
+});
+
+// ETFs Holdings
+api.etfsHoldings('SPY', (error, data, response) => {
+    console.error(data);
+});
+
+// ETFs Industry Exposure
+api.etfsIndustryExposure('SPY', (error, data, response) => {
+    console.error(data);
+});
+
+// ETFs Country Exposure
+api.etfsCountryExposure('SPY', (error, data, response) => {
     console.error(data);
 });
 ```
