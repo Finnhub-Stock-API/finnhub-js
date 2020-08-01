@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The ETFCountryExposure model module.
- * @module model/ETFCountryExposure
- * @version 1.2.0
+ * The ETFCountryExposureData model module.
+ * @module model/ETFCountryExposureData
+ * @version 1.2.1
  */
-class ETFCountryExposure {
+class ETFCountryExposureData {
     /**
-     * Constructs a new <code>ETFCountryExposure</code>.
-     * @alias module:model/ETFCountryExposure
+     * Constructs a new <code>ETFCountryExposureData</code>.
+     * @alias module:model/ETFCountryExposureData
      */
     constructor() { 
         
-        ETFCountryExposure.initialize(this);
+        ETFCountryExposureData.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class ETFCountryExposure {
     }
 
     /**
-     * Constructs a <code>ETFCountryExposure</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ETFCountryExposureData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ETFCountryExposure} obj Optional instance to populate.
-     * @return {module:model/ETFCountryExposure} The populated <code>ETFCountryExposure</code> instance.
+     * @param {module:model/ETFCountryExposureData} obj Optional instance to populate.
+     * @return {module:model/ETFCountryExposureData} The populated <code>ETFCountryExposureData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ETFCountryExposure();
+            obj = obj || new ETFCountryExposureData();
 
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
@@ -64,18 +64,18 @@ class ETFCountryExposure {
  * Country
  * @member {String} country
  */
-ETFCountryExposure.prototype['country'] = undefined;
+ETFCountryExposureData.prototype['country'] = undefined;
 
 /**
  * Percent of exposure.
  * @member {String} exposure
  */
-ETFCountryExposure.prototype['exposure'] = undefined;
+ETFCountryExposureData.prototype['exposure'] = undefined;
 
 
 
 
 
 
-export default ETFCountryExposure;
+export default ETFCountryExposureData;
 

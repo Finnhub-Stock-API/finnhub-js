@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The ETFHoldings model module.
- * @module model/ETFHoldings
- * @version 1.2.0
+ * The ETFHoldingsData model module.
+ * @module model/ETFHoldingsData
+ * @version 1.2.1
  */
-class ETFHoldings {
+class ETFHoldingsData {
     /**
-     * Constructs a new <code>ETFHoldings</code>.
-     * @alias module:model/ETFHoldings
+     * Constructs a new <code>ETFHoldingsData</code>.
+     * @alias module:model/ETFHoldingsData
      */
     constructor() { 
         
-        ETFHoldings.initialize(this);
+        ETFHoldingsData.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class ETFHoldings {
     }
 
     /**
-     * Constructs a <code>ETFHoldings</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ETFHoldingsData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ETFHoldings} obj Optional instance to populate.
-     * @return {module:model/ETFHoldings} The populated <code>ETFHoldings</code> instance.
+     * @param {module:model/ETFHoldingsData} obj Optional instance to populate.
+     * @return {module:model/ETFHoldingsData} The populated <code>ETFHoldingsData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ETFHoldings();
+            obj = obj || new ETFHoldingsData();
 
             if (data.hasOwnProperty('symbol')) {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
@@ -67,24 +67,24 @@ class ETFHoldings {
  * Symbol description
  * @member {String} symbol
  */
-ETFHoldings.prototype['symbol'] = undefined;
+ETFHoldingsData.prototype['symbol'] = undefined;
 
 /**
  * Number of shares owned by the ETF.
  * @member {Number} share
  */
-ETFHoldings.prototype['share'] = undefined;
+ETFHoldingsData.prototype['share'] = undefined;
 
 /**
  * Portfolio's percent
  * @member {Number} percent
  */
-ETFHoldings.prototype['percent'] = undefined;
+ETFHoldingsData.prototype['percent'] = undefined;
 
 
 
 
 
 
-export default ETFHoldings;
+export default ETFHoldingsData;
 

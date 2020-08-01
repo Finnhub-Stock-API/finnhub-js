@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ETFsHoldings model module.
  * @module model/ETFsHoldings
- * @version 1.2.0
+ * @version 1.2.1
  */
 class ETFsHoldings {
     /**
