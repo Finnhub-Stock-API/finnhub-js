@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyProfile model module.
  * @module model/CompanyProfile
- * @version 1.1.7
+ * @version 1.2.0
  */
 class CompanyProfile {
     /**
@@ -63,7 +63,7 @@ class CompanyProfile {
                 obj['cusip'] = ApiClient.convertToType(data['cusip'], 'String');
             }
             if (data.hasOwnProperty('sedol')) {
-                obj['sedol'] = ApiClient.convertToType(data['sedol'], 'Number');
+                obj['sedol'] = ApiClient.convertToType(data['sedol'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -170,7 +170,7 @@ CompanyProfile.prototype['cusip'] = undefined;
 
 /**
  * Sedol number.
- * @member {Number} sedol
+ * @member {String} sedol
  */
 CompanyProfile.prototype['sedol'] = undefined;
 

@@ -228,6 +228,46 @@
         done();
       });
     });
+    describe('etfsCountryExposure', function() {
+      it('should call etfsCountryExposure successfully', function(done) {
+        //uncomment below and update the code to test etfsCountryExposure
+        //instance.etfsCountryExposure(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('etfsHoldings', function() {
+      it('should call etfsHoldings successfully', function(done) {
+        //uncomment below and update the code to test etfsHoldings
+        //instance.etfsHoldings(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('etfsIndustryExposure', function() {
+      it('should call etfsIndustryExposure successfully', function(done) {
+        //uncomment below and update the code to test etfsIndustryExposure
+        //instance.etfsIndustryExposure(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('etfsProfile', function() {
+      it('should call etfsProfile successfully', function(done) {
+        //uncomment below and update the code to test etfsProfile
+        //instance.etfsProfile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('filings', function() {
       it('should call filings successfully', function(done) {
         //uncomment below and update the code to test filings
@@ -318,6 +358,26 @@
         done();
       });
     });
+    describe('indicesConstituents', function() {
+      it('should call indicesConstituents successfully', function(done) {
+        //uncomment below and update the code to test indicesConstituents
+        //instance.indicesConstituents(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('indicesHistoricalConstituents', function() {
+      it('should call indicesHistoricalConstituents successfully', function(done) {
+        //uncomment below and update the code to test indicesHistoricalConstituents
+        //instance.indicesHistoricalConstituents(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('investorsOwnership', function() {
       it('should call investorsOwnership successfully', function(done) {
         //uncomment below and update the code to test investorsOwnership
@@ -392,6 +452,16 @@
       it('should call recommendationTrends successfully', function(done) {
         //uncomment below and update the code to test recommendationTrends
         //instance.recommendationTrends(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('similarityIndex', function() {
+      it('should call similarityIndex successfully', function(done) {
+        //uncomment below and update the code to test similarityIndex
+        //instance.similarityIndex(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Trend model module.
  * @module model/Trend
- * @version 1.1.7
+ * @version 1.2.0
  */
 class Trend {
     /**
@@ -50,6 +50,9 @@ class Trend {
             if (data.hasOwnProperty('adx')) {
                 obj['adx'] = ApiClient.convertToType(data['adx'], 'Number');
             }
+            if (data.hasOwnProperty('trending')) {
+                obj['trending'] = ApiClient.convertToType(data['trending'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -62,6 +65,12 @@ class Trend {
  * @member {Number} adx
  */
 Trend.prototype['adx'] = undefined;
+
+/**
+ * Whether market is trending or going sideway
+ * @member {Boolean} trending
+ */
+Trend.prototype['trending'] = undefined;
 
 
 
