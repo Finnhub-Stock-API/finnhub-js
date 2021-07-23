@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Estimate model module.
  * @module model/Estimate
- * @version 1.2.1
+ * @version 1.2.2
  */
 class Estimate {
     /**
@@ -70,7 +70,7 @@ class Estimate {
 }
 
 /**
- * Average revenue estimates.
+ * Average revenue estimates including Finnhub's proprietary estimates.
  * @member {Number} revenueAvg
  */
 Estimate.prototype['revenueAvg'] = undefined;

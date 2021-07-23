@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **endDate** | **Date** | Period end date &lt;code&gt;%Y-%m-%d %H:%M:%S&lt;/code&gt;. | [optional] 
 **filedDate** | **Date** | Filed date &lt;code&gt;%Y-%m-%d %H:%M:%S&lt;/code&gt;. | [optional] 
 **acceptedDate** | **Date** | Accepted date &lt;code&gt;%Y-%m-%d %H:%M:%S&lt;/code&gt;. | [optional] 
-**report** | [**Object**](.md) |  | [optional] 
+**report** | **Object** |  | [optional] 
 
 

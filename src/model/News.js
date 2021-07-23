@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The News model module.
  * @module model/News
- * @version 1.2.1
+ * @version 1.2.2
  */
 class News {
     /**

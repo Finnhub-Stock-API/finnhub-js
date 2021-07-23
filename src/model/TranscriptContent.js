@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TranscriptContent model module.
  * @module model/TranscriptContent
- * @version 1.2.1
+ * @version 1.2.2
  */
 class TranscriptContent {
     /**
@@ -53,6 +53,9 @@ class TranscriptContent {
             if (data.hasOwnProperty('speech')) {
                 obj['speech'] = ApiClient.convertToType(data['speech'], ['String']);
             }
+            if (data.hasOwnProperty('session')) {
+                obj['session'] = ApiClient.convertToType(data['session'], 'String');
+            }
         }
         return obj;
     }
@@ -71,6 +74,12 @@ TranscriptContent.prototype['name'] = undefined;
  * @member {Array.<String>} speech
  */
 TranscriptContent.prototype['speech'] = undefined;
+
+/**
+ * Earnings calls section (management discussion or Q&A)
+ * @member {String} session
+ */
+TranscriptContent.prototype['session'] = undefined;
 
 
 

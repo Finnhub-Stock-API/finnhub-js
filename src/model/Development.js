@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Development model module.
  * @module model/Development
- * @version 1.2.1
+ * @version 1.2.2
  */
 class Development {
     /**
@@ -59,6 +59,9 @@ class Development {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
         }
         return obj;
     }
@@ -89,6 +92,12 @@ Development.prototype['headline'] = undefined;
  * @member {String} description
  */
 Development.prototype['description'] = undefined;
+
+/**
+ * URL.
+ * @member {String} url
+ */
+Development.prototype['url'] = undefined;
 
 
 

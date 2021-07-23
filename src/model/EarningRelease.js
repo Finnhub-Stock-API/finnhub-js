@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningRelease model module.
  * @module model/EarningRelease
- * @version 1.2.1
+ * @version 1.2.2
  */
 class EarningRelease {
     /**
@@ -124,7 +124,7 @@ EarningRelease.prototype['epsEstimate'] = undefined;
 EarningRelease.prototype['epsActual'] = undefined;
 
 /**
- * Revenue estimate.
+ * Revenue estimate including Finnhub's proprietary estimates.
  * @member {Number} revenueEstimate
  */
 EarningRelease.prototype['revenueEstimate'] = undefined;

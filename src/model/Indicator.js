@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Indicator model module.
  * @module model/Indicator
- * @version 1.2.1
+ * @version 1.2.2
  */
 class Indicator {
     /**

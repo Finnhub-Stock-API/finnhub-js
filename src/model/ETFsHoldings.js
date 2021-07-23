@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ETFsHoldings model module.
  * @module model/ETFsHoldings
- * @version 1.2.1
+ * @version 1.2.2
  */
 class ETFsHoldings {
     /**
@@ -50,6 +50,12 @@ class ETFsHoldings {
             if (data.hasOwnProperty('symbol')) {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
+            if (data.hasOwnProperty('atDate')) {
+                obj['atDate'] = ApiClient.convertToType(data['atDate'], 'Date');
+            }
+            if (data.hasOwnProperty('numberOfHoldings')) {
+                obj['numberOfHoldings'] = ApiClient.convertToType(data['numberOfHoldings'], 'Number');
+            }
             if (data.hasOwnProperty('holdings')) {
                 obj['holdings'] = ApiClient.convertToType(data['holdings'], [Object]);
             }
@@ -65,6 +71,18 @@ class ETFsHoldings {
  * @member {String} symbol
  */
 ETFsHoldings.prototype['symbol'] = undefined;
+
+/**
+ * Holdings update date.
+ * @member {Date} atDate
+ */
+ETFsHoldings.prototype['atDate'] = undefined;
+
+/**
+ * Number of holdings.
+ * @member {Number} numberOfHoldings
+ */
+ETFsHoldings.prototype['numberOfHoldings'] = undefined;
 
 /**
  * Array of holdings.
