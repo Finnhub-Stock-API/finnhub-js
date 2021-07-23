@@ -267,12 +267,12 @@ finnhubClient.indicesHistoricalConstituents("^GSPC", (error, data, response) => 
 });
 
 // ETFs Profile
-finnhubClient.etfsProfile("SPY", (error, data, response) => {
+finnhubClient.etfsProfile({'symbol': 'SPY'}, (error, data, response) => {
   console.log(data);
 });
 
 // ETFs Holdings
-finnhubClient.etfsHoldings('SPY', (error, data, response) => {
+finnhubClient.etfsHoldings({'symbol': 'ARKK'}, (error, data, response) => {
   console.log(data);
 });
 
@@ -287,12 +287,12 @@ finnhubClient.etfsCountryExposure('SPY', (error, data, response) => {
 });
 
 // Mutual Funds Profile
-finnhubClient.mutualFundProfile('VTSAX', (error, data, response) => {
+finnhubClient.mutualFundProfile({'symbol': 'VTSAX'}, (error, data, response) => {
   console.log(data);
 });
 
 // Mutual Funds Holdings
-finnhubClient.mutualFundHoldings('VTSAX', (error, data, response) => {
+finnhubClient.mutualFundHoldings({'symbol': 'VTSAX'}, (error, data, response) => {
   console.log(data);
 });
 
@@ -312,7 +312,7 @@ finnhubClient.insiderTransactions('AAPL', (error, data, response) => {
 });
 
 // Revenue Breakdown
-finnhubClient.revenueBreakdown('AAPL', (error, data, response) => {
+finnhubClient.revenueBreakdown({'symbol': 'AAPL'}, (error, data, response) => {
   console.log(data);
 });
 
