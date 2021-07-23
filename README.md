@@ -17,7 +17,7 @@ npm install finnhub --save
 const finnhub = require('finnhub');
 
 const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-api_key.apiKey = "c0i3e9f48v6qfc9d1rhg" // Replace this
+api_key.apiKey = "<API_key>" // Replace this
 const finnhubClient = new finnhub.DefaultApi()
 
 // Stock candles
@@ -253,57 +253,82 @@ finnhubClient.upgradeDowngrade({"symbol": "AAPL"}, (error, data, response) => {
 
 // Tick Data
 finnhubClient.stockTick("AAPL", "2020-03-25", 500, 0, (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // Indices Constituents
 finnhubClient.indicesConstituents("^GSPC", (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // Indices Historical Constituents
 finnhubClient.indicesHistoricalConstituents("^GSPC", (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // ETFs Profile
-finnhubClient.etfsProfile('SPY', (error, data, response) => {
-  console.error(data);
+finnhubClient.etfsProfile("SPY", (error, data, response) => {
+  console.log(data);
 });
 
 // ETFs Holdings
 finnhubClient.etfsHoldings('SPY', (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // ETFs Industry Exposure
 finnhubClient.etfsSectorExposure('SPY', (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // ETFs Country Exposure
 finnhubClient.etfsCountryExposure('SPY', (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // Mutual Funds Profile
 finnhubClient.mutualFundProfile('VTSAX', (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // Mutual Funds Holdings
 finnhubClient.mutualFundHoldings('VTSAX', (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // Mutual Funds Industry Exposure
 finnhubClient.mutualFundSectorExposure('VTSAX', (error, data, response) => {
-  console.error(data);
+  console.log(data);
 });
 
 // Mutual Funds Country Exposure
 finnhubClient.mutualFundCountryExposure('VTSAX', (error, data, response) => {
-  console.error(data);
+  console.log(data);
+});
+
+// Insider Transactions
+finnhubClient.insiderTransactions('AAPL', (error, data, response) => {
+  console.log(data);
+});
+
+// Revenue Breakdown
+finnhubClient.revenueBreakdown('AAPL', (error, data, response) => {
+  console.log(data);
+});
+
+// Social Sentiment
+finnhubClient.socialSentiment('GME', (error, data, response) => {
+  console.log(data);
+});
+
+// Investment Theme
+finnhubClient.investmentThemesThematicInvesting('financialExchangesData', (error, data, response) => {
+  console.log(data);
+});
+
+// Supply Chain
+finnhubClient.supplyChainRelationships('AAPL', (error, data, response) => {
+  console.log(data);
 });
 ```
 ## License
