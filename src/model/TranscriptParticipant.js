@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TranscriptParticipant model module.
  * @module model/TranscriptParticipant
- * @version 1.2.1
+ * @version 1.2.2
  */
 class TranscriptParticipant {
     /**
@@ -53,6 +53,9 @@ class TranscriptParticipant {
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('role')) {
+                obj['role'] = ApiClient.convertToType(data['role'], 'String');
+            }
         }
         return obj;
     }
@@ -71,6 +74,12 @@ TranscriptParticipant.prototype['name'] = undefined;
  * @member {String} description
  */
 TranscriptParticipant.prototype['description'] = undefined;
+
+/**
+ * Whether the speak is a company's executive or an analyst
+ * @member {String} role
+ */
+TranscriptParticipant.prototype['role'] = undefined;
 
 
 

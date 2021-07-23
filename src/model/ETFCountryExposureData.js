@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ETFCountryExposureData model module.
  * @module model/ETFCountryExposureData
- * @version 1.2.1
+ * @version 1.2.2
  */
 class ETFCountryExposureData {
     /**
@@ -51,7 +51,7 @@ class ETFCountryExposureData {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
             }
             if (data.hasOwnProperty('exposure')) {
-                obj['exposure'] = ApiClient.convertToType(data['exposure'], 'String');
+                obj['exposure'] = ApiClient.convertToType(data['exposure'], 'Number');
             }
         }
         return obj;
@@ -68,7 +68,7 @@ ETFCountryExposureData.prototype['country'] = undefined;
 
 /**
  * Percent of exposure.
- * @member {String} exposure
+ * @member {Number} exposure
  */
 ETFCountryExposureData.prototype['exposure'] = undefined;
 

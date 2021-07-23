@@ -9,5 +9,7 @@ Name | Type | Description | Notes
 **l** | **Number** | Low price of the day | [optional] 
 **c** | **Number** | Current price | [optional] 
 **pc** | **Number** | Previous close price | [optional] 
+**d** | **Number** | Change | [optional] 
+**dp** | **Number** | Percent change | [optional] 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningEstimate model module.
  * @module model/EarningEstimate
- * @version 1.2.1
+ * @version 1.2.2
  */
 class EarningEstimate {
     /**
@@ -70,7 +70,7 @@ class EarningEstimate {
 }
 
 /**
- * Average EPS estimates.
+ * Average EPS estimates including Finnhub's proprietary estimates.
  * @member {Number} epsAvg
  */
 EarningEstimate.prototype['epsAvg'] = undefined;

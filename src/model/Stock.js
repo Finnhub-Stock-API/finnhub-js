@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Stock model module.
  * @module model/Stock
- * @version 1.2.1
+ * @version 1.2.2
  */
 class Stock {
     /**
@@ -59,9 +59,6 @@ class Stock {
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
-            if (data.hasOwnProperty('currency')) {
-                obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
-            }
         }
         return obj;
     }
@@ -92,12 +89,6 @@ Stock.prototype['symbol'] = undefined;
  * @member {String} type
  */
 Stock.prototype['type'] = undefined;
-
-/**
- * Price's currency. This might be different from the reporting currency of fundamental data.
- * @member {String} currency
- */
-Stock.prototype['currency'] = undefined;
 
 
 

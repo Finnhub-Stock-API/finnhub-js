@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** | Symbol. | [optional] 
-**_date** | **Date** | Ex-Dividend date. | [optional] 
+**date** | **Date** | Ex-Dividend date. | [optional] 
 **amount** | **Number** | Amount in local currency. | [optional] 
 **adjustedAmount** | **Number** | Adjusted dividend. | [optional] 
 **payDate** | **Date** | Pay date. | [optional] 

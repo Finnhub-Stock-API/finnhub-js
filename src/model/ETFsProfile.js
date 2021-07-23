@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import ETFProfileData from './ETFProfileData';
 
 /**
  * The ETFsProfile model module.
  * @module model/ETFsProfile
- * @version 1.2.1
+ * @version 1.2.2
  */
 class ETFsProfile {
     /**
@@ -51,7 +52,7 @@ class ETFsProfile {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('profile')) {
-                obj['profile'] = ApiClient.convertToType(data['profile'], Object);
+                obj['profile'] = ETFProfileData.constructFromObject(data['profile']);
             }
         }
         return obj;
@@ -61,13 +62,13 @@ class ETFsProfile {
 }
 
 /**
- * Use symbol returned in <code>/forex/symbol</code> endpoint for this field.
+ * Symbol.
  * @member {String} symbol
  */
 ETFsProfile.prototype['symbol'] = undefined;
 
 /**
- * @member {Object} profile
+ * @member {module:model/ETFProfileData} profile
  */
 ETFsProfile.prototype['profile'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Quote model module.
  * @module model/Quote
- * @version 1.2.1
+ * @version 1.2.2
  */
 class Quote {
     /**
@@ -62,6 +62,12 @@ class Quote {
             if (data.hasOwnProperty('pc')) {
                 obj['pc'] = ApiClient.convertToType(data['pc'], 'Number');
             }
+            if (data.hasOwnProperty('d')) {
+                obj['d'] = ApiClient.convertToType(data['d'], 'Number');
+            }
+            if (data.hasOwnProperty('dp')) {
+                obj['dp'] = ApiClient.convertToType(data['dp'], 'Number');
+            }
         }
         return obj;
     }
@@ -98,6 +104,18 @@ Quote.prototype['c'] = undefined;
  * @member {Number} pc
  */
 Quote.prototype['pc'] = undefined;
+
+/**
+ * Change
+ * @member {Number} d
+ */
+Quote.prototype['d'] = undefined;
+
+/**
+ * Percent change
+ * @member {Number} dp
+ */
+Quote.prototype['dp'] = undefined;
 
 
 

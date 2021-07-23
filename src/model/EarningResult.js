@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningResult model module.
  * @module model/EarningResult
- * @version 1.2.1
+ * @version 1.2.2
  */
 class EarningResult {
     /**
@@ -53,6 +53,12 @@ class EarningResult {
             if (data.hasOwnProperty('estimate')) {
                 obj['estimate'] = ApiClient.convertToType(data['estimate'], 'Number');
             }
+            if (data.hasOwnProperty('surprise')) {
+                obj['surprise'] = ApiClient.convertToType(data['surprise'], 'Number');
+            }
+            if (data.hasOwnProperty('surprisePercent')) {
+                obj['surprisePercent'] = ApiClient.convertToType(data['surprisePercent'], 'Number');
+            }
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Date');
             }
@@ -77,6 +83,18 @@ EarningResult.prototype['actual'] = undefined;
  * @member {Number} estimate
  */
 EarningResult.prototype['estimate'] = undefined;
+
+/**
+ * Surprise - The difference between actual and estimate.
+ * @member {Number} surprise
+ */
+EarningResult.prototype['surprise'] = undefined;
+
+/**
+ * Surprise percent.
+ * @member {Number} surprisePercent
+ */
+EarningResult.prototype['surprisePercent'] = undefined;
 
 /**
  * Reported period.

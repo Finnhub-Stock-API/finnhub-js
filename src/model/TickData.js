@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TickData model module.
  * @module model/TickData
- * @version 1.2.1
+ * @version 1.2.2
  */
 class TickData {
     /**
@@ -71,6 +71,9 @@ class TickData {
             if (data.hasOwnProperty('x')) {
                 obj['x'] = ApiClient.convertToType(data['x'], ['String']);
             }
+            if (data.hasOwnProperty('c')) {
+                obj['c'] = ApiClient.convertToType(data['c'], [[NULL_SCHEMA_ERR]]);
+            }
         }
         return obj;
     }
@@ -121,10 +124,16 @@ TickData.prototype['p'] = undefined;
 TickData.prototype['t'] = undefined;
 
 /**
- * List of venues/exchanges.
+ * List of venues/exchanges. A list of exchange codes can be found <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1Tj53M1svmr-hfEtbk6_NpVR1yAyGLMaH6ByYU6CG0ZY/edit?usp=sharing\",>here</a>
  * @member {Array.<String>} x
  */
 TickData.prototype['x'] = undefined;
+
+/**
+ * List of trade conditions. A comprehensive list of trade conditions code can be found <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1PUxiSWPHSODbaTaoL2Vef6DgU-yFtlRGZf19oBb9Hp0/edit?usp=sharing\">here</a>
+ * @member {Array.<Array.<String>>} c
+ */
+TickData.prototype['c'] = undefined;
 
 
 

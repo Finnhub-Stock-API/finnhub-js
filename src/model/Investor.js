@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Investor model module.
  * @module model/Investor
- * @version 1.2.1
+ * @version 1.2.2
  */
 class Investor {
     /**

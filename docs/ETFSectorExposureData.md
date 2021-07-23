@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **industry** | **String** | Industry | [optional] 
-**exposure** | **String** | Percent of exposure. | [optional] 
+**exposure** | **Number** | Percent of exposure. | [optional] 
 
 

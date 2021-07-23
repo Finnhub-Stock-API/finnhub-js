@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** | Symbol | [optional] 
 **action** | **String** | &lt;code&gt;add&lt;/code&gt; or &lt;code&gt;remove&lt;/code&gt;. | [optional] 
-**_date** | **Date** | Date of joining or leaving the index. | [optional] 
+**date** | **Date** | Date of joining or leaving the index. | [optional] 
 
 

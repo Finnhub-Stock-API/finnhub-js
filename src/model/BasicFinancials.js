@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BasicFinancials model module.
  * @module model/BasicFinancials
- * @version 1.2.1
+ * @version 1.2.2
  */
 class BasicFinancials {
     /**
@@ -53,6 +53,9 @@ class BasicFinancials {
             if (data.hasOwnProperty('metricType')) {
                 obj['metricType'] = ApiClient.convertToType(data['metricType'], 'String');
             }
+            if (data.hasOwnProperty('series')) {
+                obj['series'] = ApiClient.convertToType(data['series'], Object);
+            }
             if (data.hasOwnProperty('metric')) {
                 obj['metric'] = ApiClient.convertToType(data['metric'], Object);
             }
@@ -74,6 +77,11 @@ BasicFinancials.prototype['symbol'] = undefined;
  * @member {String} metricType
  */
 BasicFinancials.prototype['metricType'] = undefined;
+
+/**
+ * @member {Object} series
+ */
+BasicFinancials.prototype['series'] = undefined;
 
 /**
  * @member {Object} metric
