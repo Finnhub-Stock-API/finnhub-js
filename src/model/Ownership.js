@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import OwnershipInfo from './OwnershipInfo';
 
 /**
  * The Ownership model module.
  * @module model/Ownership
- * @version 1.2.2
+ * @version 1.2.5
  */
 class Ownership {
     /**
@@ -51,7 +52,7 @@ class Ownership {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('ownership')) {
-                obj['ownership'] = ApiClient.convertToType(data['ownership'], [Object]);
+                obj['ownership'] = ApiClient.convertToType(data['ownership'], [OwnershipInfo]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ Ownership.prototype['symbol'] = undefined;
 
 /**
  * Array of investors with detailed information about their holdings.
- * @member {Array.<Object>} ownership
+ * @member {Array.<module:model/OwnershipInfo>} ownership
  */
 Ownership.prototype['ownership'] = undefined;
 

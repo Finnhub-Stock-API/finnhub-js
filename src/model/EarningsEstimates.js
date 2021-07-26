@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import EarningEstimate from './EarningEstimate';
 
 /**
  * The EarningsEstimates model module.
  * @module model/EarningsEstimates
- * @version 1.2.2
+ * @version 1.2.5
  */
 class EarningsEstimates {
     /**
@@ -48,7 +49,7 @@ class EarningsEstimates {
             obj = obj || new EarningsEstimates();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+                obj['data'] = ApiClient.convertToType(data['data'], [EarningEstimate]);
             }
             if (data.hasOwnProperty('freq')) {
                 obj['freq'] = ApiClient.convertToType(data['freq'], 'String');
@@ -65,7 +66,7 @@ class EarningsEstimates {
 
 /**
  * List of estimates
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/EarningEstimate>} data
  */
 EarningsEstimates.prototype['data'] = undefined;
 

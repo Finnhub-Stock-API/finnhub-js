@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FDAComitteeMeeting model module.
  * @module model/FDAComitteeMeeting
- * @version 1.2.2
+ * @version 1.2.5
  */
 var FDAComitteeMeeting = /*#__PURE__*/function () {
   /**
@@ -55,11 +55,11 @@ var FDAComitteeMeeting = /*#__PURE__*/function () {
         obj = obj || new FDAComitteeMeeting();
 
         if (data.hasOwnProperty('fromDate')) {
-          obj['fromDate'] = _ApiClient["default"].convertToType(data['fromDate'], 'Date');
+          obj['fromDate'] = _ApiClient["default"].convertToType(data['fromDate'], 'String');
         }
 
         if (data.hasOwnProperty('toDate')) {
-          obj['toDate'] = _ApiClient["default"].convertToType(data['toDate'], 'Date');
+          obj['toDate'] = _ApiClient["default"].convertToType(data['toDate'], 'String');
         }
 
         if (data.hasOwnProperty('eventDescription')) {
@@ -79,14 +79,14 @@ var FDAComitteeMeeting = /*#__PURE__*/function () {
 }();
 /**
  * Start time of the event in EST.
- * @member {Date} fromDate
+ * @member {String} fromDate
  */
 
 
 FDAComitteeMeeting.prototype['fromDate'] = undefined;
 /**
  * End time of the event in EST.
- * @member {Date} toDate
+ * @member {String} toDate
  */
 
 FDAComitteeMeeting.prototype['toDate'] = undefined;

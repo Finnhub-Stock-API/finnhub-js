@@ -18,6 +18,7 @@ import BasicFinancials from './model/BasicFinancials';
 import BreakdownItem from './model/BreakdownItem';
 import Company from './model/Company';
 import CompanyExecutive from './model/CompanyExecutive';
+import CompanyNews from './model/CompanyNews';
 import CompanyNewsStatistics from './model/CompanyNewsStatistics';
 import CompanyProfile from './model/CompanyProfile';
 import CompanyProfile2 from './model/CompanyProfile2';
@@ -27,7 +28,8 @@ import CryptoCandles from './model/CryptoCandles';
 import CryptoSymbol from './model/CryptoSymbol';
 import Development from './model/Development';
 import Dividends from './model/Dividends';
-import Dividends2Basic from './model/Dividends2Basic';
+import Dividends2 from './model/Dividends2';
+import Dividends2Info from './model/Dividends2Info';
 import ETFCountryExposureData from './model/ETFCountryExposureData';
 import ETFHoldingsData from './model/ETFHoldingsData';
 import ETFProfileData from './model/ETFProfileData';
@@ -46,6 +48,7 @@ import EarningsEstimates from './model/EarningsEstimates';
 import EconomicCalendar from './model/EconomicCalendar';
 import EconomicCode from './model/EconomicCode';
 import EconomicData from './model/EconomicData';
+import EconomicDataInfo from './model/EconomicDataInfo';
 import EconomicEvent from './model/EconomicEvent';
 import Estimate from './model/Estimate';
 import FDAComitteeMeeting from './model/FDAComitteeMeeting';
@@ -57,6 +60,7 @@ import ForexCandles from './model/ForexCandles';
 import ForexSymbol from './model/ForexSymbol';
 import Forexrates from './model/Forexrates';
 import FundOwnership from './model/FundOwnership';
+import FundOwnershipInfo from './model/FundOwnershipInfo';
 import HistoricalNBBO from './model/HistoricalNBBO';
 import IPOCalendar from './model/IPOCalendar';
 import IPOEvent from './model/IPOEvent';
@@ -67,21 +71,23 @@ import IndicesHistoricalConstituents from './model/IndicesHistoricalConstituents
 import InsiderTransactions from './model/InsiderTransactions';
 import InternationalFiling from './model/InternationalFiling';
 import InvestmentThemePortfolio from './model/InvestmentThemePortfolio';
-import InvestmentThemesThematicInvesting from './model/InvestmentThemesThematicInvesting';
-import Investor from './model/Investor';
+import InvestmentThemes from './model/InvestmentThemes';
 import KeyCustomersSuppliers from './model/KeyCustomersSuppliers';
 import LastBidAsk from './model/LastBidAsk';
-import MajorPressReleases from './model/MajorPressReleases';
+import MarketNews from './model/MarketNews';
+import MutualFundCountryExposure from './model/MutualFundCountryExposure';
 import MutualFundCountryExposureData from './model/MutualFundCountryExposureData';
+import MutualFundHoldings from './model/MutualFundHoldings';
+import MutualFundHoldingsData from './model/MutualFundHoldingsData';
+import MutualFundProfile from './model/MutualFundProfile';
+import MutualFundProfileData from './model/MutualFundProfileData';
 import MutualFundSectorExposure from './model/MutualFundSectorExposure';
 import MutualFundSectorExposureData from './model/MutualFundSectorExposureData';
-import MutualFundsCountryExposure from './model/MutualFundsCountryExposure';
-import MutualFundsHoldings from './model/MutualFundsHoldings';
-import MutualFundsProfile from './model/MutualFundsProfile';
-import News from './model/News';
 import NewsSentiment from './model/NewsSentiment';
 import Ownership from './model/Ownership';
+import OwnershipInfo from './model/OwnershipInfo';
 import PatternRecognition from './model/PatternRecognition';
+import PressRelease from './model/PressRelease';
 import PriceTarget from './model/PriceTarget';
 import Quote from './model/Quote';
 import RecommendationTrend from './model/RecommendationTrend';
@@ -94,12 +100,13 @@ import Sentiment from './model/Sentiment';
 import SimilarityIndex from './model/SimilarityIndex';
 import SocialSentiment from './model/SocialSentiment';
 import Split from './model/Split';
-import Stock from './model/Stock';
 import StockCandles from './model/StockCandles';
+import StockSymbol from './model/StockSymbol';
 import StockTranscripts from './model/StockTranscripts';
 import SupplyChainRelationships from './model/SupplyChainRelationships';
 import SupportResistance from './model/SupportResistance';
 import SymbolLookup from './model/SymbolLookup';
+import SymbolLookupInfo from './model/SymbolLookupInfo';
 import TechnicalAnalysis from './model/TechnicalAnalysis';
 import TickData from './model/TickData';
 import Transactions from './model/Transactions';
@@ -140,7 +147,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.2
+* @version 1.2.5
 */
 export {
     /**
@@ -178,6 +185,12 @@ export {
      * @property {module:model/CompanyExecutive}
      */
     CompanyExecutive,
+
+    /**
+     * The CompanyNews model constructor.
+     * @property {module:model/CompanyNews}
+     */
+    CompanyNews,
 
     /**
      * The CompanyNewsStatistics model constructor.
@@ -234,10 +247,16 @@ export {
     Dividends,
 
     /**
-     * The Dividends2Basic model constructor.
-     * @property {module:model/Dividends2Basic}
+     * The Dividends2 model constructor.
+     * @property {module:model/Dividends2}
      */
-    Dividends2Basic,
+    Dividends2,
+
+    /**
+     * The Dividends2Info model constructor.
+     * @property {module:model/Dividends2Info}
+     */
+    Dividends2Info,
 
     /**
      * The ETFCountryExposureData model constructor.
@@ -348,6 +367,12 @@ export {
     EconomicData,
 
     /**
+     * The EconomicDataInfo model constructor.
+     * @property {module:model/EconomicDataInfo}
+     */
+    EconomicDataInfo,
+
+    /**
      * The EconomicEvent model constructor.
      * @property {module:model/EconomicEvent}
      */
@@ -414,6 +439,12 @@ export {
     FundOwnership,
 
     /**
+     * The FundOwnershipInfo model constructor.
+     * @property {module:model/FundOwnershipInfo}
+     */
+    FundOwnershipInfo,
+
+    /**
      * The HistoricalNBBO model constructor.
      * @property {module:model/HistoricalNBBO}
      */
@@ -474,16 +505,10 @@ export {
     InvestmentThemePortfolio,
 
     /**
-     * The InvestmentThemesThematicInvesting model constructor.
-     * @property {module:model/InvestmentThemesThematicInvesting}
+     * The InvestmentThemes model constructor.
+     * @property {module:model/InvestmentThemes}
      */
-    InvestmentThemesThematicInvesting,
-
-    /**
-     * The Investor model constructor.
-     * @property {module:model/Investor}
-     */
-    Investor,
+    InvestmentThemes,
 
     /**
      * The KeyCustomersSuppliers model constructor.
@@ -498,16 +523,46 @@ export {
     LastBidAsk,
 
     /**
-     * The MajorPressReleases model constructor.
-     * @property {module:model/MajorPressReleases}
+     * The MarketNews model constructor.
+     * @property {module:model/MarketNews}
      */
-    MajorPressReleases,
+    MarketNews,
+
+    /**
+     * The MutualFundCountryExposure model constructor.
+     * @property {module:model/MutualFundCountryExposure}
+     */
+    MutualFundCountryExposure,
 
     /**
      * The MutualFundCountryExposureData model constructor.
      * @property {module:model/MutualFundCountryExposureData}
      */
     MutualFundCountryExposureData,
+
+    /**
+     * The MutualFundHoldings model constructor.
+     * @property {module:model/MutualFundHoldings}
+     */
+    MutualFundHoldings,
+
+    /**
+     * The MutualFundHoldingsData model constructor.
+     * @property {module:model/MutualFundHoldingsData}
+     */
+    MutualFundHoldingsData,
+
+    /**
+     * The MutualFundProfile model constructor.
+     * @property {module:model/MutualFundProfile}
+     */
+    MutualFundProfile,
+
+    /**
+     * The MutualFundProfileData model constructor.
+     * @property {module:model/MutualFundProfileData}
+     */
+    MutualFundProfileData,
 
     /**
      * The MutualFundSectorExposure model constructor.
@@ -522,30 +577,6 @@ export {
     MutualFundSectorExposureData,
 
     /**
-     * The MutualFundsCountryExposure model constructor.
-     * @property {module:model/MutualFundsCountryExposure}
-     */
-    MutualFundsCountryExposure,
-
-    /**
-     * The MutualFundsHoldings model constructor.
-     * @property {module:model/MutualFundsHoldings}
-     */
-    MutualFundsHoldings,
-
-    /**
-     * The MutualFundsProfile model constructor.
-     * @property {module:model/MutualFundsProfile}
-     */
-    MutualFundsProfile,
-
-    /**
-     * The News model constructor.
-     * @property {module:model/News}
-     */
-    News,
-
-    /**
      * The NewsSentiment model constructor.
      * @property {module:model/NewsSentiment}
      */
@@ -558,10 +589,22 @@ export {
     Ownership,
 
     /**
+     * The OwnershipInfo model constructor.
+     * @property {module:model/OwnershipInfo}
+     */
+    OwnershipInfo,
+
+    /**
      * The PatternRecognition model constructor.
      * @property {module:model/PatternRecognition}
      */
     PatternRecognition,
+
+    /**
+     * The PressRelease model constructor.
+     * @property {module:model/PressRelease}
+     */
+    PressRelease,
 
     /**
      * The PriceTarget model constructor.
@@ -636,16 +679,16 @@ export {
     Split,
 
     /**
-     * The Stock model constructor.
-     * @property {module:model/Stock}
-     */
-    Stock,
-
-    /**
      * The StockCandles model constructor.
      * @property {module:model/StockCandles}
      */
     StockCandles,
+
+    /**
+     * The StockSymbol model constructor.
+     * @property {module:model/StockSymbol}
+     */
+    StockSymbol,
 
     /**
      * The StockTranscripts model constructor.
@@ -670,6 +713,12 @@ export {
      * @property {module:model/SymbolLookup}
      */
     SymbolLookup,
+
+    /**
+     * The SymbolLookupInfo model constructor.
+     * @property {module:model/SymbolLookupInfo}
+     */
+    SymbolLookupInfo,
 
     /**
      * The TechnicalAnalysis model constructor.

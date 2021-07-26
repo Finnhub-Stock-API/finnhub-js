@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The HistoricalNBBO model module.
  * @module model/HistoricalNBBO
- * @version 1.2.2
+ * @version 1.2.5
  */
 var HistoricalNBBO = /*#__PURE__*/function () {
   /**
@@ -99,7 +99,7 @@ var HistoricalNBBO = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('c')) {
-          obj['c'] = _ApiClient["default"].convertToType(data['c'], [[NULL_SCHEMA_ERR]]);
+          obj['c'] = _ApiClient["default"].convertToType(data['c'], [['String']]);
         }
       }
 

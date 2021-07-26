@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _RedditSentimentContent = _interopRequireDefault(require("./RedditSentimentContent"));
+
+var _TwitterSentimentContent = _interopRequireDefault(require("./TwitterSentimentContent"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SocialSentiment model module.
  * @module model/SocialSentiment
- * @version 1.2.2
+ * @version 1.2.5
  */
 var SocialSentiment = /*#__PURE__*/function () {
   /**
@@ -59,11 +63,11 @@ var SocialSentiment = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('reddit')) {
-          obj['reddit'] = _ApiClient["default"].convertToType(data['reddit'], [Object]);
+          obj['reddit'] = _ApiClient["default"].convertToType(data['reddit'], [_RedditSentimentContent["default"]]);
         }
 
         if (data.hasOwnProperty('twitter')) {
-          obj['twitter'] = _ApiClient["default"].convertToType(data['twitter'], [Object]);
+          obj['twitter'] = _ApiClient["default"].convertToType(data['twitter'], [_TwitterSentimentContent["default"]]);
         }
       }
 
@@ -82,13 +86,13 @@ var SocialSentiment = /*#__PURE__*/function () {
 SocialSentiment.prototype['symbol'] = undefined;
 /**
  * Reddit sentiment.
- * @member {Array.<Object>} reddit
+ * @member {Array.<module:model/RedditSentimentContent>} reddit
  */
 
 SocialSentiment.prototype['reddit'] = undefined;
 /**
  * Twitter sentiment.
- * @member {Array.<Object>} twitter
+ * @member {Array.<module:model/TwitterSentimentContent>} twitter
  */
 
 SocialSentiment.prototype['twitter'] = undefined;

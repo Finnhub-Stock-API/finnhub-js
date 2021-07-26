@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** | Company symbol. | [optional] 
-**transcripts** | **[Object]** | Array of transcripts&#39; metadata | [optional] 
+**transcripts** | [**[StockTranscripts]**](StockTranscripts.md) | Array of transcripts&#39; metadata | [optional] 
 
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** | Company symbol. | [optional] 
-**reddit** | **[Object]** | Reddit sentiment. | [optional] 
-**twitter** | **[Object]** | Twitter sentiment. | [optional] 
+**reddit** | [**[RedditSentimentContent]**](RedditSentimentContent.md) | Reddit sentiment. | [optional] 
+**twitter** | [**[TwitterSentimentContent]**](TwitterSentimentContent.md) | Twitter sentiment. | [optional] 
 
 

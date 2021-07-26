@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Company = _interopRequireDefault(require("./Company"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyExecutive model module.
  * @module model/CompanyExecutive
- * @version 1.2.2
+ * @version 1.2.5
  */
 var CompanyExecutive = /*#__PURE__*/function () {
   /**
@@ -59,7 +61,7 @@ var CompanyExecutive = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('executive')) {
-          obj['executive'] = _ApiClient["default"].convertToType(data['executive'], [Object]);
+          obj['executive'] = _ApiClient["default"].convertToType(data['executive'], [_Company["default"]]);
         }
       }
 
@@ -78,7 +80,7 @@ var CompanyExecutive = /*#__PURE__*/function () {
 CompanyExecutive.prototype['symbol'] = undefined;
 /**
  * Array of company's executives and members of the Board.
- * @member {Array.<Object>} executive
+ * @member {Array.<module:model/Company>} executive
  */
 
 CompanyExecutive.prototype['executive'] = undefined;

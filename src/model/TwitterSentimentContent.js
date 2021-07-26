@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwitterSentimentContent model module.
  * @module model/TwitterSentimentContent
- * @version 1.2.2
+ * @version 1.2.5
  */
 class TwitterSentimentContent {
     /**
@@ -66,7 +66,7 @@ class TwitterSentimentContent {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
             }
             if (data.hasOwnProperty('atTime')) {
-                obj['atTime'] = ApiClient.convertToType(data['atTime'], 'Date');
+                obj['atTime'] = ApiClient.convertToType(data['atTime'], 'String');
             }
         }
         return obj;
@@ -113,7 +113,7 @@ TwitterSentimentContent.prototype['score'] = undefined;
 
 /**
  * Period.
- * @member {Date} atTime
+ * @member {String} atTime
  */
 TwitterSentimentContent.prototype['atTime'] = undefined;
 

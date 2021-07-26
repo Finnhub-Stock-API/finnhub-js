@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.2.4
+- Package version: 1.2.5
 
 ## Installation
 
@@ -36,7 +36,7 @@ finnhubClient.companyNews("AAPL", "2020-01-01", "2020-05-01", (error, data, resp
 
 // Investor Ownership
 let optsLimit = {'limit': 10};
-finnhubClient.investorsOwnership("AAPL", optsLimit, (error, data, response) => {
+finnhubClient.ownership("AAPL", optsLimit, (error, data, response) => {
   console.log(data)
 });
 
@@ -172,7 +172,7 @@ finnhubClient.fundOwnership("AAPL", {'limit': 10}, (error, data, response) => {
 });
 
 // General news
-finnhubClient.generalNews("general", {}, (error, data, response) => {
+finnhubClient.marketNews("general", {}, (error, data, response) => {
   console.log(data)
 });
 
@@ -182,7 +182,7 @@ finnhubClient.ipoCalendar("2020-01-01", "2020-06-15", (error, data, response) =>
 });
 
 //Major development
-finnhubClient.majorDevelopments("AAPL", {}, (error, data, response) => {
+finnhubClient.pressReleases("AAPL", {}, (error, data, response) => {
   console.log(data)
 });
 
@@ -322,7 +322,7 @@ finnhubClient.socialSentiment('GME', (error, data, response) => {
 });
 
 // Investment Theme
-finnhubClient.investmentThemesThematicInvesting('financialExchangesData', (error, data, response) => {
+finnhubClient.investmentThemes('financialExchangesData', (error, data, response) => {
   console.log(data);
 });
 

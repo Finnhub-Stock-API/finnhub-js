@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _TranscriptContent = _interopRequireDefault(require("./TranscriptContent"));
+
+var _TranscriptParticipant = _interopRequireDefault(require("./TranscriptParticipant"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningsCallTranscripts model module.
  * @module model/EarningsCallTranscripts
- * @version 1.2.2
+ * @version 1.2.5
  */
 var EarningsCallTranscripts = /*#__PURE__*/function () {
   /**
@@ -59,11 +63,11 @@ var EarningsCallTranscripts = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('transcript')) {
-          obj['transcript'] = _ApiClient["default"].convertToType(data['transcript'], [Object]);
+          obj['transcript'] = _ApiClient["default"].convertToType(data['transcript'], [_TranscriptContent["default"]]);
         }
 
         if (data.hasOwnProperty('participant')) {
-          obj['participant'] = _ApiClient["default"].convertToType(data['participant'], [Object]);
+          obj['participant'] = _ApiClient["default"].convertToType(data['participant'], [_TranscriptParticipant["default"]]);
         }
 
         if (data.hasOwnProperty('audio')) {
@@ -79,7 +83,7 @@ var EarningsCallTranscripts = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('time')) {
-          obj['time'] = _ApiClient["default"].convertToType(data['time'], 'Date');
+          obj['time'] = _ApiClient["default"].convertToType(data['time'], 'String');
         }
 
         if (data.hasOwnProperty('year')) {
@@ -106,13 +110,13 @@ var EarningsCallTranscripts = /*#__PURE__*/function () {
 EarningsCallTranscripts.prototype['symbol'] = undefined;
 /**
  * Transcript content.
- * @member {Array.<Object>} transcript
+ * @member {Array.<module:model/TranscriptContent>} transcript
  */
 
 EarningsCallTranscripts.prototype['transcript'] = undefined;
 /**
  * Participant list
- * @member {Array.<Object>} participant
+ * @member {Array.<module:model/TranscriptParticipant>} participant
  */
 
 EarningsCallTranscripts.prototype['participant'] = undefined;
@@ -136,7 +140,7 @@ EarningsCallTranscripts.prototype['id'] = undefined;
 EarningsCallTranscripts.prototype['title'] = undefined;
 /**
  * Time of the event.
- * @member {Date} time
+ * @member {String} time
  */
 
 EarningsCallTranscripts.prototype['time'] = undefined;

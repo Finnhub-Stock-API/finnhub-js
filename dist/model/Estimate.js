@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Estimate model module.
  * @module model/Estimate
- * @version 1.2.2
+ * @version 1.2.5
  */
 var Estimate = /*#__PURE__*/function () {
   /**

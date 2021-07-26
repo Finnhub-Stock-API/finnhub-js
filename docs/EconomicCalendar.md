@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**economicCalendar** | **[Object]** | Array of economic events. | [optional] 
+**economicCalendar** | [**[EconomicEvent]**](EconomicEvent.md) | Array of economic events. | [optional] 
 
 

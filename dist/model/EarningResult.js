@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningResult model module.
  * @module model/EarningResult
- * @version 1.2.2
+ * @version 1.2.5
  */
 var EarningResult = /*#__PURE__*/function () {
   /**

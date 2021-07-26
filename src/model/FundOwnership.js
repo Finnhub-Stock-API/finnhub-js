@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import FundOwnershipInfo from './FundOwnershipInfo';
 
 /**
  * The FundOwnership model module.
  * @module model/FundOwnership
- * @version 1.2.2
+ * @version 1.2.5
  */
 class FundOwnership {
     /**
@@ -51,7 +52,7 @@ class FundOwnership {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('ownership')) {
-                obj['ownership'] = ApiClient.convertToType(data['ownership'], [Object]);
+                obj['ownership'] = ApiClient.convertToType(data['ownership'], [FundOwnershipInfo]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ FundOwnership.prototype['symbol'] = undefined;
 
 /**
  * Array of investors with detailed information about their holdings.
- * @member {Array.<Object>} ownership
+ * @member {Array.<module:model/FundOwnershipInfo>} ownership
  */
 FundOwnership.prototype['ownership'] = undefined;
 

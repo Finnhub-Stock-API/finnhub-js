@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _IPOEvent = _interopRequireDefault(require("./IPOEvent"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IPOCalendar model module.
  * @module model/IPOCalendar
- * @version 1.2.2
+ * @version 1.2.5
  */
 var IPOCalendar = /*#__PURE__*/function () {
   /**
@@ -55,7 +57,7 @@ var IPOCalendar = /*#__PURE__*/function () {
         obj = obj || new IPOCalendar();
 
         if (data.hasOwnProperty('ipoCalendar')) {
-          obj['ipoCalendar'] = _ApiClient["default"].convertToType(data['ipoCalendar'], [Object]);
+          obj['ipoCalendar'] = _ApiClient["default"].convertToType(data['ipoCalendar'], [_IPOEvent["default"]]);
         }
       }
 
@@ -67,7 +69,7 @@ var IPOCalendar = /*#__PURE__*/function () {
 }();
 /**
  * Array of IPO events.
- * @member {Array.<Object>} ipoCalendar
+ * @member {Array.<module:model/IPOEvent>} ipoCalendar
  */
 
 

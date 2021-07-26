@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import EconomicDataInfo from './EconomicDataInfo';
 
 /**
  * The EconomicData model module.
  * @module model/EconomicData
- * @version 1.2.2
+ * @version 1.2.5
  */
 class EconomicData {
     /**
@@ -48,7 +49,7 @@ class EconomicData {
             obj = obj || new EconomicData();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+                obj['data'] = ApiClient.convertToType(data['data'], [EconomicDataInfo]);
             }
             if (data.hasOwnProperty('code')) {
                 obj['code'] = ApiClient.convertToType(data['code'], 'String');
@@ -62,7 +63,7 @@ class EconomicData {
 
 /**
  * Array of economic data for requested code.
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/EconomicDataInfo>} data
  */
 EconomicData.prototype['data'] = undefined;
 

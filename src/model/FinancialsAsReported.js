@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import Report from './Report';
 
 /**
  * The FinancialsAsReported model module.
  * @module model/FinancialsAsReported
- * @version 1.2.2
+ * @version 1.2.5
  */
 class FinancialsAsReported {
     /**
@@ -54,7 +55,7 @@ class FinancialsAsReported {
                 obj['cik'] = ApiClient.convertToType(data['cik'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Report]);
             }
         }
         return obj;
@@ -77,7 +78,7 @@ FinancialsAsReported.prototype['cik'] = undefined;
 
 /**
  * Array of filings.
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/Report>} data
  */
 FinancialsAsReported.prototype['data'] = undefined;
 

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import MutualFundSectorExposureData from './MutualFundSectorExposureData';
 
 /**
  * The MutualFundSectorExposure model module.
  * @module model/MutualFundSectorExposure
- * @version 1.2.2
+ * @version 1.2.5
  */
 class MutualFundSectorExposure {
     /**
@@ -51,7 +52,7 @@ class MutualFundSectorExposure {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('sectorExposure')) {
-                obj['sectorExposure'] = ApiClient.convertToType(data['sectorExposure'], [Object]);
+                obj['sectorExposure'] = ApiClient.convertToType(data['sectorExposure'], [MutualFundSectorExposureData]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ MutualFundSectorExposure.prototype['symbol'] = undefined;
 
 /**
  * Array of sector and exposure levels.
- * @member {Array.<Object>} sectorExposure
+ * @member {Array.<module:model/MutualFundSectorExposureData>} sectorExposure
  */
 MutualFundSectorExposure.prototype['sectorExposure'] = undefined;
 

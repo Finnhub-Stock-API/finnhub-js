@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import IPOEvent from './IPOEvent';
 
 /**
  * The IPOCalendar model module.
  * @module model/IPOCalendar
- * @version 1.2.2
+ * @version 1.2.5
  */
 class IPOCalendar {
     /**
@@ -48,7 +49,7 @@ class IPOCalendar {
             obj = obj || new IPOCalendar();
 
             if (data.hasOwnProperty('ipoCalendar')) {
-                obj['ipoCalendar'] = ApiClient.convertToType(data['ipoCalendar'], [Object]);
+                obj['ipoCalendar'] = ApiClient.convertToType(data['ipoCalendar'], [IPOEvent]);
             }
         }
         return obj;
@@ -59,7 +60,7 @@ class IPOCalendar {
 
 /**
  * Array of IPO events.
- * @member {Array.<Object>} ipoCalendar
+ * @member {Array.<module:model/IPOEvent>} ipoCalendar
  */
 IPOCalendar.prototype['ipoCalendar'] = undefined;
 

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import KeyCustomersSuppliers from './KeyCustomersSuppliers';
 
 /**
  * The SupplyChainRelationships model module.
  * @module model/SupplyChainRelationships
- * @version 1.2.2
+ * @version 1.2.5
  */
 class SupplyChainRelationships {
     /**
@@ -51,7 +52,7 @@ class SupplyChainRelationships {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+                obj['data'] = ApiClient.convertToType(data['data'], [KeyCustomersSuppliers]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ SupplyChainRelationships.prototype['symbol'] = undefined;
 
 /**
  * Key customers and suppliers.
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/KeyCustomersSuppliers>} data
  */
 SupplyChainRelationships.prototype['data'] = undefined;
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Estimate model module.
  * @module model/Estimate
- * @version 1.2.2
+ * @version 1.2.5
  */
 class Estimate {
     /**

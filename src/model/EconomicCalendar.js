@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import EconomicEvent from './EconomicEvent';
 
 /**
  * The EconomicCalendar model module.
  * @module model/EconomicCalendar
- * @version 1.2.2
+ * @version 1.2.5
  */
 class EconomicCalendar {
     /**
@@ -48,7 +49,7 @@ class EconomicCalendar {
             obj = obj || new EconomicCalendar();
 
             if (data.hasOwnProperty('economicCalendar')) {
-                obj['economicCalendar'] = ApiClient.convertToType(data['economicCalendar'], [Object]);
+                obj['economicCalendar'] = ApiClient.convertToType(data['economicCalendar'], [EconomicEvent]);
             }
         }
         return obj;
@@ -59,7 +60,7 @@ class EconomicCalendar {
 
 /**
  * Array of economic events.
- * @member {Array.<Object>} economicCalendar
+ * @member {Array.<module:model/EconomicEvent>} economicCalendar
  */
 EconomicCalendar.prototype['economicCalendar'] = undefined;
 

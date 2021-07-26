@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Report model module.
  * @module model/Report
- * @version 1.2.2
+ * @version 1.2.5
  */
 class Report {
     /**
@@ -66,16 +66,16 @@ class Report {
                 obj['form'] = ApiClient.convertToType(data['form'], 'String');
             }
             if (data.hasOwnProperty('startDate')) {
-                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'Date');
+                obj['startDate'] = ApiClient.convertToType(data['startDate'], 'String');
             }
             if (data.hasOwnProperty('endDate')) {
-                obj['endDate'] = ApiClient.convertToType(data['endDate'], 'Date');
+                obj['endDate'] = ApiClient.convertToType(data['endDate'], 'String');
             }
             if (data.hasOwnProperty('filedDate')) {
-                obj['filedDate'] = ApiClient.convertToType(data['filedDate'], 'Date');
+                obj['filedDate'] = ApiClient.convertToType(data['filedDate'], 'String');
             }
             if (data.hasOwnProperty('acceptedDate')) {
-                obj['acceptedDate'] = ApiClient.convertToType(data['acceptedDate'], 'Date');
+                obj['acceptedDate'] = ApiClient.convertToType(data['acceptedDate'], 'String');
             }
             if (data.hasOwnProperty('report')) {
                 obj['report'] = ApiClient.convertToType(data['report'], Object);
@@ -125,25 +125,25 @@ Report.prototype['form'] = undefined;
 
 /**
  * Period start date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} startDate
+ * @member {String} startDate
  */
 Report.prototype['startDate'] = undefined;
 
 /**
  * Period end date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} endDate
+ * @member {String} endDate
  */
 Report.prototype['endDate'] = undefined;
 
 /**
  * Filed date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} filedDate
+ * @member {String} filedDate
  */
 Report.prototype['filedDate'] = undefined;
 
 /**
  * Accepted date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} acceptedDate
+ * @member {String} acceptedDate
  */
 Report.prototype['acceptedDate'] = undefined;
 

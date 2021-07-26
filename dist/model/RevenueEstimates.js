@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Estimate = _interopRequireDefault(require("./Estimate"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RevenueEstimates model module.
  * @module model/RevenueEstimates
- * @version 1.2.2
+ * @version 1.2.5
  */
 var RevenueEstimates = /*#__PURE__*/function () {
   /**
@@ -55,7 +57,7 @@ var RevenueEstimates = /*#__PURE__*/function () {
         obj = obj || new RevenueEstimates();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [Object]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_Estimate["default"]]);
         }
 
         if (data.hasOwnProperty('freq')) {
@@ -75,7 +77,7 @@ var RevenueEstimates = /*#__PURE__*/function () {
 }();
 /**
  * List of estimates
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/Estimate>} data
  */
 
 

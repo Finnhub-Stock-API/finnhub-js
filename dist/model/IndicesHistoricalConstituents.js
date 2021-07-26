@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _IndexHistoricalConstituent = _interopRequireDefault(require("./IndexHistoricalConstituent"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IndicesHistoricalConstituents model module.
  * @module model/IndicesHistoricalConstituents
- * @version 1.2.2
+ * @version 1.2.5
  */
 var IndicesHistoricalConstituents = /*#__PURE__*/function () {
   /**
@@ -59,7 +61,7 @@ var IndicesHistoricalConstituents = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('historicalConstituents')) {
-          obj['historicalConstituents'] = _ApiClient["default"].convertToType(data['historicalConstituents'], [Object]);
+          obj['historicalConstituents'] = _ApiClient["default"].convertToType(data['historicalConstituents'], [_IndexHistoricalConstituent["default"]]);
         }
       }
 
@@ -78,7 +80,7 @@ var IndicesHistoricalConstituents = /*#__PURE__*/function () {
 IndicesHistoricalConstituents.prototype['symbol'] = undefined;
 /**
  * Array of historical constituents.
- * @member {Array.<Object>} historicalConstituents
+ * @member {Array.<module:model/IndexHistoricalConstituent>} historicalConstituents
  */
 
 IndicesHistoricalConstituents.prototype['historicalConstituents'] = undefined;

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import SymbolLookupInfo from './SymbolLookupInfo';
 
 /**
  * The SymbolLookup model module.
  * @module model/SymbolLookup
- * @version 1.2.2
+ * @version 1.2.5
  */
 class SymbolLookup {
     /**
@@ -48,7 +49,7 @@ class SymbolLookup {
             obj = obj || new SymbolLookup();
 
             if (data.hasOwnProperty('result')) {
-                obj['result'] = ApiClient.convertToType(data['result'], [Object]);
+                obj['result'] = ApiClient.convertToType(data['result'], [SymbolLookupInfo]);
             }
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
@@ -62,7 +63,7 @@ class SymbolLookup {
 
 /**
  * Array of search results.
- * @member {Array.<Object>} result
+ * @member {Array.<module:model/SymbolLookupInfo>} result
  */
 SymbolLookup.prototype['result'] = undefined;
 

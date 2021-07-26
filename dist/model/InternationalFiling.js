@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InternationalFiling model module.
  * @module model/InternationalFiling
- * @version 1.2.2
+ * @version 1.2.5
  */
 var InternationalFiling = /*#__PURE__*/function () {
   /**
@@ -63,7 +63,7 @@ var InternationalFiling = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('filedDate')) {
-          obj['filedDate'] = _ApiClient["default"].convertToType(data['filedDate'], 'Date');
+          obj['filedDate'] = _ApiClient["default"].convertToType(data['filedDate'], 'String');
         }
 
         if (data.hasOwnProperty('category')) {
@@ -112,7 +112,7 @@ InternationalFiling.prototype['symbol'] = undefined;
 InternationalFiling.prototype['companyName'] = undefined;
 /**
  * Filed date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} filedDate
+ * @member {String} filedDate
  */
 
 InternationalFiling.prototype['filedDate'] = undefined;

@@ -39,6 +39,12 @@ Object.defineProperty(exports, "CompanyExecutive", {
     return _CompanyExecutive["default"];
   }
 });
+Object.defineProperty(exports, "CompanyNews", {
+  enumerable: true,
+  get: function get() {
+    return _CompanyNews["default"];
+  }
+});
 Object.defineProperty(exports, "CompanyNewsStatistics", {
   enumerable: true,
   get: function get() {
@@ -93,10 +99,16 @@ Object.defineProperty(exports, "Dividends", {
     return _Dividends["default"];
   }
 });
-Object.defineProperty(exports, "Dividends2Basic", {
+Object.defineProperty(exports, "Dividends2", {
   enumerable: true,
   get: function get() {
-    return _Dividends2Basic["default"];
+    return _Dividends2["default"];
+  }
+});
+Object.defineProperty(exports, "Dividends2Info", {
+  enumerable: true,
+  get: function get() {
+    return _Dividends2Info["default"];
   }
 });
 Object.defineProperty(exports, "ETFCountryExposureData", {
@@ -207,6 +219,12 @@ Object.defineProperty(exports, "EconomicData", {
     return _EconomicData["default"];
   }
 });
+Object.defineProperty(exports, "EconomicDataInfo", {
+  enumerable: true,
+  get: function get() {
+    return _EconomicDataInfo["default"];
+  }
+});
 Object.defineProperty(exports, "EconomicEvent", {
   enumerable: true,
   get: function get() {
@@ -273,6 +291,12 @@ Object.defineProperty(exports, "FundOwnership", {
     return _FundOwnership["default"];
   }
 });
+Object.defineProperty(exports, "FundOwnershipInfo", {
+  enumerable: true,
+  get: function get() {
+    return _FundOwnershipInfo["default"];
+  }
+});
 Object.defineProperty(exports, "HistoricalNBBO", {
   enumerable: true,
   get: function get() {
@@ -333,16 +357,10 @@ Object.defineProperty(exports, "InvestmentThemePortfolio", {
     return _InvestmentThemePortfolio["default"];
   }
 });
-Object.defineProperty(exports, "InvestmentThemesThematicInvesting", {
+Object.defineProperty(exports, "InvestmentThemes", {
   enumerable: true,
   get: function get() {
-    return _InvestmentThemesThematicInvesting["default"];
-  }
-});
-Object.defineProperty(exports, "Investor", {
-  enumerable: true,
-  get: function get() {
-    return _Investor["default"];
+    return _InvestmentThemes["default"];
   }
 });
 Object.defineProperty(exports, "KeyCustomersSuppliers", {
@@ -357,16 +375,46 @@ Object.defineProperty(exports, "LastBidAsk", {
     return _LastBidAsk["default"];
   }
 });
-Object.defineProperty(exports, "MajorPressReleases", {
+Object.defineProperty(exports, "MarketNews", {
   enumerable: true,
   get: function get() {
-    return _MajorPressReleases["default"];
+    return _MarketNews["default"];
+  }
+});
+Object.defineProperty(exports, "MutualFundCountryExposure", {
+  enumerable: true,
+  get: function get() {
+    return _MutualFundCountryExposure["default"];
   }
 });
 Object.defineProperty(exports, "MutualFundCountryExposureData", {
   enumerable: true,
   get: function get() {
     return _MutualFundCountryExposureData["default"];
+  }
+});
+Object.defineProperty(exports, "MutualFundHoldings", {
+  enumerable: true,
+  get: function get() {
+    return _MutualFundHoldings["default"];
+  }
+});
+Object.defineProperty(exports, "MutualFundHoldingsData", {
+  enumerable: true,
+  get: function get() {
+    return _MutualFundHoldingsData["default"];
+  }
+});
+Object.defineProperty(exports, "MutualFundProfile", {
+  enumerable: true,
+  get: function get() {
+    return _MutualFundProfile["default"];
+  }
+});
+Object.defineProperty(exports, "MutualFundProfileData", {
+  enumerable: true,
+  get: function get() {
+    return _MutualFundProfileData["default"];
   }
 });
 Object.defineProperty(exports, "MutualFundSectorExposure", {
@@ -381,30 +429,6 @@ Object.defineProperty(exports, "MutualFundSectorExposureData", {
     return _MutualFundSectorExposureData["default"];
   }
 });
-Object.defineProperty(exports, "MutualFundsCountryExposure", {
-  enumerable: true,
-  get: function get() {
-    return _MutualFundsCountryExposure["default"];
-  }
-});
-Object.defineProperty(exports, "MutualFundsHoldings", {
-  enumerable: true,
-  get: function get() {
-    return _MutualFundsHoldings["default"];
-  }
-});
-Object.defineProperty(exports, "MutualFundsProfile", {
-  enumerable: true,
-  get: function get() {
-    return _MutualFundsProfile["default"];
-  }
-});
-Object.defineProperty(exports, "News", {
-  enumerable: true,
-  get: function get() {
-    return _News["default"];
-  }
-});
 Object.defineProperty(exports, "NewsSentiment", {
   enumerable: true,
   get: function get() {
@@ -417,10 +441,22 @@ Object.defineProperty(exports, "Ownership", {
     return _Ownership["default"];
   }
 });
+Object.defineProperty(exports, "OwnershipInfo", {
+  enumerable: true,
+  get: function get() {
+    return _OwnershipInfo["default"];
+  }
+});
 Object.defineProperty(exports, "PatternRecognition", {
   enumerable: true,
   get: function get() {
     return _PatternRecognition["default"];
+  }
+});
+Object.defineProperty(exports, "PressRelease", {
+  enumerable: true,
+  get: function get() {
+    return _PressRelease["default"];
   }
 });
 Object.defineProperty(exports, "PriceTarget", {
@@ -495,16 +531,16 @@ Object.defineProperty(exports, "Split", {
     return _Split["default"];
   }
 });
-Object.defineProperty(exports, "Stock", {
-  enumerable: true,
-  get: function get() {
-    return _Stock["default"];
-  }
-});
 Object.defineProperty(exports, "StockCandles", {
   enumerable: true,
   get: function get() {
     return _StockCandles["default"];
+  }
+});
+Object.defineProperty(exports, "StockSymbol", {
+  enumerable: true,
+  get: function get() {
+    return _StockSymbol["default"];
   }
 });
 Object.defineProperty(exports, "StockTranscripts", {
@@ -529,6 +565,12 @@ Object.defineProperty(exports, "SymbolLookup", {
   enumerable: true,
   get: function get() {
     return _SymbolLookup["default"];
+  }
+});
+Object.defineProperty(exports, "SymbolLookupInfo", {
+  enumerable: true,
+  get: function get() {
+    return _SymbolLookupInfo["default"];
   }
 });
 Object.defineProperty(exports, "TechnicalAnalysis", {
@@ -598,6 +640,8 @@ var _Company = _interopRequireDefault(require("./model/Company"));
 
 var _CompanyExecutive = _interopRequireDefault(require("./model/CompanyExecutive"));
 
+var _CompanyNews = _interopRequireDefault(require("./model/CompanyNews"));
+
 var _CompanyNewsStatistics = _interopRequireDefault(require("./model/CompanyNewsStatistics"));
 
 var _CompanyProfile = _interopRequireDefault(require("./model/CompanyProfile"));
@@ -616,7 +660,9 @@ var _Development = _interopRequireDefault(require("./model/Development"));
 
 var _Dividends = _interopRequireDefault(require("./model/Dividends"));
 
-var _Dividends2Basic = _interopRequireDefault(require("./model/Dividends2Basic"));
+var _Dividends2 = _interopRequireDefault(require("./model/Dividends2"));
+
+var _Dividends2Info = _interopRequireDefault(require("./model/Dividends2Info"));
 
 var _ETFCountryExposureData = _interopRequireDefault(require("./model/ETFCountryExposureData"));
 
@@ -654,6 +700,8 @@ var _EconomicCode = _interopRequireDefault(require("./model/EconomicCode"));
 
 var _EconomicData = _interopRequireDefault(require("./model/EconomicData"));
 
+var _EconomicDataInfo = _interopRequireDefault(require("./model/EconomicDataInfo"));
+
 var _EconomicEvent = _interopRequireDefault(require("./model/EconomicEvent"));
 
 var _Estimate = _interopRequireDefault(require("./model/Estimate"));
@@ -676,6 +724,8 @@ var _Forexrates = _interopRequireDefault(require("./model/Forexrates"));
 
 var _FundOwnership = _interopRequireDefault(require("./model/FundOwnership"));
 
+var _FundOwnershipInfo = _interopRequireDefault(require("./model/FundOwnershipInfo"));
+
 var _HistoricalNBBO = _interopRequireDefault(require("./model/HistoricalNBBO"));
 
 var _IPOCalendar = _interopRequireDefault(require("./model/IPOCalendar"));
@@ -696,35 +746,39 @@ var _InternationalFiling = _interopRequireDefault(require("./model/International
 
 var _InvestmentThemePortfolio = _interopRequireDefault(require("./model/InvestmentThemePortfolio"));
 
-var _InvestmentThemesThematicInvesting = _interopRequireDefault(require("./model/InvestmentThemesThematicInvesting"));
-
-var _Investor = _interopRequireDefault(require("./model/Investor"));
+var _InvestmentThemes = _interopRequireDefault(require("./model/InvestmentThemes"));
 
 var _KeyCustomersSuppliers = _interopRequireDefault(require("./model/KeyCustomersSuppliers"));
 
 var _LastBidAsk = _interopRequireDefault(require("./model/LastBidAsk"));
 
-var _MajorPressReleases = _interopRequireDefault(require("./model/MajorPressReleases"));
+var _MarketNews = _interopRequireDefault(require("./model/MarketNews"));
+
+var _MutualFundCountryExposure = _interopRequireDefault(require("./model/MutualFundCountryExposure"));
 
 var _MutualFundCountryExposureData = _interopRequireDefault(require("./model/MutualFundCountryExposureData"));
+
+var _MutualFundHoldings = _interopRequireDefault(require("./model/MutualFundHoldings"));
+
+var _MutualFundHoldingsData = _interopRequireDefault(require("./model/MutualFundHoldingsData"));
+
+var _MutualFundProfile = _interopRequireDefault(require("./model/MutualFundProfile"));
+
+var _MutualFundProfileData = _interopRequireDefault(require("./model/MutualFundProfileData"));
 
 var _MutualFundSectorExposure = _interopRequireDefault(require("./model/MutualFundSectorExposure"));
 
 var _MutualFundSectorExposureData = _interopRequireDefault(require("./model/MutualFundSectorExposureData"));
 
-var _MutualFundsCountryExposure = _interopRequireDefault(require("./model/MutualFundsCountryExposure"));
-
-var _MutualFundsHoldings = _interopRequireDefault(require("./model/MutualFundsHoldings"));
-
-var _MutualFundsProfile = _interopRequireDefault(require("./model/MutualFundsProfile"));
-
-var _News = _interopRequireDefault(require("./model/News"));
-
 var _NewsSentiment = _interopRequireDefault(require("./model/NewsSentiment"));
 
 var _Ownership = _interopRequireDefault(require("./model/Ownership"));
 
+var _OwnershipInfo = _interopRequireDefault(require("./model/OwnershipInfo"));
+
 var _PatternRecognition = _interopRequireDefault(require("./model/PatternRecognition"));
+
+var _PressRelease = _interopRequireDefault(require("./model/PressRelease"));
 
 var _PriceTarget = _interopRequireDefault(require("./model/PriceTarget"));
 
@@ -750,9 +804,9 @@ var _SocialSentiment = _interopRequireDefault(require("./model/SocialSentiment")
 
 var _Split = _interopRequireDefault(require("./model/Split"));
 
-var _Stock = _interopRequireDefault(require("./model/Stock"));
-
 var _StockCandles = _interopRequireDefault(require("./model/StockCandles"));
+
+var _StockSymbol = _interopRequireDefault(require("./model/StockSymbol"));
 
 var _StockTranscripts = _interopRequireDefault(require("./model/StockTranscripts"));
 
@@ -761,6 +815,8 @@ var _SupplyChainRelationships = _interopRequireDefault(require("./model/SupplyCh
 var _SupportResistance = _interopRequireDefault(require("./model/SupportResistance"));
 
 var _SymbolLookup = _interopRequireDefault(require("./model/SymbolLookup"));
+
+var _SymbolLookupInfo = _interopRequireDefault(require("./model/SymbolLookupInfo"));
 
 var _TechnicalAnalysis = _interopRequireDefault(require("./model/TechnicalAnalysis"));
 

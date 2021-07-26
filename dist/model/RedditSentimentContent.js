@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RedditSentimentContent model module.
  * @module model/RedditSentimentContent
- * @version 1.2.2
+ * @version 1.2.5
  */
 var RedditSentimentContent = /*#__PURE__*/function () {
   /**
@@ -79,7 +79,7 @@ var RedditSentimentContent = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('atTime')) {
-          obj['atTime'] = _ApiClient["default"].convertToType(data['atTime'], 'Date');
+          obj['atTime'] = _ApiClient["default"].convertToType(data['atTime'], 'String');
         }
       }
 
@@ -128,7 +128,7 @@ RedditSentimentContent.prototype['negativeScore'] = undefined;
 RedditSentimentContent.prototype['score'] = undefined;
 /**
  * Period.
- * @member {Date} atTime
+ * @member {String} atTime
  */
 
 RedditSentimentContent.prototype['atTime'] = undefined;

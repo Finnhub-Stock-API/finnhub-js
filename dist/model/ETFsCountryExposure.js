@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ETFCountryExposureData = _interopRequireDefault(require("./ETFCountryExposureData"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ETFsCountryExposure model module.
  * @module model/ETFsCountryExposure
- * @version 1.2.2
+ * @version 1.2.5
  */
 var ETFsCountryExposure = /*#__PURE__*/function () {
   /**
@@ -59,7 +61,7 @@ var ETFsCountryExposure = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('countryExposure')) {
-          obj['countryExposure'] = _ApiClient["default"].convertToType(data['countryExposure'], [Object]);
+          obj['countryExposure'] = _ApiClient["default"].convertToType(data['countryExposure'], [_ETFCountryExposureData["default"]]);
         }
       }
 
@@ -78,7 +80,7 @@ var ETFsCountryExposure = /*#__PURE__*/function () {
 ETFsCountryExposure.prototype['symbol'] = undefined;
 /**
  * Array of countries and and exposure levels.
- * @member {Array.<Object>} countryExposure
+ * @member {Array.<module:model/ETFCountryExposureData>} countryExposure
  */
 
 ETFsCountryExposure.prototype['countryExposure'] = undefined;

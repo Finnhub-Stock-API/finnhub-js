@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _BreakdownItem = _interopRequireDefault(require("./BreakdownItem"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RevenueBreakdown model module.
  * @module model/RevenueBreakdown
- * @version 1.2.2
+ * @version 1.2.5
  */
 var RevenueBreakdown = /*#__PURE__*/function () {
   /**
@@ -63,7 +65,7 @@ var RevenueBreakdown = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [Object]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_BreakdownItem["default"]]);
         }
       }
 
@@ -88,7 +90,7 @@ RevenueBreakdown.prototype['symbol'] = undefined;
 RevenueBreakdown.prototype['cik'] = undefined;
 /**
  * Array of revenue breakdown over multiple periods.
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/BreakdownItem>} data
  */
 
 RevenueBreakdown.prototype['data'] = undefined;

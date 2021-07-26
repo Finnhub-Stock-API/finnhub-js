@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**cryptoExchanges**](DefaultApi.md#cryptoExchanges) | **GET** /crypto/exchange | Crypto Exchanges
 [**cryptoSymbols**](DefaultApi.md#cryptoSymbols) | **GET** /crypto/symbol | Crypto Symbol
 [**earningsCalendar**](DefaultApi.md#earningsCalendar) | **GET** /calendar/earnings | Earnings Calendar
-[**earningsCallTranscriptsApi**](DefaultApi.md#earningsCallTranscriptsApi) | **GET** /stock/transcripts | Earnings Call Transcripts
+[**economicCalendar**](DefaultApi.md#economicCalendar) | **GET** /calendar/economic | Economic Calendar
 [**economicCode**](DefaultApi.md#economicCode) | **GET** /economic/code | Economic Code
 [**economicData**](DefaultApi.md#economicData) | **GET** /economic | Economic Data
 [**etfsCountryExposure**](DefaultApi.md#etfsCountryExposure) | **GET** /etf/country | ETFs Country Exposure
@@ -41,13 +41,13 @@ Method | HTTP request | Description
 [**indicesHistoricalConstituents**](DefaultApi.md#indicesHistoricalConstituents) | **GET** /index/historical-constituents | Indices Historical Constituents
 [**insiderTransactions**](DefaultApi.md#insiderTransactions) | **GET** /stock/insider-transactions | Insider Transactions
 [**internationalFilings**](DefaultApi.md#internationalFilings) | **GET** /stock/international-filings | International Filings
-[**investmentThemesThematicInvesting**](DefaultApi.md#investmentThemesThematicInvesting) | **GET** /stock/investment-theme | Investment Themes (Thematic Investing)
+[**investmentThemes**](DefaultApi.md#investmentThemes) | **GET** /stock/investment-theme | Investment Themes (Thematic Investing)
 [**ipoCalendar**](DefaultApi.md#ipoCalendar) | **GET** /calendar/ipo | IPO Calendar
 [**marketNews**](DefaultApi.md#marketNews) | **GET** /news | Market News
 [**mutualFundCountryExposure**](DefaultApi.md#mutualFundCountryExposure) | **GET** /mutual-fund/country | Mutual Funds Country Exposure
 [**mutualFundHoldings**](DefaultApi.md#mutualFundHoldings) | **GET** /mutual-fund/holdings | Mutual Funds Holdings
 [**mutualFundProfile**](DefaultApi.md#mutualFundProfile) | **GET** /mutual-fund/profile | Mutual Funds Profile
-[**mutualFundSectorExposure**](DefaultApi.md#mutualFundSectorExposure) | **GET** /mutual-fund/sector | Mutual-fund Sector Exposure
+[**mutualFundSectorExposure**](DefaultApi.md#mutualFundSectorExposure) | **GET** /mutual-fund/sector | Mutual Funds Sector Exposure
 [**newsSentiment**](DefaultApi.md#newsSentiment) | **GET** /news-sentiment | News Sentiment
 [**ownership**](DefaultApi.md#ownership) | **GET** /stock/ownership | Ownership
 [**patternRecognition**](DefaultApi.md#patternRecognition) | **GET** /scan/pattern | Pattern Recognition
@@ -70,6 +70,7 @@ Method | HTTP request | Description
 [**supportResistance**](DefaultApi.md#supportResistance) | **GET** /scan/support-resistance | Support/Resistance
 [**symbolSearch**](DefaultApi.md#symbolSearch) | **GET** /search | Symbol Lookup
 [**technicalIndicator**](DefaultApi.md#technicalIndicator) | **POST** /indicator | Technical Indicators
+[**transcripts**](DefaultApi.md#transcripts) | **GET** /stock/transcripts | Earnings Call Transcripts
 [**transcriptsList**](DefaultApi.md#transcriptsList) | **GET** /stock/transcripts/list | Earnings Call Transcripts List
 [**upgradeDowngrade**](DefaultApi.md#upgradeDowngrade) | **GET** /stock/upgrade-downgrade | Stock Upgrade/Downgrade
 
@@ -344,7 +345,7 @@ Name | Type | Description  | Notes
 
 ## companyNews
 
-> [News] companyNews(symbol, from, to)
+> [CompanyNews] companyNews(symbol, from, to)
 
 Company News
 
@@ -385,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[News]**](News.md)
+[**[CompanyNews]**](CompanyNews.md)
 
 ### Authorization
 
@@ -925,13 +926,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## earningsCallTranscriptsApi
+## economicCalendar
 
-> EarningsCallTranscripts earningsCallTranscriptsApi(id)
+> EconomicCalendar economicCalendar()
 
-Earnings Call Transcripts
+Economic Calendar
 
-&lt;p&gt;Get earnings call transcripts, audio and participants&#39; list. This endpoint is only available for US, UK, and Candian companies. &lt;p&gt;15+ years of data is available with 220,000+ audio which add up to 7TB in size.&lt;/p&gt;
+&lt;p&gt;Get recent and upcoming economic releases.&lt;/p&gt;&lt;p&gt;Historical events and surprises are available for Enterprise clients.&lt;/p&gt;
 
 ### Example
 
@@ -945,8 +946,7 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new finnhub.DefaultApi();
-let id = "id_example"; // String | Transcript's id obtained with <a href=\"#transcripts-list\">Transcripts List endpoint</a>.
-apiInstance.earningsCallTranscriptsApi(id, (error, data, response) => {
+apiInstance.economicCalendar((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -957,14 +957,11 @@ apiInstance.earningsCallTranscriptsApi(id, (error, data, response) => {
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| Transcript&#39;s id obtained with &lt;a href&#x3D;\&quot;#transcripts-list\&quot;&gt;Transcripts List endpoint&lt;/a&gt;. | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**EarningsCallTranscripts**](EarningsCallTranscripts.md)
+[**EconomicCalendar**](EconomicCalendar.md)
 
 ### Authorization
 
@@ -2040,9 +2037,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## investmentThemesThematicInvesting
+## investmentThemes
 
-> InvestmentThemesThematicInvesting investmentThemesThematicInvesting(theme)
+> InvestmentThemes investmentThemes(theme)
 
 Investment Themes (Thematic Investing)
 
@@ -2061,7 +2058,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let theme = "theme_example"; // String | Investment theme. A full list of themes supported can be found <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1ULj9xDh4iPoQj279M084adZ2_S852ttRthKKJ7madYc/edit?usp=sharing\">here</a>.
-apiInstance.investmentThemesThematicInvesting(theme, (error, data, response) => {
+apiInstance.investmentThemes(theme, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2079,7 +2076,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvestmentThemesThematicInvesting**](InvestmentThemesThematicInvesting.md)
+[**InvestmentThemes**](InvestmentThemes.md)
 
 ### Authorization
 
@@ -2146,7 +2143,7 @@ Name | Type | Description  | Notes
 
 ## marketNews
 
-> [News] marketNews(category, opts)
+> [MarketNews] marketNews(category, opts)
 
 Market News
 
@@ -2187,7 +2184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[News]**](News.md)
+[**[MarketNews]**](MarketNews.md)
 
 ### Authorization
 
@@ -2201,7 +2198,7 @@ Name | Type | Description  | Notes
 
 ## mutualFundCountryExposure
 
-> MutualFundsCountryExposure mutualFundCountryExposure(symbol)
+> MutualFundCountryExposure mutualFundCountryExposure(symbol)
 
 Mutual Funds Country Exposure
 
@@ -2238,7 +2235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MutualFundsCountryExposure**](MutualFundsCountryExposure.md)
+[**MutualFundCountryExposure**](MutualFundCountryExposure.md)
 
 ### Authorization
 
@@ -2252,7 +2249,7 @@ Name | Type | Description  | Notes
 
 ## mutualFundHoldings
 
-> MutualFundsHoldings mutualFundHoldings(opts)
+> MutualFundHoldings mutualFundHoldings(opts)
 
 Mutual Funds Holdings
 
@@ -2295,7 +2292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MutualFundsHoldings**](MutualFundsHoldings.md)
+[**MutualFundHoldings**](MutualFundHoldings.md)
 
 ### Authorization
 
@@ -2309,7 +2306,7 @@ Name | Type | Description  | Notes
 
 ## mutualFundProfile
 
-> MutualFundsProfile mutualFundProfile(opts)
+> MutualFundProfile mutualFundProfile(opts)
 
 Mutual Funds Profile
 
@@ -2350,7 +2347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MutualFundsProfile**](MutualFundsProfile.md)
+[**MutualFundProfile**](MutualFundProfile.md)
 
 ### Authorization
 
@@ -2366,7 +2363,7 @@ Name | Type | Description  | Notes
 
 > MutualFundSectorExposure mutualFundSectorExposure(symbol)
 
-Mutual-fund Sector Exposure
+Mutual Funds Sector Exposure
 
 Get Mutual Funds sector exposure data.
 
@@ -2574,7 +2571,7 @@ Name | Type | Description  | Notes
 
 ## pressReleases
 
-> MajorPressReleases pressReleases(symbol, opts)
+> PressRelease pressReleases(symbol, opts)
 
 Major Press Releases
 
@@ -2617,7 +2614,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MajorPressReleases**](MajorPressReleases.md)
+[**PressRelease**](PressRelease.md)
 
 ### Authorization
 
@@ -2953,7 +2950,7 @@ Name | Type | Description  | Notes
 
 ## stockBasicDividends
 
-> Dividends2Basic stockBasicDividends(symbol)
+> Dividends2 stockBasicDividends(symbol)
 
 Dividends 2 (Basic)
 
@@ -2990,7 +2987,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Dividends2Basic**](Dividends2Basic.md)
+[**Dividends2**](Dividends2.md)
 
 ### Authorization
 
@@ -3283,7 +3280,7 @@ Name | Type | Description  | Notes
 
 ## stockSymbols
 
-> [Stock] stockSymbols(exchange, opts)
+> [StockSymbol] stockSymbols(exchange, opts)
 
 Stock Symbol
 
@@ -3328,7 +3325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Stock]**](Stock.md)
+[**[StockSymbol]**](StockSymbol.md)
 
 ### Authorization
 
@@ -3612,6 +3609,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## transcripts
+
+> EarningsCallTranscripts transcripts(id)
+
+Earnings Call Transcripts
+
+&lt;p&gt;Get earnings call transcripts, audio and participants&#39; list. This endpoint is only available for US, UK, and Candian companies. &lt;p&gt;15+ years of data is available with 220,000+ audio which add up to 7TB in size.&lt;/p&gt;
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let id = "id_example"; // String | Transcript's id obtained with <a href=\"#transcripts-list\">Transcripts List endpoint</a>.
+apiInstance.transcripts(id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Transcript&#39;s id obtained with &lt;a href&#x3D;\&quot;#transcripts-list\&quot;&gt;Transcripts List endpoint&lt;/a&gt;. | 
+
+### Return type
+
+[**EarningsCallTranscripts**](EarningsCallTranscripts.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

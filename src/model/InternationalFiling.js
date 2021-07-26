@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InternationalFiling model module.
  * @module model/InternationalFiling
- * @version 1.2.2
+ * @version 1.2.5
  */
 class InternationalFiling {
     /**
@@ -54,7 +54,7 @@ class InternationalFiling {
                 obj['companyName'] = ApiClient.convertToType(data['companyName'], 'String');
             }
             if (data.hasOwnProperty('filedDate')) {
-                obj['filedDate'] = ApiClient.convertToType(data['filedDate'], 'Date');
+                obj['filedDate'] = ApiClient.convertToType(data['filedDate'], 'String');
             }
             if (data.hasOwnProperty('category')) {
                 obj['category'] = ApiClient.convertToType(data['category'], 'String');
@@ -95,7 +95,7 @@ InternationalFiling.prototype['companyName'] = undefined;
 
 /**
  * Filed date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} filedDate
+ * @member {String} filedDate
  */
 InternationalFiling.prototype['filedDate'] = undefined;
 

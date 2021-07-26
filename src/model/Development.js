@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Development model module.
  * @module model/Development
- * @version 1.2.2
+ * @version 1.2.5
  */
 class Development {
     /**
@@ -51,7 +51,7 @@ class Development {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('datetime')) {
-                obj['datetime'] = ApiClient.convertToType(data['datetime'], 'Date');
+                obj['datetime'] = ApiClient.convertToType(data['datetime'], 'String');
             }
             if (data.hasOwnProperty('headline')) {
                 obj['headline'] = ApiClient.convertToType(data['headline'], 'String');
@@ -77,7 +77,7 @@ Development.prototype['symbol'] = undefined;
 
 /**
  * Published time in <code>YYYY-MM-DD HH:MM:SS</code> format.
- * @member {Date} datetime
+ * @member {String} datetime
  */
 Development.prototype['datetime'] = undefined;
 

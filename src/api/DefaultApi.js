@@ -16,6 +16,7 @@ import ApiClient from "../ApiClient";
 import AggregateIndicators from '../model/AggregateIndicators';
 import BasicFinancials from '../model/BasicFinancials';
 import CompanyExecutive from '../model/CompanyExecutive';
+import CompanyNews from '../model/CompanyNews';
 import CompanyProfile from '../model/CompanyProfile';
 import CompanyProfile2 from '../model/CompanyProfile2';
 import CountryMetadata from '../model/CountryMetadata';
@@ -23,7 +24,7 @@ import CovidInfo from '../model/CovidInfo';
 import CryptoCandles from '../model/CryptoCandles';
 import CryptoSymbol from '../model/CryptoSymbol';
 import Dividends from '../model/Dividends';
-import Dividends2Basic from '../model/Dividends2Basic';
+import Dividends2 from '../model/Dividends2';
 import ETFsCountryExposure from '../model/ETFsCountryExposure';
 import ETFsHoldings from '../model/ETFsHoldings';
 import ETFsProfile from '../model/ETFsProfile';
@@ -33,6 +34,7 @@ import EarningsCalendar from '../model/EarningsCalendar';
 import EarningsCallTranscripts from '../model/EarningsCallTranscripts';
 import EarningsCallTranscriptsList from '../model/EarningsCallTranscriptsList';
 import EarningsEstimates from '../model/EarningsEstimates';
+import EconomicCalendar from '../model/EconomicCalendar';
 import EconomicCode from '../model/EconomicCode';
 import EconomicData from '../model/EconomicData';
 import FDAComitteeMeeting from '../model/FDAComitteeMeeting';
@@ -49,17 +51,17 @@ import IndicesConstituents from '../model/IndicesConstituents';
 import IndicesHistoricalConstituents from '../model/IndicesHistoricalConstituents';
 import InsiderTransactions from '../model/InsiderTransactions';
 import InternationalFiling from '../model/InternationalFiling';
-import InvestmentThemesThematicInvesting from '../model/InvestmentThemesThematicInvesting';
+import InvestmentThemes from '../model/InvestmentThemes';
 import LastBidAsk from '../model/LastBidAsk';
-import MajorPressReleases from '../model/MajorPressReleases';
+import MarketNews from '../model/MarketNews';
+import MutualFundCountryExposure from '../model/MutualFundCountryExposure';
+import MutualFundHoldings from '../model/MutualFundHoldings';
+import MutualFundProfile from '../model/MutualFundProfile';
 import MutualFundSectorExposure from '../model/MutualFundSectorExposure';
-import MutualFundsCountryExposure from '../model/MutualFundsCountryExposure';
-import MutualFundsHoldings from '../model/MutualFundsHoldings';
-import MutualFundsProfile from '../model/MutualFundsProfile';
-import News from '../model/News';
 import NewsSentiment from '../model/NewsSentiment';
 import Ownership from '../model/Ownership';
 import PatternRecognition from '../model/PatternRecognition';
+import PressRelease from '../model/PressRelease';
 import PriceTarget from '../model/PriceTarget';
 import Quote from '../model/Quote';
 import RecommendationTrend from '../model/RecommendationTrend';
@@ -69,8 +71,8 @@ import SECSentimentAnalysis from '../model/SECSentimentAnalysis';
 import SimilarityIndex from '../model/SimilarityIndex';
 import SocialSentiment from '../model/SocialSentiment';
 import Split from '../model/Split';
-import Stock from '../model/Stock';
 import StockCandles from '../model/StockCandles';
+import StockSymbol from '../model/StockSymbol';
 import SupplyChainRelationships from '../model/SupplyChainRelationships';
 import SupportResistance from '../model/SupportResistance';
 import SymbolLookup from '../model/SymbolLookup';
@@ -80,7 +82,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.2
+* @version 1.2.5
 */
 export default class DefaultApi {
 
@@ -335,7 +337,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the companyNews operation.
      * @callback module:api/DefaultApi~companyNewsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/News>} data The data returned by the service call.
+     * @param {Array.<module:model/CompanyNews>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -346,7 +348,7 @@ export default class DefaultApi {
      * @param {Date} from From date <code>YYYY-MM-DD</code>.
      * @param {Date} to To date <code>YYYY-MM-DD</code>.
      * @param {module:api/DefaultApi~companyNewsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/News>}
+     * data is of type: {@link Array.<module:model/CompanyNews>}
      */
     companyNews(symbol, from, to, callback) {
       let postBody = null;
@@ -378,7 +380,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [News];
+      let returnType = [CompanyNews];
       return this.apiClient.callApi(
         '/company-news', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -829,31 +831,25 @@ export default class DefaultApi {
     }
 
     /**
-     * Callback function to receive the result of the earningsCallTranscriptsApi operation.
-     * @callback module:api/DefaultApi~earningsCallTranscriptsApiCallback
+     * Callback function to receive the result of the economicCalendar operation.
+     * @callback module:api/DefaultApi~economicCalendarCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/EarningsCallTranscripts} data The data returned by the service call.
+     * @param {module:model/EconomicCalendar} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Earnings Call Transcripts
-     * <p>Get earnings call transcripts, audio and participants' list. This endpoint is only available for US, UK, and Candian companies. <p>15+ years of data is available with 220,000+ audio which add up to 7TB in size.</p>
-     * @param {String} id Transcript's id obtained with <a href=\"#transcripts-list\">Transcripts List endpoint</a>.
-     * @param {module:api/DefaultApi~earningsCallTranscriptsApiCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/EarningsCallTranscripts}
+     * Economic Calendar
+     * <p>Get recent and upcoming economic releases.</p><p>Historical events and surprises are available for Enterprise clients.</p>
+     * @param {module:api/DefaultApi~economicCalendarCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EconomicCalendar}
      */
-    earningsCallTranscriptsApi(id, callback) {
+    economicCalendar(callback) {
       let postBody = null;
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling earningsCallTranscriptsApi");
-      }
 
       let pathParams = {
       };
       let queryParams = {
-        'id': id
       };
       let headerParams = {
       };
@@ -863,9 +859,9 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = EarningsCallTranscripts;
+      let returnType = EconomicCalendar;
       return this.apiClient.callApi(
-        '/stock/transcripts', 'GET',
+        '/calendar/economic', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -1766,10 +1762,10 @@ export default class DefaultApi {
     }
 
     /**
-     * Callback function to receive the result of the investmentThemesThematicInvesting operation.
-     * @callback module:api/DefaultApi~investmentThemesThematicInvestingCallback
+     * Callback function to receive the result of the investmentThemes operation.
+     * @callback module:api/DefaultApi~investmentThemesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InvestmentThemesThematicInvesting} data The data returned by the service call.
+     * @param {module:model/InvestmentThemes} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1777,14 +1773,14 @@ export default class DefaultApi {
      * Investment Themes (Thematic Investing)
      * <p>Thematic investing involves creating a portfolio (or portion of a portfolio) by gathering together a collection of companies involved in certain areas that you predict will generate above-market returns over the long term. Themes can be based on a concept such as ageing populations or a sub-sector such as robotics, and drones. Thematic investing focuses on predicted long-term trends rather than specific companies or sectors, enabling investors to access structural, one-off shifts that can change an entire industry.</p><p>This endpoint will help you get portfolios of different investment themes that are changing our life and are the way of the future.</p><p>A full list of themes supported can be found <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1ULj9xDh4iPoQj279M084adZ2_S852ttRthKKJ7madYc/edit?usp=sharing\">here</a>. The theme coverage and portfolios are updated bi-weekly by our analysts. Our approach excludes penny, super-small cap and illiquid stocks.</p>
      * @param {String} theme Investment theme. A full list of themes supported can be found <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1ULj9xDh4iPoQj279M084adZ2_S852ttRthKKJ7madYc/edit?usp=sharing\">here</a>.
-     * @param {module:api/DefaultApi~investmentThemesThematicInvestingCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InvestmentThemesThematicInvesting}
+     * @param {module:api/DefaultApi~investmentThemesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InvestmentThemes}
      */
-    investmentThemesThematicInvesting(theme, callback) {
+    investmentThemes(theme, callback) {
       let postBody = null;
       // verify the required parameter 'theme' is set
       if (theme === undefined || theme === null) {
-        throw new Error("Missing the required parameter 'theme' when calling investmentThemesThematicInvesting");
+        throw new Error("Missing the required parameter 'theme' when calling investmentThemes");
       }
 
       let pathParams = {
@@ -1800,7 +1796,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InvestmentThemesThematicInvesting;
+      let returnType = InvestmentThemes;
       return this.apiClient.callApi(
         '/stock/investment-theme', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1861,7 +1857,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the marketNews operation.
      * @callback module:api/DefaultApi~marketNewsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/News>} data The data returned by the service call.
+     * @param {Array.<module:model/MarketNews>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1872,7 +1868,7 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.minId Use this field to get only news after this ID. Default to 0
      * @param {module:api/DefaultApi~marketNewsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/News>}
+     * data is of type: {@link Array.<module:model/MarketNews>}
      */
     marketNews(category, opts, callback) {
       opts = opts || {};
@@ -1896,7 +1892,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [News];
+      let returnType = [MarketNews];
       return this.apiClient.callApi(
         '/news', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1908,7 +1904,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the mutualFundCountryExposure operation.
      * @callback module:api/DefaultApi~mutualFundCountryExposureCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/MutualFundsCountryExposure} data The data returned by the service call.
+     * @param {module:model/MutualFundCountryExposure} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1917,7 +1913,7 @@ export default class DefaultApi {
      * Get Mutual Funds country exposure data.
      * @param {String} symbol Symbol.
      * @param {module:api/DefaultApi~mutualFundCountryExposureCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/MutualFundsCountryExposure}
+     * data is of type: {@link module:model/MutualFundCountryExposure}
      */
     mutualFundCountryExposure(symbol, callback) {
       let postBody = null;
@@ -1939,7 +1935,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = MutualFundsCountryExposure;
+      let returnType = MutualFundCountryExposure;
       return this.apiClient.callApi(
         '/mutual-fund/country', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1951,7 +1947,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the mutualFundHoldings operation.
      * @callback module:api/DefaultApi~mutualFundHoldingsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/MutualFundsHoldings} data The data returned by the service call.
+     * @param {module:model/MutualFundHoldings} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1963,7 +1959,7 @@ export default class DefaultApi {
      * @param {String} opts.isin Fund's isin.
      * @param {Number} opts.skip Skip the first n results. You can use this parameter to query historical constituents data. The latest result is returned if skip=0 or not set.
      * @param {module:api/DefaultApi~mutualFundHoldingsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/MutualFundsHoldings}
+     * data is of type: {@link module:model/MutualFundHoldings}
      */
     mutualFundHoldings(opts, callback) {
       opts = opts || {};
@@ -1984,7 +1980,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = MutualFundsHoldings;
+      let returnType = MutualFundHoldings;
       return this.apiClient.callApi(
         '/mutual-fund/holdings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1996,7 +1992,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the mutualFundProfile operation.
      * @callback module:api/DefaultApi~mutualFundProfileCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/MutualFundsProfile} data The data returned by the service call.
+     * @param {module:model/MutualFundProfile} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -2007,7 +2003,7 @@ export default class DefaultApi {
      * @param {String} opts.symbol Fund's symbol.
      * @param {String} opts.isin Fund's isin.
      * @param {module:api/DefaultApi~mutualFundProfileCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/MutualFundsProfile}
+     * data is of type: {@link module:model/MutualFundProfile}
      */
     mutualFundProfile(opts, callback) {
       opts = opts || {};
@@ -2027,7 +2023,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = MutualFundsProfile;
+      let returnType = MutualFundProfile;
       return this.apiClient.callApi(
         '/mutual-fund/profile', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2044,7 +2040,7 @@ export default class DefaultApi {
      */
 
     /**
-     * Mutual-fund Sector Exposure
+     * Mutual Funds Sector Exposure
      * Get Mutual Funds sector exposure data.
      * @param {String} symbol Mutual Fund symbol.
      * @param {module:api/DefaultApi~mutualFundSectorExposureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -2221,7 +2217,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the pressReleases operation.
      * @callback module:api/DefaultApi~pressReleasesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/MajorPressReleases} data The data returned by the service call.
+     * @param {module:model/PressRelease} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -2233,7 +2229,7 @@ export default class DefaultApi {
      * @param {Date} opts.from From time: 2020-01-01.
      * @param {Date} opts.to To time: 2020-01-05.
      * @param {module:api/DefaultApi~pressReleasesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/MajorPressReleases}
+     * data is of type: {@link module:model/PressRelease}
      */
     pressReleases(symbol, opts, callback) {
       opts = opts || {};
@@ -2258,7 +2254,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = MajorPressReleases;
+      let returnType = PressRelease;
       return this.apiClient.callApi(
         '/press-releases', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2536,7 +2532,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the stockBasicDividends operation.
      * @callback module:api/DefaultApi~stockBasicDividendsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Dividends2Basic} data The data returned by the service call.
+     * @param {module:model/Dividends2} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -2545,7 +2541,7 @@ export default class DefaultApi {
      * Get global dividends data.
      * @param {String} symbol Symbol.
      * @param {module:api/DefaultApi~stockBasicDividendsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Dividends2Basic}
+     * data is of type: {@link module:model/Dividends2}
      */
     stockBasicDividends(symbol, callback) {
       let postBody = null;
@@ -2567,7 +2563,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Dividends2Basic;
+      let returnType = Dividends2;
       return this.apiClient.callApi(
         '/stock/dividend2', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2858,7 +2854,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the stockSymbols operation.
      * @callback module:api/DefaultApi~stockSymbolsCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Stock>} data The data returned by the service call.
+     * @param {Array.<module:model/StockSymbol>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -2871,7 +2867,7 @@ export default class DefaultApi {
      * @param {String} opts.securityType Filter by security type used by OpenFigi standard.
      * @param {String} opts.currency Filter by currency.
      * @param {module:api/DefaultApi~stockSymbolsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Stock>}
+     * data is of type: {@link Array.<module:model/StockSymbol>}
      */
     stockSymbols(exchange, opts, callback) {
       opts = opts || {};
@@ -2897,7 +2893,7 @@ export default class DefaultApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Stock];
+      let returnType = [StockSymbol];
       return this.apiClient.callApi(
         '/stock/symbol', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -3166,6 +3162,49 @@ export default class DefaultApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/indicator', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the transcripts operation.
+     * @callback module:api/DefaultApi~transcriptsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EarningsCallTranscripts} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Earnings Call Transcripts
+     * <p>Get earnings call transcripts, audio and participants' list. This endpoint is only available for US, UK, and Candian companies. <p>15+ years of data is available with 220,000+ audio which add up to 7TB in size.</p>
+     * @param {String} id Transcript's id obtained with <a href=\"#transcripts-list\">Transcripts List endpoint</a>.
+     * @param {module:api/DefaultApi~transcriptsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EarningsCallTranscripts}
+     */
+    transcripts(id, callback) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling transcripts");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'id': id
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EarningsCallTranscripts;
+      return this.apiClient.callApi(
+        '/stock/transcripts', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

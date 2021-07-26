@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StockTranscripts model module.
  * @module model/StockTranscripts
- * @version 1.2.2
+ * @version 1.2.5
  */
 var StockTranscripts = /*#__PURE__*/function () {
   /**
@@ -63,7 +63,7 @@ var StockTranscripts = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('time')) {
-          obj['time'] = _ApiClient["default"].convertToType(data['time'], 'Date');
+          obj['time'] = _ApiClient["default"].convertToType(data['time'], 'String');
         }
 
         if (data.hasOwnProperty('year')) {
@@ -96,7 +96,7 @@ StockTranscripts.prototype['id'] = undefined;
 StockTranscripts.prototype['title'] = undefined;
 /**
  * Time of the event.
- * @member {Date} time
+ * @member {String} time
  */
 
 StockTranscripts.prototype['time'] = undefined;

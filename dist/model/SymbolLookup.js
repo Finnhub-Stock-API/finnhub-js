@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _SymbolLookupInfo = _interopRequireDefault(require("./SymbolLookupInfo"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SymbolLookup model module.
  * @module model/SymbolLookup
- * @version 1.2.2
+ * @version 1.2.5
  */
 var SymbolLookup = /*#__PURE__*/function () {
   /**
@@ -55,7 +57,7 @@ var SymbolLookup = /*#__PURE__*/function () {
         obj = obj || new SymbolLookup();
 
         if (data.hasOwnProperty('result')) {
-          obj['result'] = _ApiClient["default"].convertToType(data['result'], [Object]);
+          obj['result'] = _ApiClient["default"].convertToType(data['result'], [_SymbolLookupInfo["default"]]);
         }
 
         if (data.hasOwnProperty('count')) {
@@ -71,7 +73,7 @@ var SymbolLookup = /*#__PURE__*/function () {
 }();
 /**
  * Array of search results.
- * @member {Array.<Object>} result
+ * @member {Array.<module:model/SymbolLookupInfo>} result
  */
 
 
