@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import EarningRelease from './EarningRelease';
 
 /**
  * The EarningsCalendar model module.
  * @module model/EarningsCalendar
- * @version 1.2.2
+ * @version 1.2.5
  */
 class EarningsCalendar {
     /**
@@ -48,7 +49,7 @@ class EarningsCalendar {
             obj = obj || new EarningsCalendar();
 
             if (data.hasOwnProperty('earningsCalendar')) {
-                obj['earningsCalendar'] = ApiClient.convertToType(data['earningsCalendar'], [Object]);
+                obj['earningsCalendar'] = ApiClient.convertToType(data['earningsCalendar'], [EarningRelease]);
             }
         }
         return obj;
@@ -59,7 +60,7 @@ class EarningsCalendar {
 
 /**
  * Array of earnings release.
- * @member {Array.<Object>} earningsCalendar
+ * @member {Array.<module:model/EarningRelease>} earningsCalendar
  */
 EarningsCalendar.prototype['earningsCalendar'] = undefined;
 

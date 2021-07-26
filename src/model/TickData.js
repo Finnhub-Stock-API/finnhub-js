@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TickData model module.
  * @module model/TickData
- * @version 1.2.2
+ * @version 1.2.5
  */
 class TickData {
     /**
@@ -72,7 +72,7 @@ class TickData {
                 obj['x'] = ApiClient.convertToType(data['x'], ['String']);
             }
             if (data.hasOwnProperty('c')) {
-                obj['c'] = ApiClient.convertToType(data['c'], [[NULL_SCHEMA_ERR]]);
+                obj['c'] = ApiClient.convertToType(data['c'], [['String']]);
             }
         }
         return obj;

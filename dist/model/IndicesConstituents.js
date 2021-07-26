@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IndicesConstituents model module.
  * @module model/IndicesConstituents
- * @version 1.2.2
+ * @version 1.2.5
  */
 var IndicesConstituents = /*#__PURE__*/function () {
   /**

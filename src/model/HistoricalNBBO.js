@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalNBBO model module.
  * @module model/HistoricalNBBO
- * @version 1.2.2
+ * @version 1.2.5
  */
 class HistoricalNBBO {
     /**
@@ -81,7 +81,7 @@ class HistoricalNBBO {
                 obj['t'] = ApiClient.convertToType(data['t'], ['Number']);
             }
             if (data.hasOwnProperty('c')) {
-                obj['c'] = ApiClient.convertToType(data['c'], [[NULL_SCHEMA_ERR]]);
+                obj['c'] = ApiClient.convertToType(data['c'], [['String']]);
             }
         }
         return obj;

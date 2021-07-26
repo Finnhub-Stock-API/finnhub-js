@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PriceTarget model module.
  * @module model/PriceTarget
- * @version 1.2.2
+ * @version 1.2.5
  */
 var PriceTarget = /*#__PURE__*/function () {
   /**
@@ -75,7 +75,7 @@ var PriceTarget = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('lastUpdated')) {
-          obj['lastUpdated'] = _ApiClient["default"].convertToType(data['lastUpdated'], 'Date');
+          obj['lastUpdated'] = _ApiClient["default"].convertToType(data['lastUpdated'], 'String');
         }
       }
 
@@ -118,7 +118,7 @@ PriceTarget.prototype['targetMean'] = undefined;
 PriceTarget.prototype['targetMedian'] = undefined;
 /**
  * Updated time of the data
- * @member {Date} lastUpdated
+ * @member {String} lastUpdated
  */
 
 PriceTarget.prototype['lastUpdated'] = undefined;

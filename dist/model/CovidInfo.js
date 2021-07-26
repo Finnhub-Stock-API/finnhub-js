@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CovidInfo model module.
  * @module model/CovidInfo
- * @version 1.2.2
+ * @version 1.2.5
  */
 var CovidInfo = /*#__PURE__*/function () {
   /**
@@ -67,7 +67,7 @@ var CovidInfo = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('updated')) {
-          obj['updated'] = _ApiClient["default"].convertToType(data['updated'], 'Date');
+          obj['updated'] = _ApiClient["default"].convertToType(data['updated'], 'String');
         }
       }
 
@@ -98,7 +98,7 @@ CovidInfo.prototype['case'] = undefined;
 CovidInfo.prototype['death'] = undefined;
 /**
  * Updated time.
- * @member {Date} updated
+ * @member {String} updated
  */
 
 CovidInfo.prototype['updated'] = undefined;

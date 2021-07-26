@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import BreakdownItem from './BreakdownItem';
 
 /**
  * The RevenueBreakdown model module.
  * @module model/RevenueBreakdown
- * @version 1.2.2
+ * @version 1.2.5
  */
 class RevenueBreakdown {
     /**
@@ -54,7 +55,7 @@ class RevenueBreakdown {
                 obj['cik'] = ApiClient.convertToType(data['cik'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+                obj['data'] = ApiClient.convertToType(data['data'], [BreakdownItem]);
             }
         }
         return obj;
@@ -77,7 +78,7 @@ RevenueBreakdown.prototype['cik'] = undefined;
 
 /**
  * Array of revenue breakdown over multiple periods.
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/BreakdownItem>} data
  */
 RevenueBreakdown.prototype['data'] = undefined;
 

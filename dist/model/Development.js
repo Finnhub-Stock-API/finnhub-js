@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Development model module.
  * @module model/Development
- * @version 1.2.2
+ * @version 1.2.5
  */
 var Development = /*#__PURE__*/function () {
   /**
@@ -59,7 +59,7 @@ var Development = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('datetime')) {
-          obj['datetime'] = _ApiClient["default"].convertToType(data['datetime'], 'Date');
+          obj['datetime'] = _ApiClient["default"].convertToType(data['datetime'], 'String');
         }
 
         if (data.hasOwnProperty('headline')) {
@@ -90,7 +90,7 @@ var Development = /*#__PURE__*/function () {
 Development.prototype['symbol'] = undefined;
 /**
  * Published time in <code>YYYY-MM-DD HH:MM:SS</code> format.
- * @member {Date} datetime
+ * @member {String} datetime
  */
 
 Development.prototype['datetime'] = undefined;

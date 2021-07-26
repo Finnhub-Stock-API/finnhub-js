@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _OwnershipInfo = _interopRequireDefault(require("./OwnershipInfo"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Ownership model module.
  * @module model/Ownership
- * @version 1.2.2
+ * @version 1.2.5
  */
 var Ownership = /*#__PURE__*/function () {
   /**
@@ -59,7 +61,7 @@ var Ownership = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('ownership')) {
-          obj['ownership'] = _ApiClient["default"].convertToType(data['ownership'], [Object]);
+          obj['ownership'] = _ApiClient["default"].convertToType(data['ownership'], [_OwnershipInfo["default"]]);
         }
       }
 
@@ -78,7 +80,7 @@ var Ownership = /*#__PURE__*/function () {
 Ownership.prototype['symbol'] = undefined;
 /**
  * Array of investors with detailed information about their holdings.
- * @member {Array.<Object>} ownership
+ * @member {Array.<module:model/OwnershipInfo>} ownership
  */
 
 Ownership.prototype['ownership'] = undefined;

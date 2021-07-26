@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _MutualFundSectorExposureData = _interopRequireDefault(require("./MutualFundSectorExposureData"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MutualFundSectorExposure model module.
  * @module model/MutualFundSectorExposure
- * @version 1.2.2
+ * @version 1.2.5
  */
 var MutualFundSectorExposure = /*#__PURE__*/function () {
   /**
@@ -59,7 +61,7 @@ var MutualFundSectorExposure = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('sectorExposure')) {
-          obj['sectorExposure'] = _ApiClient["default"].convertToType(data['sectorExposure'], [Object]);
+          obj['sectorExposure'] = _ApiClient["default"].convertToType(data['sectorExposure'], [_MutualFundSectorExposureData["default"]]);
         }
       }
 
@@ -78,7 +80,7 @@ var MutualFundSectorExposure = /*#__PURE__*/function () {
 MutualFundSectorExposure.prototype['symbol'] = undefined;
 /**
  * Array of sector and exposure levels.
- * @member {Array.<Object>} sectorExposure
+ * @member {Array.<module:model/MutualFundSectorExposureData>} sectorExposure
  */
 
 MutualFundSectorExposure.prototype['sectorExposure'] = undefined;

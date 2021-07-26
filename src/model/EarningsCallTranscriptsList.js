@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import StockTranscripts from './StockTranscripts';
 
 /**
  * The EarningsCallTranscriptsList model module.
  * @module model/EarningsCallTranscriptsList
- * @version 1.2.2
+ * @version 1.2.5
  */
 class EarningsCallTranscriptsList {
     /**
@@ -51,7 +52,7 @@ class EarningsCallTranscriptsList {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('transcripts')) {
-                obj['transcripts'] = ApiClient.convertToType(data['transcripts'], [Object]);
+                obj['transcripts'] = ApiClient.convertToType(data['transcripts'], [StockTranscripts]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ EarningsCallTranscriptsList.prototype['symbol'] = undefined;
 
 /**
  * Array of transcripts' metadata
- * @member {Array.<Object>} transcripts
+ * @member {Array.<module:model/StockTranscripts>} transcripts
  */
 EarningsCallTranscriptsList.prototype['transcripts'] = undefined;
 

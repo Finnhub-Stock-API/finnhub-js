@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _KeyCustomersSuppliers = _interopRequireDefault(require("./KeyCustomersSuppliers"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SupplyChainRelationships model module.
  * @module model/SupplyChainRelationships
- * @version 1.2.2
+ * @version 1.2.5
  */
 var SupplyChainRelationships = /*#__PURE__*/function () {
   /**
@@ -59,7 +61,7 @@ var SupplyChainRelationships = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [Object]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_KeyCustomersSuppliers["default"]]);
         }
       }
 
@@ -78,7 +80,7 @@ var SupplyChainRelationships = /*#__PURE__*/function () {
 SupplyChainRelationships.prototype['symbol'] = undefined;
 /**
  * Key customers and suppliers.
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/KeyCustomersSuppliers>} data
  */
 
 SupplyChainRelationships.prototype['data'] = undefined;

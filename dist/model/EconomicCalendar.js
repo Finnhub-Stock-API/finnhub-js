@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _EconomicEvent = _interopRequireDefault(require("./EconomicEvent"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EconomicCalendar model module.
  * @module model/EconomicCalendar
- * @version 1.2.2
+ * @version 1.2.5
  */
 var EconomicCalendar = /*#__PURE__*/function () {
   /**
@@ -55,7 +57,7 @@ var EconomicCalendar = /*#__PURE__*/function () {
         obj = obj || new EconomicCalendar();
 
         if (data.hasOwnProperty('economicCalendar')) {
-          obj['economicCalendar'] = _ApiClient["default"].convertToType(data['economicCalendar'], [Object]);
+          obj['economicCalendar'] = _ApiClient["default"].convertToType(data['economicCalendar'], [_EconomicEvent["default"]]);
         }
       }
 
@@ -67,7 +69,7 @@ var EconomicCalendar = /*#__PURE__*/function () {
 }();
 /**
  * Array of economic events.
- * @member {Array.<Object>} economicCalendar
+ * @member {Array.<module:model/EconomicEvent>} economicCalendar
  */
 
 

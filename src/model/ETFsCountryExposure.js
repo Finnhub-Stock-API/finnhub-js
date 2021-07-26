@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import ETFCountryExposureData from './ETFCountryExposureData';
 
 /**
  * The ETFsCountryExposure model module.
  * @module model/ETFsCountryExposure
- * @version 1.2.2
+ * @version 1.2.5
  */
 class ETFsCountryExposure {
     /**
@@ -51,7 +52,7 @@ class ETFsCountryExposure {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('countryExposure')) {
-                obj['countryExposure'] = ApiClient.convertToType(data['countryExposure'], [Object]);
+                obj['countryExposure'] = ApiClient.convertToType(data['countryExposure'], [ETFCountryExposureData]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ ETFsCountryExposure.prototype['symbol'] = undefined;
 
 /**
  * Array of countries and and exposure levels.
- * @member {Array.<Object>} countryExposure
+ * @member {Array.<module:model/ETFCountryExposureData>} countryExposure
  */
 ETFsCountryExposure.prototype['countryExposure'] = undefined;
 

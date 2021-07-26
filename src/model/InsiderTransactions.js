@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import Transactions from './Transactions';
 
 /**
  * The InsiderTransactions model module.
  * @module model/InsiderTransactions
- * @version 1.2.2
+ * @version 1.2.5
  */
 class InsiderTransactions {
     /**
@@ -51,7 +52,7 @@ class InsiderTransactions {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Object]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Transactions]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ InsiderTransactions.prototype['symbol'] = undefined;
 
 /**
  * Array of insider transactions.
- * @member {Array.<Object>} data
+ * @member {Array.<module:model/Transactions>} data
  */
 InsiderTransactions.prototype['data'] = undefined;
 

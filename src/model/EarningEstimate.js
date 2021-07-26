@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningEstimate model module.
  * @module model/EarningEstimate
- * @version 1.2.2
+ * @version 1.2.5
  */
 class EarningEstimate {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TickData model module.
  * @module model/TickData
- * @version 1.2.2
+ * @version 1.2.5
  */
 var TickData = /*#__PURE__*/function () {
   /**
@@ -87,7 +87,7 @@ var TickData = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('c')) {
-          obj['c'] = _ApiClient["default"].convertToType(data['c'], [[NULL_SCHEMA_ERR]]);
+          obj['c'] = _ApiClient["default"].convertToType(data['c'], [['String']]);
         }
       }
 

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ipoCalendar** | **[Object]** | Array of IPO events. | [optional] 
+**ipoCalendar** | [**[IPOEvent]**](IPOEvent.md) | Array of IPO events. | [optional] 
 
 

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **positiveScore** | **Number** | Positive score. Range 0-1 | [optional] 
 **negativeScore** | **Number** | Negative score. Range 0-1 | [optional] 
 **score** | **Number** | Final score. Range: -1 to 1 with 1 is very positive and -1 is very negative | [optional] 
-**atTime** | **Date** | Period. | [optional] 
+**atTime** | **String** | Period. | [optional] 
 
 

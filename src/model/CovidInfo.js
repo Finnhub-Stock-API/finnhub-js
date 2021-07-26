@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CovidInfo model module.
  * @module model/CovidInfo
- * @version 1.2.2
+ * @version 1.2.5
  */
 class CovidInfo {
     /**
@@ -57,7 +57,7 @@ class CovidInfo {
                 obj['death'] = ApiClient.convertToType(data['death'], 'Number');
             }
             if (data.hasOwnProperty('updated')) {
-                obj['updated'] = ApiClient.convertToType(data['updated'], 'Date');
+                obj['updated'] = ApiClient.convertToType(data['updated'], 'String');
             }
         }
         return obj;
@@ -86,7 +86,7 @@ CovidInfo.prototype['death'] = undefined;
 
 /**
  * Updated time.
- * @member {Date} updated
+ * @member {String} updated
  */
 CovidInfo.prototype['updated'] = undefined;
 

@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _EarningRelease = _interopRequireDefault(require("./EarningRelease"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningsCalendar model module.
  * @module model/EarningsCalendar
- * @version 1.2.2
+ * @version 1.2.5
  */
 var EarningsCalendar = /*#__PURE__*/function () {
   /**
@@ -55,7 +57,7 @@ var EarningsCalendar = /*#__PURE__*/function () {
         obj = obj || new EarningsCalendar();
 
         if (data.hasOwnProperty('earningsCalendar')) {
-          obj['earningsCalendar'] = _ApiClient["default"].convertToType(data['earningsCalendar'], [Object]);
+          obj['earningsCalendar'] = _ApiClient["default"].convertToType(data['earningsCalendar'], [_EarningRelease["default"]]);
         }
       }
 
@@ -67,7 +69,7 @@ var EarningsCalendar = /*#__PURE__*/function () {
 }();
 /**
  * Array of earnings release.
- * @member {Array.<Object>} earningsCalendar
+ * @member {Array.<module:model/EarningRelease>} earningsCalendar
  */
 
 

@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ETFHoldingsData = _interopRequireDefault(require("./ETFHoldingsData"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ETFsHoldings model module.
  * @module model/ETFsHoldings
- * @version 1.2.2
+ * @version 1.2.5
  */
 var ETFsHoldings = /*#__PURE__*/function () {
   /**
@@ -67,7 +69,7 @@ var ETFsHoldings = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('holdings')) {
-          obj['holdings'] = _ApiClient["default"].convertToType(data['holdings'], [Object]);
+          obj['holdings'] = _ApiClient["default"].convertToType(data['holdings'], [_ETFHoldingsData["default"]]);
         }
       }
 
@@ -98,7 +100,7 @@ ETFsHoldings.prototype['atDate'] = undefined;
 ETFsHoldings.prototype['numberOfHoldings'] = undefined;
 /**
  * Array of holdings.
- * @member {Array.<Object>} holdings
+ * @member {Array.<module:model/ETFHoldingsData>} holdings
  */
 
 ETFsHoldings.prototype['holdings'] = undefined;

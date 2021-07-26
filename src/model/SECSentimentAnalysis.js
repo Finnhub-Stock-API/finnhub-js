@@ -17,7 +17,7 @@ import FilingSentiment from './FilingSentiment';
 /**
  * The SECSentimentAnalysis model module.
  * @module model/SECSentimentAnalysis
- * @version 1.2.2
+ * @version 1.2.5
  */
 class SECSentimentAnalysis {
     /**

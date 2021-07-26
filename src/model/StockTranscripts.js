@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StockTranscripts model module.
  * @module model/StockTranscripts
- * @version 1.2.2
+ * @version 1.2.5
  */
 class StockTranscripts {
     /**
@@ -54,7 +54,7 @@ class StockTranscripts {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
             if (data.hasOwnProperty('time')) {
-                obj['time'] = ApiClient.convertToType(data['time'], 'Date');
+                obj['time'] = ApiClient.convertToType(data['time'], 'String');
             }
             if (data.hasOwnProperty('year')) {
                 obj['year'] = ApiClient.convertToType(data['year'], 'Number');
@@ -83,7 +83,7 @@ StockTranscripts.prototype['title'] = undefined;
 
 /**
  * Time of the event.
- * @member {Date} time
+ * @member {String} time
  */
 StockTranscripts.prototype['time'] = undefined;
 

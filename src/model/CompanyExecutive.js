@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import Company from './Company';
 
 /**
  * The CompanyExecutive model module.
  * @module model/CompanyExecutive
- * @version 1.2.2
+ * @version 1.2.5
  */
 class CompanyExecutive {
     /**
@@ -51,7 +52,7 @@ class CompanyExecutive {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('executive')) {
-                obj['executive'] = ApiClient.convertToType(data['executive'], [Object]);
+                obj['executive'] = ApiClient.convertToType(data['executive'], [Company]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ CompanyExecutive.prototype['symbol'] = undefined;
 
 /**
  * Array of company's executives and members of the Board.
- * @member {Array.<Object>} executive
+ * @member {Array.<module:model/Company>} executive
  */
 CompanyExecutive.prototype['executive'] = undefined;
 

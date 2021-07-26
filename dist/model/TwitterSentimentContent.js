@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TwitterSentimentContent model module.
  * @module model/TwitterSentimentContent
- * @version 1.2.2
+ * @version 1.2.5
  */
 var TwitterSentimentContent = /*#__PURE__*/function () {
   /**
@@ -79,7 +79,7 @@ var TwitterSentimentContent = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('atTime')) {
-          obj['atTime'] = _ApiClient["default"].convertToType(data['atTime'], 'Date');
+          obj['atTime'] = _ApiClient["default"].convertToType(data['atTime'], 'String');
         }
       }
 
@@ -128,7 +128,7 @@ TwitterSentimentContent.prototype['negativeScore'] = undefined;
 TwitterSentimentContent.prototype['score'] = undefined;
 /**
  * Period.
- * @member {Date} atTime
+ * @member {String} atTime
  */
 
 TwitterSentimentContent.prototype['atTime'] = undefined;

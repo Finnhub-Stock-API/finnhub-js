@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FDAComitteeMeeting model module.
  * @module model/FDAComitteeMeeting
- * @version 1.2.2
+ * @version 1.2.5
  */
 class FDAComitteeMeeting {
     /**
@@ -48,10 +48,10 @@ class FDAComitteeMeeting {
             obj = obj || new FDAComitteeMeeting();
 
             if (data.hasOwnProperty('fromDate')) {
-                obj['fromDate'] = ApiClient.convertToType(data['fromDate'], 'Date');
+                obj['fromDate'] = ApiClient.convertToType(data['fromDate'], 'String');
             }
             if (data.hasOwnProperty('toDate')) {
-                obj['toDate'] = ApiClient.convertToType(data['toDate'], 'Date');
+                obj['toDate'] = ApiClient.convertToType(data['toDate'], 'String');
             }
             if (data.hasOwnProperty('eventDescription')) {
                 obj['eventDescription'] = ApiClient.convertToType(data['eventDescription'], 'String');
@@ -68,13 +68,13 @@ class FDAComitteeMeeting {
 
 /**
  * Start time of the event in EST.
- * @member {Date} fromDate
+ * @member {String} fromDate
  */
 FDAComitteeMeeting.prototype['fromDate'] = undefined;
 
 /**
  * End time of the event in EST.
- * @member {Date} toDate
+ * @member {String} toDate
  */
 FDAComitteeMeeting.prototype['toDate'] = undefined;
 

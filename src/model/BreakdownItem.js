@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BreakdownItem model module.
  * @module model/BreakdownItem
- * @version 1.2.2
+ * @version 1.2.5
  */
 class BreakdownItem {
     /**

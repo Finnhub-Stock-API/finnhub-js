@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Filing model module.
  * @module model/Filing
- * @version 1.2.2
+ * @version 1.2.5
  */
 class Filing {
     /**
@@ -60,10 +60,10 @@ class Filing {
                 obj['form'] = ApiClient.convertToType(data['form'], 'String');
             }
             if (data.hasOwnProperty('filedDate')) {
-                obj['filedDate'] = ApiClient.convertToType(data['filedDate'], 'Date');
+                obj['filedDate'] = ApiClient.convertToType(data['filedDate'], 'String');
             }
             if (data.hasOwnProperty('acceptedDate')) {
-                obj['acceptedDate'] = ApiClient.convertToType(data['acceptedDate'], 'Date');
+                obj['acceptedDate'] = ApiClient.convertToType(data['acceptedDate'], 'String');
             }
             if (data.hasOwnProperty('reportUrl')) {
                 obj['reportUrl'] = ApiClient.convertToType(data['reportUrl'], 'String');
@@ -104,13 +104,13 @@ Filing.prototype['form'] = undefined;
 
 /**
  * Filed date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} filedDate
+ * @member {String} filedDate
  */
 Filing.prototype['filedDate'] = undefined;
 
 /**
  * Accepted date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} acceptedDate
+ * @member {String} acceptedDate
  */
 Filing.prototype['acceptedDate'] = undefined;
 

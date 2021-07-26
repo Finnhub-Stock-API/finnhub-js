@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**earningsCalendar** | **[Object]** | Array of earnings release. | [optional] 
+**earningsCalendar** | [**[EarningRelease]**](EarningRelease.md) | Array of earnings release. | [optional] 
 
 

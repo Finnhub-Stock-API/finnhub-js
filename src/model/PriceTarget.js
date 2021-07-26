@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PriceTarget model module.
  * @module model/PriceTarget
- * @version 1.2.2
+ * @version 1.2.5
  */
 class PriceTarget {
     /**
@@ -63,7 +63,7 @@ class PriceTarget {
                 obj['targetMedian'] = ApiClient.convertToType(data['targetMedian'], 'Number');
             }
             if (data.hasOwnProperty('lastUpdated')) {
-                obj['lastUpdated'] = ApiClient.convertToType(data['lastUpdated'], 'Date');
+                obj['lastUpdated'] = ApiClient.convertToType(data['lastUpdated'], 'String');
             }
         }
         return obj;
@@ -104,7 +104,7 @@ PriceTarget.prototype['targetMedian'] = undefined;
 
 /**
  * Updated time of the data
- * @member {Date} lastUpdated
+ * @member {String} lastUpdated
  */
 PriceTarget.prototype['lastUpdated'] = undefined;
 

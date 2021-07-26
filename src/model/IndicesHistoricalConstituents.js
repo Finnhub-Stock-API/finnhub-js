@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import IndexHistoricalConstituent from './IndexHistoricalConstituent';
 
 /**
  * The IndicesHistoricalConstituents model module.
  * @module model/IndicesHistoricalConstituents
- * @version 1.2.2
+ * @version 1.2.5
  */
 class IndicesHistoricalConstituents {
     /**
@@ -51,7 +52,7 @@ class IndicesHistoricalConstituents {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('historicalConstituents')) {
-                obj['historicalConstituents'] = ApiClient.convertToType(data['historicalConstituents'], [Object]);
+                obj['historicalConstituents'] = ApiClient.convertToType(data['historicalConstituents'], [IndexHistoricalConstituent]);
             }
         }
         return obj;
@@ -68,7 +69,7 @@ IndicesHistoricalConstituents.prototype['symbol'] = undefined;
 
 /**
  * Array of historical constituents.
- * @member {Array.<Object>} historicalConstituents
+ * @member {Array.<module:model/IndexHistoricalConstituent>} historicalConstituents
  */
 IndicesHistoricalConstituents.prototype['historicalConstituents'] = undefined;
 

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BreakdownItem model module.
  * @module model/BreakdownItem
- * @version 1.2.2
+ * @version 1.2.5
  */
 var BreakdownItem = /*#__PURE__*/function () {
   /**

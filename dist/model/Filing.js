@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Filing model module.
  * @module model/Filing
- * @version 1.2.2
+ * @version 1.2.5
  */
 var Filing = /*#__PURE__*/function () {
   /**
@@ -71,11 +71,11 @@ var Filing = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('filedDate')) {
-          obj['filedDate'] = _ApiClient["default"].convertToType(data['filedDate'], 'Date');
+          obj['filedDate'] = _ApiClient["default"].convertToType(data['filedDate'], 'String');
         }
 
         if (data.hasOwnProperty('acceptedDate')) {
-          obj['acceptedDate'] = _ApiClient["default"].convertToType(data['acceptedDate'], 'Date');
+          obj['acceptedDate'] = _ApiClient["default"].convertToType(data['acceptedDate'], 'String');
         }
 
         if (data.hasOwnProperty('reportUrl')) {
@@ -120,13 +120,13 @@ Filing.prototype['cik'] = undefined;
 Filing.prototype['form'] = undefined;
 /**
  * Filed date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} filedDate
+ * @member {String} filedDate
  */
 
 Filing.prototype['filedDate'] = undefined;
 /**
  * Accepted date <code>%Y-%m-%d %H:%M:%S</code>.
- * @member {Date} acceptedDate
+ * @member {String} acceptedDate
  */
 
 Filing.prototype['acceptedDate'] = undefined;

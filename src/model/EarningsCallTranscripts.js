@@ -12,11 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import TranscriptContent from './TranscriptContent';
+import TranscriptParticipant from './TranscriptParticipant';
 
 /**
  * The EarningsCallTranscripts model module.
  * @module model/EarningsCallTranscripts
- * @version 1.2.2
+ * @version 1.2.5
  */
 class EarningsCallTranscripts {
     /**
@@ -51,10 +53,10 @@ class EarningsCallTranscripts {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
             if (data.hasOwnProperty('transcript')) {
-                obj['transcript'] = ApiClient.convertToType(data['transcript'], [Object]);
+                obj['transcript'] = ApiClient.convertToType(data['transcript'], [TranscriptContent]);
             }
             if (data.hasOwnProperty('participant')) {
-                obj['participant'] = ApiClient.convertToType(data['participant'], [Object]);
+                obj['participant'] = ApiClient.convertToType(data['participant'], [TranscriptParticipant]);
             }
             if (data.hasOwnProperty('audio')) {
                 obj['audio'] = ApiClient.convertToType(data['audio'], 'String');
@@ -66,7 +68,7 @@ class EarningsCallTranscripts {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
             if (data.hasOwnProperty('time')) {
-                obj['time'] = ApiClient.convertToType(data['time'], 'Date');
+                obj['time'] = ApiClient.convertToType(data['time'], 'String');
             }
             if (data.hasOwnProperty('year')) {
                 obj['year'] = ApiClient.convertToType(data['year'], 'Number');
@@ -89,13 +91,13 @@ EarningsCallTranscripts.prototype['symbol'] = undefined;
 
 /**
  * Transcript content.
- * @member {Array.<Object>} transcript
+ * @member {Array.<module:model/TranscriptContent>} transcript
  */
 EarningsCallTranscripts.prototype['transcript'] = undefined;
 
 /**
  * Participant list
- * @member {Array.<Object>} participant
+ * @member {Array.<module:model/TranscriptParticipant>} participant
  */
 EarningsCallTranscripts.prototype['participant'] = undefined;
 
@@ -119,7 +121,7 @@ EarningsCallTranscripts.prototype['title'] = undefined;
 
 /**
  * Time of the event.
- * @member {Date} time
+ * @member {String} time
  */
 EarningsCallTranscripts.prototype['time'] = undefined;
 

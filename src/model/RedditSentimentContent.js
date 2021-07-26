@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedditSentimentContent model module.
  * @module model/RedditSentimentContent
- * @version 1.2.2
+ * @version 1.2.5
  */
 class RedditSentimentContent {
     /**
@@ -66,7 +66,7 @@ class RedditSentimentContent {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
             }
             if (data.hasOwnProperty('atTime')) {
-                obj['atTime'] = ApiClient.convertToType(data['atTime'], 'Date');
+                obj['atTime'] = ApiClient.convertToType(data['atTime'], 'String');
             }
         }
         return obj;
@@ -113,7 +113,7 @@ RedditSentimentContent.prototype['score'] = undefined;
 
 /**
  * Period.
- * @member {Date} atTime
+ * @member {String} atTime
  */
 RedditSentimentContent.prototype['atTime'] = undefined;
 
