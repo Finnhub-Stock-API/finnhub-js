@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualFundProfileData model module.
  * @module model/MutualFundProfileData
- * @version 1.2.5
+ * @version 1.2.6
  */
 class MutualFundProfileData {
     /**

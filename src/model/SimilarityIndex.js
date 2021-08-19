@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Filing from './Filing';
+import SimilarityIndexInfo from './SimilarityIndexInfo';
 
 /**
  * The SimilarityIndex model module.
  * @module model/SimilarityIndex
- * @version 1.2.5
+ * @version 1.2.6
  */
 class SimilarityIndex {
     /**
@@ -55,7 +55,7 @@ class SimilarityIndex {
                 obj['cik'] = ApiClient.convertToType(data['cik'], 'String');
             }
             if (data.hasOwnProperty('similarity')) {
-                obj['similarity'] = ApiClient.convertToType(data['similarity'], [Filing]);
+                obj['similarity'] = ApiClient.convertToType(data['similarity'], [SimilarityIndexInfo]);
             }
         }
         return obj;
@@ -78,7 +78,7 @@ SimilarityIndex.prototype['cik'] = undefined;
 
 /**
  * Array of filings with its cosine similarity compared to the same report of the previous year.
- * @member {Array.<module:model/Filing>} similarity
+ * @member {Array.<module:model/SimilarityIndexInfo>} similarity
  */
 SimilarityIndex.prototype['similarity'] = undefined;
 

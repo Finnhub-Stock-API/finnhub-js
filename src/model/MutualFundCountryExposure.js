@@ -17,7 +17,7 @@ import MutualFundCountryExposureData from './MutualFundCountryExposureData';
 /**
  * The MutualFundCountryExposure model module.
  * @module model/MutualFundCountryExposure
- * @version 1.2.5
+ * @version 1.2.6
  */
 class MutualFundCountryExposure {
     /**

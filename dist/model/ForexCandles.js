@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ForexCandles model module.
  * @module model/ForexCandles
- * @version 1.2.5
+ * @version 1.2.6
  */
 var ForexCandles = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Transactions model module.
  * @module model/Transactions
- * @version 1.2.5
+ * @version 1.2.6
  */
 class Transactions {
     /**
@@ -66,7 +66,7 @@ class Transactions {
                 obj['transactionPrice'] = ApiClient.convertToType(data['transactionPrice'], 'Number');
             }
             if (data.hasOwnProperty('transactionCode')) {
-                obj['transactionCode'] = ApiClient.convertToType(data['transactionCode'], 'Date');
+                obj['transactionCode'] = ApiClient.convertToType(data['transactionCode'], 'String');
             }
         }
         return obj;
@@ -113,7 +113,7 @@ Transactions.prototype['transactionPrice'] = undefined;
 
 /**
  * Transaction code. A list of codes and their meanings can be found <a href=\"https://www.sec.gov/about/forms/form4data.pdf\" target=\"_blank\" rel=\"noopener\">here</a>.
- * @member {Date} transactionCode
+ * @member {String} transactionCode
  */
 Transactions.prototype['transactionCode'] = undefined;
 

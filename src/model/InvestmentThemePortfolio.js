@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InvestmentThemePortfolio model module.
  * @module model/InvestmentThemePortfolio
- * @version 1.2.5
+ * @version 1.2.6
  */
 class InvestmentThemePortfolio {
     /**

@@ -17,6 +17,7 @@ import AggregateIndicators from './model/AggregateIndicators';
 import BasicFinancials from './model/BasicFinancials';
 import BreakdownItem from './model/BreakdownItem';
 import Company from './model/Company';
+import CompanyESG from './model/CompanyESG';
 import CompanyExecutive from './model/CompanyExecutive';
 import CompanyNews from './model/CompanyNews';
 import CompanyNewsStatistics from './model/CompanyNewsStatistics';
@@ -38,19 +39,18 @@ import ETFsCountryExposure from './model/ETFsCountryExposure';
 import ETFsHoldings from './model/ETFsHoldings';
 import ETFsProfile from './model/ETFsProfile';
 import ETFsSectorExposure from './model/ETFsSectorExposure';
-import EarningEstimate from './model/EarningEstimate';
 import EarningRelease from './model/EarningRelease';
 import EarningResult from './model/EarningResult';
 import EarningsCalendar from './model/EarningsCalendar';
 import EarningsCallTranscripts from './model/EarningsCallTranscripts';
 import EarningsCallTranscriptsList from './model/EarningsCallTranscriptsList';
 import EarningsEstimates from './model/EarningsEstimates';
+import EarningsEstimatesInfo from './model/EarningsEstimatesInfo';
 import EconomicCalendar from './model/EconomicCalendar';
 import EconomicCode from './model/EconomicCode';
 import EconomicData from './model/EconomicData';
 import EconomicDataInfo from './model/EconomicDataInfo';
 import EconomicEvent from './model/EconomicEvent';
-import Estimate from './model/Estimate';
 import FDAComitteeMeeting from './model/FDAComitteeMeeting';
 import Filing from './model/Filing';
 import FilingSentiment from './model/FilingSentiment';
@@ -95,9 +95,11 @@ import RedditSentimentContent from './model/RedditSentimentContent';
 import Report from './model/Report';
 import RevenueBreakdown from './model/RevenueBreakdown';
 import RevenueEstimates from './model/RevenueEstimates';
+import RevenueEstimatesInfo from './model/RevenueEstimatesInfo';
 import SECSentimentAnalysis from './model/SECSentimentAnalysis';
 import Sentiment from './model/Sentiment';
 import SimilarityIndex from './model/SimilarityIndex';
+import SimilarityIndexInfo from './model/SimilarityIndexInfo';
 import SocialSentiment from './model/SocialSentiment';
 import Split from './model/Split';
 import StockCandles from './model/StockCandles';
@@ -147,7 +149,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.5
+* @version 1.2.6
 */
 export {
     /**
@@ -179,6 +181,12 @@ export {
      * @property {module:model/Company}
      */
     Company,
+
+    /**
+     * The CompanyESG model constructor.
+     * @property {module:model/CompanyESG}
+     */
+    CompanyESG,
 
     /**
      * The CompanyExecutive model constructor.
@@ -307,12 +315,6 @@ export {
     ETFsSectorExposure,
 
     /**
-     * The EarningEstimate model constructor.
-     * @property {module:model/EarningEstimate}
-     */
-    EarningEstimate,
-
-    /**
      * The EarningRelease model constructor.
      * @property {module:model/EarningRelease}
      */
@@ -349,6 +351,12 @@ export {
     EarningsEstimates,
 
     /**
+     * The EarningsEstimatesInfo model constructor.
+     * @property {module:model/EarningsEstimatesInfo}
+     */
+    EarningsEstimatesInfo,
+
+    /**
      * The EconomicCalendar model constructor.
      * @property {module:model/EconomicCalendar}
      */
@@ -377,12 +385,6 @@ export {
      * @property {module:model/EconomicEvent}
      */
     EconomicEvent,
-
-    /**
-     * The Estimate model constructor.
-     * @property {module:model/Estimate}
-     */
-    Estimate,
 
     /**
      * The FDAComitteeMeeting model constructor.
@@ -649,6 +651,12 @@ export {
     RevenueEstimates,
 
     /**
+     * The RevenueEstimatesInfo model constructor.
+     * @property {module:model/RevenueEstimatesInfo}
+     */
+    RevenueEstimatesInfo,
+
+    /**
      * The SECSentimentAnalysis model constructor.
      * @property {module:model/SECSentimentAnalysis}
      */
@@ -665,6 +673,12 @@ export {
      * @property {module:model/SimilarityIndex}
      */
     SimilarityIndex,
+
+    /**
+     * The SimilarityIndexInfo model constructor.
+     * @property {module:model/SimilarityIndexInfo}
+     */
+    SimilarityIndexInfo,
 
     /**
      * The SocialSentiment model constructor.

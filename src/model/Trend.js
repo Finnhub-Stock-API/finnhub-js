@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Trend model module.
  * @module model/Trend
- * @version 1.2.5
+ * @version 1.2.6
  */
 class Trend {
     /**

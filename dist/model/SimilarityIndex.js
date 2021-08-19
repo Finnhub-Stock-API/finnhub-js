@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Filing = _interopRequireDefault(require("./Filing"));
+var _SimilarityIndexInfo = _interopRequireDefault(require("./SimilarityIndexInfo"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SimilarityIndex model module.
  * @module model/SimilarityIndex
- * @version 1.2.5
+ * @version 1.2.6
  */
 var SimilarityIndex = /*#__PURE__*/function () {
   /**
@@ -65,7 +65,7 @@ var SimilarityIndex = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('similarity')) {
-          obj['similarity'] = _ApiClient["default"].convertToType(data['similarity'], [_Filing["default"]]);
+          obj['similarity'] = _ApiClient["default"].convertToType(data['similarity'], [_SimilarityIndexInfo["default"]]);
         }
       }
 
@@ -90,7 +90,7 @@ SimilarityIndex.prototype['symbol'] = undefined;
 SimilarityIndex.prototype['cik'] = undefined;
 /**
  * Array of filings with its cosine similarity compared to the same report of the previous year.
- * @member {Array.<module:model/Filing>} similarity
+ * @member {Array.<module:model/SimilarityIndexInfo>} similarity
  */
 
 SimilarityIndex.prototype['similarity'] = undefined;

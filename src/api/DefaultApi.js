@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import AggregateIndicators from '../model/AggregateIndicators';
 import BasicFinancials from '../model/BasicFinancials';
+import CompanyESG from '../model/CompanyESG';
 import CompanyExecutive from '../model/CompanyExecutive';
 import CompanyNews from '../model/CompanyNews';
 import CompanyProfile from '../model/CompanyProfile';
@@ -82,7 +83,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.5
+* @version 1.2.6
 */
 export default class DefaultApi {
 
@@ -285,6 +286,49 @@ export default class DefaultApi {
       let returnType = EarningsEstimates;
       return this.apiClient.callApi(
         '/stock/eps-estimate', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the companyEsgScore operation.
+     * @callback module:api/DefaultApi~companyEsgScoreCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CompanyESG} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Company ESG Scores
+     * <p>This endpoint provides ESG scores and important indicators for 1000+ global companies. The data is collected through company's public ESG disclosure and public sources.</p><p>Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.</p>
+     * @param {String} symbol Symbol.
+     * @param {module:api/DefaultApi~companyEsgScoreCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CompanyESG}
+     */
+    companyEsgScore(symbol, callback) {
+      let postBody = null;
+      // verify the required parameter 'symbol' is set
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling companyEsgScore");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'symbol': symbol
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CompanyESG;
+      return this.apiClient.callApi(
+        '/stock/esg', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -1866,7 +1910,7 @@ export default class DefaultApi {
      * Get latest market news.
      * @param {String} category This parameter can be 1 of the following values <code>general, forex, crypto, merger</code>.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.minId Use this field to get only news after this ID. Default to 0
+     * @param {Number} opts.minId Use this field to get only news after this ID. Default to 0
      * @param {module:api/DefaultApi~marketNewsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/MarketNews>}
      */
@@ -2624,18 +2668,15 @@ export default class DefaultApi {
 
     /**
      * Stock Candles
-     * <p>Get candlestick data (OHLCV) for stocks
+     * <p>Get candlestick data (OHLCV) for stocks.</p><p>Daily data will be adjusted for Splits. Intraday data will remain unadjusted.</p>
      * @param {String} symbol Symbol.
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {Number} from UNIX timestamp. Interval initial value.
      * @param {Number} to UNIX timestamp. Interval end value.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.adjusted DEPRECATED: this option has been deprecated. All Daily data will be adjusted for Splits and intraday data will remain unadjusted.
      * @param {module:api/DefaultApi~stockCandlesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/StockCandles}
      */
-    stockCandles(symbol, resolution, from, to, opts, callback) {
-      opts = opts || {};
+    stockCandles(symbol, resolution, from, to, callback) {
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -2660,8 +2701,7 @@ export default class DefaultApi {
         'symbol': symbol,
         'resolution': resolution,
         'from': from,
-        'to': to,
-        'adjusted': opts['adjusted']
+        'to': to
       };
       let headerParams = {
       };

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PatternRecognition model module.
  * @module model/PatternRecognition
- * @version 1.2.5
+ * @version 1.2.6
  */
 class PatternRecognition {
     /**

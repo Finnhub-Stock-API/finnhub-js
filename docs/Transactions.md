@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **filingDate** | **Date** | Filing date. | [optional] 
 **transactionDate** | **Date** | Transaction date. | [optional] 
 **transactionPrice** | **Number** | Average transaction price. | [optional] 
-**transactionCode** | **Date** | Transaction code. A list of codes and their meanings can be found &lt;a href&#x3D;\&quot;https://www.sec.gov/about/forms/form4data.pdf\&quot; target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener\&quot;&gt;here&lt;/a&gt;. | [optional] 
+**transactionCode** | **String** | Transaction code. A list of codes and their meanings can be found &lt;a href&#x3D;\&quot;https://www.sec.gov/about/forms/form4data.pdf\&quot; target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener\&quot;&gt;here&lt;/a&gt;. | [optional] 
 
 
