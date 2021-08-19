@@ -33,6 +33,12 @@ Object.defineProperty(exports, "Company", {
     return _Company["default"];
   }
 });
+Object.defineProperty(exports, "CompanyESG", {
+  enumerable: true,
+  get: function get() {
+    return _CompanyESG["default"];
+  }
+});
 Object.defineProperty(exports, "CompanyExecutive", {
   enumerable: true,
   get: function get() {
@@ -159,12 +165,6 @@ Object.defineProperty(exports, "ETFsSectorExposure", {
     return _ETFsSectorExposure["default"];
   }
 });
-Object.defineProperty(exports, "EarningEstimate", {
-  enumerable: true,
-  get: function get() {
-    return _EarningEstimate["default"];
-  }
-});
 Object.defineProperty(exports, "EarningRelease", {
   enumerable: true,
   get: function get() {
@@ -201,6 +201,12 @@ Object.defineProperty(exports, "EarningsEstimates", {
     return _EarningsEstimates["default"];
   }
 });
+Object.defineProperty(exports, "EarningsEstimatesInfo", {
+  enumerable: true,
+  get: function get() {
+    return _EarningsEstimatesInfo["default"];
+  }
+});
 Object.defineProperty(exports, "EconomicCalendar", {
   enumerable: true,
   get: function get() {
@@ -229,12 +235,6 @@ Object.defineProperty(exports, "EconomicEvent", {
   enumerable: true,
   get: function get() {
     return _EconomicEvent["default"];
-  }
-});
-Object.defineProperty(exports, "Estimate", {
-  enumerable: true,
-  get: function get() {
-    return _Estimate["default"];
   }
 });
 Object.defineProperty(exports, "FDAComitteeMeeting", {
@@ -501,6 +501,12 @@ Object.defineProperty(exports, "RevenueEstimates", {
     return _RevenueEstimates["default"];
   }
 });
+Object.defineProperty(exports, "RevenueEstimatesInfo", {
+  enumerable: true,
+  get: function get() {
+    return _RevenueEstimatesInfo["default"];
+  }
+});
 Object.defineProperty(exports, "SECSentimentAnalysis", {
   enumerable: true,
   get: function get() {
@@ -517,6 +523,12 @@ Object.defineProperty(exports, "SimilarityIndex", {
   enumerable: true,
   get: function get() {
     return _SimilarityIndex["default"];
+  }
+});
+Object.defineProperty(exports, "SimilarityIndexInfo", {
+  enumerable: true,
+  get: function get() {
+    return _SimilarityIndexInfo["default"];
   }
 });
 Object.defineProperty(exports, "SocialSentiment", {
@@ -638,6 +650,8 @@ var _BreakdownItem = _interopRequireDefault(require("./model/BreakdownItem"));
 
 var _Company = _interopRequireDefault(require("./model/Company"));
 
+var _CompanyESG = _interopRequireDefault(require("./model/CompanyESG"));
+
 var _CompanyExecutive = _interopRequireDefault(require("./model/CompanyExecutive"));
 
 var _CompanyNews = _interopRequireDefault(require("./model/CompanyNews"));
@@ -680,8 +694,6 @@ var _ETFsProfile = _interopRequireDefault(require("./model/ETFsProfile"));
 
 var _ETFsSectorExposure = _interopRequireDefault(require("./model/ETFsSectorExposure"));
 
-var _EarningEstimate = _interopRequireDefault(require("./model/EarningEstimate"));
-
 var _EarningRelease = _interopRequireDefault(require("./model/EarningRelease"));
 
 var _EarningResult = _interopRequireDefault(require("./model/EarningResult"));
@@ -694,6 +706,8 @@ var _EarningsCallTranscriptsList = _interopRequireDefault(require("./model/Earni
 
 var _EarningsEstimates = _interopRequireDefault(require("./model/EarningsEstimates"));
 
+var _EarningsEstimatesInfo = _interopRequireDefault(require("./model/EarningsEstimatesInfo"));
+
 var _EconomicCalendar = _interopRequireDefault(require("./model/EconomicCalendar"));
 
 var _EconomicCode = _interopRequireDefault(require("./model/EconomicCode"));
@@ -703,8 +717,6 @@ var _EconomicData = _interopRequireDefault(require("./model/EconomicData"));
 var _EconomicDataInfo = _interopRequireDefault(require("./model/EconomicDataInfo"));
 
 var _EconomicEvent = _interopRequireDefault(require("./model/EconomicEvent"));
-
-var _Estimate = _interopRequireDefault(require("./model/Estimate"));
 
 var _FDAComitteeMeeting = _interopRequireDefault(require("./model/FDAComitteeMeeting"));
 
@@ -794,11 +806,15 @@ var _RevenueBreakdown = _interopRequireDefault(require("./model/RevenueBreakdown
 
 var _RevenueEstimates = _interopRequireDefault(require("./model/RevenueEstimates"));
 
+var _RevenueEstimatesInfo = _interopRequireDefault(require("./model/RevenueEstimatesInfo"));
+
 var _SECSentimentAnalysis = _interopRequireDefault(require("./model/SECSentimentAnalysis"));
 
 var _Sentiment = _interopRequireDefault(require("./model/Sentiment"));
 
 var _SimilarityIndex = _interopRequireDefault(require("./model/SimilarityIndex"));
+
+var _SimilarityIndexInfo = _interopRequireDefault(require("./model/SimilarityIndexInfo"));
 
 var _SocialSentiment = _interopRequireDefault(require("./model/SocialSentiment"));
 

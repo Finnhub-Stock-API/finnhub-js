@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FinancialStatements model module.
  * @module model/FinancialStatements
- * @version 1.2.5
+ * @version 1.2.6
  */
 class FinancialStatements {
     /**

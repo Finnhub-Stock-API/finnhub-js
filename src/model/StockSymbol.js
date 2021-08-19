@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StockSymbol model module.
  * @module model/StockSymbol
- * @version 1.2.5
+ * @version 1.2.6
  */
 class StockSymbol {
     /**

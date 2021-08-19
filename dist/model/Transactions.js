@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Transactions model module.
  * @module model/Transactions
- * @version 1.2.5
+ * @version 1.2.6
  */
 var Transactions = /*#__PURE__*/function () {
   /**
@@ -79,7 +79,7 @@ var Transactions = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('transactionCode')) {
-          obj['transactionCode'] = _ApiClient["default"].convertToType(data['transactionCode'], 'Date');
+          obj['transactionCode'] = _ApiClient["default"].convertToType(data['transactionCode'], 'String');
         }
       }
 
@@ -128,7 +128,7 @@ Transactions.prototype['transactionDate'] = undefined;
 Transactions.prototype['transactionPrice'] = undefined;
 /**
  * Transaction code. A list of codes and their meanings can be found <a href=\"https://www.sec.gov/about/forms/form4data.pdf\" target=\"_blank\" rel=\"noopener\">here</a>.
- * @member {Date} transactionCode
+ * @member {String} transactionCode
  */
 
 Transactions.prototype['transactionCode'] = undefined;

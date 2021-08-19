@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _EarningEstimate = _interopRequireDefault(require("./EarningEstimate"));
+var _EarningsEstimatesInfo = _interopRequireDefault(require("./EarningsEstimatesInfo"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningsEstimates model module.
  * @module model/EarningsEstimates
- * @version 1.2.5
+ * @version 1.2.6
  */
 var EarningsEstimates = /*#__PURE__*/function () {
   /**
@@ -57,7 +57,7 @@ var EarningsEstimates = /*#__PURE__*/function () {
         obj = obj || new EarningsEstimates();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_EarningEstimate["default"]]);
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_EarningsEstimatesInfo["default"]]);
         }
 
         if (data.hasOwnProperty('freq')) {
@@ -77,7 +77,7 @@ var EarningsEstimates = /*#__PURE__*/function () {
 }();
 /**
  * List of estimates
- * @member {Array.<module:model/EarningEstimate>} data
+ * @member {Array.<module:model/EarningsEstimatesInfo>} data
  */
 
 

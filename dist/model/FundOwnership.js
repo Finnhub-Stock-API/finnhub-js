@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FundOwnership model module.
  * @module model/FundOwnership
- * @version 1.2.5
+ * @version 1.2.6
  */
 var FundOwnership = /*#__PURE__*/function () {
   /**

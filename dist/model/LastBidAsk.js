@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LastBidAsk model module.
  * @module model/LastBidAsk
- * @version 1.2.5
+ * @version 1.2.6
  */
 var LastBidAsk = /*#__PURE__*/function () {
   /**

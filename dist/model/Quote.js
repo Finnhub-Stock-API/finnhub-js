@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Quote model module.
  * @module model/Quote
- * @version 1.2.5
+ * @version 1.2.6
  */
 var Quote = /*#__PURE__*/function () {
   /**

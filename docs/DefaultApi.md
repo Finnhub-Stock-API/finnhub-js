@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**companyBasicFinancials**](DefaultApi.md#companyBasicFinancials) | **GET** /stock/metric | Basic Financials
 [**companyEarnings**](DefaultApi.md#companyEarnings) | **GET** /stock/earnings | Earnings Surprises
 [**companyEpsEstimates**](DefaultApi.md#companyEpsEstimates) | **GET** /stock/eps-estimate | Earnings Estimates
+[**companyEsgScore**](DefaultApi.md#companyEsgScore) | **GET** /stock/esg | Company ESG Scores
 [**companyExecutive**](DefaultApi.md#companyExecutive) | **GET** /stock/executive | Company Executive
 [**companyNews**](DefaultApi.md#companyNews) | **GET** /company-news | Company News
 [**companyPeers**](DefaultApi.md#companyPeers) | **GET** /stock/peers | Peers
@@ -281,6 +282,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EarningsEstimates**](EarningsEstimates.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## companyEsgScore
+
+> CompanyESG companyEsgScore(symbol)
+
+Company ESG Scores
+
+&lt;p&gt;This endpoint provides ESG scores and important indicators for 1000+ global companies. The data is collected through company&#39;s public ESG disclosure and public sources.&lt;/p&gt;&lt;p&gt;Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.&lt;/p&gt;
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol.
+apiInstance.companyEsgScore(symbol, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. | 
+
+### Return type
+
+[**CompanyESG**](CompanyESG.md)
 
 ### Authorization
 
@@ -2163,7 +2215,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new finnhub.DefaultApi();
 let category = "category_example"; // String | This parameter can be 1 of the following values <code>general, forex, crypto, merger</code>.
 let opts = {
-  'minId': "minId_example" // String | Use this field to get only news after this ID. Default to 0
+  'minId': 789 // Number | Use this field to get only news after this ID. Default to 0
 };
 apiInstance.marketNews(category, opts, (error, data, response) => {
   if (error) {
@@ -2180,7 +2232,7 @@ apiInstance.marketNews(category, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category** | **String**| This parameter can be 1 of the following values &lt;code&gt;general, forex, crypto, merger&lt;/code&gt;. | 
- **minId** | **String**| Use this field to get only news after this ID. Default to 0 | [optional] 
+ **minId** | **Number**| Use this field to get only news after this ID. Default to 0 | [optional] 
 
 ### Return type
 
@@ -3052,11 +3104,11 @@ Name | Type | Description  | Notes
 
 ## stockCandles
 
-> StockCandles stockCandles(symbol, resolution, from, to, opts)
+> StockCandles stockCandles(symbol, resolution, from, to)
 
 Stock Candles
 
-&lt;p&gt;Get candlestick data (OHLCV) for stocks
+&lt;p&gt;Get candlestick data (OHLCV) for stocks.&lt;/p&gt;&lt;p&gt;Daily data will be adjusted for Splits. Intraday data will remain unadjusted.&lt;/p&gt;
 
 ### Example
 
@@ -3074,10 +3126,7 @@ let symbol = "symbol_example"; // String | Symbol.
 let resolution = "resolution_example"; // String | Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
 let from = 789; // Number | UNIX timestamp. Interval initial value.
 let to = 789; // Number | UNIX timestamp. Interval end value.
-let opts = {
-  'adjusted': "adjusted_example" // String | DEPRECATED: this option has been deprecated. All Daily data will be adjusted for Splits and intraday data will remain unadjusted.
-};
-apiInstance.stockCandles(symbol, resolution, from, to, opts, (error, data, response) => {
+apiInstance.stockCandles(symbol, resolution, from, to, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3095,7 +3144,6 @@ Name | Type | Description  | Notes
  **resolution** | **String**| Supported resolution includes &lt;code&gt;1, 5, 15, 30, 60, D, W, M &lt;/code&gt;.Some timeframes might not be available depending on the exchange. | 
  **from** | **Number**| UNIX timestamp. Interval initial value. | 
  **to** | **Number**| UNIX timestamp. Interval end value. | 
- **adjusted** | **String**| DEPRECATED: this option has been deprecated. All Daily data will be adjusted for Splits and intraday data will remain unadjusted. | [optional] 
 
 ### Return type
 

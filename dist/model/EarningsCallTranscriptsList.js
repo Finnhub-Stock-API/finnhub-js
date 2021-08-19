@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningsCallTranscriptsList model module.
  * @module model/EarningsCallTranscriptsList
- * @version 1.2.5
+ * @version 1.2.6
  */
 var EarningsCallTranscriptsList = /*#__PURE__*/function () {
   /**

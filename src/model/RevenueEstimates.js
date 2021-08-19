@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Estimate from './Estimate';
+import RevenueEstimatesInfo from './RevenueEstimatesInfo';
 
 /**
  * The RevenueEstimates model module.
  * @module model/RevenueEstimates
- * @version 1.2.5
+ * @version 1.2.6
  */
 class RevenueEstimates {
     /**
@@ -49,7 +49,7 @@ class RevenueEstimates {
             obj = obj || new RevenueEstimates();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Estimate]);
+                obj['data'] = ApiClient.convertToType(data['data'], [RevenueEstimatesInfo]);
             }
             if (data.hasOwnProperty('freq')) {
                 obj['freq'] = ApiClient.convertToType(data['freq'], 'String');
@@ -66,7 +66,7 @@ class RevenueEstimates {
 
 /**
  * List of estimates
- * @member {Array.<module:model/Estimate>} data
+ * @member {Array.<module:model/RevenueEstimatesInfo>} data
  */
 RevenueEstimates.prototype['data'] = undefined;
 

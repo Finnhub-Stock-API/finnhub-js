@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Ownership model module.
  * @module model/Ownership
- * @version 1.2.5
+ * @version 1.2.6
  */
 var Ownership = /*#__PURE__*/function () {
   /**

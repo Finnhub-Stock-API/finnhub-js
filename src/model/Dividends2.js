@@ -17,7 +17,7 @@ import Dividends2Info from './Dividends2Info';
 /**
  * The Dividends2 model module.
  * @module model/Dividends2
- * @version 1.2.5
+ * @version 1.2.6
  */
 class Dividends2 {
     /**
