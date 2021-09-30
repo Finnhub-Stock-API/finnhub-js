@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CountryMetadata model module.
  * @module model/CountryMetadata
- * @version 1.2.6
+ * @version 1.2.7
  */
 var CountryMetadata = /*#__PURE__*/function () {
   /**
@@ -77,6 +77,14 @@ var CountryMetadata = /*#__PURE__*/function () {
         if (data.hasOwnProperty('currencyCode')) {
           obj['currencyCode'] = _ApiClient["default"].convertToType(data['currencyCode'], 'String');
         }
+
+        if (data.hasOwnProperty('region')) {
+          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
+        }
+
+        if (data.hasOwnProperty('subRegion')) {
+          obj['subRegion'] = _ApiClient["default"].convertToType(data['subRegion'], 'String');
+        }
       }
 
       return obj;
@@ -122,5 +130,17 @@ CountryMetadata.prototype['currency'] = undefined;
  */
 
 CountryMetadata.prototype['currencyCode'] = undefined;
+/**
+ * Region
+ * @member {String} region
+ */
+
+CountryMetadata.prototype['region'] = undefined;
+/**
+ * Sub-Region
+ * @member {String} subRegion
+ */
+
+CountryMetadata.prototype['subRegion'] = undefined;
 var _default = CountryMetadata;
 exports["default"] = _default;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Dividends2Info model module.
  * @module model/Dividends2Info
- * @version 1.2.6
+ * @version 1.2.7
  */
 class Dividends2Info {
     /**

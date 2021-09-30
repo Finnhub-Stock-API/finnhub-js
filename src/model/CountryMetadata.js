@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CountryMetadata model module.
  * @module model/CountryMetadata
- * @version 1.2.6
+ * @version 1.2.7
  */
 class CountryMetadata {
     /**
@@ -65,6 +65,12 @@ class CountryMetadata {
             if (data.hasOwnProperty('currencyCode')) {
                 obj['currencyCode'] = ApiClient.convertToType(data['currencyCode'], 'String');
             }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
+            if (data.hasOwnProperty('subRegion')) {
+                obj['subRegion'] = ApiClient.convertToType(data['subRegion'], 'String');
+            }
         }
         return obj;
     }
@@ -107,6 +113,18 @@ CountryMetadata.prototype['currency'] = undefined;
  * @member {String} currencyCode
  */
 CountryMetadata.prototype['currencyCode'] = undefined;
+
+/**
+ * Region
+ * @member {String} region
+ */
+CountryMetadata.prototype['region'] = undefined;
+
+/**
+ * Sub-Region
+ * @member {String} subRegion
+ */
+CountryMetadata.prototype['subRegion'] = undefined;
 
 
 

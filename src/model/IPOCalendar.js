@@ -17,7 +17,7 @@ import IPOEvent from './IPOEvent';
 /**
  * The IPOCalendar model module.
  * @module model/IPOCalendar
- * @version 1.2.6
+ * @version 1.2.7
  */
 class IPOCalendar {
     /**

@@ -6,6 +6,8 @@ docs/BasicFinancials.md
 docs/BreakdownItem.md
 docs/Company.md
 docs/CompanyESG.md
+docs/CompanyEarningsQualityScore.md
+docs/CompanyEarningsQualityScoreData.md
 docs/CompanyExecutive.md
 docs/CompanyNews.md
 docs/CompanyNewsStatistics.md
@@ -117,6 +119,8 @@ src/model/BasicFinancials.js
 src/model/BreakdownItem.js
 src/model/Company.js
 src/model/CompanyESG.js
+src/model/CompanyEarningsQualityScore.js
+src/model/CompanyEarningsQualityScoreData.js
 src/model/CompanyExecutive.js
 src/model/CompanyNews.js
 src/model/CompanyNewsStatistics.js

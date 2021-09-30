@@ -18,6 +18,8 @@ import BasicFinancials from './model/BasicFinancials';
 import BreakdownItem from './model/BreakdownItem';
 import Company from './model/Company';
 import CompanyESG from './model/CompanyESG';
+import CompanyEarningsQualityScore from './model/CompanyEarningsQualityScore';
+import CompanyEarningsQualityScoreData from './model/CompanyEarningsQualityScoreData';
 import CompanyExecutive from './model/CompanyExecutive';
 import CompanyNews from './model/CompanyNews';
 import CompanyNewsStatistics from './model/CompanyNewsStatistics';
@@ -149,7 +151,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.6
+* @version 1.2.7
 */
 export {
     /**
@@ -187,6 +189,18 @@ export {
      * @property {module:model/CompanyESG}
      */
     CompanyESG,
+
+    /**
+     * The CompanyEarningsQualityScore model constructor.
+     * @property {module:model/CompanyEarningsQualityScore}
+     */
+    CompanyEarningsQualityScore,
+
+    /**
+     * The CompanyEarningsQualityScoreData model constructor.
+     * @property {module:model/CompanyEarningsQualityScoreData}
+     */
+    CompanyEarningsQualityScoreData,
 
     /**
      * The CompanyExecutive model constructor.
