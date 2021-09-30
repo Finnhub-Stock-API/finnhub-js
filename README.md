@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.2.6
+- Package version: 1.2.7
 
 ## Installation
 
@@ -333,6 +333,11 @@ finnhubClient.supplyChainRelationships('AAPL', (error, data, response) => {
 
 // Company ESG
 finnhubClient.companyEsgScore('AAPL', (error, data, response) => {
+    console.log(data);
+});
+
+// Company Earnings Quality Score
+finnhubClient.companyEarningsQualityScore('AAPL', 'quarterly', (error, data, response) => {
     console.log(data);
 });
 

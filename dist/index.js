@@ -39,6 +39,18 @@ Object.defineProperty(exports, "CompanyESG", {
     return _CompanyESG["default"];
   }
 });
+Object.defineProperty(exports, "CompanyEarningsQualityScore", {
+  enumerable: true,
+  get: function get() {
+    return _CompanyEarningsQualityScore["default"];
+  }
+});
+Object.defineProperty(exports, "CompanyEarningsQualityScoreData", {
+  enumerable: true,
+  get: function get() {
+    return _CompanyEarningsQualityScoreData["default"];
+  }
+});
 Object.defineProperty(exports, "CompanyExecutive", {
   enumerable: true,
   get: function get() {
@@ -651,6 +663,10 @@ var _BreakdownItem = _interopRequireDefault(require("./model/BreakdownItem"));
 var _Company = _interopRequireDefault(require("./model/Company"));
 
 var _CompanyESG = _interopRequireDefault(require("./model/CompanyESG"));
+
+var _CompanyEarningsQualityScore = _interopRequireDefault(require("./model/CompanyEarningsQualityScore"));
+
+var _CompanyEarningsQualityScoreData = _interopRequireDefault(require("./model/CompanyEarningsQualityScoreData"));
 
 var _CompanyExecutive = _interopRequireDefault(require("./model/CompanyExecutive"));
 

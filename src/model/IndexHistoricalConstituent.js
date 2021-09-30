@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IndexHistoricalConstituent model module.
  * @module model/IndexHistoricalConstituent
- * @version 1.2.6
+ * @version 1.2.7
  */
 class IndexHistoricalConstituent {
     /**

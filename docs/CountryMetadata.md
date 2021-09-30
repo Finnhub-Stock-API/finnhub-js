@@ -10,5 +10,7 @@ Name | Type | Description | Notes
 **codeNo** | **String** | UN code | [optional] 
 **currency** | **String** | Currency name | [optional] 
 **currencyCode** | **String** | Currency code | [optional] 
+**region** | **String** | Region | [optional] 
+**subRegion** | **String** | Sub-Region | [optional] 
 
 

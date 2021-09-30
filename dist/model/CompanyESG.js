@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyESG model module.
  * @module model/CompanyESG
- * @version 1.2.6
+ * @version 1.2.7
  */
 var CompanyESG = /*#__PURE__*/function () {
   /**
@@ -99,19 +99,19 @@ CompanyESG.prototype['symbol'] = undefined;
 
 CompanyESG.prototype['totalESGScore'] = undefined;
 /**
- * symbol
+ * Environment Score
  * @member {Number} environmentScore
  */
 
 CompanyESG.prototype['environmentScore'] = undefined;
 /**
- * symbol
+ * Governance Score
  * @member {Number} governanceScore
  */
 
 CompanyESG.prototype['governanceScore'] = undefined;
 /**
- * symbol
+ * Social Score
  * @member {Number} socialScore
  */
 

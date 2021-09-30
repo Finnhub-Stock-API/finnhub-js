@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyProfile model module.
  * @module model/CompanyProfile
- * @version 1.2.6
+ * @version 1.2.7
  */
 var CompanyProfile = /*#__PURE__*/function () {
   /**
@@ -223,25 +223,25 @@ CompanyProfile.prototype['description'] = undefined;
 
 CompanyProfile.prototype['exchange'] = undefined;
 /**
- * GICS industry group.
+ * Industry group.
  * @member {String} ggroup
  */
 
 CompanyProfile.prototype['ggroup'] = undefined;
 /**
- * GICS industry.
+ * Industry.
  * @member {String} gind
  */
 
 CompanyProfile.prototype['gind'] = undefined;
 /**
- * GICS sector.
+ * Sector.
  * @member {String} gsector
  */
 
 CompanyProfile.prototype['gsector'] = undefined;
 /**
- * GICS sub-industry.
+ * Sub-industry.
  * @member {String} gsubind
  */
 

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The HistoricalNBBO model module.
  * @module model/HistoricalNBBO
- * @version 1.2.6
+ * @version 1.2.7
  */
 var HistoricalNBBO = /*#__PURE__*/function () {
   /**

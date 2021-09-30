@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyESG model module.
  * @module model/CompanyESG
- * @version 1.2.6
+ * @version 1.2.7
  */
 class CompanyESG {
     /**
@@ -85,19 +85,19 @@ CompanyESG.prototype['symbol'] = undefined;
 CompanyESG.prototype['totalESGScore'] = undefined;
 
 /**
- * symbol
+ * Environment Score
  * @member {Number} environmentScore
  */
 CompanyESG.prototype['environmentScore'] = undefined;
 
 /**
- * symbol
+ * Governance Score
  * @member {Number} governanceScore
  */
 CompanyESG.prototype['governanceScore'] = undefined;
 
 /**
- * symbol
+ * Social Score
  * @member {Number} socialScore
  */
 CompanyESG.prototype['socialScore'] = undefined;

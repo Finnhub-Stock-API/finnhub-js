@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Split model module.
  * @module model/Split
- * @version 1.2.6
+ * @version 1.2.7
  */
 var Split = /*#__PURE__*/function () {
   /**
