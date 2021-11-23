@@ -68,6 +68,9 @@ class Quote {
             if (data.hasOwnProperty('dp')) {
                 obj['dp'] = ApiClient.convertToType(data['dp'], 'Number');
             }
+            if (data.hasOwnProperty('t')) {
+                obj['t'] = ApiClient.convertToType(data['t'], 'Number');
+            }
         }
         return obj;
     }
@@ -117,6 +120,11 @@ Quote.prototype['d'] = undefined;
  */
 Quote.prototype['dp'] = undefined;
 
+/**
+ * Timestamp
+ * @member {Number} t
+ */
+ Quote.prototype['t'] = undefined;
 
 
 
