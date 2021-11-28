@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**covid19**](DefaultApi.md#covid19) | **GET** /covid19/us | COVID-19
 [**cryptoCandles**](DefaultApi.md#cryptoCandles) | **GET** /crypto/candle | Crypto Candles
 [**cryptoExchanges**](DefaultApi.md#cryptoExchanges) | **GET** /crypto/exchange | Crypto Exchanges
+[**cryptoProfile**](DefaultApi.md#cryptoProfile) | **GET** /crypto/profile | Crypto Profile
 [**cryptoSymbols**](DefaultApi.md#cryptoSymbols) | **GET** /crypto/symbol | Crypto Symbol
 [**earningsCalendar**](DefaultApi.md#earningsCalendar) | **GET** /calendar/earnings | Earnings Calendar
 [**economicCalendar**](DefaultApi.md#economicCalendar) | **GET** /calendar/economic | Economic Calendar
@@ -260,7 +261,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | Symbol.
-let freq = "freq_example"; // String | Frequency. Currently only support <code>quarterly</code>
+let freq = "freq_example"; // String | Frequency. Currently support <code>annual</code> and <code>quarterly</code>
 apiInstance.companyEarningsQualityScore(symbol, freq, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -276,7 +277,7 @@ apiInstance.companyEarningsQualityScore(symbol, freq, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Symbol. | 
- **freq** | **String**| Frequency. Currently only support &lt;code&gt;quarterly&lt;/code&gt; | 
+ **freq** | **String**| Frequency. Currently support &lt;code&gt;annual&lt;/code&gt; and &lt;code&gt;quarterly&lt;/code&gt; | 
 
 ### Return type
 
@@ -922,6 +923,57 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
+## cryptoProfile
+
+> CryptoProfile cryptoProfile(symbol)
+
+Crypto Profile
+
+Get crypto&#39;s profile.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Crypto symbol such as BTC or ETH.
+apiInstance.cryptoProfile(symbol, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Crypto symbol such as BTC or ETH. | 
+
+### Return type
+
+[**CryptoProfile**](CryptoProfile.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## cryptoSymbols
 
 > [CryptoSymbol] cryptoSymbols(exchange)
@@ -1034,7 +1086,7 @@ Name | Type | Description  | Notes
 
 ## economicCalendar
 
-> EconomicCalendar economicCalendar()
+> EconomicCalendar economicCalendar(opts)
 
 Economic Calendar
 
@@ -1052,7 +1104,11 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new finnhub.DefaultApi();
-apiInstance.economicCalendar((error, data, response) => {
+let opts = {
+  'from': new Date("2013-10-20"), // Date | From date <code>YYYY-MM-DD</code>.
+  'to': new Date("2013-10-20") // Date | To date <code>YYYY-MM-DD</code>.
+};
+apiInstance.economicCalendar(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1063,7 +1119,11 @@ apiInstance.economicCalendar((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | [optional] 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | [optional] 
 
 ### Return type
 
@@ -2051,7 +2111,7 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new finnhub.DefaultApi();
-let symbol = "symbol_example"; // String | Symbol of the company: AAPL.
+let symbol = "symbol_example"; // String | Symbol of the company: AAPL. Leave this param blank to get the latest transactions.
 let opts = {
   'from': new Date("2013-10-20"), // Date | From date: 2020-03-15.
   'to': new Date("2013-10-20") // Date | To date: 2020-03-16.
@@ -2070,7 +2130,7 @@ apiInstance.insiderTransactions(symbol, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **String**| Symbol of the company: AAPL. | 
+ **symbol** | **String**| Symbol of the company: AAPL. Leave this param blank to get the latest transactions. | 
  **from** | **Date**| From date: 2020-03-15. | [optional] 
  **to** | **Date**| To date: 2020-03-16. | [optional] 
 

@@ -17,7 +17,7 @@ import OwnershipInfo from './OwnershipInfo';
 /**
  * The Ownership model module.
  * @module model/Ownership
- * @version 1.2.7
+ * @version 1.2.8
  */
 class Ownership {
     /**

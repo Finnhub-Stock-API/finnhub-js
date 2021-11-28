@@ -17,7 +17,7 @@ import FundOwnershipInfo from './FundOwnershipInfo';
 /**
  * The FundOwnership model module.
  * @module model/FundOwnership
- * @version 1.2.7
+ * @version 1.2.8
  */
 class FundOwnership {
     /**

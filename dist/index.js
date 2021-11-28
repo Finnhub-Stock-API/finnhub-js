@@ -99,6 +99,12 @@ Object.defineProperty(exports, "CryptoCandles", {
     return _CryptoCandles["default"];
   }
 });
+Object.defineProperty(exports, "CryptoProfile", {
+  enumerable: true,
+  get: function get() {
+    return _CryptoProfile["default"];
+  }
+});
 Object.defineProperty(exports, "CryptoSymbol", {
   enumerable: true,
   get: function get() {
@@ -683,6 +689,8 @@ var _CountryMetadata = _interopRequireDefault(require("./model/CountryMetadata")
 var _CovidInfo = _interopRequireDefault(require("./model/CovidInfo"));
 
 var _CryptoCandles = _interopRequireDefault(require("./model/CryptoCandles"));
+
+var _CryptoProfile = _interopRequireDefault(require("./model/CryptoProfile"));
 
 var _CryptoSymbol = _interopRequireDefault(require("./model/CryptoSymbol"));
 

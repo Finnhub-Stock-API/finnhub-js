@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ForexSymbol model module.
  * @module model/ForexSymbol
- * @version 1.2.7
+ * @version 1.2.8
  */
 var ForexSymbol = /*#__PURE__*/function () {
   /**

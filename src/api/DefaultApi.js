@@ -24,6 +24,7 @@ import CompanyProfile2 from '../model/CompanyProfile2';
 import CountryMetadata from '../model/CountryMetadata';
 import CovidInfo from '../model/CovidInfo';
 import CryptoCandles from '../model/CryptoCandles';
+import CryptoProfile from '../model/CryptoProfile';
 import CryptoSymbol from '../model/CryptoSymbol';
 import Dividends from '../model/Dividends';
 import Dividends2 from '../model/Dividends2';
@@ -84,7 +85,7 @@ import UpgradeDowngrade from '../model/UpgradeDowngrade';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.7
+* @version 1.2.8
 */
 export default class DefaultApi {
 
@@ -257,7 +258,7 @@ export default class DefaultApi {
      * Company Earnings Quality Score
      * <p>This endpoint provides Earnings Quality Score for global companies.</p><p> Earnings quality refers to the extent to which current earnings predict future earnings. \"High-quality\" earnings are expected to persist, while \"low-quality\" earnings do not. A higher score means a higher earnings quality</p><p>Finnhub uses a proprietary model which takes into consideration 4 criteria:</p> <ul style=\"list-style-type: unset; margin-left: 30px;\"><li>Profitability</li><li>Growth</li><li>Cash Generation & Capital Allocation</li><li>Leverage</li></ul><br/><p>We then compare the metrics of each company in each category against its peers in the same industry to gauge how quality its earnings is.</p>
      * @param {String} symbol Symbol.
-     * @param {String} freq Frequency. Currently only support <code>quarterly</code>
+     * @param {String} freq Frequency. Currently support <code>annual</code> and <code>quarterly</code>
      * @param {module:api/DefaultApi~companyEarningsQualityScoreCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompanyEarningsQualityScore}
      */
@@ -835,6 +836,49 @@ export default class DefaultApi {
     }
 
     /**
+     * Callback function to receive the result of the cryptoProfile operation.
+     * @callback module:api/DefaultApi~cryptoProfileCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CryptoProfile} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Crypto Profile
+     * Get crypto's profile.
+     * @param {String} symbol Crypto symbol such as BTC or ETH.
+     * @param {module:api/DefaultApi~cryptoProfileCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CryptoProfile}
+     */
+    cryptoProfile(symbol, callback) {
+      let postBody = null;
+      // verify the required parameter 'symbol' is set
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling cryptoProfile");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'symbol': symbol
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = CryptoProfile;
+      return this.apiClient.callApi(
+        '/crypto/profile', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the cryptoSymbols operation.
      * @callback module:api/DefaultApi~cryptoSymbolsCallback
      * @param {String} error Error message, if any.
@@ -935,15 +979,21 @@ export default class DefaultApi {
     /**
      * Economic Calendar
      * <p>Get recent and upcoming economic releases.</p><p>Historical events and surprises are available for Enterprise clients.</p>
+     * @param {Object} opts Optional parameters
+     * @param {Date} opts.from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} opts.to To date <code>YYYY-MM-DD</code>.
      * @param {module:api/DefaultApi~economicCalendarCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EconomicCalendar}
      */
-    economicCalendar(callback) {
+    economicCalendar(opts, callback) {
+      opts = opts || {};
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
+        'from': opts['from'],
+        'to': opts['to']
       };
       let headerParams = {
       };
@@ -1774,7 +1824,7 @@ export default class DefaultApi {
     /**
      * Insider Transactions
      * Company insider transactions data sourced from <code>Form 3,4,5</code>. This endpoint only covers US companies at the moment. Limit to 100 transactions per API call.
-     * @param {String} symbol Symbol of the company: AAPL.
+     * @param {String} symbol Symbol of the company: AAPL. Leave this param blank to get the latest transactions.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.from From date: 2020-03-15.
      * @param {Date} opts.to To date: 2020-03-16.

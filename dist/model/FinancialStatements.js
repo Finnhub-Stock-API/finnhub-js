@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FinancialStatements model module.
  * @module model/FinancialStatements
- * @version 1.2.7
+ * @version 1.2.8
  */
 var FinancialStatements = /*#__PURE__*/function () {
   /**

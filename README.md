@@ -21,7 +21,7 @@ api_key.apiKey = "<API_key>" // Replace this
 const finnhubClient = new finnhub.DefaultApi()
 
 // Stock candles
-finnhubClient.stockCandles("AAPL", "D", 1590988249, 1591852249, {}, (error, data, response) => {
+finnhubClient.stockCandles("AAPL", "D", 1590988249, 1591852249, (error, data, response) => {
     console.log(data)
 });
 
@@ -338,6 +338,11 @@ finnhubClient.companyEsgScore('AAPL', (error, data, response) => {
 
 // Company Earnings Quality Score
 finnhubClient.companyEarningsQualityScore('AAPL', 'quarterly', (error, data, response) => {
+    console.log(data);
+});
+
+// Crypto Profile
+finnhubClient.cryptoProfile('BTC', (error, data, response) => {
     console.log(data);
 });
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FundOwnershipInfo model module.
  * @module model/FundOwnershipInfo
- * @version 1.2.7
+ * @version 1.2.8
  */
 class FundOwnershipInfo {
     /**

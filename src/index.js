@@ -28,6 +28,7 @@ import CompanyProfile2 from './model/CompanyProfile2';
 import CountryMetadata from './model/CountryMetadata';
 import CovidInfo from './model/CovidInfo';
 import CryptoCandles from './model/CryptoCandles';
+import CryptoProfile from './model/CryptoProfile';
 import CryptoSymbol from './model/CryptoSymbol';
 import Development from './model/Development';
 import Dividends from './model/Dividends';
@@ -151,7 +152,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.7
+* @version 1.2.8
 */
 export {
     /**
@@ -249,6 +250,12 @@ export {
      * @property {module:model/CryptoCandles}
      */
     CryptoCandles,
+
+    /**
+     * The CryptoProfile model constructor.
+     * @property {module:model/CryptoProfile}
+     */
+    CryptoProfile,
 
     /**
      * The CryptoSymbol model constructor.

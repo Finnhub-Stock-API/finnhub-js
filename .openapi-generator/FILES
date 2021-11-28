@@ -16,6 +16,7 @@ docs/CompanyProfile2.md
 docs/CountryMetadata.md
 docs/CovidInfo.md
 docs/CryptoCandles.md
+docs/CryptoProfile.md
 docs/CryptoSymbol.md
 docs/DefaultApi.md
 docs/Development.md
@@ -129,6 +130,7 @@ src/model/CompanyProfile2.js
 src/model/CountryMetadata.js
 src/model/CovidInfo.js
 src/model/CryptoCandles.js
+src/model/CryptoProfile.js
 src/model/CryptoSymbol.js
 src/model/Development.js
 src/model/Dividends.js
@@ -220,3 +222,4 @@ src/model/TranscriptParticipant.js
 src/model/Trend.js
 src/model/TwitterSentimentContent.js
 src/model/UpgradeDowngrade.js
+test/model/CryptoProfile.spec.js
