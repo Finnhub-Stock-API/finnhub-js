@@ -17,7 +17,7 @@ import EarningsEstimatesInfo from './EarningsEstimatesInfo';
 /**
  * The EarningsEstimates model module.
  * @module model/EarningsEstimates
- * @version 1.2.7
+ * @version 1.2.8
  */
 class EarningsEstimates {
     /**

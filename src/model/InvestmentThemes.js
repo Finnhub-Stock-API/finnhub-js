@@ -17,7 +17,7 @@ import InvestmentThemePortfolio from './InvestmentThemePortfolio';
 /**
  * The InvestmentThemes model module.
  * @module model/InvestmentThemes
- * @version 1.2.7
+ * @version 1.2.8
  */
 class InvestmentThemes {
     /**

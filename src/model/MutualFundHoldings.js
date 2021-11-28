@@ -17,7 +17,7 @@ import MutualFundHoldingsData from './MutualFundHoldingsData';
 /**
  * The MutualFundHoldings model module.
  * @module model/MutualFundHoldings
- * @version 1.2.7
+ * @version 1.2.8
  */
 class MutualFundHoldings {
     /**

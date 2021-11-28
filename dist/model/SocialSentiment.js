@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SocialSentiment model module.
  * @module model/SocialSentiment
- * @version 1.2.7
+ * @version 1.2.8
  */
 var SocialSentiment = /*#__PURE__*/function () {
   /**

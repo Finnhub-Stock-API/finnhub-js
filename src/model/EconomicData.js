@@ -17,7 +17,7 @@ import EconomicDataInfo from './EconomicDataInfo';
 /**
  * The EconomicData model module.
  * @module model/EconomicData
- * @version 1.2.7
+ * @version 1.2.8
  */
 class EconomicData {
     /**

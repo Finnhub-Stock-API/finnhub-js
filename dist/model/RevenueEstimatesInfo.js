@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RevenueEstimatesInfo model module.
  * @module model/RevenueEstimatesInfo
- * @version 1.2.7
+ * @version 1.2.8
  */
 var RevenueEstimatesInfo = /*#__PURE__*/function () {
   /**

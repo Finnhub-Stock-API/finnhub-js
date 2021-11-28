@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyExecutive model module.
  * @module model/CompanyExecutive
- * @version 1.2.7
+ * @version 1.2.8
  */
 var CompanyExecutive = /*#__PURE__*/function () {
   /**
