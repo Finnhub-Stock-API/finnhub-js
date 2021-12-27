@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CryptoCandles model module.
  * @module model/CryptoCandles
- * @version 1.2.8
+ * @version 1.2.9
  */
 var CryptoCandles = /*#__PURE__*/function () {
   /**

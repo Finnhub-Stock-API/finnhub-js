@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualFundProfileData model module.
  * @module model/MutualFundProfileData
- * @version 1.2.8
+ * @version 1.2.9
  */
 class MutualFundProfileData {
     /**
@@ -109,6 +109,18 @@ class MutualFundProfileData {
             }
             if (data.hasOwnProperty('turnover')) {
                 obj['turnover'] = ApiClient.convertToType(data['turnover'], 'Number');
+            }
+            if (data.hasOwnProperty('seriesId')) {
+                obj['seriesId'] = ApiClient.convertToType(data['seriesId'], 'String');
+            }
+            if (data.hasOwnProperty('seriesName')) {
+                obj['seriesName'] = ApiClient.convertToType(data['seriesName'], 'String');
+            }
+            if (data.hasOwnProperty('classId')) {
+                obj['classId'] = ApiClient.convertToType(data['classId'], 'String');
+            }
+            if (data.hasOwnProperty('className')) {
+                obj['className'] = ApiClient.convertToType(data['className'], 'String');
             }
         }
         return obj;
@@ -242,6 +254,30 @@ MutualFundProfileData.prototype['standardMinInvestment'] = undefined;
  * @member {Number} turnover
  */
 MutualFundProfileData.prototype['turnover'] = undefined;
+
+/**
+ * Fund's series ID. This field can be used to group multiple share classes into 1 unique fund.
+ * @member {String} seriesId
+ */
+MutualFundProfileData.prototype['seriesId'] = undefined;
+
+/**
+ * Fund's series name.
+ * @member {String} seriesName
+ */
+MutualFundProfileData.prototype['seriesName'] = undefined;
+
+/**
+ * Class ID.
+ * @member {String} classId
+ */
+MutualFundProfileData.prototype['classId'] = undefined;
+
+/**
+ * Class name.
+ * @member {String} className
+ */
+MutualFundProfileData.prototype['className'] = undefined;
 
 
 

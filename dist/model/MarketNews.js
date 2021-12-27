@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MarketNews model module.
  * @module model/MarketNews
- * @version 1.2.8
+ * @version 1.2.9
  */
 var MarketNews = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import Indicator from './Indicator';
 /**
  * The TechnicalAnalysis model module.
  * @module model/TechnicalAnalysis
- * @version 1.2.8
+ * @version 1.2.9
  */
 class TechnicalAnalysis {
     /**

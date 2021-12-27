@@ -25,5 +25,9 @@ Name | Type | Description | Notes
 **maxRedemptionFee** | **Number** | Max redemption fee. | [optional] 
 **standardMinInvestment** | **Number** | Minimum investment for standard accounts. | [optional] 
 **turnover** | **Number** | Turnover. | [optional] 
+**seriesId** | **String** | Fund&#39;s series ID. This field can be used to group multiple share classes into 1 unique fund. | [optional] 
+**seriesName** | **String** | Fund&#39;s series name. | [optional] 
+**classId** | **String** | Class ID. | [optional] 
+**className** | **String** | Class name. | [optional] 
 
 

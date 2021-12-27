@@ -17,7 +17,7 @@ import Report from './Report';
 /**
  * The FinancialsAsReported model module.
  * @module model/FinancialsAsReported
- * @version 1.2.8
+ * @version 1.2.9
  */
 class FinancialsAsReported {
     /**

@@ -38,6 +38,10 @@ docs/EarningsCallTranscripts.md
 docs/EarningsCallTranscriptsList.md
 docs/EarningsEstimates.md
 docs/EarningsEstimatesInfo.md
+docs/EbitEstimates.md
+docs/EbitEstimatesInfo.md
+docs/EbitdaEstimates.md
+docs/EbitdaEstimatesInfo.md
 docs/EconomicCalendar.md
 docs/EconomicCode.md
 docs/EconomicData.md
@@ -151,6 +155,10 @@ src/model/EarningsCallTranscripts.js
 src/model/EarningsCallTranscriptsList.js
 src/model/EarningsEstimates.js
 src/model/EarningsEstimatesInfo.js
+src/model/EbitEstimates.js
+src/model/EbitEstimatesInfo.js
+src/model/EbitdaEstimates.js
+src/model/EbitdaEstimatesInfo.js
 src/model/EconomicCalendar.js
 src/model/EconomicCode.js
 src/model/EconomicData.js
@@ -222,4 +230,7 @@ src/model/TranscriptParticipant.js
 src/model/Trend.js
 src/model/TwitterSentimentContent.js
 src/model/UpgradeDowngrade.js
-test/model/CryptoProfile.spec.js
+test/model/EbitEstimates.spec.js
+test/model/EbitEstimatesInfo.spec.js
+test/model/EbitdaEstimates.spec.js
+test/model/EbitdaEstimatesInfo.spec.js

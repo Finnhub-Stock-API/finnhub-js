@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Transactions model module.
  * @module model/Transactions
- * @version 1.2.8
+ * @version 1.2.9
  */
 class Transactions {
     /**
@@ -47,6 +47,9 @@ class Transactions {
         if (data) {
             obj = obj || new Transactions();
 
+            if (data.hasOwnProperty('symbol')) {
+                obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -74,6 +77,12 @@ class Transactions {
 
 
 }
+
+/**
+ * Symbol.
+ * @member {String} symbol
+ */
+Transactions.prototype['symbol'] = undefined;
 
 /**
  * Insider's name.

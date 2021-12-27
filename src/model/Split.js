@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Split model module.
  * @module model/Split
- * @version 1.2.8
+ * @version 1.2.9
  */
 class Split {
     /**

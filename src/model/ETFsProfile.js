@@ -17,7 +17,7 @@ import ETFProfileData from './ETFProfileData';
 /**
  * The ETFsProfile model module.
  * @module model/ETFsProfile
- * @version 1.2.8
+ * @version 1.2.9
  */
 class ETFsProfile {
     /**

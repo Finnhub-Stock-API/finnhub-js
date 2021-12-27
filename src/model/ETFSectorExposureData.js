@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ETFSectorExposureData model module.
  * @module model/ETFSectorExposureData
- * @version 1.2.8
+ * @version 1.2.9
  */
 class ETFSectorExposureData {
     /**

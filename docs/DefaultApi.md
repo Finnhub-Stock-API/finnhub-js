@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**companyBasicFinancials**](DefaultApi.md#companyBasicFinancials) | **GET** /stock/metric | Basic Financials
 [**companyEarnings**](DefaultApi.md#companyEarnings) | **GET** /stock/earnings | Earnings Surprises
 [**companyEarningsQualityScore**](DefaultApi.md#companyEarningsQualityScore) | **GET** /stock/earnings-quality-score | Company Earnings Quality Score
+[**companyEbitEstimates**](DefaultApi.md#companyEbitEstimates) | **GET** /stock/ebit-estimate | EBIT Estimates
+[**companyEbitdaEstimates**](DefaultApi.md#companyEbitdaEstimates) | **GET** /stock/ebitda-estimate | EBITDA Estimates
 [**companyEpsEstimates**](DefaultApi.md#companyEpsEstimates) | **GET** /stock/eps-estimate | Earnings Estimates
 [**companyEsgScore**](DefaultApi.md#companyEsgScore) | **GET** /stock/esg | Company ESG Scores
 [**companyExecutive**](DefaultApi.md#companyExecutive) | **GET** /stock/executive | Company Executive
@@ -282,6 +284,116 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CompanyEarningsQualityScore**](CompanyEarningsQualityScore.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## companyEbitEstimates
+
+> EbitEstimates companyEbitEstimates(symbol, opts)
+
+EBIT Estimates
+
+Get company&#39;s ebit estimates.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol of the company: AAPL.
+let opts = {
+  'freq': "freq_example" // String | Can take 1 of the following values: <code>annual, quarterly</code>. Default to <code>quarterly</code>
+};
+apiInstance.companyEbitEstimates(symbol, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol of the company: AAPL. | 
+ **freq** | **String**| Can take 1 of the following values: &lt;code&gt;annual, quarterly&lt;/code&gt;. Default to &lt;code&gt;quarterly&lt;/code&gt; | [optional] 
+
+### Return type
+
+[**EbitEstimates**](EbitEstimates.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## companyEbitdaEstimates
+
+> EbitdaEstimates companyEbitdaEstimates(symbol, opts)
+
+EBITDA Estimates
+
+Get company&#39;s ebitda estimates.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol of the company: AAPL.
+let opts = {
+  'freq': "freq_example" // String | Can take 1 of the following values: <code>annual, quarterly</code>. Default to <code>quarterly</code>
+};
+apiInstance.companyEbitdaEstimates(symbol, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol of the company: AAPL. | 
+ **freq** | **String**| Can take 1 of the following values: &lt;code&gt;annual, quarterly&lt;/code&gt;. Default to &lt;code&gt;quarterly&lt;/code&gt; | [optional] 
+
+### Return type
+
+[**EbitdaEstimates**](EbitdaEstimates.md)
 
 ### Authorization
 

@@ -17,7 +17,7 @@ import SimilarityIndexInfo from './SimilarityIndexInfo';
 /**
  * The SimilarityIndex model module.
  * @module model/SimilarityIndex
- * @version 1.2.8
+ * @version 1.2.9
  */
 class SimilarityIndex {
     /**

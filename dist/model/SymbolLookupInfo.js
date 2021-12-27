@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SymbolLookupInfo model module.
  * @module model/SymbolLookupInfo
- * @version 1.2.8
+ * @version 1.2.9
  */
 var SymbolLookupInfo = /*#__PURE__*/function () {
   /**

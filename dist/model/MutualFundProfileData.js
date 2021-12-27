@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MutualFundProfileData model module.
  * @module model/MutualFundProfileData
- * @version 1.2.8
+ * @version 1.2.9
  */
 var MutualFundProfileData = /*#__PURE__*/function () {
   /**
@@ -136,6 +136,22 @@ var MutualFundProfileData = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('turnover')) {
           obj['turnover'] = _ApiClient["default"].convertToType(data['turnover'], 'Number');
+        }
+
+        if (data.hasOwnProperty('seriesId')) {
+          obj['seriesId'] = _ApiClient["default"].convertToType(data['seriesId'], 'String');
+        }
+
+        if (data.hasOwnProperty('seriesName')) {
+          obj['seriesName'] = _ApiClient["default"].convertToType(data['seriesName'], 'String');
+        }
+
+        if (data.hasOwnProperty('classId')) {
+          obj['classId'] = _ApiClient["default"].convertToType(data['classId'], 'String');
+        }
+
+        if (data.hasOwnProperty('className')) {
+          obj['className'] = _ApiClient["default"].convertToType(data['className'], 'String');
         }
       }
 
@@ -272,5 +288,29 @@ MutualFundProfileData.prototype['standardMinInvestment'] = undefined;
  */
 
 MutualFundProfileData.prototype['turnover'] = undefined;
+/**
+ * Fund's series ID. This field can be used to group multiple share classes into 1 unique fund.
+ * @member {String} seriesId
+ */
+
+MutualFundProfileData.prototype['seriesId'] = undefined;
+/**
+ * Fund's series name.
+ * @member {String} seriesName
+ */
+
+MutualFundProfileData.prototype['seriesName'] = undefined;
+/**
+ * Class ID.
+ * @member {String} classId
+ */
+
+MutualFundProfileData.prototype['classId'] = undefined;
+/**
+ * Class name.
+ * @member {String} className
+ */
+
+MutualFundProfileData.prototype['className'] = undefined;
 var _default = MutualFundProfileData;
 exports["default"] = _default;
