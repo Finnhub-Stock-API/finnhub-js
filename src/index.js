@@ -49,6 +49,10 @@ import EarningsCallTranscripts from './model/EarningsCallTranscripts';
 import EarningsCallTranscriptsList from './model/EarningsCallTranscriptsList';
 import EarningsEstimates from './model/EarningsEstimates';
 import EarningsEstimatesInfo from './model/EarningsEstimatesInfo';
+import EbitEstimates from './model/EbitEstimates';
+import EbitEstimatesInfo from './model/EbitEstimatesInfo';
+import EbitdaEstimates from './model/EbitdaEstimates';
+import EbitdaEstimatesInfo from './model/EbitdaEstimatesInfo';
 import EconomicCalendar from './model/EconomicCalendar';
 import EconomicCode from './model/EconomicCode';
 import EconomicData from './model/EconomicData';
@@ -152,7 +156,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.8
+* @version 1.2.9
 */
 export {
     /**
@@ -376,6 +380,30 @@ export {
      * @property {module:model/EarningsEstimatesInfo}
      */
     EarningsEstimatesInfo,
+
+    /**
+     * The EbitEstimates model constructor.
+     * @property {module:model/EbitEstimates}
+     */
+    EbitEstimates,
+
+    /**
+     * The EbitEstimatesInfo model constructor.
+     * @property {module:model/EbitEstimatesInfo}
+     */
+    EbitEstimatesInfo,
+
+    /**
+     * The EbitdaEstimates model constructor.
+     * @property {module:model/EbitdaEstimates}
+     */
+    EbitdaEstimates,
+
+    /**
+     * The EbitdaEstimatesInfo model constructor.
+     * @property {module:model/EbitdaEstimatesInfo}
+     */
+    EbitdaEstimatesInfo,
 
     /**
      * The EconomicCalendar model constructor.

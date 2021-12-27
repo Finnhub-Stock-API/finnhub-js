@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.2.7
+- Package version: 1.2.9
 
 ## Installation
 
@@ -57,6 +57,16 @@ finnhubClient.companyEarnings("AAPL", {'limit': 10}, (error, data, response) => 
 
 // Company EPS estimates
 finnhubClient.companyEpsEstimates("AAPL", {}, (error, data, response) => {
+    console.log(data)
+});
+
+// Ebitda Estimates
+finnhubClient.companyEbitdaEstimates("AAPL", {"freq": "annual"}, (error, data, response) => {
+    console.log(data)
+});
+
+// Ebit Estimates
+finnhubClient.companyEbitEstimates("AAPL", {"freq": "annual"}, (error, data, response) => {
     console.log(data)
 });
 

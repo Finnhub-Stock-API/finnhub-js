@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CryptoCandles model module.
  * @module model/CryptoCandles
- * @version 1.2.8
+ * @version 1.2.9
  */
 class CryptoCandles {
     /**

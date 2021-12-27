@@ -225,6 +225,30 @@ Object.defineProperty(exports, "EarningsEstimatesInfo", {
     return _EarningsEstimatesInfo["default"];
   }
 });
+Object.defineProperty(exports, "EbitEstimates", {
+  enumerable: true,
+  get: function get() {
+    return _EbitEstimates["default"];
+  }
+});
+Object.defineProperty(exports, "EbitEstimatesInfo", {
+  enumerable: true,
+  get: function get() {
+    return _EbitEstimatesInfo["default"];
+  }
+});
+Object.defineProperty(exports, "EbitdaEstimates", {
+  enumerable: true,
+  get: function get() {
+    return _EbitdaEstimates["default"];
+  }
+});
+Object.defineProperty(exports, "EbitdaEstimatesInfo", {
+  enumerable: true,
+  get: function get() {
+    return _EbitdaEstimatesInfo["default"];
+  }
+});
 Object.defineProperty(exports, "EconomicCalendar", {
   enumerable: true,
   get: function get() {
@@ -731,6 +755,14 @@ var _EarningsCallTranscriptsList = _interopRequireDefault(require("./model/Earni
 var _EarningsEstimates = _interopRequireDefault(require("./model/EarningsEstimates"));
 
 var _EarningsEstimatesInfo = _interopRequireDefault(require("./model/EarningsEstimatesInfo"));
+
+var _EbitEstimates = _interopRequireDefault(require("./model/EbitEstimates"));
+
+var _EbitEstimatesInfo = _interopRequireDefault(require("./model/EbitEstimatesInfo"));
+
+var _EbitdaEstimates = _interopRequireDefault(require("./model/EbitdaEstimates"));
+
+var _EbitdaEstimatesInfo = _interopRequireDefault(require("./model/EbitdaEstimatesInfo"));
 
 var _EconomicCalendar = _interopRequireDefault(require("./model/EconomicCalendar"));
 

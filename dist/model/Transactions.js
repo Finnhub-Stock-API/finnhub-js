@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Transactions model module.
  * @module model/Transactions
- * @version 1.2.8
+ * @version 1.2.9
  */
 var Transactions = /*#__PURE__*/function () {
   /**
@@ -53,6 +53,10 @@ var Transactions = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new Transactions();
+
+        if (data.hasOwnProperty('symbol')) {
+          obj['symbol'] = _ApiClient["default"].convertToType(data['symbol'], 'String');
+        }
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
@@ -90,10 +94,16 @@ var Transactions = /*#__PURE__*/function () {
   return Transactions;
 }();
 /**
+ * Symbol.
+ * @member {String} symbol
+ */
+
+
+Transactions.prototype['symbol'] = undefined;
+/**
  * Insider's name.
  * @member {String} name
  */
-
 
 Transactions.prototype['name'] = undefined;
 /**

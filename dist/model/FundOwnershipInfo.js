@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FundOwnershipInfo model module.
  * @module model/FundOwnershipInfo
- * @version 1.2.8
+ * @version 1.2.9
  */
 var FundOwnershipInfo = /*#__PURE__*/function () {
   /**

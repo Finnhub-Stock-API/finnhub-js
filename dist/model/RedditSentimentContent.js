@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RedditSentimentContent model module.
  * @module model/RedditSentimentContent
- * @version 1.2.8
+ * @version 1.2.9
  */
 var RedditSentimentContent = /*#__PURE__*/function () {
   /**

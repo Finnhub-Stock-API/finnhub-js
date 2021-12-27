@@ -55,6 +55,10 @@ var _EarningsCallTranscriptsList = _interopRequireDefault(require("../model/Earn
 
 var _EarningsEstimates = _interopRequireDefault(require("../model/EarningsEstimates"));
 
+var _EbitEstimates = _interopRequireDefault(require("../model/EbitEstimates"));
+
+var _EbitdaEstimates = _interopRequireDefault(require("../model/EbitdaEstimates"));
+
 var _EconomicCalendar = _interopRequireDefault(require("../model/EconomicCalendar"));
 
 var _EconomicCode = _interopRequireDefault(require("../model/EconomicCode"));
@@ -154,7 +158,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.8
+* @version 1.2.9
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -342,6 +346,88 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _CompanyEarningsQualityScore["default"];
       return this.apiClient.callApi('/stock/earnings-quality-score', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the companyEbitEstimates operation.
+     * @callback module:api/DefaultApi~companyEbitEstimatesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EbitEstimates} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * EBIT Estimates
+     * Get company's ebit estimates.
+     * @param {String} symbol Symbol of the company: AAPL.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.freq Can take 1 of the following values: <code>annual, quarterly</code>. Default to <code>quarterly</code>
+     * @param {module:api/DefaultApi~companyEbitEstimatesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EbitEstimates}
+     */
+
+  }, {
+    key: "companyEbitEstimates",
+    value: function companyEbitEstimates(symbol, opts, callback) {
+      opts = opts || {};
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling companyEbitEstimates");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'freq': opts['freq']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _EbitEstimates["default"];
+      return this.apiClient.callApi('/stock/ebit-estimate', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the companyEbitdaEstimates operation.
+     * @callback module:api/DefaultApi~companyEbitdaEstimatesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EbitdaEstimates} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * EBITDA Estimates
+     * Get company's ebitda estimates.
+     * @param {String} symbol Symbol of the company: AAPL.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.freq Can take 1 of the following values: <code>annual, quarterly</code>. Default to <code>quarterly</code>
+     * @param {module:api/DefaultApi~companyEbitdaEstimatesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EbitdaEstimates}
+     */
+
+  }, {
+    key: "companyEbitdaEstimates",
+    value: function companyEbitdaEstimates(symbol, opts, callback) {
+      opts = opts || {};
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling companyEbitdaEstimates");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'freq': opts['freq']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _EbitdaEstimates["default"];
+      return this.apiClient.callApi('/stock/ebitda-estimate', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the companyEpsEstimates operation.

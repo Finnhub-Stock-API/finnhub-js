@@ -17,7 +17,7 @@ import EconomicEvent from './EconomicEvent';
 /**
  * The EconomicCalendar model module.
  * @module model/EconomicCalendar
- * @version 1.2.8
+ * @version 1.2.9
  */
 class EconomicCalendar {
     /**
