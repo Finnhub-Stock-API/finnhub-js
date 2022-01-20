@@ -124,6 +124,8 @@ import TranscriptParticipant from './model/TranscriptParticipant';
 import Trend from './model/Trend';
 import TwitterSentimentContent from './model/TwitterSentimentContent';
 import UpgradeDowngrade from './model/UpgradeDowngrade';
+import UsptoPatent from './model/UsptoPatent';
+import UsptoPatentResult from './model/UsptoPatentResult';
 import DefaultApi from './api/DefaultApi';
 
 
@@ -156,7 +158,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.9
+* @version 1.2.10
 */
 export {
     /**
@@ -830,6 +832,18 @@ export {
      * @property {module:model/UpgradeDowngrade}
      */
     UpgradeDowngrade,
+
+    /**
+     * The UsptoPatent model constructor.
+     * @property {module:model/UsptoPatent}
+     */
+    UsptoPatent,
+
+    /**
+     * The UsptoPatentResult model constructor.
+     * @property {module:model/UsptoPatentResult}
+     */
+    UsptoPatentResult,
 
     /**
     * The DefaultApi service constructor.

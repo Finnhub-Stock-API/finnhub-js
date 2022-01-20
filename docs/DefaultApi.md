@@ -71,6 +71,7 @@ Method | HTTP request | Description
 [**stockSplits**](DefaultApi.md#stockSplits) | **GET** /stock/split | Splits
 [**stockSymbols**](DefaultApi.md#stockSymbols) | **GET** /stock/symbol | Stock Symbol
 [**stockTick**](DefaultApi.md#stockTick) | **GET** /stock/tick | Tick Data
+[**stockUsptoPatent**](DefaultApi.md#stockUsptoPatent) | **GET** /stock/uspto-patent | USPTO Patents
 [**supplyChainRelationships**](DefaultApi.md#supplyChainRelationships) | **GET** /stock/supply-chain | Supply Chain Relationships
 [**supportResistance**](DefaultApi.md#supportResistance) | **GET** /scan/support-resistance | Support/Resistance
 [**symbolSearch**](DefaultApi.md#symbolSearch) | **GET** /search | Symbol Lookup
@@ -2266,7 +2267,7 @@ Name | Type | Description  | Notes
 
 International Filings
 
-List filings for international companies which covers 95%+ of global market cap. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
+List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
 
 ### Example
 
@@ -3657,6 +3658,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TickData**](TickData.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## stockUsptoPatent
+
+> UsptoPatentResult stockUsptoPatent(symbol, from, to)
+
+USPTO Patents
+
+List USPTO patents for companies. Limit to 250 records per API call.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol.
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>.
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>.
+apiInstance.stockUsptoPatent(symbol, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**UsptoPatentResult**](UsptoPatentResult.md)
 
 ### Authorization
 

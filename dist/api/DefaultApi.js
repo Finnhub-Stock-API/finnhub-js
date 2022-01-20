@@ -147,6 +147,8 @@ var _TickData = _interopRequireDefault(require("../model/TickData"));
 
 var _UpgradeDowngrade = _interopRequireDefault(require("../model/UpgradeDowngrade"));
 
+var _UsptoPatentResult = _interopRequireDefault(require("../model/UsptoPatentResult"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -158,7 +160,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.9
+* @version 1.2.10
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -1785,7 +1787,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * International Filings
-     * List filings for international companies which covers 95%+ of global market cap. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
+     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Symbol. Leave empty to list latest filings.
      * @param {String} opts.country Filter by country using country's 2-letter code.
@@ -2868,6 +2870,57 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _TickData["default"];
       return this.apiClient.callApi('/stock/tick', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the stockUsptoPatent operation.
+     * @callback module:api/DefaultApi~stockUsptoPatentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UsptoPatentResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * USPTO Patents
+     * List USPTO patents for companies. Limit to 250 records per API call.
+     * @param {String} symbol Symbol.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>.
+     * @param {module:api/DefaultApi~stockUsptoPatentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UsptoPatentResult}
+     */
+
+  }, {
+    key: "stockUsptoPatent",
+    value: function stockUsptoPatent(symbol, from, to, callback) {
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling stockUsptoPatent");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling stockUsptoPatent");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling stockUsptoPatent");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _UsptoPatentResult["default"];
+      return this.apiClient.callApi('/stock/uspto-patent', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the supplyChainRelationships operation.

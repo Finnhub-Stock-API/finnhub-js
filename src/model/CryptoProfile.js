@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CryptoProfile model module.
  * @module model/CryptoProfile
- * @version 1.2.9
+ * @version 1.2.10
  */
 class CryptoProfile {
     /**
