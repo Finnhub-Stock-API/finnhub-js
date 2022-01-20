@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NewsSentiment model module.
  * @module model/NewsSentiment
- * @version 1.2.9
+ * @version 1.2.10
  */
 var NewsSentiment = /*#__PURE__*/function () {
   /**

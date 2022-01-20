@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RecommendationTrend model module.
  * @module model/RecommendationTrend
- * @version 1.2.9
+ * @version 1.2.10
  */
 class RecommendationTrend {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyESG model module.
  * @module model/CompanyESG
- * @version 1.2.9
+ * @version 1.2.10
  */
 class CompanyESG {
     /**

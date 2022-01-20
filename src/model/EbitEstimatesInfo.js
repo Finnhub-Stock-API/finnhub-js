@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EbitEstimatesInfo model module.
  * @module model/EbitEstimatesInfo
- * @version 1.2.9
+ * @version 1.2.10
  */
 class EbitEstimatesInfo {
     /**

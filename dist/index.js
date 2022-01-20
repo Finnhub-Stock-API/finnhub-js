@@ -675,6 +675,18 @@ Object.defineProperty(exports, "UpgradeDowngrade", {
     return _UpgradeDowngrade["default"];
   }
 });
+Object.defineProperty(exports, "UsptoPatent", {
+  enumerable: true,
+  get: function get() {
+    return _UsptoPatent["default"];
+  }
+});
+Object.defineProperty(exports, "UsptoPatentResult", {
+  enumerable: true,
+  get: function get() {
+    return _UsptoPatentResult["default"];
+  }
+});
 Object.defineProperty(exports, "DefaultApi", {
   enumerable: true,
   get: function get() {
@@ -905,6 +917,10 @@ var _Trend = _interopRequireDefault(require("./model/Trend"));
 var _TwitterSentimentContent = _interopRequireDefault(require("./model/TwitterSentimentContent"));
 
 var _UpgradeDowngrade = _interopRequireDefault(require("./model/UpgradeDowngrade"));
+
+var _UsptoPatent = _interopRequireDefault(require("./model/UsptoPatent"));
+
+var _UsptoPatentResult = _interopRequireDefault(require("./model/UsptoPatentResult"));
 
 var _DefaultApi = _interopRequireDefault(require("./api/DefaultApi"));
 

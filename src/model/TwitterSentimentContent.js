@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TwitterSentimentContent model module.
  * @module model/TwitterSentimentContent
- * @version 1.2.9
+ * @version 1.2.10
  */
 class TwitterSentimentContent {
     /**

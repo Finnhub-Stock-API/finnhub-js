@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StockSymbol model module.
  * @module model/StockSymbol
- * @version 1.2.9
+ * @version 1.2.10
  */
 class StockSymbol {
     /**
@@ -65,8 +65,17 @@ class StockSymbol {
             if (data.hasOwnProperty('figi')) {
                 obj['figi'] = ApiClient.convertToType(data['figi'], 'String');
             }
+            if (data.hasOwnProperty('shareClassFIGI')) {
+                obj['shareClassFIGI'] = ApiClient.convertToType(data['shareClassFIGI'], 'String');
+            }
             if (data.hasOwnProperty('currency')) {
                 obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
+            }
+            if (data.hasOwnProperty('symbol2')) {
+                obj['symbol2'] = ApiClient.convertToType(data['symbol2'], 'String');
+            }
+            if (data.hasOwnProperty('isin')) {
+                obj['isin'] = ApiClient.convertToType(data['isin'], 'String');
             }
         }
         return obj;
@@ -112,10 +121,28 @@ StockSymbol.prototype['mic'] = undefined;
 StockSymbol.prototype['figi'] = undefined;
 
 /**
+ * Global Share Class FIGI.
+ * @member {String} shareClassFIGI
+ */
+StockSymbol.prototype['shareClassFIGI'] = undefined;
+
+/**
  * Price's currency. This might be different from the reporting currency of fundamental data.
  * @member {String} currency
  */
 StockSymbol.prototype['currency'] = undefined;
+
+/**
+ * Alternative ticker for exchanges with multiple tickers for 1 stock such as BSE.
+ * @member {String} symbol2
+ */
+StockSymbol.prototype['symbol2'] = undefined;
+
+/**
+ * ISIN. This field is only available for EU stocks and selected Asian markets. Entitlement from Finnhub is required to access this field.
+ * @member {String} isin
+ */
+StockSymbol.prototype['isin'] = undefined;
 
 
 

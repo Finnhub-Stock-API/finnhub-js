@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FilingSentiment model module.
  * @module model/FilingSentiment
- * @version 1.2.9
+ * @version 1.2.10
  */
 class FilingSentiment {
     /**

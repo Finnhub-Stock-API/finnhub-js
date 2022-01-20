@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Trend model module.
  * @module model/Trend
- * @version 1.2.9
+ * @version 1.2.10
  */
 var Trend = /*#__PURE__*/function () {
   /**

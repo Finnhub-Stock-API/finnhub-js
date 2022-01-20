@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StockSymbol model module.
  * @module model/StockSymbol
- * @version 1.2.9
+ * @version 1.2.10
  */
 var StockSymbol = /*#__PURE__*/function () {
   /**
@@ -78,8 +78,20 @@ var StockSymbol = /*#__PURE__*/function () {
           obj['figi'] = _ApiClient["default"].convertToType(data['figi'], 'String');
         }
 
+        if (data.hasOwnProperty('shareClassFIGI')) {
+          obj['shareClassFIGI'] = _ApiClient["default"].convertToType(data['shareClassFIGI'], 'String');
+        }
+
         if (data.hasOwnProperty('currency')) {
           obj['currency'] = _ApiClient["default"].convertToType(data['currency'], 'String');
+        }
+
+        if (data.hasOwnProperty('symbol2')) {
+          obj['symbol2'] = _ApiClient["default"].convertToType(data['symbol2'], 'String');
+        }
+
+        if (data.hasOwnProperty('isin')) {
+          obj['isin'] = _ApiClient["default"].convertToType(data['isin'], 'String');
         }
       }
 
@@ -127,10 +139,28 @@ StockSymbol.prototype['mic'] = undefined;
 
 StockSymbol.prototype['figi'] = undefined;
 /**
+ * Global Share Class FIGI.
+ * @member {String} shareClassFIGI
+ */
+
+StockSymbol.prototype['shareClassFIGI'] = undefined;
+/**
  * Price's currency. This might be different from the reporting currency of fundamental data.
  * @member {String} currency
  */
 
 StockSymbol.prototype['currency'] = undefined;
+/**
+ * Alternative ticker for exchanges with multiple tickers for 1 stock such as BSE.
+ * @member {String} symbol2
+ */
+
+StockSymbol.prototype['symbol2'] = undefined;
+/**
+ * ISIN. This field is only available for EU stocks and selected Asian markets. Entitlement from Finnhub is required to access this field.
+ * @member {String} isin
+ */
+
+StockSymbol.prototype['isin'] = undefined;
 var _default = StockSymbol;
 exports["default"] = _default;

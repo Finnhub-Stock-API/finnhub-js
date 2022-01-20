@@ -83,11 +83,12 @@ import SupportResistance from '../model/SupportResistance';
 import SymbolLookup from '../model/SymbolLookup';
 import TickData from '../model/TickData';
 import UpgradeDowngrade from '../model/UpgradeDowngrade';
+import UsptoPatentResult from '../model/UsptoPatentResult';
 
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.9
+* @version 1.2.10
 */
 export default class DefaultApi {
 
@@ -1968,7 +1969,7 @@ export default class DefaultApi {
 
     /**
      * International Filings
-     * List filings for international companies which covers 95%+ of global market cap. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
+     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Symbol. Leave empty to list latest filings.
      * @param {String} opts.country Filter by country using country's 2-letter code.
@@ -3193,6 +3194,61 @@ export default class DefaultApi {
       let returnType = TickData;
       return this.apiClient.callApi(
         '/stock/tick', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the stockUsptoPatent operation.
+     * @callback module:api/DefaultApi~stockUsptoPatentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UsptoPatentResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * USPTO Patents
+     * List USPTO patents for companies. Limit to 250 records per API call.
+     * @param {String} symbol Symbol.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>.
+     * @param {module:api/DefaultApi~stockUsptoPatentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UsptoPatentResult}
+     */
+    stockUsptoPatent(symbol, from, to, callback) {
+      let postBody = null;
+      // verify the required parameter 'symbol' is set
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling stockUsptoPatent");
+      }
+      // verify the required parameter 'from' is set
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling stockUsptoPatent");
+      }
+      // verify the required parameter 'to' is set
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling stockUsptoPatent");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UsptoPatentResult;
+      return this.apiClient.callApi(
+        '/stock/uspto-patent', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

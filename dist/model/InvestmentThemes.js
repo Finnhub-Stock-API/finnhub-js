@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InvestmentThemes model module.
  * @module model/InvestmentThemes
- * @version 1.2.9
+ * @version 1.2.10
  */
 var InvestmentThemes = /*#__PURE__*/function () {
   /**

@@ -113,6 +113,8 @@ docs/TranscriptParticipant.md
 docs/Trend.md
 docs/TwitterSentimentContent.md
 docs/UpgradeDowngrade.md
+docs/UsptoPatent.md
+docs/UsptoPatentResult.md
 git_push.sh
 mocha.opts
 package.json
@@ -230,7 +232,7 @@ src/model/TranscriptParticipant.js
 src/model/Trend.js
 src/model/TwitterSentimentContent.js
 src/model/UpgradeDowngrade.js
-test/model/EbitEstimates.spec.js
-test/model/EbitEstimatesInfo.spec.js
-test/model/EbitdaEstimates.spec.js
-test/model/EbitdaEstimatesInfo.spec.js
+src/model/UsptoPatent.js
+src/model/UsptoPatentResult.js
+test/model/UsptoPatent.spec.js
+test/model/UsptoPatentResult.spec.js

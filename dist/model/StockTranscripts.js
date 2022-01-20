@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StockTranscripts model module.
  * @module model/StockTranscripts
- * @version 1.2.9
+ * @version 1.2.10
  */
 var StockTranscripts = /*#__PURE__*/function () {
   /**

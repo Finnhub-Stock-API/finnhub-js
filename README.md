@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 1.2.9
+- Package version: 1.2.10
 
 ## Installation
 
@@ -353,6 +353,11 @@ finnhubClient.companyEarningsQualityScore('AAPL', 'quarterly', (error, data, res
 
 // Crypto Profile
 finnhubClient.cryptoProfile('BTC', (error, data, response) => {
+    console.log(data);
+});
+
+// USPO Patent
+finnhubClient.stockUsptoPatent('NVDA', '2021-01-01', '2021-12-31', (error, data, response) => {
     console.log(data);
 });
 
