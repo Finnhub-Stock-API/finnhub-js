@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SupportResistance model module.
  * @module model/SupportResistance
- * @version 1.2.10
+ * @version 1.2.11
  */
 var SupportResistance = /*#__PURE__*/function () {
   /**

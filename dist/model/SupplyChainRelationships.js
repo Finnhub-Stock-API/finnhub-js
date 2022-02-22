@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SupplyChainRelationships model module.
  * @module model/SupplyChainRelationships
- * @version 1.2.10
+ * @version 1.2.11
  */
 var SupplyChainRelationships = /*#__PURE__*/function () {
   /**

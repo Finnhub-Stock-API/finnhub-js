@@ -84,11 +84,12 @@ import SymbolLookup from '../model/SymbolLookup';
 import TickData from '../model/TickData';
 import UpgradeDowngrade from '../model/UpgradeDowngrade';
 import UsptoPatentResult from '../model/UsptoPatentResult';
+import VisaApplicationResult from '../model/VisaApplicationResult';
 
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.10
+* @version 1.2.11
 */
 export default class DefaultApi {
 
@@ -1706,6 +1707,7 @@ export default class DefaultApi {
      * Get rates for all forex pairs. Ideal for currency conversion
      * @param {Object} opts Optional parameters
      * @param {String} opts.base Base currency. Default to EUR.
+     * @param {String} opts.date Date. Leave blank to get the latest data.
      * @param {module:api/DefaultApi~forexRatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Forexrates}
      */
@@ -1716,7 +1718,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
-        'base': opts['base']
+        'base': opts['base'],
+        'date': opts['date']
       };
       let headerParams = {
       };
@@ -3249,6 +3252,61 @@ export default class DefaultApi {
       let returnType = UsptoPatentResult;
       return this.apiClient.callApi(
         '/stock/uspto-patent', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the stockVisaApplication operation.
+     * @callback module:api/DefaultApi~stockVisaApplicationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/VisaApplicationResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * H1-B Visa Application
+     * Get a list of H1-B and Permanent visa applications for companies from the DOL. The data is updated quarterly.
+     * @param {String} symbol Symbol.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>. Filter on the <code>beginDate</code> column.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>. Filter on the <code>beginDate</code> column.
+     * @param {module:api/DefaultApi~stockVisaApplicationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/VisaApplicationResult}
+     */
+    stockVisaApplication(symbol, from, to, callback) {
+      let postBody = null;
+      // verify the required parameter 'symbol' is set
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling stockVisaApplication");
+      }
+      // verify the required parameter 'from' is set
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling stockVisaApplication");
+      }
+      // verify the required parameter 'to' is set
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling stockVisaApplication");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = VisaApplicationResult;
+      return this.apiClient.callApi(
+        '/stock/visa-application', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

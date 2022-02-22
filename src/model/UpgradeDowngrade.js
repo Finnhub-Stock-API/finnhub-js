@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpgradeDowngrade model module.
  * @module model/UpgradeDowngrade
- * @version 1.2.10
+ * @version 1.2.11
  */
 class UpgradeDowngrade {
     /**

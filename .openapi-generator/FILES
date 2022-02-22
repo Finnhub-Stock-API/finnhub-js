@@ -115,6 +115,8 @@ docs/TwitterSentimentContent.md
 docs/UpgradeDowngrade.md
 docs/UsptoPatent.md
 docs/UsptoPatentResult.md
+docs/VisaApplication.md
+docs/VisaApplicationResult.md
 git_push.sh
 mocha.opts
 package.json
@@ -234,5 +236,7 @@ src/model/TwitterSentimentContent.js
 src/model/UpgradeDowngrade.js
 src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
-test/model/UsptoPatent.spec.js
-test/model/UsptoPatentResult.spec.js
+src/model/VisaApplication.js
+src/model/VisaApplicationResult.js
+test/model/VisaApplication.spec.js
+test/model/VisaApplicationResult.spec.js

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AggregateIndicators model module.
  * @module model/AggregateIndicators
- * @version 1.2.10
+ * @version 1.2.11
  */
 var AggregateIndicators = /*#__PURE__*/function () {
   /**

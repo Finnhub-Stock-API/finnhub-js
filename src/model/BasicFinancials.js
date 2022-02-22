@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BasicFinancials model module.
  * @module model/BasicFinancials
- * @version 1.2.10
+ * @version 1.2.11
  */
 class BasicFinancials {
     /**

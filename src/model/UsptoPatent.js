@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UsptoPatent model module.
  * @module model/UsptoPatent
- * @version 1.2.10
+ * @version 1.2.11
  */
 class UsptoPatent {
     /**
@@ -118,7 +118,7 @@ UsptoPatent.prototype['filingStatus'] = undefined;
 UsptoPatent.prototype['patentNumber'] = undefined;
 
 /**
- * Filing date.
+ * Publication date.
  * @member {String} publicationDate
  */
 UsptoPatent.prototype['publicationDate'] = undefined;

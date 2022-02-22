@@ -687,6 +687,18 @@ Object.defineProperty(exports, "UsptoPatentResult", {
     return _UsptoPatentResult["default"];
   }
 });
+Object.defineProperty(exports, "VisaApplication", {
+  enumerable: true,
+  get: function get() {
+    return _VisaApplication["default"];
+  }
+});
+Object.defineProperty(exports, "VisaApplicationResult", {
+  enumerable: true,
+  get: function get() {
+    return _VisaApplicationResult["default"];
+  }
+});
 Object.defineProperty(exports, "DefaultApi", {
   enumerable: true,
   get: function get() {
@@ -921,6 +933,10 @@ var _UpgradeDowngrade = _interopRequireDefault(require("./model/UpgradeDowngrade
 var _UsptoPatent = _interopRequireDefault(require("./model/UsptoPatent"));
 
 var _UsptoPatentResult = _interopRequireDefault(require("./model/UsptoPatentResult"));
+
+var _VisaApplication = _interopRequireDefault(require("./model/VisaApplication"));
+
+var _VisaApplicationResult = _interopRequireDefault(require("./model/VisaApplicationResult"));
 
 var _DefaultApi = _interopRequireDefault(require("./api/DefaultApi"));
 

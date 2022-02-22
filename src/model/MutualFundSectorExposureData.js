@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualFundSectorExposureData model module.
  * @module model/MutualFundSectorExposureData
- * @version 1.2.10
+ * @version 1.2.11
  */
 class MutualFundSectorExposureData {
     /**

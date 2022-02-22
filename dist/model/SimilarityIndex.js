@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SimilarityIndex model module.
  * @module model/SimilarityIndex
- * @version 1.2.10
+ * @version 1.2.11
  */
 var SimilarityIndex = /*#__PURE__*/function () {
   /**

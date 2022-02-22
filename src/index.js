@@ -126,6 +126,8 @@ import TwitterSentimentContent from './model/TwitterSentimentContent';
 import UpgradeDowngrade from './model/UpgradeDowngrade';
 import UsptoPatent from './model/UsptoPatent';
 import UsptoPatentResult from './model/UsptoPatentResult';
+import VisaApplication from './model/VisaApplication';
+import VisaApplicationResult from './model/VisaApplicationResult';
 import DefaultApi from './api/DefaultApi';
 
 
@@ -158,7 +160,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.10
+* @version 1.2.11
 */
 export {
     /**
@@ -844,6 +846,18 @@ export {
      * @property {module:model/UsptoPatentResult}
      */
     UsptoPatentResult,
+
+    /**
+     * The VisaApplication model constructor.
+     * @property {module:model/VisaApplication}
+     */
+    VisaApplication,
+
+    /**
+     * The VisaApplicationResult model constructor.
+     * @property {module:model/VisaApplicationResult}
+     */
+    VisaApplicationResult,
 
     /**
     * The DefaultApi service constructor.

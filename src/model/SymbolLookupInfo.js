@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SymbolLookupInfo model module.
  * @module model/SymbolLookupInfo
- * @version 1.2.10
+ * @version 1.2.11
  */
 class SymbolLookupInfo {
     /**
