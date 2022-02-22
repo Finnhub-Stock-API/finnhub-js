@@ -72,6 +72,7 @@ Method | HTTP request | Description
 [**stockSymbols**](DefaultApi.md#stockSymbols) | **GET** /stock/symbol | Stock Symbol
 [**stockTick**](DefaultApi.md#stockTick) | **GET** /stock/tick | Tick Data
 [**stockUsptoPatent**](DefaultApi.md#stockUsptoPatent) | **GET** /stock/uspto-patent | USPTO Patents
+[**stockVisaApplication**](DefaultApi.md#stockVisaApplication) | **GET** /stock/visa-application | H1-B Visa Application
 [**supplyChainRelationships**](DefaultApi.md#supplyChainRelationships) | **GET** /stock/supply-chain | Supply Chain Relationships
 [**supportResistance**](DefaultApi.md#supportResistance) | **GET** /scan/support-resistance | Support/Resistance
 [**symbolSearch**](DefaultApi.md#symbolSearch) | **GET** /search | Symbol Lookup
@@ -1964,7 +1965,8 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let opts = {
-  'base': "base_example" // String | Base currency. Default to EUR.
+  'base': "base_example", // String | Base currency. Default to EUR.
+  'date': "date_example" // String | Date. Leave blank to get the latest data.
 };
 apiInstance.forexRates(opts, (error, data, response) => {
   if (error) {
@@ -1981,6 +1983,7 @@ apiInstance.forexRates(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **base** | **String**| Base currency. Default to EUR. | [optional] 
+ **date** | **String**| Date. Leave blank to get the latest data. | [optional] 
 
 ### Return type
 
@@ -3713,6 +3716,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UsptoPatentResult**](UsptoPatentResult.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## stockVisaApplication
+
+> VisaApplicationResult stockVisaApplication(symbol, from, to)
+
+H1-B Visa Application
+
+Get a list of H1-B and Permanent visa applications for companies from the DOL. The data is updated quarterly.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol.
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>. Filter on the <code>beginDate</code> column.
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>. Filter on the <code>beginDate</code> column.
+apiInstance.stockVisaApplication(symbol, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. Filter on the &lt;code&gt;beginDate&lt;/code&gt; column. | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. Filter on the &lt;code&gt;beginDate&lt;/code&gt; column. | 
+
+### Return type
+
+[**VisaApplicationResult**](VisaApplicationResult.md)
 
 ### Authorization
 

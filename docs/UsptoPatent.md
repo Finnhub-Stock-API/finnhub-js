@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **description** | **String** | Description. | [optional] 
 **filingStatus** | **String** | Filing status. | [optional] 
 **patentNumber** | **String** | Patent number. | [optional] 
-**publicationDate** | **String** | Filing date. | [optional] 
+**publicationDate** | **String** | Publication date. | [optional] 
 **patentType** | **String** | Patent&#39;s type. | [optional] 
 **url** | **String** | URL of the original article. | [optional] 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualFundHoldingsData model module.
  * @module model/MutualFundHoldingsData
- * @version 1.2.10
+ * @version 1.2.11
  */
 class MutualFundHoldingsData {
     /**

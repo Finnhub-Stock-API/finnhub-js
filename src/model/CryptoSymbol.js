@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CryptoSymbol model module.
  * @module model/CryptoSymbol
- * @version 1.2.10
+ * @version 1.2.11
  */
 class CryptoSymbol {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IndicesHistoricalConstituents model module.
  * @module model/IndicesHistoricalConstituents
- * @version 1.2.10
+ * @version 1.2.11
  */
 var IndicesHistoricalConstituents = /*#__PURE__*/function () {
   /**
