@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CovidInfo model module.
  * @module model/CovidInfo
- * @version 1.2.11
+ * @version 1.2.12
  */
 var CovidInfo = /*#__PURE__*/function () {
   /**

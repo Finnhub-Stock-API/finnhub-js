@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CountryMetadata model module.
  * @module model/CountryMetadata
- * @version 1.2.11
+ * @version 1.2.12
  */
 var CountryMetadata = /*#__PURE__*/function () {
   /**

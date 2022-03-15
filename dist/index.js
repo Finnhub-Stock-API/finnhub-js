@@ -381,6 +381,18 @@ Object.defineProperty(exports, "IndicesHistoricalConstituents", {
     return _IndicesHistoricalConstituents["default"];
   }
 });
+Object.defineProperty(exports, "InsiderSentiments", {
+  enumerable: true,
+  get: function get() {
+    return _InsiderSentiments["default"];
+  }
+});
+Object.defineProperty(exports, "InsiderSentimentsData", {
+  enumerable: true,
+  get: function get() {
+    return _InsiderSentimentsData["default"];
+  }
+});
 Object.defineProperty(exports, "InsiderTransactions", {
   enumerable: true,
   get: function get() {
@@ -831,6 +843,10 @@ var _Indicator = _interopRequireDefault(require("./model/Indicator"));
 var _IndicesConstituents = _interopRequireDefault(require("./model/IndicesConstituents"));
 
 var _IndicesHistoricalConstituents = _interopRequireDefault(require("./model/IndicesHistoricalConstituents"));
+
+var _InsiderSentiments = _interopRequireDefault(require("./model/InsiderSentiments"));
+
+var _InsiderSentimentsData = _interopRequireDefault(require("./model/InsiderSentimentsData"));
 
 var _InsiderTransactions = _interopRequireDefault(require("./model/InsiderTransactions"));
 

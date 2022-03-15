@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IndexHistoricalConstituent model module.
  * @module model/IndexHistoricalConstituent
- * @version 1.2.11
+ * @version 1.2.12
  */
 var IndexHistoricalConstituent = /*#__PURE__*/function () {
   /**

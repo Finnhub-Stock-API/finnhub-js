@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpgradeDowngrade model module.
  * @module model/UpgradeDowngrade
- * @version 1.2.11
+ * @version 1.2.12
  */
 var UpgradeDowngrade = /*#__PURE__*/function () {
   /**

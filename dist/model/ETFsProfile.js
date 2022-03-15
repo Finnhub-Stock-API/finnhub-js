@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ETFsProfile model module.
  * @module model/ETFsProfile
- * @version 1.2.11
+ * @version 1.2.12
  */
 var ETFsProfile = /*#__PURE__*/function () {
   /**

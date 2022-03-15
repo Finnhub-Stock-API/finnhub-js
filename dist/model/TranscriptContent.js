@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TranscriptContent model module.
  * @module model/TranscriptContent
- * @version 1.2.11
+ * @version 1.2.12
  */
 var TranscriptContent = /*#__PURE__*/function () {
   /**

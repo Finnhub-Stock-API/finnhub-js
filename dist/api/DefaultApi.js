@@ -89,6 +89,8 @@ var _IndicesConstituents = _interopRequireDefault(require("../model/IndicesConst
 
 var _IndicesHistoricalConstituents = _interopRequireDefault(require("../model/IndicesHistoricalConstituents"));
 
+var _InsiderSentiments = _interopRequireDefault(require("../model/InsiderSentiments"));
+
 var _InsiderTransactions = _interopRequireDefault(require("../model/InsiderTransactions"));
 
 var _InternationalFiling = _interopRequireDefault(require("../model/InternationalFiling"));
@@ -162,7 +164,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.11
+* @version 1.2.12
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -1166,6 +1168,7 @@ var DefaultApi = /*#__PURE__*/function () {
      * @param {String} opts.symbol ETF symbol.
      * @param {String} opts.isin ETF isin.
      * @param {Number} opts.skip Skip the first n results. You can use this parameter to query historical constituents data. The latest result is returned if skip=0 or not set.
+     * @param {String} opts.date Query holdings by date. You can use either this param or <code>skip</code> param, not both.
      * @param {module:api/DefaultApi~etfsHoldingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ETFsHoldings}
      */
@@ -1179,7 +1182,8 @@ var DefaultApi = /*#__PURE__*/function () {
       var queryParams = {
         'symbol': opts['symbol'],
         'isin': opts['isin'],
-        'skip': opts['skip']
+        'skip': opts['skip'],
+        'date': opts['date']
       };
       var headerParams = {};
       var formParams = {};
@@ -1711,7 +1715,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Indices Historical Constituents
-     * Get full history of index's constituents including symbols and dates of joining and leaving the Index. Currently support <code>^GSPC (S&P 500)</code>, <code>^NDX (Nasdaq 100)</code>, <code>^DJI (Dow Jones)</code>
+     * Get full history of index's constituents including symbols and dates of joining and leaving the Index. Currently support <code>^GSPC</code>, <code>^NDX</code>, <code>^DJI</code>
      * @param {String} symbol symbol
      * @param {module:api/DefaultApi~indicesHistoricalConstituentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/IndicesHistoricalConstituents}
@@ -1737,6 +1741,57 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _IndicesHistoricalConstituents["default"];
       return this.apiClient.callApi('/index/historical-constituents', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the insiderSentiment operation.
+     * @callback module:api/DefaultApi~insiderSentimentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InsiderSentiments} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Insider Sentiment
+     * Get insider sentiment data for US companies calculated using method discussed <a href=\"https://medium.com/@stock-api/finnhub-insiders-sentiment-analysis-cc43f9f64b3a\" target=\"_blank\">here</a>. The MSPR ranges from -100 for the most negative to 100 for the most positive which can signal price changes in the coming 30-90 days.
+     * @param {String} symbol Symbol of the company: AAPL.
+     * @param {Date} from From date: 2020-03-15.
+     * @param {Date} to To date: 2020-03-16.
+     * @param {module:api/DefaultApi~insiderSentimentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InsiderSentiments}
+     */
+
+  }, {
+    key: "insiderSentiment",
+    value: function insiderSentiment(symbol, from, to, callback) {
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling insiderSentiment");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling insiderSentiment");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling insiderSentiment");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _InsiderSentiments["default"];
+      return this.apiClient.callApi('/stock/insider-sentiment', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the insiderTransactions operation.
@@ -2782,7 +2837,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Stock Symbol
-     * List supported stocks. We use the following symbology to identify stocks on Finnhub <code>Exchange_Ticker.Exchange_Code</code>. A list of supported exchange codes can be found <a href=\"https://docs.google.com/spreadsheets/d/1I3pBxjfXB056-g_JYf_6o3Rns3BV2kMGG1nCatb91ls/edit?usp=sharing\" target=\"_blank\">here</a>. A list of supported CFD Indices can be found <a href=\"https://docs.google.com/spreadsheets/d/1BAbIXBgl405fj0oHeEyRFEu8mW4QD1PhvtaBATLoR14/edit?usp=sharing\" target=\"_blank\">here</a>.
+     * List supported stocks. We use the following symbology to identify stocks on Finnhub <code>Exchange_Ticker.Exchange_Code</code>. A list of supported exchange codes can be found <a href=\"https://docs.google.com/spreadsheets/d/1I3pBxjfXB056-g_JYf_6o3Rns3BV2kMGG1nCatb91ls/edit?usp=sharing\" target=\"_blank\">here</a>.
      * @param {String} exchange Exchange you want to get the list of symbols from. List of exchange codes can be found <a href=\"https://docs.google.com/spreadsheets/d/1I3pBxjfXB056-g_JYf_6o3Rns3BV2kMGG1nCatb91ls/edit?usp=sharing\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
      * @param {String} opts.mic Filter by MIC code.
@@ -2827,7 +2882,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Tick Data
-     * <p>Get historical tick data for global exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server.</p><p>For US market, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Nasdaq Nordic & Baltic</th>       <td> <ul> <li>Copenhagen (CO)</li> <li>Stockholm (ST)</li> <li>Helsinki (HE)</li> <li>Iceland (IC)</li> <li>Riga (RG)</li> <li>Tallinn (TL)</li> <li>Vilnius(VS)</li> <li>Fixed Income</li> <li>Derivatives</li> <li>Commodities</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
+     * <p>Get historical tick data for global exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server.</p><p>For US market, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
      * @param {String} symbol Symbol.
      * @param {Date} date Date: 2020-04-02.
      * @param {Number} limit Limit number of ticks returned. Maximum value: <code>25000</code>
@@ -2987,7 +3042,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Supply Chain Relationships
-     * <p>This endpoint provides an overall map of public companies' key customers and suppliers. The data offers a deeper look into a company's supply chain and how products are created. The data will help investors manage risk, limit exposure or generate alpha-generating ideas and trading insights.</p><p>We currently cover data for S&P500 and Nasdaq 100 companies.</p>
+     * <p>This endpoint provides an overall map of public companies' key customers and suppliers. The data offers a deeper look into a company's supply chain and how products are created. The data will help investors manage risk, limit exposure or generate alpha-generating ideas and trading insights.</p>
      * @param {String} symbol Symbol.
      * @param {module:api/DefaultApi~supplyChainRelationshipsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SupplyChainRelationships}
@@ -3210,7 +3265,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Earnings Call Transcripts List
-     * List earnings call transcripts' metadata. This endpoint is available for US, UK and Canadian companies.
+     * List earnings call transcripts' metadata. This endpoint is available for US, UK, European, Australian and Canadian companies.
      * @param {String} symbol Company symbol: AAPL. Leave empty to list the latest transcripts
      * @param {module:api/DefaultApi~transcriptsListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EarningsCallTranscriptsList}

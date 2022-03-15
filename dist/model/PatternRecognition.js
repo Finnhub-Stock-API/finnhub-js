@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PatternRecognition model module.
  * @module model/PatternRecognition
- * @version 1.2.11
+ * @version 1.2.12
  */
 var PatternRecognition = /*#__PURE__*/function () {
   /**
