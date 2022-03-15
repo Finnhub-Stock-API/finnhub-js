@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RevenueBreakdown model module.
  * @module model/RevenueBreakdown
- * @version 1.2.11
+ * @version 1.2.12
  */
 var RevenueBreakdown = /*#__PURE__*/function () {
   /**

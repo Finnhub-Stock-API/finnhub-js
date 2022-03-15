@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MutualFundCountryExposure model module.
  * @module model/MutualFundCountryExposure
- * @version 1.2.11
+ * @version 1.2.12
  */
 var MutualFundCountryExposure = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CryptoSymbol model module.
  * @module model/CryptoSymbol
- * @version 1.2.11
+ * @version 1.2.12
  */
 var CryptoSymbol = /*#__PURE__*/function () {
   /**

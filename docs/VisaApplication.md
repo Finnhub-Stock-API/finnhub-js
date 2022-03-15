@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **worksitePostalCode** | **String** | Worksite postal code. | [optional] 
 **wageRangeFrom** | **Number** | Wage range from. | [optional] 
 **wageRangeTo** | **Number** | Wage range to. | [optional] 
-**waveUnitOfPay** | **String** | Wage unit of pay. | [optional] 
+**wageUnitOfPay** | **String** | Wage unit of pay. | [optional] 
 **wageLevel** | **String** | Wage level. | [optional] 
 **h1bDependent** | **String** | H1B dependent flag. | [optional] 
 

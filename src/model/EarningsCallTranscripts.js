@@ -18,7 +18,7 @@ import TranscriptParticipant from './TranscriptParticipant';
 /**
  * The EarningsCallTranscripts model module.
  * @module model/EarningsCallTranscripts
- * @version 1.2.11
+ * @version 1.2.12
  */
 class EarningsCallTranscripts {
     /**

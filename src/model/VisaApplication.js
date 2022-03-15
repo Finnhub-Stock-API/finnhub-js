@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VisaApplication model module.
  * @module model/VisaApplication
- * @version 1.2.11
+ * @version 1.2.12
  */
 class VisaApplication {
     /**
@@ -107,8 +107,8 @@ class VisaApplication {
             if (data.hasOwnProperty('wageRangeTo')) {
                 obj['wageRangeTo'] = ApiClient.convertToType(data['wageRangeTo'], 'Number');
             }
-            if (data.hasOwnProperty('waveUnitOfPay')) {
-                obj['waveUnitOfPay'] = ApiClient.convertToType(data['waveUnitOfPay'], 'String');
+            if (data.hasOwnProperty('wageUnitOfPay')) {
+                obj['wageUnitOfPay'] = ApiClient.convertToType(data['wageUnitOfPay'], 'String');
             }
             if (data.hasOwnProperty('wageLevel')) {
                 obj['wageLevel'] = ApiClient.convertToType(data['wageLevel'], 'String');
@@ -245,9 +245,9 @@ VisaApplication.prototype['wageRangeTo'] = undefined;
 
 /**
  * Wage unit of pay.
- * @member {String} waveUnitOfPay
+ * @member {String} wageUnitOfPay
  */
-VisaApplication.prototype['waveUnitOfPay'] = undefined;
+VisaApplication.prototype['wageUnitOfPay'] = undefined;
 
 /**
  * Wage level.

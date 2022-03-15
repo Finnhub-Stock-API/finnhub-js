@@ -64,6 +64,8 @@ docs/IndexHistoricalConstituent.md
 docs/Indicator.md
 docs/IndicesConstituents.md
 docs/IndicesHistoricalConstituents.md
+docs/InsiderSentiments.md
+docs/InsiderSentimentsData.md
 docs/InsiderTransactions.md
 docs/InternationalFiling.md
 docs/InvestmentThemePortfolio.md
@@ -185,6 +187,8 @@ src/model/IndexHistoricalConstituent.js
 src/model/Indicator.js
 src/model/IndicesConstituents.js
 src/model/IndicesHistoricalConstituents.js
+src/model/InsiderSentiments.js
+src/model/InsiderSentimentsData.js
 src/model/InsiderTransactions.js
 src/model/InternationalFiling.js
 src/model/InvestmentThemePortfolio.js
@@ -238,5 +242,5 @@ src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
-test/model/VisaApplication.spec.js
-test/model/VisaApplicationResult.spec.js
+test/model/InsiderSentiments.spec.js
+test/model/InsiderSentimentsData.spec.js

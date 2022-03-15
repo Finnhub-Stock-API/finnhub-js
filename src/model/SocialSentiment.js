@@ -18,7 +18,7 @@ import TwitterSentimentContent from './TwitterSentimentContent';
 /**
  * The SocialSentiment model module.
  * @module model/SocialSentiment
- * @version 1.2.11
+ * @version 1.2.12
  */
 class SocialSentiment {
     /**

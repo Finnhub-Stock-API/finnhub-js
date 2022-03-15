@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InternationalFiling model module.
  * @module model/InternationalFiling
- * @version 1.2.11
+ * @version 1.2.12
  */
 var InternationalFiling = /*#__PURE__*/function () {
   /**

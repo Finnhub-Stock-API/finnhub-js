@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EconomicCalendar model module.
  * @module model/EconomicCalendar
- * @version 1.2.11
+ * @version 1.2.12
  */
 var EconomicCalendar = /*#__PURE__*/function () {
   /**

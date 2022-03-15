@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VisaApplication model module.
  * @module model/VisaApplication
- * @version 1.2.11
+ * @version 1.2.12
  */
 var VisaApplication = /*#__PURE__*/function () {
   /**
@@ -134,8 +134,8 @@ var VisaApplication = /*#__PURE__*/function () {
           obj['wageRangeTo'] = _ApiClient["default"].convertToType(data['wageRangeTo'], 'Number');
         }
 
-        if (data.hasOwnProperty('waveUnitOfPay')) {
-          obj['waveUnitOfPay'] = _ApiClient["default"].convertToType(data['waveUnitOfPay'], 'String');
+        if (data.hasOwnProperty('wageUnitOfPay')) {
+          obj['wageUnitOfPay'] = _ApiClient["default"].convertToType(data['wageUnitOfPay'], 'String');
         }
 
         if (data.hasOwnProperty('wageLevel')) {
@@ -276,10 +276,10 @@ VisaApplication.prototype['wageRangeFrom'] = undefined;
 VisaApplication.prototype['wageRangeTo'] = undefined;
 /**
  * Wage unit of pay.
- * @member {String} waveUnitOfPay
+ * @member {String} wageUnitOfPay
  */
 
-VisaApplication.prototype['waveUnitOfPay'] = undefined;
+VisaApplication.prototype['wageUnitOfPay'] = undefined;
 /**
  * Wage level.
  * @member {String} wageLevel

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyESG model module.
  * @module model/CompanyESG
- * @version 1.2.11
+ * @version 1.2.12
  */
 var CompanyESG = /*#__PURE__*/function () {
   /**

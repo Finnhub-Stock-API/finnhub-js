@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StockCandles model module.
  * @module model/StockCandles
- * @version 1.2.11
+ * @version 1.2.12
  */
 class StockCandles {
     /**

@@ -75,6 +75,8 @@ import IndexHistoricalConstituent from './model/IndexHistoricalConstituent';
 import Indicator from './model/Indicator';
 import IndicesConstituents from './model/IndicesConstituents';
 import IndicesHistoricalConstituents from './model/IndicesHistoricalConstituents';
+import InsiderSentiments from './model/InsiderSentiments';
+import InsiderSentimentsData from './model/InsiderSentimentsData';
 import InsiderTransactions from './model/InsiderTransactions';
 import InternationalFiling from './model/InternationalFiling';
 import InvestmentThemePortfolio from './model/InvestmentThemePortfolio';
@@ -160,7 +162,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.11
+* @version 1.2.12
 */
 export {
     /**
@@ -540,6 +542,18 @@ export {
      * @property {module:model/IndicesHistoricalConstituents}
      */
     IndicesHistoricalConstituents,
+
+    /**
+     * The InsiderSentiments model constructor.
+     * @property {module:model/InsiderSentiments}
+     */
+    InsiderSentiments,
+
+    /**
+     * The InsiderSentimentsData model constructor.
+     * @property {module:model/InsiderSentimentsData}
+     */
+    InsiderSentimentsData,
 
     /**
      * The InsiderTransactions model constructor.

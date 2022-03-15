@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ETFsSectorExposure model module.
  * @module model/ETFsSectorExposure
- * @version 1.2.11
+ * @version 1.2.12
  */
 var ETFsSectorExposure = /*#__PURE__*/function () {
   /**

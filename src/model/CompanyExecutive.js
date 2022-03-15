@@ -17,7 +17,7 @@ import Company from './Company';
 /**
  * The CompanyExecutive model module.
  * @module model/CompanyExecutive
- * @version 1.2.11
+ * @version 1.2.12
  */
 class CompanyExecutive {
     /**
