@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StockCandles model module.
  * @module model/StockCandles
- * @version 1.2.12
+ * @version 1.2.13
  */
 var StockCandles = /*#__PURE__*/function () {
   /**

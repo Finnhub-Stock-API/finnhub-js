@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VisaApplication model module.
  * @module model/VisaApplication
- * @version 1.2.12
+ * @version 1.2.13
  */
 class VisaApplication {
     /**

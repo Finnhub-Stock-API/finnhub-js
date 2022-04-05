@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IPOEvent model module.
  * @module model/IPOEvent
- * @version 1.2.12
+ * @version 1.2.13
  */
 class IPOEvent {
     /**

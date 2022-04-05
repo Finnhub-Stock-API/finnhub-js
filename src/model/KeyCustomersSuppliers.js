@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KeyCustomersSuppliers model module.
  * @module model/KeyCustomersSuppliers
- * @version 1.2.12
+ * @version 1.2.13
  */
 class KeyCustomersSuppliers {
     /**

@@ -15,6 +15,8 @@
 import ApiClient from './ApiClient';
 import AggregateIndicators from './model/AggregateIndicators';
 import BasicFinancials from './model/BasicFinancials';
+import BondCandles from './model/BondCandles';
+import BondProfile from './model/BondProfile';
 import BreakdownItem from './model/BreakdownItem';
 import Company from './model/Company';
 import CompanyESG from './model/CompanyESG';
@@ -83,6 +85,8 @@ import InvestmentThemePortfolio from './model/InvestmentThemePortfolio';
 import InvestmentThemes from './model/InvestmentThemes';
 import KeyCustomersSuppliers from './model/KeyCustomersSuppliers';
 import LastBidAsk from './model/LastBidAsk';
+import LobbyingData from './model/LobbyingData';
+import LobbyingResult from './model/LobbyingResult';
 import MarketNews from './model/MarketNews';
 import MutualFundCountryExposure from './model/MutualFundCountryExposure';
 import MutualFundCountryExposureData from './model/MutualFundCountryExposureData';
@@ -162,7 +166,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.12
+* @version 1.2.13
 */
 export {
     /**
@@ -182,6 +186,18 @@ export {
      * @property {module:model/BasicFinancials}
      */
     BasicFinancials,
+
+    /**
+     * The BondCandles model constructor.
+     * @property {module:model/BondCandles}
+     */
+    BondCandles,
+
+    /**
+     * The BondProfile model constructor.
+     * @property {module:model/BondProfile}
+     */
+    BondProfile,
 
     /**
      * The BreakdownItem model constructor.
@@ -590,6 +606,18 @@ export {
      * @property {module:model/LastBidAsk}
      */
     LastBidAsk,
+
+    /**
+     * The LobbyingData model constructor.
+     * @property {module:model/LobbyingData}
+     */
+    LobbyingData,
+
+    /**
+     * The LobbyingResult model constructor.
+     * @property {module:model/LobbyingResult}
+     */
+    LobbyingResult,
 
     /**
      * The MarketNews model constructor.
