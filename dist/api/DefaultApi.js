@@ -11,6 +11,10 @@ var _AggregateIndicators = _interopRequireDefault(require("../model/AggregateInd
 
 var _BasicFinancials = _interopRequireDefault(require("../model/BasicFinancials"));
 
+var _BondCandles = _interopRequireDefault(require("../model/BondCandles"));
+
+var _BondProfile = _interopRequireDefault(require("../model/BondProfile"));
+
 var _CompanyESG = _interopRequireDefault(require("../model/CompanyESG"));
 
 var _CompanyEarningsQualityScore = _interopRequireDefault(require("../model/CompanyEarningsQualityScore"));
@@ -99,6 +103,8 @@ var _InvestmentThemes = _interopRequireDefault(require("../model/InvestmentTheme
 
 var _LastBidAsk = _interopRequireDefault(require("../model/LastBidAsk"));
 
+var _LobbyingResult = _interopRequireDefault(require("../model/LobbyingResult"));
+
 var _MarketNews = _interopRequireDefault(require("../model/MarketNews"));
 
 var _MutualFundCountryExposure = _interopRequireDefault(require("../model/MutualFundCountryExposure"));
@@ -164,7 +170,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.12
+* @version 1.2.13
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -223,6 +229,95 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _AggregateIndicators["default"];
       return this.apiClient.callApi('/scan/technical-indicator', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the bondPrice operation.
+     * @callback module:api/DefaultApi~bondPriceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BondCandles} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Bond price data
+     * Get end-of-day bond's price data.
+     * @param {String} isin ISIN.
+     * @param {Number} from UNIX timestamp. Interval initial value.
+     * @param {Number} to UNIX timestamp. Interval end value.
+     * @param {module:api/DefaultApi~bondPriceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BondCandles}
+     */
+
+  }, {
+    key: "bondPrice",
+    value: function bondPrice(isin, from, to, callback) {
+      var postBody = null; // verify the required parameter 'isin' is set
+
+      if (isin === undefined || isin === null) {
+        throw new Error("Missing the required parameter 'isin' when calling bondPrice");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling bondPrice");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling bondPrice");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'isin': isin,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _BondCandles["default"];
+      return this.apiClient.callApi('/bond/price', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the bondProfile operation.
+     * @callback module:api/DefaultApi~bondProfileCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BondProfile} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Bond Profile
+     * Get general information of a bond. You can query by FIGI, ISIN or CUSIP
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.isin ISIN
+     * @param {String} opts.cusip CUSIP
+     * @param {String} opts.figi FIGI
+     * @param {module:api/DefaultApi~bondProfileCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BondProfile}
+     */
+
+  }, {
+    key: "bondProfile",
+    value: function bondProfile(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {
+        'isin': opts['isin'],
+        'cusip': opts['cusip'],
+        'figi': opts['figi']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _BondProfile["default"];
+      return this.apiClient.callApi('/bond/profile', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the companyBasicFinancials operation.
@@ -2717,6 +2812,57 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = [_Dividends["default"]];
       return this.apiClient.callApi('/stock/dividend', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the stockLobbying operation.
+     * @callback module:api/DefaultApi~stockLobbyingCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LobbyingResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Senate Lobbying
+     * Get a list of reported lobbying activities in the Senate and the House.
+     * @param {String} symbol Symbol.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>.
+     * @param {module:api/DefaultApi~stockLobbyingCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LobbyingResult}
+     */
+
+  }, {
+    key: "stockLobbying",
+    value: function stockLobbying(symbol, from, to, callback) {
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling stockLobbying");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling stockLobbying");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling stockLobbying");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _LobbyingResult["default"];
+      return this.apiClient.callApi('/stock/lobbying', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the stockNbbo operation.

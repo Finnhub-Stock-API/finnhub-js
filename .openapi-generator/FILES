@@ -3,6 +3,8 @@
 .travis.yml
 docs/AggregateIndicators.md
 docs/BasicFinancials.md
+docs/BondCandles.md
+docs/BondProfile.md
 docs/BreakdownItem.md
 docs/Company.md
 docs/CompanyESG.md
@@ -72,6 +74,8 @@ docs/InvestmentThemePortfolio.md
 docs/InvestmentThemes.md
 docs/KeyCustomersSuppliers.md
 docs/LastBidAsk.md
+docs/LobbyingData.md
+docs/LobbyingResult.md
 docs/MarketNews.md
 docs/MutualFundCountryExposure.md
 docs/MutualFundCountryExposureData.md
@@ -127,6 +131,8 @@ src/api/DefaultApi.js
 src/index.js
 src/model/AggregateIndicators.js
 src/model/BasicFinancials.js
+src/model/BondCandles.js
+src/model/BondProfile.js
 src/model/BreakdownItem.js
 src/model/Company.js
 src/model/CompanyESG.js
@@ -195,6 +201,8 @@ src/model/InvestmentThemePortfolio.js
 src/model/InvestmentThemes.js
 src/model/KeyCustomersSuppliers.js
 src/model/LastBidAsk.js
+src/model/LobbyingData.js
+src/model/LobbyingResult.js
 src/model/MarketNews.js
 src/model/MutualFundCountryExposure.js
 src/model/MutualFundCountryExposureData.js
@@ -242,5 +250,7 @@ src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
-test/model/InsiderSentiments.spec.js
-test/model/InsiderSentimentsData.spec.js
+test/model/BondCandles.spec.js
+test/model/BondProfile.spec.js
+test/model/LobbyingData.spec.js
+test/model/LobbyingResult.spec.js

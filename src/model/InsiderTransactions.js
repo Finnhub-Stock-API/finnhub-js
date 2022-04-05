@@ -17,7 +17,7 @@ import Transactions from './Transactions';
 /**
  * The InsiderTransactions model module.
  * @module model/InsiderTransactions
- * @version 1.2.12
+ * @version 1.2.13
  */
 class InsiderTransactions {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IPOEvent model module.
  * @module model/IPOEvent
- * @version 1.2.12
+ * @version 1.2.13
  */
 var IPOEvent = /*#__PURE__*/function () {
   /**

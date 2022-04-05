@@ -5,6 +5,8 @@ All URIs are relative to *https://finnhub.io/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**aggregateIndicator**](DefaultApi.md#aggregateIndicator) | **GET** /scan/technical-indicator | Aggregate Indicators
+[**bondPrice**](DefaultApi.md#bondPrice) | **GET** /bond/price | Bond price data
+[**bondProfile**](DefaultApi.md#bondProfile) | **GET** /bond/profile | Bond Profile
 [**companyBasicFinancials**](DefaultApi.md#companyBasicFinancials) | **GET** /stock/metric | Basic Financials
 [**companyEarnings**](DefaultApi.md#companyEarnings) | **GET** /stock/earnings | Earnings Surprises
 [**companyEarningsQualityScore**](DefaultApi.md#companyEarningsQualityScore) | **GET** /stock/earnings-quality-score | Company Earnings Quality Score
@@ -68,6 +70,7 @@ Method | HTTP request | Description
 [**stockBidask**](DefaultApi.md#stockBidask) | **GET** /stock/bidask | Last Bid-Ask
 [**stockCandles**](DefaultApi.md#stockCandles) | **GET** /stock/candle | Stock Candles
 [**stockDividends**](DefaultApi.md#stockDividends) | **GET** /stock/dividend | Dividends
+[**stockLobbying**](DefaultApi.md#stockLobbying) | **GET** /stock/lobbying | Senate Lobbying
 [**stockNbbo**](DefaultApi.md#stockNbbo) | **GET** /stock/bbo | Historical NBBO
 [**stockSplits**](DefaultApi.md#stockSplits) | **GET** /stock/split | Splits
 [**stockSymbols**](DefaultApi.md#stockSymbols) | **GET** /stock/symbol | Stock Symbol
@@ -126,6 +129,118 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AggregateIndicators**](AggregateIndicators.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bondPrice
+
+> BondCandles bondPrice(isin, from, to)
+
+Bond price data
+
+Get end-of-day bond&#39;s price data.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let isin = "isin_example"; // String | ISIN.
+let from = 789; // Number | UNIX timestamp. Interval initial value.
+let to = 789; // Number | UNIX timestamp. Interval end value.
+apiInstance.bondPrice(isin, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isin** | **String**| ISIN. | 
+ **from** | **Number**| UNIX timestamp. Interval initial value. | 
+ **to** | **Number**| UNIX timestamp. Interval end value. | 
+
+### Return type
+
+[**BondCandles**](BondCandles.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bondProfile
+
+> BondProfile bondProfile(opts)
+
+Bond Profile
+
+Get general information of a bond. You can query by FIGI, ISIN or CUSIP
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let opts = {
+  'isin': "isin_example", // String | ISIN
+  'cusip': "cusip_example", // String | CUSIP
+  'figi': "figi_example" // String | FIGI
+};
+apiInstance.bondProfile(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isin** | **String**| ISIN | [optional] 
+ **cusip** | **String**| CUSIP | [optional] 
+ **figi** | **String**| FIGI | [optional] 
+
+### Return type
+
+[**BondProfile**](BondProfile.md)
 
 ### Authorization
 
@@ -3491,6 +3606,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Dividends]**](Dividends.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## stockLobbying
+
+> LobbyingResult stockLobbying(symbol, from, to)
+
+Senate Lobbying
+
+Get a list of reported lobbying activities in the Senate and the House.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol.
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>.
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>.
+apiInstance.stockLobbying(symbol, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**LobbyingResult**](LobbyingResult.md)
 
 ### Authorization
 

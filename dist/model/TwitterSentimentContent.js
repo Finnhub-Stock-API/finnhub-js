@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TwitterSentimentContent model module.
  * @module model/TwitterSentimentContent
- * @version 1.2.12
+ * @version 1.2.13
  */
 var TwitterSentimentContent = /*#__PURE__*/function () {
   /**

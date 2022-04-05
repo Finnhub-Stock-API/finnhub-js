@@ -17,7 +17,7 @@ import VisaApplication from './VisaApplication';
 /**
  * The VisaApplicationResult model module.
  * @module model/VisaApplicationResult
- * @version 1.2.12
+ * @version 1.2.13
  */
 class VisaApplicationResult {
     /**

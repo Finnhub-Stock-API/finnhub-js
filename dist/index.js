@@ -21,6 +21,18 @@ Object.defineProperty(exports, "BasicFinancials", {
     return _BasicFinancials["default"];
   }
 });
+Object.defineProperty(exports, "BondCandles", {
+  enumerable: true,
+  get: function get() {
+    return _BondCandles["default"];
+  }
+});
+Object.defineProperty(exports, "BondProfile", {
+  enumerable: true,
+  get: function get() {
+    return _BondProfile["default"];
+  }
+});
 Object.defineProperty(exports, "BreakdownItem", {
   enumerable: true,
   get: function get() {
@@ -429,6 +441,18 @@ Object.defineProperty(exports, "LastBidAsk", {
     return _LastBidAsk["default"];
   }
 });
+Object.defineProperty(exports, "LobbyingData", {
+  enumerable: true,
+  get: function get() {
+    return _LobbyingData["default"];
+  }
+});
+Object.defineProperty(exports, "LobbyingResult", {
+  enumerable: true,
+  get: function get() {
+    return _LobbyingResult["default"];
+  }
+});
 Object.defineProperty(exports, "MarketNews", {
   enumerable: true,
   get: function get() {
@@ -724,6 +748,10 @@ var _AggregateIndicators = _interopRequireDefault(require("./model/AggregateIndi
 
 var _BasicFinancials = _interopRequireDefault(require("./model/BasicFinancials"));
 
+var _BondCandles = _interopRequireDefault(require("./model/BondCandles"));
+
+var _BondProfile = _interopRequireDefault(require("./model/BondProfile"));
+
 var _BreakdownItem = _interopRequireDefault(require("./model/BreakdownItem"));
 
 var _Company = _interopRequireDefault(require("./model/Company"));
@@ -859,6 +887,10 @@ var _InvestmentThemes = _interopRequireDefault(require("./model/InvestmentThemes
 var _KeyCustomersSuppliers = _interopRequireDefault(require("./model/KeyCustomersSuppliers"));
 
 var _LastBidAsk = _interopRequireDefault(require("./model/LastBidAsk"));
+
+var _LobbyingData = _interopRequireDefault(require("./model/LobbyingData"));
+
+var _LobbyingResult = _interopRequireDefault(require("./model/LobbyingResult"));
 
 var _MarketNews = _interopRequireDefault(require("./model/MarketNews"));
 
