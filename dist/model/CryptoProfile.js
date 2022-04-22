@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CryptoProfile model module.
  * @module model/CryptoProfile
- * @version 1.2.13
+ * @version 1.2.14
  */
 var CryptoProfile = /*#__PURE__*/function () {
   /**

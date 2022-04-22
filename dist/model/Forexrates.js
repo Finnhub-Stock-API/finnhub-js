@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Forexrates model module.
  * @module model/Forexrates
- * @version 1.2.13
+ * @version 1.2.14
  */
 var Forexrates = /*#__PURE__*/function () {
   /**

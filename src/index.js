@@ -130,6 +130,8 @@ import TranscriptParticipant from './model/TranscriptParticipant';
 import Trend from './model/Trend';
 import TwitterSentimentContent from './model/TwitterSentimentContent';
 import UpgradeDowngrade from './model/UpgradeDowngrade';
+import UsaSpending from './model/UsaSpending';
+import UsaSpendingResult from './model/UsaSpendingResult';
 import UsptoPatent from './model/UsptoPatent';
 import UsptoPatentResult from './model/UsptoPatentResult';
 import VisaApplication from './model/VisaApplication';
@@ -166,7 +168,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.13
+* @version 1.2.14
 */
 export {
     /**
@@ -876,6 +878,18 @@ export {
      * @property {module:model/UpgradeDowngrade}
      */
     UpgradeDowngrade,
+
+    /**
+     * The UsaSpending model constructor.
+     * @property {module:model/UsaSpending}
+     */
+    UsaSpending,
+
+    /**
+     * The UsaSpendingResult model constructor.
+     * @property {module:model/UsaSpendingResult}
+     */
+    UsaSpendingResult,
 
     /**
      * The UsptoPatent model constructor.

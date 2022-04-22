@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UsptoPatent model module.
  * @module model/UsptoPatent
- * @version 1.2.13
+ * @version 1.2.14
  */
 class UsptoPatent {
     /**

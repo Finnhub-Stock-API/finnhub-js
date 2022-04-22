@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalNBBO model module.
  * @module model/HistoricalNBBO
- * @version 1.2.13
+ * @version 1.2.14
  */
 class HistoricalNBBO {
     /**

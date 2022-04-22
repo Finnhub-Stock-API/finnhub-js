@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SimilarityIndexInfo model module.
  * @module model/SimilarityIndexInfo
- * @version 1.2.13
+ * @version 1.2.14
  */
 class SimilarityIndexInfo {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EconomicCode model module.
  * @module model/EconomicCode
- * @version 1.2.13
+ * @version 1.2.14
  */
 class EconomicCode {
     /**

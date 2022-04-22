@@ -87,13 +87,14 @@ import SupportResistance from '../model/SupportResistance';
 import SymbolLookup from '../model/SymbolLookup';
 import TickData from '../model/TickData';
 import UpgradeDowngrade from '../model/UpgradeDowngrade';
+import UsaSpendingResult from '../model/UsaSpendingResult';
 import UsptoPatentResult from '../model/UsptoPatentResult';
 import VisaApplicationResult from '../model/VisaApplicationResult';
 
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.13
+* @version 1.2.14
 */
 export default class DefaultApi {
 
@@ -2358,7 +2359,7 @@ export default class DefaultApi {
 
     /**
      * Mutual Funds Holdings
-     * Get full Mutual Funds holdings/constituents.
+     * Get full Mutual Funds holdings/constituents. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Fund's symbol.
      * @param {String} opts.isin Fund's isin.
@@ -2403,7 +2404,7 @@ export default class DefaultApi {
 
     /**
      * Mutual Funds Profile
-     * Get mutual funds profile information. This endpoint covers US mutual funds only.
+     * Get mutual funds profile information. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Fund's symbol.
      * @param {String} opts.isin Fund's isin.
@@ -3413,6 +3414,61 @@ export default class DefaultApi {
       let returnType = TickData;
       return this.apiClient.callApi(
         '/stock/tick', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the stockUsaSpending operation.
+     * @callback module:api/DefaultApi~stockUsaSpendingCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/UsaSpendingResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * USA Spending
+     * Get a list of government's spending activities from USASpending dataset for public companies. This dataset can help you identify companies that win big government contracts which is extremely important for industries such as Defense, Aerospace, and Education.
+     * @param {String} symbol Symbol.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>. Filter for <code>actionDate</code>
+     * @param {Date} to To date <code>YYYY-MM-DD</code>. Filter for <code>actionDate</code>
+     * @param {module:api/DefaultApi~stockUsaSpendingCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/UsaSpendingResult}
+     */
+    stockUsaSpending(symbol, from, to, callback) {
+      let postBody = null;
+      // verify the required parameter 'symbol' is set
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling stockUsaSpending");
+      }
+      // verify the required parameter 'from' is set
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling stockUsaSpending");
+      }
+      // verify the required parameter 'to' is set
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling stockUsaSpending");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UsaSpendingResult;
+      return this.apiClient.callApi(
+        '/stock/usa-spending', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
