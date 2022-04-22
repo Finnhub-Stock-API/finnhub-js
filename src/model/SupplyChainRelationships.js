@@ -17,7 +17,7 @@ import KeyCustomersSuppliers from './KeyCustomersSuppliers';
 /**
  * The SupplyChainRelationships model module.
  * @module model/SupplyChainRelationships
- * @version 1.2.13
+ * @version 1.2.14
  */
 class SupplyChainRelationships {
     /**

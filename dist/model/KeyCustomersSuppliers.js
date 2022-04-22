@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The KeyCustomersSuppliers model module.
  * @module model/KeyCustomersSuppliers
- * @version 1.2.13
+ * @version 1.2.14
  */
 var KeyCustomersSuppliers = /*#__PURE__*/function () {
   /**

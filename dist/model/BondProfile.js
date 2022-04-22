@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BondProfile model module.
  * @module model/BondProfile
- * @version 1.2.13
+ * @version 1.2.14
  */
 var BondProfile = /*#__PURE__*/function () {
   /**

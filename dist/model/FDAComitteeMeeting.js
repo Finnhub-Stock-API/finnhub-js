@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FDAComitteeMeeting model module.
  * @module model/FDAComitteeMeeting
- * @version 1.2.13
+ * @version 1.2.14
  */
 var FDAComitteeMeeting = /*#__PURE__*/function () {
   /**

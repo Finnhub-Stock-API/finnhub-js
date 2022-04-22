@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InsiderSentimentsData model module.
  * @module model/InsiderSentimentsData
- * @version 1.2.13
+ * @version 1.2.14
  */
 var InsiderSentimentsData = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PriceTarget model module.
  * @module model/PriceTarget
- * @version 1.2.13
+ * @version 1.2.14
  */
 var PriceTarget = /*#__PURE__*/function () {
   /**

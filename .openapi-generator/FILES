@@ -119,6 +119,8 @@ docs/TranscriptParticipant.md
 docs/Trend.md
 docs/TwitterSentimentContent.md
 docs/UpgradeDowngrade.md
+docs/UsaSpending.md
+docs/UsaSpendingResult.md
 docs/UsptoPatent.md
 docs/UsptoPatentResult.md
 docs/VisaApplication.md
@@ -246,11 +248,11 @@ src/model/TranscriptParticipant.js
 src/model/Trend.js
 src/model/TwitterSentimentContent.js
 src/model/UpgradeDowngrade.js
+src/model/UsaSpending.js
+src/model/UsaSpendingResult.js
 src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
-test/model/BondCandles.spec.js
-test/model/BondProfile.spec.js
-test/model/LobbyingData.spec.js
-test/model/LobbyingResult.spec.js
+test/model/UsaSpending.spec.js
+test/model/UsaSpendingResult.spec.js

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TranscriptParticipant model module.
  * @module model/TranscriptParticipant
- * @version 1.2.13
+ * @version 1.2.14
  */
 var TranscriptParticipant = /*#__PURE__*/function () {
   /**

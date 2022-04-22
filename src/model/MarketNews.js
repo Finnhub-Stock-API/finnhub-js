@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MarketNews model module.
  * @module model/MarketNews
- * @version 1.2.13
+ * @version 1.2.14
  */
 class MarketNews {
     /**

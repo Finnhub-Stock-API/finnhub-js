@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LobbyingData model module.
  * @module model/LobbyingData
- * @version 1.2.13
+ * @version 1.2.14
  */
 class LobbyingData {
     /**

@@ -75,6 +75,7 @@ Method | HTTP request | Description
 [**stockSplits**](DefaultApi.md#stockSplits) | **GET** /stock/split | Splits
 [**stockSymbols**](DefaultApi.md#stockSymbols) | **GET** /stock/symbol | Stock Symbol
 [**stockTick**](DefaultApi.md#stockTick) | **GET** /stock/tick | Tick Data
+[**stockUsaSpending**](DefaultApi.md#stockUsaSpending) | **GET** /stock/usa-spending | USA Spending
 [**stockUsptoPatent**](DefaultApi.md#stockUsptoPatent) | **GET** /stock/uspto-patent | USPTO Patents
 [**stockVisaApplication**](DefaultApi.md#stockVisaApplication) | **GET** /stock/visa-application | H1-B Visa Application
 [**supplyChainRelationships**](DefaultApi.md#supplyChainRelationships) | **GET** /stock/supply-chain | Supply Chain Relationships
@@ -2708,7 +2709,7 @@ Name | Type | Description  | Notes
 
 Mutual Funds Holdings
 
-Get full Mutual Funds holdings/constituents.
+Get full Mutual Funds holdings/constituents. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
 
 ### Example
 
@@ -2765,7 +2766,7 @@ Name | Type | Description  | Notes
 
 Mutual Funds Profile
 
-Get mutual funds profile information. This endpoint covers US mutual funds only.
+Get mutual funds profile information. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
 
 ### Example
 
@@ -3889,6 +3890,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TickData**](TickData.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## stockUsaSpending
+
+> UsaSpendingResult stockUsaSpending(symbol, from, to)
+
+USA Spending
+
+Get a list of government&#39;s spending activities from USASpending dataset for public companies. This dataset can help you identify companies that win big government contracts which is extremely important for industries such as Defense, Aerospace, and Education.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol.
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>. Filter for <code>actionDate</code>
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>. Filter for <code>actionDate</code>
+apiInstance.stockUsaSpending(symbol, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. Filter for &lt;code&gt;actionDate&lt;/code&gt; | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. Filter for &lt;code&gt;actionDate&lt;/code&gt; | 
+
+### Return type
+
+[**UsaSpendingResult**](UsaSpendingResult.md)
 
 ### Authorization
 

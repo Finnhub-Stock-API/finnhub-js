@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EconomicData model module.
  * @module model/EconomicData
- * @version 1.2.13
+ * @version 1.2.14
  */
 var EconomicData = /*#__PURE__*/function () {
   /**

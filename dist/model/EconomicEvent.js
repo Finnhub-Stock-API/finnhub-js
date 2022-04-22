@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EconomicEvent model module.
  * @module model/EconomicEvent
- * @version 1.2.13
+ * @version 1.2.14
  */
 var EconomicEvent = /*#__PURE__*/function () {
   /**

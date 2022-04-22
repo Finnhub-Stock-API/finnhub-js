@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EbitEstimatesInfo model module.
  * @module model/EbitEstimatesInfo
- * @version 1.2.13
+ * @version 1.2.14
  */
 var EbitEstimatesInfo = /*#__PURE__*/function () {
   /**

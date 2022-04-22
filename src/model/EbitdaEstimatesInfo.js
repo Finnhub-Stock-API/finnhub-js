@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EbitdaEstimatesInfo model module.
  * @module model/EbitdaEstimatesInfo
- * @version 1.2.13
+ * @version 1.2.14
  */
 class EbitdaEstimatesInfo {
     /**
