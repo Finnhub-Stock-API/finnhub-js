@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LobbyingData model module.
  * @module model/LobbyingData
- * @version 1.2.14
+ * @version 1.2.15
  */
 var LobbyingData = /*#__PURE__*/function () {
   /**

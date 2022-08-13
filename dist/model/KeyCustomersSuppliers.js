@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The KeyCustomersSuppliers model module.
  * @module model/KeyCustomersSuppliers
- * @version 1.2.14
+ * @version 1.2.15
  */
 var KeyCustomersSuppliers = /*#__PURE__*/function () {
   /**
@@ -60,6 +60,14 @@ var KeyCustomersSuppliers = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('country')) {
+          obj['country'] = _ApiClient["default"].convertToType(data['country'], 'String');
+        }
+
+        if (data.hasOwnProperty('industry')) {
+          obj['industry'] = _ApiClient["default"].convertToType(data['industry'], 'String');
         }
 
         if (data.hasOwnProperty('customer')) {
@@ -114,6 +122,18 @@ KeyCustomersSuppliers.prototype['symbol'] = undefined;
  */
 
 KeyCustomersSuppliers.prototype['name'] = undefined;
+/**
+ * Country
+ * @member {String} country
+ */
+
+KeyCustomersSuppliers.prototype['country'] = undefined;
+/**
+ * Industry
+ * @member {String} industry
+ */
+
+KeyCustomersSuppliers.prototype['industry'] = undefined;
 /**
  * Whether the company is a customer.
  * @member {Boolean} customer

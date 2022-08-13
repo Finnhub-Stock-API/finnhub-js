@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Company model module.
  * @module model/Company
- * @version 1.2.14
+ * @version 1.2.15
  */
 var Company = /*#__PURE__*/function () {
   /**
@@ -109,7 +109,7 @@ Company.prototype['age'] = undefined;
 
 Company.prototype['title'] = undefined;
 /**
- * Year appointed
+ * Year first appointed as executive/director of the company
  * @member {String} since
  */
 

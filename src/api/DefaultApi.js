@@ -77,6 +77,7 @@ import RecommendationTrend from '../model/RecommendationTrend';
 import RevenueBreakdown from '../model/RevenueBreakdown';
 import RevenueEstimates from '../model/RevenueEstimates';
 import SECSentimentAnalysis from '../model/SECSentimentAnalysis';
+import SectorMetric from '../model/SectorMetric';
 import SimilarityIndex from '../model/SimilarityIndex';
 import SocialSentiment from '../model/SocialSentiment';
 import Split from '../model/Split';
@@ -94,7 +95,7 @@ import VisaApplicationResult from '../model/VisaApplicationResult';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.14
+* @version 1.2.15
 */
 export default class DefaultApi {
 
@@ -2134,7 +2135,7 @@ export default class DefaultApi {
 
     /**
      * International Filings
-     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
+     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Symbol. Leave empty to list latest filings.
      * @param {String} opts.country Filter by country using country's 2-letter code.
@@ -2629,7 +2630,7 @@ export default class DefaultApi {
 
     /**
      * Major Press Releases
-     * Get latest major press releases of a company. This data can be used to highlight the most significant events comprised of mostly press releases sourced from the exchanges, BusinessWire, AccessWire, GlobeNewswire, Newsfile, and PRNewswire.
+     * <p>Get latest major press releases of a company. This data can be used to highlight the most significant events comprised of mostly press releases sourced from the exchanges, BusinessWire, AccessWire, GlobeNewswire, Newsfile, and PRNewswire.</p><p>Full-text press releases data is available for Enterprise clients. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Company symbol.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.from From time: 2020-01-01.
@@ -2835,6 +2836,49 @@ export default class DefaultApi {
       let returnType = RevenueBreakdown;
       return this.apiClient.callApi(
         '/stock/revenue-breakdown', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the sectorMetric operation.
+     * @callback module:api/DefaultApi~sectorMetricCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/SectorMetric} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Sector Metrics
+     * Get ratios for different sectors and regions/indices.
+     * @param {String} region Region. A list of supported values for this field can be found <a href=\"https://docs.google.com/spreadsheets/d/1afedyv7yWJ-z7pMjaAZK-f6ENY3mI3EBCk95QffpoHw/edit?usp=sharing\" target=\"_blank\">here</a>.
+     * @param {module:api/DefaultApi~sectorMetricCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/SectorMetric}
+     */
+    sectorMetric(region, callback) {
+      let postBody = null;
+      // verify the required parameter 'region' is set
+      if (region === undefined || region === null) {
+        throw new Error("Missing the required parameter 'region' when calling sectorMetric");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'region': region
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = SectorMetric;
+      return this.apiClient.callApi(
+        '/sector/metrics', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

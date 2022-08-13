@@ -591,6 +591,18 @@ Object.defineProperty(exports, "SECSentimentAnalysis", {
     return _SECSentimentAnalysis["default"];
   }
 });
+Object.defineProperty(exports, "SectorMetric", {
+  enumerable: true,
+  get: function get() {
+    return _SectorMetric["default"];
+  }
+});
+Object.defineProperty(exports, "SectorMetricData", {
+  enumerable: true,
+  get: function get() {
+    return _SectorMetricData["default"];
+  }
+});
 Object.defineProperty(exports, "Sentiment", {
   enumerable: true,
   get: function get() {
@@ -949,6 +961,10 @@ var _RevenueEstimates = _interopRequireDefault(require("./model/RevenueEstimates
 var _RevenueEstimatesInfo = _interopRequireDefault(require("./model/RevenueEstimatesInfo"));
 
 var _SECSentimentAnalysis = _interopRequireDefault(require("./model/SECSentimentAnalysis"));
+
+var _SectorMetric = _interopRequireDefault(require("./model/SectorMetric"));
+
+var _SectorMetricData = _interopRequireDefault(require("./model/SectorMetricData"));
 
 var _Sentiment = _interopRequireDefault(require("./model/Sentiment"));
 

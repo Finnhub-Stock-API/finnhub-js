@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MutualFundProfileData model module.
  * @module model/MutualFundProfileData
- * @version 1.2.14
+ * @version 1.2.15
  */
 var MutualFundProfileData = /*#__PURE__*/function () {
   /**
@@ -152,6 +152,14 @@ var MutualFundProfileData = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('className')) {
           obj['className'] = _ApiClient["default"].convertToType(data['className'], 'String');
+        }
+
+        if (data.hasOwnProperty('sfdrClassification')) {
+          obj['sfdrClassification'] = _ApiClient["default"].convertToType(data['sfdrClassification'], 'String');
+        }
+
+        if (data.hasOwnProperty('currency')) {
+          obj['currency'] = _ApiClient["default"].convertToType(data['currency'], 'String');
         }
       }
 
@@ -312,5 +320,17 @@ MutualFundProfileData.prototype['classId'] = undefined;
  */
 
 MutualFundProfileData.prototype['className'] = undefined;
+/**
+ * SFDR classification for EU funds. Under the new classifications, a fund's strategy will labeled under either Article 6, 8 or 9. Article 6 covers funds which do not integrate any kind of sustainability into the investment process. Article 8, also known as ‘environmental and socially promoting’, applies “… where a financial product promotes, among other characteristics, environmental or social characteristics, or a combination of those characteristics, provided that the companies in which the investments are made follow good governance practices.”. Article 9, also known as ‘products targeting sustainable investments’, covers products targeting bespoke sustainable investments and applies “… where a financial product has sustainable investment as its objective and an index has been designated as a reference benchmark.”
+ * @member {String} sfdrClassification
+ */
+
+MutualFundProfileData.prototype['sfdrClassification'] = undefined;
+/**
+ * Fund's currency
+ * @member {String} currency
+ */
+
+MutualFundProfileData.prototype['currency'] = undefined;
 var _default = MutualFundProfileData;
 exports["default"] = _default;

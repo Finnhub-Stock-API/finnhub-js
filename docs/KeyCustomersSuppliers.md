@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **symbol** | **String** | Symbol | [optional] 
 **name** | **String** | Name | [optional] 
+**country** | **String** | Country | [optional] 
+**industry** | **String** | Industry | [optional] 
 **customer** | **Boolean** | Whether the company is a customer. | [optional] 
 **supplier** | **Boolean** | Whether the company is a supplier | [optional] 
 **oneMonthCorrelation** | **Number** | 1-month price correlation | [optional] 

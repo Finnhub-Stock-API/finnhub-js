@@ -135,6 +135,8 @@ var _RevenueEstimates = _interopRequireDefault(require("../model/RevenueEstimate
 
 var _SECSentimentAnalysis = _interopRequireDefault(require("../model/SECSentimentAnalysis"));
 
+var _SectorMetric = _interopRequireDefault(require("../model/SectorMetric"));
+
 var _SimilarityIndex = _interopRequireDefault(require("../model/SimilarityIndex"));
 
 var _SocialSentiment = _interopRequireDefault(require("../model/SocialSentiment"));
@@ -172,7 +174,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.14
+* @version 1.2.15
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -1943,7 +1945,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * International Filings
-     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data.
+     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Symbol. Leave empty to list latest filings.
      * @param {String} opts.country Filter by country using country's 2-letter code.
@@ -2371,7 +2373,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Major Press Releases
-     * Get latest major press releases of a company. This data can be used to highlight the most significant events comprised of mostly press releases sourced from the exchanges, BusinessWire, AccessWire, GlobeNewswire, Newsfile, and PRNewswire.
+     * <p>Get latest major press releases of a company. This data can be used to highlight the most significant events comprised of mostly press releases sourced from the exchanges, BusinessWire, AccessWire, GlobeNewswire, Newsfile, and PRNewswire.</p><p>Full-text press releases data is available for Enterprise clients. <a href=\"mailto:support@finnhub.io\">Contact Us</a> to learn more.</p>
      * @param {String} symbol Company symbol.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.from From time: 2020-01-01.
@@ -2550,6 +2552,43 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _RevenueBreakdown["default"];
       return this.apiClient.callApi('/stock/revenue-breakdown', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the sectorMetric operation.
+     * @callback module:api/DefaultApi~sectorMetricCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/SectorMetric} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Sector Metrics
+     * Get ratios for different sectors and regions/indices.
+     * @param {String} region Region. A list of supported values for this field can be found <a href=\"https://docs.google.com/spreadsheets/d/1afedyv7yWJ-z7pMjaAZK-f6ENY3mI3EBCk95QffpoHw/edit?usp=sharing\" target=\"_blank\">here</a>.
+     * @param {module:api/DefaultApi~sectorMetricCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/SectorMetric}
+     */
+
+  }, {
+    key: "sectorMetric",
+    value: function sectorMetric(region, callback) {
+      var postBody = null; // verify the required parameter 'region' is set
+
+      if (region === undefined || region === null) {
+        throw new Error("Missing the required parameter 'region' when calling sectorMetric");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'region': region
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _SectorMetric["default"];
+      return this.apiClient.callApi('/sector/metrics', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the similarityIndex operation.

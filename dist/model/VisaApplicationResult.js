@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VisaApplicationResult model module.
  * @module model/VisaApplicationResult
- * @version 1.2.14
+ * @version 1.2.15
  */
 var VisaApplicationResult = /*#__PURE__*/function () {
   /**

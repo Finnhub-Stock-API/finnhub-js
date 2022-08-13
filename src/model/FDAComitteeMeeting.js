@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FDAComitteeMeeting model module.
  * @module model/FDAComitteeMeeting
- * @version 1.2.14
+ * @version 1.2.15
  */
 class FDAComitteeMeeting {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FilingSentiment model module.
  * @module model/FilingSentiment
- * @version 1.2.14
+ * @version 1.2.15
  */
 var FilingSentiment = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Filing model module.
  * @module model/Filing
- * @version 1.2.14
+ * @version 1.2.15
  */
 var Filing = /*#__PURE__*/function () {
   /**

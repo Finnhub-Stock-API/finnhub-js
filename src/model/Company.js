@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Company model module.
  * @module model/Company
- * @version 1.2.14
+ * @version 1.2.15
  */
 class Company {
     /**
@@ -94,7 +94,7 @@ Company.prototype['age'] = undefined;
 Company.prototype['title'] = undefined;
 
 /**
- * Year appointed
+ * Year first appointed as executive/director of the company
  * @member {String} since
  */
 Company.prototype['since'] = undefined;

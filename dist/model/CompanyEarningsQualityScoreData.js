@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyEarningsQualityScoreData model module.
  * @module model/CompanyEarningsQualityScoreData
- * @version 1.2.14
+ * @version 1.2.15
  */
 var CompanyEarningsQualityScoreData = /*#__PURE__*/function () {
   /**
