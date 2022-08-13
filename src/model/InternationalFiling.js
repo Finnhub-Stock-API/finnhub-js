@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InternationalFiling model module.
  * @module model/InternationalFiling
- * @version 1.2.14
+ * @version 1.2.15
  */
 class InternationalFiling {
     /**

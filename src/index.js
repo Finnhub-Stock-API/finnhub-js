@@ -110,6 +110,8 @@ import RevenueBreakdown from './model/RevenueBreakdown';
 import RevenueEstimates from './model/RevenueEstimates';
 import RevenueEstimatesInfo from './model/RevenueEstimatesInfo';
 import SECSentimentAnalysis from './model/SECSentimentAnalysis';
+import SectorMetric from './model/SectorMetric';
+import SectorMetricData from './model/SectorMetricData';
 import Sentiment from './model/Sentiment';
 import SimilarityIndex from './model/SimilarityIndex';
 import SimilarityIndexInfo from './model/SimilarityIndexInfo';
@@ -168,7 +170,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.14
+* @version 1.2.15
 */
 export {
     /**
@@ -758,6 +760,18 @@ export {
      * @property {module:model/SECSentimentAnalysis}
      */
     SECSentimentAnalysis,
+
+    /**
+     * The SectorMetric model constructor.
+     * @property {module:model/SectorMetric}
+     */
+    SectorMetric,
+
+    /**
+     * The SectorMetricData model constructor.
+     * @property {module:model/SectorMetricData}
+     */
+    SectorMetricData,
 
     /**
      * The Sentiment model constructor.

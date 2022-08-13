@@ -17,7 +17,7 @@ import UsptoPatent from './UsptoPatent';
 /**
  * The UsptoPatentResult model module.
  * @module model/UsptoPatentResult
- * @version 1.2.14
+ * @version 1.2.15
  */
 class UsptoPatentResult {
     /**

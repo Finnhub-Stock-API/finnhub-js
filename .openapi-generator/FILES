@@ -99,6 +99,8 @@ docs/RevenueBreakdown.md
 docs/RevenueEstimates.md
 docs/RevenueEstimatesInfo.md
 docs/SECSentimentAnalysis.md
+docs/SectorMetric.md
+docs/SectorMetricData.md
 docs/Sentiment.md
 docs/SimilarityIndex.md
 docs/SimilarityIndexInfo.md
@@ -228,6 +230,8 @@ src/model/RevenueBreakdown.js
 src/model/RevenueEstimates.js
 src/model/RevenueEstimatesInfo.js
 src/model/SECSentimentAnalysis.js
+src/model/SectorMetric.js
+src/model/SectorMetricData.js
 src/model/Sentiment.js
 src/model/SimilarityIndex.js
 src/model/SimilarityIndexInfo.js
@@ -254,5 +258,5 @@ src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
-test/model/UsaSpending.spec.js
-test/model/UsaSpendingResult.spec.js
+test/model/SectorMetric.spec.js
+test/model/SectorMetricData.spec.js

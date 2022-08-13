@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Report model module.
  * @module model/Report
- * @version 1.2.14
+ * @version 1.2.15
  */
 var Report = /*#__PURE__*/function () {
   /**

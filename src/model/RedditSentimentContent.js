@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RedditSentimentContent model module.
  * @module model/RedditSentimentContent
- * @version 1.2.14
+ * @version 1.2.15
  */
 class RedditSentimentContent {
     /**

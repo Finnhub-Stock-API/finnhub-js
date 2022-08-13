@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KeyCustomersSuppliers model module.
  * @module model/KeyCustomersSuppliers
- * @version 1.2.14
+ * @version 1.2.15
  */
 class KeyCustomersSuppliers {
     /**
@@ -52,6 +52,12 @@ class KeyCustomersSuppliers {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('country')) {
+                obj['country'] = ApiClient.convertToType(data['country'], 'String');
+            }
+            if (data.hasOwnProperty('industry')) {
+                obj['industry'] = ApiClient.convertToType(data['industry'], 'String');
             }
             if (data.hasOwnProperty('customer')) {
                 obj['customer'] = ApiClient.convertToType(data['customer'], 'Boolean');
@@ -95,6 +101,18 @@ KeyCustomersSuppliers.prototype['symbol'] = undefined;
  * @member {String} name
  */
 KeyCustomersSuppliers.prototype['name'] = undefined;
+
+/**
+ * Country
+ * @member {String} country
+ */
+KeyCustomersSuppliers.prototype['country'] = undefined;
+
+/**
+ * Industry
+ * @member {String} industry
+ */
+KeyCustomersSuppliers.prototype['industry'] = undefined;
 
 /**
  * Whether the company is a customer.

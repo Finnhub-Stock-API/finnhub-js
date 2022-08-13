@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningResult model module.
  * @module model/EarningResult
- * @version 1.2.14
+ * @version 1.2.15
  */
 class EarningResult {
     /**
