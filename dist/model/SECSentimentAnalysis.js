@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SECSentimentAnalysis model module.
  * @module model/SECSentimentAnalysis
- * @version 1.2.15
+ * @version 1.2.16
  */
 var SECSentimentAnalysis = /*#__PURE__*/function () {
   /**

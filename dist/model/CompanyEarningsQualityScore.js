@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyEarningsQualityScore model module.
  * @module model/CompanyEarningsQualityScore
- * @version 1.2.15
+ * @version 1.2.16
  */
 var CompanyEarningsQualityScore = /*#__PURE__*/function () {
   /**

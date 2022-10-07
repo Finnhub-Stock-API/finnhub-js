@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CovidInfo model module.
  * @module model/CovidInfo
- * @version 1.2.15
+ * @version 1.2.16
  */
 class CovidInfo {
     /**

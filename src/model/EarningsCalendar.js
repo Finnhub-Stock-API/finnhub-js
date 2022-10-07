@@ -17,7 +17,7 @@ import EarningRelease from './EarningRelease';
 /**
  * The EarningsCalendar model module.
  * @module model/EarningsCalendar
- * @version 1.2.15
+ * @version 1.2.16
  */
 class EarningsCalendar {
     /**

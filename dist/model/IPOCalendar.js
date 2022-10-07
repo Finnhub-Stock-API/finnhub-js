@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IPOCalendar model module.
  * @module model/IPOCalendar
- * @version 1.2.15
+ * @version 1.2.16
  */
 var IPOCalendar = /*#__PURE__*/function () {
   /**

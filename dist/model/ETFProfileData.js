@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ETFProfileData model module.
  * @module model/ETFProfileData
- * @version 1.2.15
+ * @version 1.2.16
  */
 var ETFProfileData = /*#__PURE__*/function () {
   /**
@@ -125,6 +125,18 @@ var ETFProfileData = /*#__PURE__*/function () {
         if (data.hasOwnProperty('description')) {
           obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
         }
+
+        if (data.hasOwnProperty('isInverse')) {
+          obj['isInverse'] = _ApiClient["default"].convertToType(data['isInverse'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('isLeveraged')) {
+          obj['isLeveraged'] = _ApiClient["default"].convertToType(data['isLeveraged'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('leverageFactor')) {
+          obj['leverageFactor'] = _ApiClient["default"].convertToType(data['leverageFactor'], 'Number');
+        }
       }
 
       return obj;
@@ -171,7 +183,7 @@ ETFProfileData.prototype['nav'] = undefined;
 
 ETFProfileData.prototype['navCurrency'] = undefined;
 /**
- * Expense ratio.
+ * Expense ratio. For non-US funds, this is the <a href=\"https://www.esma.europa.eu/sites/default/files/library/2015/11/09_1028_final_kid_ongoing_charges_methodology_for_publication_u_2_.pdf\" target=\"_blank\">KID ongoing charges<a/>.
  * @member {Number} expenseRatio
  */
 
@@ -242,5 +254,23 @@ ETFProfileData.prototype['avgVolume'] = undefined;
  */
 
 ETFProfileData.prototype['description'] = undefined;
+/**
+ * Whether the ETF is inverse
+ * @member {Boolean} isInverse
+ */
+
+ETFProfileData.prototype['isInverse'] = undefined;
+/**
+ * Whether the ETF is leveraged
+ * @member {Boolean} isLeveraged
+ */
+
+ETFProfileData.prototype['isLeveraged'] = undefined;
+/**
+ * Leverage factor.
+ * @member {Number} leverageFactor
+ */
+
+ETFProfileData.prototype['leverageFactor'] = undefined;
 var _default = ETFProfileData;
 exports["default"] = _default;

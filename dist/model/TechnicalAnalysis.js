@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TechnicalAnalysis model module.
  * @module model/TechnicalAnalysis
- * @version 1.2.15
+ * @version 1.2.16
  */
 var TechnicalAnalysis = /*#__PURE__*/function () {
   /**

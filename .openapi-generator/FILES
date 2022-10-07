@@ -5,6 +5,7 @@ docs/AggregateIndicators.md
 docs/BasicFinancials.md
 docs/BondCandles.md
 docs/BondProfile.md
+docs/BondTickData.md
 docs/BreakdownItem.md
 docs/Company.md
 docs/CompanyESG.md
@@ -69,9 +70,19 @@ docs/IndicesHistoricalConstituents.md
 docs/InsiderSentiments.md
 docs/InsiderSentimentsData.md
 docs/InsiderTransactions.md
+docs/InstitutionalOwnership.md
+docs/InstitutionalOwnershipGroup.md
+docs/InstitutionalOwnershipInfo.md
+docs/InstitutionalPortfolio.md
+docs/InstitutionalPortfolioGroup.md
+docs/InstitutionalPortfolioInfo.md
+docs/InstitutionalProfile.md
+docs/InstitutionalProfileInfo.md
 docs/InternationalFiling.md
 docs/InvestmentThemePortfolio.md
 docs/InvestmentThemes.md
+docs/IsinChange.md
+docs/IsinChangeInfo.md
 docs/KeyCustomersSuppliers.md
 docs/LastBidAsk.md
 docs/LobbyingData.md
@@ -90,6 +101,7 @@ docs/Ownership.md
 docs/OwnershipInfo.md
 docs/PatternRecognition.md
 docs/PressRelease.md
+docs/PriceMetrics.md
 docs/PriceTarget.md
 docs/Quote.md
 docs/RecommendationTrend.md
@@ -111,6 +123,8 @@ docs/StockSymbol.md
 docs/StockTranscripts.md
 docs/SupplyChainRelationships.md
 docs/SupportResistance.md
+docs/SymbolChange.md
+docs/SymbolChangeInfo.md
 docs/SymbolLookup.md
 docs/SymbolLookupInfo.md
 docs/TechnicalAnalysis.md
@@ -137,6 +151,7 @@ src/model/AggregateIndicators.js
 src/model/BasicFinancials.js
 src/model/BondCandles.js
 src/model/BondProfile.js
+src/model/BondTickData.js
 src/model/BreakdownItem.js
 src/model/Company.js
 src/model/CompanyESG.js
@@ -200,9 +215,19 @@ src/model/IndicesHistoricalConstituents.js
 src/model/InsiderSentiments.js
 src/model/InsiderSentimentsData.js
 src/model/InsiderTransactions.js
+src/model/InstitutionalOwnership.js
+src/model/InstitutionalOwnershipGroup.js
+src/model/InstitutionalOwnershipInfo.js
+src/model/InstitutionalPortfolio.js
+src/model/InstitutionalPortfolioGroup.js
+src/model/InstitutionalPortfolioInfo.js
+src/model/InstitutionalProfile.js
+src/model/InstitutionalProfileInfo.js
 src/model/InternationalFiling.js
 src/model/InvestmentThemePortfolio.js
 src/model/InvestmentThemes.js
+src/model/IsinChange.js
+src/model/IsinChangeInfo.js
 src/model/KeyCustomersSuppliers.js
 src/model/LastBidAsk.js
 src/model/LobbyingData.js
@@ -221,6 +246,7 @@ src/model/Ownership.js
 src/model/OwnershipInfo.js
 src/model/PatternRecognition.js
 src/model/PressRelease.js
+src/model/PriceMetrics.js
 src/model/PriceTarget.js
 src/model/Quote.js
 src/model/RecommendationTrend.js
@@ -242,6 +268,8 @@ src/model/StockSymbol.js
 src/model/StockTranscripts.js
 src/model/SupplyChainRelationships.js
 src/model/SupportResistance.js
+src/model/SymbolChange.js
+src/model/SymbolChangeInfo.js
 src/model/SymbolLookup.js
 src/model/SymbolLookupInfo.js
 src/model/TechnicalAnalysis.js
@@ -258,5 +286,3 @@ src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
-test/model/SectorMetric.spec.js
-test/model/SectorMetricData.spec.js

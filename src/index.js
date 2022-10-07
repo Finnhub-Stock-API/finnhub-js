@@ -17,6 +17,7 @@ import AggregateIndicators from './model/AggregateIndicators';
 import BasicFinancials from './model/BasicFinancials';
 import BondCandles from './model/BondCandles';
 import BondProfile from './model/BondProfile';
+import BondTickData from './model/BondTickData';
 import BreakdownItem from './model/BreakdownItem';
 import Company from './model/Company';
 import CompanyESG from './model/CompanyESG';
@@ -80,9 +81,19 @@ import IndicesHistoricalConstituents from './model/IndicesHistoricalConstituents
 import InsiderSentiments from './model/InsiderSentiments';
 import InsiderSentimentsData from './model/InsiderSentimentsData';
 import InsiderTransactions from './model/InsiderTransactions';
+import InstitutionalOwnership from './model/InstitutionalOwnership';
+import InstitutionalOwnershipGroup from './model/InstitutionalOwnershipGroup';
+import InstitutionalOwnershipInfo from './model/InstitutionalOwnershipInfo';
+import InstitutionalPortfolio from './model/InstitutionalPortfolio';
+import InstitutionalPortfolioGroup from './model/InstitutionalPortfolioGroup';
+import InstitutionalPortfolioInfo from './model/InstitutionalPortfolioInfo';
+import InstitutionalProfile from './model/InstitutionalProfile';
+import InstitutionalProfileInfo from './model/InstitutionalProfileInfo';
 import InternationalFiling from './model/InternationalFiling';
 import InvestmentThemePortfolio from './model/InvestmentThemePortfolio';
 import InvestmentThemes from './model/InvestmentThemes';
+import IsinChange from './model/IsinChange';
+import IsinChangeInfo from './model/IsinChangeInfo';
 import KeyCustomersSuppliers from './model/KeyCustomersSuppliers';
 import LastBidAsk from './model/LastBidAsk';
 import LobbyingData from './model/LobbyingData';
@@ -101,6 +112,7 @@ import Ownership from './model/Ownership';
 import OwnershipInfo from './model/OwnershipInfo';
 import PatternRecognition from './model/PatternRecognition';
 import PressRelease from './model/PressRelease';
+import PriceMetrics from './model/PriceMetrics';
 import PriceTarget from './model/PriceTarget';
 import Quote from './model/Quote';
 import RecommendationTrend from './model/RecommendationTrend';
@@ -122,6 +134,8 @@ import StockSymbol from './model/StockSymbol';
 import StockTranscripts from './model/StockTranscripts';
 import SupplyChainRelationships from './model/SupplyChainRelationships';
 import SupportResistance from './model/SupportResistance';
+import SymbolChange from './model/SymbolChange';
+import SymbolChangeInfo from './model/SymbolChangeInfo';
 import SymbolLookup from './model/SymbolLookup';
 import SymbolLookupInfo from './model/SymbolLookupInfo';
 import TechnicalAnalysis from './model/TechnicalAnalysis';
@@ -170,7 +184,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.15
+* @version 1.2.16
 */
 export {
     /**
@@ -202,6 +216,12 @@ export {
      * @property {module:model/BondProfile}
      */
     BondProfile,
+
+    /**
+     * The BondTickData model constructor.
+     * @property {module:model/BondTickData}
+     */
+    BondTickData,
 
     /**
      * The BreakdownItem model constructor.
@@ -582,6 +602,54 @@ export {
     InsiderTransactions,
 
     /**
+     * The InstitutionalOwnership model constructor.
+     * @property {module:model/InstitutionalOwnership}
+     */
+    InstitutionalOwnership,
+
+    /**
+     * The InstitutionalOwnershipGroup model constructor.
+     * @property {module:model/InstitutionalOwnershipGroup}
+     */
+    InstitutionalOwnershipGroup,
+
+    /**
+     * The InstitutionalOwnershipInfo model constructor.
+     * @property {module:model/InstitutionalOwnershipInfo}
+     */
+    InstitutionalOwnershipInfo,
+
+    /**
+     * The InstitutionalPortfolio model constructor.
+     * @property {module:model/InstitutionalPortfolio}
+     */
+    InstitutionalPortfolio,
+
+    /**
+     * The InstitutionalPortfolioGroup model constructor.
+     * @property {module:model/InstitutionalPortfolioGroup}
+     */
+    InstitutionalPortfolioGroup,
+
+    /**
+     * The InstitutionalPortfolioInfo model constructor.
+     * @property {module:model/InstitutionalPortfolioInfo}
+     */
+    InstitutionalPortfolioInfo,
+
+    /**
+     * The InstitutionalProfile model constructor.
+     * @property {module:model/InstitutionalProfile}
+     */
+    InstitutionalProfile,
+
+    /**
+     * The InstitutionalProfileInfo model constructor.
+     * @property {module:model/InstitutionalProfileInfo}
+     */
+    InstitutionalProfileInfo,
+
+    /**
      * The InternationalFiling model constructor.
      * @property {module:model/InternationalFiling}
      */
@@ -598,6 +666,18 @@ export {
      * @property {module:model/InvestmentThemes}
      */
     InvestmentThemes,
+
+    /**
+     * The IsinChange model constructor.
+     * @property {module:model/IsinChange}
+     */
+    IsinChange,
+
+    /**
+     * The IsinChangeInfo model constructor.
+     * @property {module:model/IsinChangeInfo}
+     */
+    IsinChangeInfo,
 
     /**
      * The KeyCustomersSuppliers model constructor.
@@ -706,6 +786,12 @@ export {
      * @property {module:model/PressRelease}
      */
     PressRelease,
+
+    /**
+     * The PriceMetrics model constructor.
+     * @property {module:model/PriceMetrics}
+     */
+    PriceMetrics,
 
     /**
      * The PriceTarget model constructor.
@@ -832,6 +918,18 @@ export {
      * @property {module:model/SupportResistance}
      */
     SupportResistance,
+
+    /**
+     * The SymbolChange model constructor.
+     * @property {module:model/SymbolChange}
+     */
+    SymbolChange,
+
+    /**
+     * The SymbolChangeInfo model constructor.
+     * @property {module:model/SymbolChangeInfo}
+     */
+    SymbolChangeInfo,
 
     /**
      * The SymbolLookup model constructor.

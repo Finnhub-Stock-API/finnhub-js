@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**aggregateIndicator**](DefaultApi.md#aggregateIndicator) | **GET** /scan/technical-indicator | Aggregate Indicators
 [**bondPrice**](DefaultApi.md#bondPrice) | **GET** /bond/price | Bond price data
 [**bondProfile**](DefaultApi.md#bondProfile) | **GET** /bond/profile | Bond Profile
+[**bondTick**](DefaultApi.md#bondTick) | **GET** /bond/tick | Bond Tick Data
 [**companyBasicFinancials**](DefaultApi.md#companyBasicFinancials) | **GET** /stock/metric | Basic Financials
 [**companyEarnings**](DefaultApi.md#companyEarnings) | **GET** /stock/earnings | Earnings Surprises
 [**companyEarningsQualityScore**](DefaultApi.md#companyEarningsQualityScore) | **GET** /stock/earnings-quality-score | Company Earnings Quality Score
@@ -48,9 +49,13 @@ Method | HTTP request | Description
 [**indicesHistoricalConstituents**](DefaultApi.md#indicesHistoricalConstituents) | **GET** /index/historical-constituents | Indices Historical Constituents
 [**insiderSentiment**](DefaultApi.md#insiderSentiment) | **GET** /stock/insider-sentiment | Insider Sentiment
 [**insiderTransactions**](DefaultApi.md#insiderTransactions) | **GET** /stock/insider-transactions | Insider Transactions
+[**institutionalOwnership**](DefaultApi.md#institutionalOwnership) | **GET** /institutional/ownership | Institutional Ownership
+[**institutionalPortfolio**](DefaultApi.md#institutionalPortfolio) | **GET** /institutional/portfolio | Institutional Portfolio
+[**institutionalProfile**](DefaultApi.md#institutionalProfile) | **GET** /institutional/profile | Institutional Profile
 [**internationalFilings**](DefaultApi.md#internationalFilings) | **GET** /stock/international-filings | International Filings
 [**investmentThemes**](DefaultApi.md#investmentThemes) | **GET** /stock/investment-theme | Investment Themes (Thematic Investing)
 [**ipoCalendar**](DefaultApi.md#ipoCalendar) | **GET** /calendar/ipo | IPO Calendar
+[**isinChange**](DefaultApi.md#isinChange) | **GET** /ca/isin-change | ISIN Change
 [**marketNews**](DefaultApi.md#marketNews) | **GET** /news | Market News
 [**mutualFundCountryExposure**](DefaultApi.md#mutualFundCountryExposure) | **GET** /mutual-fund/country | Mutual Funds Country Exposure
 [**mutualFundHoldings**](DefaultApi.md#mutualFundHoldings) | **GET** /mutual-fund/holdings | Mutual Funds Holdings
@@ -60,6 +65,7 @@ Method | HTTP request | Description
 [**ownership**](DefaultApi.md#ownership) | **GET** /stock/ownership | Ownership
 [**patternRecognition**](DefaultApi.md#patternRecognition) | **GET** /scan/pattern | Pattern Recognition
 [**pressReleases**](DefaultApi.md#pressReleases) | **GET** /press-releases | Major Press Releases
+[**priceMetrics**](DefaultApi.md#priceMetrics) | **GET** /stock/price-metric | Price Metrics
 [**priceTarget**](DefaultApi.md#priceTarget) | **GET** /stock/price-target | Price Target
 [**quote**](DefaultApi.md#quote) | **GET** /quote | Quote
 [**recommendationTrends**](DefaultApi.md#recommendationTrends) | **GET** /stock/recommendation | Recommendation Trends
@@ -81,6 +87,7 @@ Method | HTTP request | Description
 [**stockVisaApplication**](DefaultApi.md#stockVisaApplication) | **GET** /stock/visa-application | H1-B Visa Application
 [**supplyChainRelationships**](DefaultApi.md#supplyChainRelationships) | **GET** /stock/supply-chain | Supply Chain Relationships
 [**supportResistance**](DefaultApi.md#supportResistance) | **GET** /scan/support-resistance | Support/Resistance
+[**symbolChange**](DefaultApi.md#symbolChange) | **GET** /ca/symbol-change | Symbol Change
 [**symbolSearch**](DefaultApi.md#symbolSearch) | **GET** /search | Symbol Lookup
 [**technicalIndicator**](DefaultApi.md#technicalIndicator) | **POST** /indicator | Technical Indicators
 [**transcripts**](DefaultApi.md#transcripts) | **GET** /stock/transcripts | Earnings Call Transcripts
@@ -148,7 +155,7 @@ Name | Type | Description  | Notes
 
 Bond price data
 
-Get end-of-day bond&#39;s price data.
+&lt;p&gt;Get bond&#39;s price data. The following datasets are supported:&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;   &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;US Government Bonds&lt;/th&gt;       &lt;td&gt;Government Bonds&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;FINRA Trace&lt;/th&gt;       &lt;td&gt;BTDS: US Corporate Bonds&lt;/td&gt;       &lt;td&gt;Delayed 4h&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;FINRA Trace&lt;/th&gt;       &lt;td&gt;144A Bonds&lt;/td&gt;       &lt;td&gt;Delayed 4h&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
 
 ### Example
 
@@ -243,6 +250,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BondProfile**](BondProfile.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bondTick
+
+> BondTickData bondTick(isin, date, limit, skip, exchange)
+
+Bond Tick Data
+
+&lt;p&gt;Get trade-level data for bonds. The following datasets are supported:&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;FINRA Trace&lt;/th&gt;       &lt;td&gt;BTDS: US Corporate Bonds&lt;/td&gt;       &lt;td&gt;Delayed 4h&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;FINRA Trace&lt;/th&gt;       &lt;td&gt;144A Bonds&lt;/td&gt;       &lt;td&gt;Delayed 4h&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let isin = "isin_example"; // String | ISIN.
+let date = new Date("2013-10-20"); // Date | Date: 2020-04-02.
+let limit = 789; // Number | Limit number of ticks returned. Maximum value: <code>25000</code>
+let skip = 789; // Number | Number of ticks to skip. Use this parameter to loop through the entire data.
+let exchange = "exchange_example"; // String | Currently support the following values: <code>trace</code>.
+apiInstance.bondTick(isin, date, limit, skip, exchange, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isin** | **String**| ISIN. | 
+ **date** | **Date**| Date: 2020-04-02. | 
+ **limit** | **Number**| Limit number of ticks returned. Maximum value: &lt;code&gt;25000&lt;/code&gt; | 
+ **skip** | **Number**| Number of ticks to skip. Use this parameter to loop through the entire data. | 
+ **exchange** | **String**| Currently support the following values: &lt;code&gt;trace&lt;/code&gt;. | 
+
+### Return type
+
+[**BondTickData**](BondTickData.md)
 
 ### Authorization
 
@@ -739,11 +805,11 @@ Name | Type | Description  | Notes
 
 ## companyPeers
 
-> [String] companyPeers(symbol)
+> [String] companyPeers(symbol, opts)
 
 Peers
 
-Get company peers. Return a list of peers in the same country and sub-industry
+Get company peers. Return a list of peers operating in the same country and sector/industry.
 
 ### Example
 
@@ -758,7 +824,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | Symbol of the company: AAPL.
-apiInstance.companyPeers(symbol, (error, data, response) => {
+let opts = {
+  'grouping': "grouping_example" // String | Specify the grouping criteria for choosing peers.Supporter values: <code>sector</code>, <code>industry</code>, <code>subIndustry</code>. Default to <code>subIndustry</code>.
+};
+apiInstance.companyPeers(symbol, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -773,6 +842,7 @@ apiInstance.companyPeers(symbol, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Symbol of the company: AAPL. | 
+ **grouping** | **String**| Specify the grouping criteria for choosing peers.Supporter values: &lt;code&gt;sector&lt;/code&gt;, &lt;code&gt;industry&lt;/code&gt;, &lt;code&gt;subIndustry&lt;/code&gt;. Default to &lt;code&gt;subIndustry&lt;/code&gt;. | [optional] 
 
 ### Return type
 
@@ -1925,7 +1995,9 @@ let opts = {
   'symbol': "symbol_example", // String | Symbol.
   'cik': "cik_example", // String | CIK.
   'accessNumber': "accessNumber_example", // String | Access number of a specific report you want to retrieve financials from.
-  'freq': "freq_example" // String | Frequency. Can be either <code>annual</code> or <code>quarterly</code>. Default to <code>annual</code>.
+  'freq': "freq_example", // String | Frequency. Can be either <code>annual</code> or <code>quarterly</code>. Default to <code>annual</code>.
+  'from': new Date("2013-10-20"), // Date | From date <code>YYYY-MM-DD</code>. Filter for endDate.
+  'to': new Date("2013-10-20") // Date | To date <code>YYYY-MM-DD</code>. Filter for endDate.
 };
 apiInstance.financialsReported(opts, (error, data, response) => {
   if (error) {
@@ -1945,6 +2017,8 @@ Name | Type | Description  | Notes
  **cik** | **String**| CIK. | [optional] 
  **accessNumber** | **String**| Access number of a specific report you want to retrieve financials from. | [optional] 
  **freq** | **String**| Frequency. Can be either &lt;code&gt;annual&lt;/code&gt; or &lt;code&gt;quarterly&lt;/code&gt;. Default to &lt;code&gt;annual&lt;/code&gt;. | [optional] 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. Filter for endDate. | [optional] 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. Filter for endDate. | [optional] 
 
 ### Return type
 
@@ -2439,6 +2513,171 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## institutionalOwnership
+
+> InstitutionalOwnership institutionalOwnership(symbol, cusip, from, to)
+
+Institutional Ownership
+
+Get a list institutional investors&#39; positions for a particular stock overtime. Data from 13-F filings. Limit to 1 year of data at a time.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Filter by symbol.
+let cusip = "cusip_example"; // String | Filter by CUSIP.
+let from = "from_example"; // String | From date <code>YYYY-MM-DD</code>.
+let to = "to_example"; // String | To date <code>YYYY-MM-DD</code>.
+apiInstance.institutionalOwnership(symbol, cusip, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Filter by symbol. | 
+ **cusip** | **String**| Filter by CUSIP. | 
+ **from** | **String**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **String**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**InstitutionalOwnership**](InstitutionalOwnership.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## institutionalPortfolio
+
+> InstitutionalPortfolio institutionalPortfolio(cik, from, to)
+
+Institutional Portfolio
+
+Get the holdings/portfolio data of institutional investors from 13-F filings. Limit to 1 year of data at a time.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let cik = "cik_example"; // String | Fund's CIK.
+let from = "from_example"; // String | From date <code>YYYY-MM-DD</code>.
+let to = "to_example"; // String | To date <code>YYYY-MM-DD</code>.
+apiInstance.institutionalPortfolio(cik, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cik** | **String**| Fund&#39;s CIK. | 
+ **from** | **String**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **String**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**InstitutionalPortfolio**](InstitutionalPortfolio.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## institutionalProfile
+
+> InstitutionalProfile institutionalProfile(opts)
+
+Institutional Profile
+
+Get a list of well-known institutional investors. Currently support 60+ profiles.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let opts = {
+  'cik': "cik_example" // String | Filter by CIK. Leave blank to get the full list.
+};
+apiInstance.institutionalProfile(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cik** | **String**| Filter by CIK. Leave blank to get the full list. | [optional] 
+
+### Return type
+
+[**InstitutionalProfile**](InstitutionalProfile.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## internationalFilings
 
 > [InternationalFiling] internationalFilings(opts)
@@ -2587,6 +2826,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**IPOCalendar**](IPOCalendar.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## isinChange
+
+> IsinChange isinChange(from, to)
+
+ISIN Change
+
+Get a list of ISIN changes for EU-listed securities. Limit to 2000 events at a time.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let from = "from_example"; // String | From date <code>YYYY-MM-DD</code>.
+let to = "to_example"; // String | To date <code>YYYY-MM-DD</code>.
+apiInstance.isinChange(from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **String**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **String**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**IsinChange**](IsinChange.md)
 
 ### Authorization
 
@@ -3072,6 +3364,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PressRelease**](PressRelease.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## priceMetrics
+
+> PriceMetrics priceMetrics(symbol)
+
+Price Metrics
+
+Get company price performance statistics such as 52-week high/low, YTD return and much more.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol of the company: AAPL.
+apiInstance.priceMetrics(symbol, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol of the company: AAPL. | 
+
+### Return type
+
+[**PriceMetrics**](PriceMetrics.md)
 
 ### Authorization
 
@@ -4211,6 +4554,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SupportResistance**](SupportResistance.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## symbolChange
+
+> SymbolChange symbolChange(from, to)
+
+Symbol Change
+
+Get a list of symbol changes for US-listed and EU-listed securities. Limit to 2000 events at a time.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let from = "from_example"; // String | From date <code>YYYY-MM-DD</code>.
+let to = "to_example"; // String | To date <code>YYYY-MM-DD</code>.
+apiInstance.symbolChange(from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **String**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **String**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**SymbolChange**](SymbolChange.md)
 
 ### Authorization
 

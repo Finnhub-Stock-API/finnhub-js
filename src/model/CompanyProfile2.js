@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyProfile2 model module.
  * @module model/CompanyProfile2
- * @version 1.2.15
+ * @version 1.2.16
  */
 class CompanyProfile2 {
     /**

@@ -17,7 +17,7 @@ import EbitEstimatesInfo from './EbitEstimatesInfo';
 /**
  * The EbitEstimates model module.
  * @module model/EbitEstimates
- * @version 1.2.15
+ * @version 1.2.16
  */
 class EbitEstimates {
     /**
