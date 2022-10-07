@@ -17,7 +17,7 @@ import CompanyEarningsQualityScoreData from './CompanyEarningsQualityScoreData';
 /**
  * The CompanyEarningsQualityScore model module.
  * @module model/CompanyEarningsQualityScore
- * @version 1.2.15
+ * @version 1.2.16
  */
 class CompanyEarningsQualityScore {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UsaSpendingResult model module.
  * @module model/UsaSpendingResult
- * @version 1.2.15
+ * @version 1.2.16
  */
 var UsaSpendingResult = /*#__PURE__*/function () {
   /**

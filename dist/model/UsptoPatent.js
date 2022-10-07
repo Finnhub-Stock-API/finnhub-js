@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UsptoPatent model module.
  * @module model/UsptoPatent
- * @version 1.2.15
+ * @version 1.2.16
  */
 var UsptoPatent = /*#__PURE__*/function () {
   /**

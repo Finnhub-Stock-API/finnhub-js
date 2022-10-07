@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RecommendationTrend model module.
  * @module model/RecommendationTrend
- * @version 1.2.15
+ * @version 1.2.16
  */
 var RecommendationTrend = /*#__PURE__*/function () {
   /**

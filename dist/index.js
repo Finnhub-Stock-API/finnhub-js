@@ -33,6 +33,12 @@ Object.defineProperty(exports, "BondProfile", {
     return _BondProfile["default"];
   }
 });
+Object.defineProperty(exports, "BondTickData", {
+  enumerable: true,
+  get: function get() {
+    return _BondTickData["default"];
+  }
+});
 Object.defineProperty(exports, "BreakdownItem", {
   enumerable: true,
   get: function get() {
@@ -411,6 +417,54 @@ Object.defineProperty(exports, "InsiderTransactions", {
     return _InsiderTransactions["default"];
   }
 });
+Object.defineProperty(exports, "InstitutionalOwnership", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalOwnership["default"];
+  }
+});
+Object.defineProperty(exports, "InstitutionalOwnershipGroup", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalOwnershipGroup["default"];
+  }
+});
+Object.defineProperty(exports, "InstitutionalOwnershipInfo", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalOwnershipInfo["default"];
+  }
+});
+Object.defineProperty(exports, "InstitutionalPortfolio", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalPortfolio["default"];
+  }
+});
+Object.defineProperty(exports, "InstitutionalPortfolioGroup", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalPortfolioGroup["default"];
+  }
+});
+Object.defineProperty(exports, "InstitutionalPortfolioInfo", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalPortfolioInfo["default"];
+  }
+});
+Object.defineProperty(exports, "InstitutionalProfile", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalProfile["default"];
+  }
+});
+Object.defineProperty(exports, "InstitutionalProfileInfo", {
+  enumerable: true,
+  get: function get() {
+    return _InstitutionalProfileInfo["default"];
+  }
+});
 Object.defineProperty(exports, "InternationalFiling", {
   enumerable: true,
   get: function get() {
@@ -427,6 +481,18 @@ Object.defineProperty(exports, "InvestmentThemes", {
   enumerable: true,
   get: function get() {
     return _InvestmentThemes["default"];
+  }
+});
+Object.defineProperty(exports, "IsinChange", {
+  enumerable: true,
+  get: function get() {
+    return _IsinChange["default"];
+  }
+});
+Object.defineProperty(exports, "IsinChangeInfo", {
+  enumerable: true,
+  get: function get() {
+    return _IsinChangeInfo["default"];
   }
 });
 Object.defineProperty(exports, "KeyCustomersSuppliers", {
@@ -535,6 +601,12 @@ Object.defineProperty(exports, "PressRelease", {
   enumerable: true,
   get: function get() {
     return _PressRelease["default"];
+  }
+});
+Object.defineProperty(exports, "PriceMetrics", {
+  enumerable: true,
+  get: function get() {
+    return _PriceMetrics["default"];
   }
 });
 Object.defineProperty(exports, "PriceTarget", {
@@ -663,6 +735,18 @@ Object.defineProperty(exports, "SupportResistance", {
     return _SupportResistance["default"];
   }
 });
+Object.defineProperty(exports, "SymbolChange", {
+  enumerable: true,
+  get: function get() {
+    return _SymbolChange["default"];
+  }
+});
+Object.defineProperty(exports, "SymbolChangeInfo", {
+  enumerable: true,
+  get: function get() {
+    return _SymbolChangeInfo["default"];
+  }
+});
 Object.defineProperty(exports, "SymbolLookup", {
   enumerable: true,
   get: function get() {
@@ -775,6 +859,8 @@ var _BasicFinancials = _interopRequireDefault(require("./model/BasicFinancials")
 var _BondCandles = _interopRequireDefault(require("./model/BondCandles"));
 
 var _BondProfile = _interopRequireDefault(require("./model/BondProfile"));
+
+var _BondTickData = _interopRequireDefault(require("./model/BondTickData"));
 
 var _BreakdownItem = _interopRequireDefault(require("./model/BreakdownItem"));
 
@@ -902,11 +988,31 @@ var _InsiderSentimentsData = _interopRequireDefault(require("./model/InsiderSent
 
 var _InsiderTransactions = _interopRequireDefault(require("./model/InsiderTransactions"));
 
+var _InstitutionalOwnership = _interopRequireDefault(require("./model/InstitutionalOwnership"));
+
+var _InstitutionalOwnershipGroup = _interopRequireDefault(require("./model/InstitutionalOwnershipGroup"));
+
+var _InstitutionalOwnershipInfo = _interopRequireDefault(require("./model/InstitutionalOwnershipInfo"));
+
+var _InstitutionalPortfolio = _interopRequireDefault(require("./model/InstitutionalPortfolio"));
+
+var _InstitutionalPortfolioGroup = _interopRequireDefault(require("./model/InstitutionalPortfolioGroup"));
+
+var _InstitutionalPortfolioInfo = _interopRequireDefault(require("./model/InstitutionalPortfolioInfo"));
+
+var _InstitutionalProfile = _interopRequireDefault(require("./model/InstitutionalProfile"));
+
+var _InstitutionalProfileInfo = _interopRequireDefault(require("./model/InstitutionalProfileInfo"));
+
 var _InternationalFiling = _interopRequireDefault(require("./model/InternationalFiling"));
 
 var _InvestmentThemePortfolio = _interopRequireDefault(require("./model/InvestmentThemePortfolio"));
 
 var _InvestmentThemes = _interopRequireDefault(require("./model/InvestmentThemes"));
+
+var _IsinChange = _interopRequireDefault(require("./model/IsinChange"));
+
+var _IsinChangeInfo = _interopRequireDefault(require("./model/IsinChangeInfo"));
 
 var _KeyCustomersSuppliers = _interopRequireDefault(require("./model/KeyCustomersSuppliers"));
 
@@ -943,6 +1049,8 @@ var _OwnershipInfo = _interopRequireDefault(require("./model/OwnershipInfo"));
 var _PatternRecognition = _interopRequireDefault(require("./model/PatternRecognition"));
 
 var _PressRelease = _interopRequireDefault(require("./model/PressRelease"));
+
+var _PriceMetrics = _interopRequireDefault(require("./model/PriceMetrics"));
 
 var _PriceTarget = _interopRequireDefault(require("./model/PriceTarget"));
 
@@ -985,6 +1093,10 @@ var _StockTranscripts = _interopRequireDefault(require("./model/StockTranscripts
 var _SupplyChainRelationships = _interopRequireDefault(require("./model/SupplyChainRelationships"));
 
 var _SupportResistance = _interopRequireDefault(require("./model/SupportResistance"));
+
+var _SymbolChange = _interopRequireDefault(require("./model/SymbolChange"));
+
+var _SymbolChangeInfo = _interopRequireDefault(require("./model/SymbolChangeInfo"));
 
 var _SymbolLookup = _interopRequireDefault(require("./model/SymbolLookup"));
 
