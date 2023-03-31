@@ -17,7 +17,7 @@ import InstitutionalPortfolioGroup from './InstitutionalPortfolioGroup';
 /**
  * The InstitutionalPortfolio model module.
  * @module model/InstitutionalPortfolio
- * @version 1.2.16
+ * @version 1.2.17
  */
 class InstitutionalPortfolio {
     /**

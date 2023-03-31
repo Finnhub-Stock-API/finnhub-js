@@ -39,6 +39,18 @@ Object.defineProperty(exports, "BondTickData", {
     return _BondTickData["default"];
   }
 });
+Object.defineProperty(exports, "BondYieldCurve", {
+  enumerable: true,
+  get: function get() {
+    return _BondYieldCurve["default"];
+  }
+});
+Object.defineProperty(exports, "BondYieldCurveInfo", {
+  enumerable: true,
+  get: function get() {
+    return _BondYieldCurveInfo["default"];
+  }
+});
 Object.defineProperty(exports, "BreakdownItem", {
   enumerable: true,
   get: function get() {
@@ -99,6 +111,18 @@ Object.defineProperty(exports, "CompanyProfile2", {
     return _CompanyProfile2["default"];
   }
 });
+Object.defineProperty(exports, "CongressionalTrading", {
+  enumerable: true,
+  get: function get() {
+    return _CongressionalTrading["default"];
+  }
+});
+Object.defineProperty(exports, "CongressionalTransaction", {
+  enumerable: true,
+  get: function get() {
+    return _CongressionalTransaction["default"];
+  }
+});
 Object.defineProperty(exports, "CountryMetadata", {
   enumerable: true,
   get: function get() {
@@ -151,6 +175,12 @@ Object.defineProperty(exports, "Dividends2Info", {
   enumerable: true,
   get: function get() {
     return _Dividends2Info["default"];
+  }
+});
+Object.defineProperty(exports, "DocumentResponse", {
+  enumerable: true,
+  get: function get() {
+    return _DocumentResponse["default"];
   }
 });
 Object.defineProperty(exports, "ETFCountryExposureData", {
@@ -297,6 +327,12 @@ Object.defineProperty(exports, "EconomicEvent", {
     return _EconomicEvent["default"];
   }
 });
+Object.defineProperty(exports, "ExcerptResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ExcerptResponse["default"];
+  }
+});
 Object.defineProperty(exports, "FDAComitteeMeeting", {
   enumerable: true,
   get: function get() {
@@ -307,6 +343,12 @@ Object.defineProperty(exports, "Filing", {
   enumerable: true,
   get: function get() {
     return _Filing["default"];
+  }
+});
+Object.defineProperty(exports, "FilingResponse", {
+  enumerable: true,
+  get: function get() {
+    return _FilingResponse["default"];
   }
 });
 Object.defineProperty(exports, "FilingSentiment", {
@@ -373,6 +415,18 @@ Object.defineProperty(exports, "IPOEvent", {
   enumerable: true,
   get: function get() {
     return _IPOEvent["default"];
+  }
+});
+Object.defineProperty(exports, "InFilingResponse", {
+  enumerable: true,
+  get: function get() {
+    return _InFilingResponse["default"];
+  }
+});
+Object.defineProperty(exports, "InFilingSearchBody", {
+  enumerable: true,
+  get: function get() {
+    return _InFilingSearchBody["default"];
   }
 });
 Object.defineProperty(exports, "IndexHistoricalConstituent", {
@@ -537,6 +591,18 @@ Object.defineProperty(exports, "MutualFundCountryExposureData", {
     return _MutualFundCountryExposureData["default"];
   }
 });
+Object.defineProperty(exports, "MutualFundEet", {
+  enumerable: true,
+  get: function get() {
+    return _MutualFundEet["default"];
+  }
+});
+Object.defineProperty(exports, "MutualFundEetPai", {
+  enumerable: true,
+  get: function get() {
+    return _MutualFundEetPai["default"];
+  }
+});
 Object.defineProperty(exports, "MutualFundHoldings", {
   enumerable: true,
   get: function get() {
@@ -661,6 +727,24 @@ Object.defineProperty(exports, "SECSentimentAnalysis", {
   enumerable: true,
   get: function get() {
     return _SECSentimentAnalysis["default"];
+  }
+});
+Object.defineProperty(exports, "SearchBody", {
+  enumerable: true,
+  get: function get() {
+    return _SearchBody["default"];
+  }
+});
+Object.defineProperty(exports, "SearchFilter", {
+  enumerable: true,
+  get: function get() {
+    return _SearchFilter["default"];
+  }
+});
+Object.defineProperty(exports, "SearchResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SearchResponse["default"];
   }
 });
 Object.defineProperty(exports, "SectorMetric", {
@@ -862,6 +946,10 @@ var _BondProfile = _interopRequireDefault(require("./model/BondProfile"));
 
 var _BondTickData = _interopRequireDefault(require("./model/BondTickData"));
 
+var _BondYieldCurve = _interopRequireDefault(require("./model/BondYieldCurve"));
+
+var _BondYieldCurveInfo = _interopRequireDefault(require("./model/BondYieldCurveInfo"));
+
 var _BreakdownItem = _interopRequireDefault(require("./model/BreakdownItem"));
 
 var _Company = _interopRequireDefault(require("./model/Company"));
@@ -882,6 +970,10 @@ var _CompanyProfile = _interopRequireDefault(require("./model/CompanyProfile"));
 
 var _CompanyProfile2 = _interopRequireDefault(require("./model/CompanyProfile2"));
 
+var _CongressionalTrading = _interopRequireDefault(require("./model/CongressionalTrading"));
+
+var _CongressionalTransaction = _interopRequireDefault(require("./model/CongressionalTransaction"));
+
 var _CountryMetadata = _interopRequireDefault(require("./model/CountryMetadata"));
 
 var _CovidInfo = _interopRequireDefault(require("./model/CovidInfo"));
@@ -899,6 +991,8 @@ var _Dividends = _interopRequireDefault(require("./model/Dividends"));
 var _Dividends2 = _interopRequireDefault(require("./model/Dividends2"));
 
 var _Dividends2Info = _interopRequireDefault(require("./model/Dividends2Info"));
+
+var _DocumentResponse = _interopRequireDefault(require("./model/DocumentResponse"));
 
 var _ETFCountryExposureData = _interopRequireDefault(require("./model/ETFCountryExposureData"));
 
@@ -948,9 +1042,13 @@ var _EconomicDataInfo = _interopRequireDefault(require("./model/EconomicDataInfo
 
 var _EconomicEvent = _interopRequireDefault(require("./model/EconomicEvent"));
 
+var _ExcerptResponse = _interopRequireDefault(require("./model/ExcerptResponse"));
+
 var _FDAComitteeMeeting = _interopRequireDefault(require("./model/FDAComitteeMeeting"));
 
 var _Filing = _interopRequireDefault(require("./model/Filing"));
+
+var _FilingResponse = _interopRequireDefault(require("./model/FilingResponse"));
 
 var _FilingSentiment = _interopRequireDefault(require("./model/FilingSentiment"));
 
@@ -973,6 +1071,10 @@ var _HistoricalNBBO = _interopRequireDefault(require("./model/HistoricalNBBO"));
 var _IPOCalendar = _interopRequireDefault(require("./model/IPOCalendar"));
 
 var _IPOEvent = _interopRequireDefault(require("./model/IPOEvent"));
+
+var _InFilingResponse = _interopRequireDefault(require("./model/InFilingResponse"));
+
+var _InFilingSearchBody = _interopRequireDefault(require("./model/InFilingSearchBody"));
 
 var _IndexHistoricalConstituent = _interopRequireDefault(require("./model/IndexHistoricalConstituent"));
 
@@ -1028,6 +1130,10 @@ var _MutualFundCountryExposure = _interopRequireDefault(require("./model/MutualF
 
 var _MutualFundCountryExposureData = _interopRequireDefault(require("./model/MutualFundCountryExposureData"));
 
+var _MutualFundEet = _interopRequireDefault(require("./model/MutualFundEet"));
+
+var _MutualFundEetPai = _interopRequireDefault(require("./model/MutualFundEetPai"));
+
 var _MutualFundHoldings = _interopRequireDefault(require("./model/MutualFundHoldings"));
 
 var _MutualFundHoldingsData = _interopRequireDefault(require("./model/MutualFundHoldingsData"));
@@ -1069,6 +1175,12 @@ var _RevenueEstimates = _interopRequireDefault(require("./model/RevenueEstimates
 var _RevenueEstimatesInfo = _interopRequireDefault(require("./model/RevenueEstimatesInfo"));
 
 var _SECSentimentAnalysis = _interopRequireDefault(require("./model/SECSentimentAnalysis"));
+
+var _SearchBody = _interopRequireDefault(require("./model/SearchBody"));
+
+var _SearchFilter = _interopRequireDefault(require("./model/SearchFilter"));
+
+var _SearchResponse = _interopRequireDefault(require("./model/SearchResponse"));
 
 var _SectorMetric = _interopRequireDefault(require("./model/SectorMetric"));
 

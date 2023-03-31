@@ -17,7 +17,7 @@ import SymbolChangeInfo from './SymbolChangeInfo';
 /**
  * The SymbolChange model module.
  * @module model/SymbolChange
- * @version 1.2.16
+ * @version 1.2.17
  */
 class SymbolChange {
     /**

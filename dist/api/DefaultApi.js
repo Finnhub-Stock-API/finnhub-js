@@ -17,6 +17,8 @@ var _BondProfile = _interopRequireDefault(require("../model/BondProfile"));
 
 var _BondTickData = _interopRequireDefault(require("../model/BondTickData"));
 
+var _BondYieldCurve = _interopRequireDefault(require("../model/BondYieldCurve"));
+
 var _CompanyESG = _interopRequireDefault(require("../model/CompanyESG"));
 
 var _CompanyEarningsQualityScore = _interopRequireDefault(require("../model/CompanyEarningsQualityScore"));
@@ -28,6 +30,8 @@ var _CompanyNews = _interopRequireDefault(require("../model/CompanyNews"));
 var _CompanyProfile = _interopRequireDefault(require("../model/CompanyProfile"));
 
 var _CompanyProfile2 = _interopRequireDefault(require("../model/CompanyProfile2"));
+
+var _CongressionalTrading = _interopRequireDefault(require("../model/CongressionalTrading"));
 
 var _CountryMetadata = _interopRequireDefault(require("../model/CountryMetadata"));
 
@@ -105,8 +109,6 @@ var _InstitutionalPortfolio = _interopRequireDefault(require("../model/Instituti
 
 var _InstitutionalProfile = _interopRequireDefault(require("../model/InstitutionalProfile"));
 
-var _InternationalFiling = _interopRequireDefault(require("../model/InternationalFiling"));
-
 var _InvestmentThemes = _interopRequireDefault(require("../model/InvestmentThemes"));
 
 var _IsinChange = _interopRequireDefault(require("../model/IsinChange"));
@@ -118,6 +120,10 @@ var _LobbyingResult = _interopRequireDefault(require("../model/LobbyingResult"))
 var _MarketNews = _interopRequireDefault(require("../model/MarketNews"));
 
 var _MutualFundCountryExposure = _interopRequireDefault(require("../model/MutualFundCountryExposure"));
+
+var _MutualFundEet = _interopRequireDefault(require("../model/MutualFundEet"));
+
+var _MutualFundEetPai = _interopRequireDefault(require("../model/MutualFundEetPai"));
 
 var _MutualFundHoldings = _interopRequireDefault(require("../model/MutualFundHoldings"));
 
@@ -188,7 +194,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.16
+* @version 1.2.17
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -213,7 +219,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
   /**
    * Aggregate Indicators
-   * Get aggregate signal of multiple technical indicators such as MACD, RSI, Moving Average v.v.
+   * Get aggregate signal of multiple technical indicators such as MACD, RSI, Moving Average v.v. A full list of indicators can be found <a href=\"https://docs.google.com/spreadsheets/d/1MWuy0WuT2yVlxr1KbPdggVygMZtJfunDnhe-C0GEXYM/edit?usp=sharing\" target=\"_blank\">here</a>.
    * @param {String} symbol symbol
    * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
    * @param {module:api/DefaultApi~aggregateIndicatorCallback} callback The callback function, accepting three arguments: error, data, response
@@ -309,7 +315,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Bond Profile
-     * Get general information of a bond. You can query by FIGI, ISIN or CUSIP
+     * Get general information of a bond. You can query by FIGI, ISIN or CUSIP. A list of supported bonds can be found <a href=\"/api/v1/bond/list?token=\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
      * @param {String} opts.isin ISIN
      * @param {String} opts.cusip CUSIP
@@ -401,6 +407,43 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _BondTickData["default"];
       return this.apiClient.callApi('/bond/tick', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the bondYieldCurve operation.
+     * @callback module:api/DefaultApi~bondYieldCurveCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BondYieldCurve} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Bond Yield Curve
+     * Get yield curve data for Treasury bonds.
+     * @param {String} code Bond's code. You can find the list of supported code <a href=\"https://docs.google.com/spreadsheets/d/1iA-lM0Kht7lsQZ7Uu_s6r2i1BbQNUNO9eGkO5-zglHg/edit?usp=sharing\" target=\"_blank\" rel=\"noopener\">here</a>.
+     * @param {module:api/DefaultApi~bondYieldCurveCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BondYieldCurve}
+     */
+
+  }, {
+    key: "bondYieldCurve",
+    value: function bondYieldCurve(code, callback) {
+      var postBody = null; // verify the required parameter 'code' is set
+
+      if (code === undefined || code === null) {
+        throw new Error("Missing the required parameter 'code' when calling bondYieldCurve");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'code': code
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _BondYieldCurve["default"];
+      return this.apiClient.callApi('/bond/yield-curve', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the companyBasicFinancials operation.
@@ -938,6 +981,57 @@ var DefaultApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/stock/revenue-estimate', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the congressionalTrading operation.
+     * @callback module:api/DefaultApi~congressionalTradingCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CongressionalTrading} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Congressional Trading
+     * Get stock trades data disclosed by members of congress.
+     * @param {String} symbol Symbol of the company: AAPL.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>.
+     * @param {module:api/DefaultApi~congressionalTradingCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CongressionalTrading}
+     */
+
+  }, {
+    key: "congressionalTrading",
+    value: function congressionalTrading(symbol, from, to, callback) {
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling congressionalTrading");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling congressionalTrading");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling congressionalTrading");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _CongressionalTrading["default"];
+      return this.apiClient.callApi('/stock/congressional-trading', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the country operation.
      * @callback module:api/DefaultApi~countryCallback
      * @param {String} error Error message, if any.
@@ -1345,7 +1439,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * ETFs Holdings
-     * Get full ETF holdings/constituents. This endpoint has global coverage. Widget only shows top 10 holdings.
+     * Get full ETF holdings/constituents. This endpoint has global coverage. Widget only shows top 10 holdings. A list of supported ETFs can be found <a href=\"/api/v1/etf/list?token=\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol ETF symbol.
      * @param {String} opts.isin ETF isin.
@@ -1385,7 +1479,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * ETFs Profile
-     * Get ETF profile information. This endpoint has global coverage.
+     * Get ETF profile information. This endpoint has global coverage. A list of supported ETFs can be found <a href=\"/api/v1/etf/list?token=\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol ETF symbol.
      * @param {String} opts.isin ETF isin.
@@ -1989,7 +2083,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Insider Transactions
-     * Company insider transactions data sourced from <code>Form 3,4,5</code>. This endpoint only covers US companies at the moment. Limit to 100 transactions per API call.
+     * Company insider transactions data sourced from <code>Form 3,4,5</code>, SEDI and relevant companies' filings. This endpoint covers US, Canada, Australia, and selected EU companies. Limit to 100 transactions per API call.
      * @param {String} symbol Symbol of the company: AAPL. Leave this param blank to get the latest transactions.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.from From date: 2020-03-15.
@@ -2090,7 +2184,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Institutional Portfolio
-     * Get the holdings/portfolio data of institutional investors from 13-F filings. Limit to 1 year of data at a time.
+     * Get the holdings/portfolio data of institutional investors from 13-F filings. Limit to 1 year of data at a time. You can get a list of supported CIK <a href=\"/api/v1/institutional/list?token=\" target=\"_blank\">here</a>.
      * @param {String} cik Fund's CIK.
      * @param {String} from From date <code>YYYY-MM-DD</code>.
      * @param {String} to To date <code>YYYY-MM-DD</code>.
@@ -2164,42 +2258,6 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _InstitutionalProfile["default"];
       return this.apiClient.callApi('/institutional/profile', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the internationalFilings operation.
-     * @callback module:api/DefaultApi~internationalFilingsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InternationalFiling>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * International Filings
-     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.symbol Symbol. Leave empty to list latest filings.
-     * @param {String} opts.country Filter by country using country's 2-letter code.
-     * @param {module:api/DefaultApi~internationalFilingsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InternationalFiling>}
-     */
-
-  }, {
-    key: "internationalFilings",
-    value: function internationalFilings(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {
-        'symbol': opts['symbol'],
-        'country': opts['country']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['api_key'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [_InternationalFiling["default"]];
-      return this.apiClient.callApi('/stock/international-filings', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the investmentThemes operation.
@@ -2405,6 +2463,80 @@ var DefaultApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/mutual-fund/country', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the mutualFundEet operation.
+     * @callback module:api/DefaultApi~mutualFundEetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MutualFundEet} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Mutual Funds EET
+     * Get EET data for EU funds. For PAIs data, please see the EET PAI endpoint.
+     * @param {String} isin ISIN.
+     * @param {module:api/DefaultApi~mutualFundEetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MutualFundEet}
+     */
+
+  }, {
+    key: "mutualFundEet",
+    value: function mutualFundEet(isin, callback) {
+      var postBody = null; // verify the required parameter 'isin' is set
+
+      if (isin === undefined || isin === null) {
+        throw new Error("Missing the required parameter 'isin' when calling mutualFundEet");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'isin': isin
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _MutualFundEet["default"];
+      return this.apiClient.callApi('/mutual-fund/eet', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the mutualFundEetPai operation.
+     * @callback module:api/DefaultApi~mutualFundEetPaiCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MutualFundEetPai} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Mutual Funds EET PAI
+     * Get EET PAI data for EU funds.
+     * @param {String} isin ISIN.
+     * @param {module:api/DefaultApi~mutualFundEetPaiCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MutualFundEetPai}
+     */
+
+  }, {
+    key: "mutualFundEetPai",
+    value: function mutualFundEetPai(isin, callback) {
+      var postBody = null; // verify the required parameter 'isin' is set
+
+      if (isin === undefined || isin === null) {
+        throw new Error("Missing the required parameter 'isin' when calling mutualFundEetPai");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'isin': isin
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _MutualFundEetPai["default"];
+      return this.apiClient.callApi('/mutual-fund/eet-pai', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the mutualFundHoldings operation.
      * @callback module:api/DefaultApi~mutualFundHoldingsCallback
      * @param {String} error Error message, if any.
@@ -2414,7 +2546,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Mutual Funds Holdings
-     * Get full Mutual Funds holdings/constituents. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
+     * Get full Mutual Funds holdings/constituents. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN. A list of supported funds can be found <a href=\"/api/v1/mutual-fund/list?token=\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Fund's symbol.
      * @param {String} opts.isin Fund's isin.
@@ -2452,7 +2584,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Mutual Funds Profile
-     * Get mutual funds profile information. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
+     * Get mutual funds profile information. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN. A list of supported funds can be found <a href=\"/api/v1/mutual-fund/list?token=\" target=\"_blank\">here</a>.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Fund's symbol.
      * @param {String} opts.isin Fund's isin.
@@ -2692,13 +2824,16 @@ var DefaultApi = /*#__PURE__*/function () {
      * Price Metrics
      * Get company price performance statistics such as 52-week high/low, YTD return and much more.
      * @param {String} symbol Symbol of the company: AAPL.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.date Get data on a specific date in the past. The data is available weekly so your date will be automatically adjusted to the last day of that week.
      * @param {module:api/DefaultApi~priceMetricsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PriceMetrics}
      */
 
   }, {
     key: "priceMetrics",
-    value: function priceMetrics(symbol, callback) {
+    value: function priceMetrics(symbol, opts, callback) {
+      opts = opts || {};
       var postBody = null; // verify the required parameter 'symbol' is set
 
       if (symbol === undefined || symbol === null) {
@@ -2707,7 +2842,8 @@ var DefaultApi = /*#__PURE__*/function () {
 
       var pathParams = {};
       var queryParams = {
-        'symbol': symbol
+        'symbol': symbol,
+        'date': opts['date']
       };
       var headerParams = {};
       var formParams = {};
@@ -3380,7 +3516,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Tick Data
-     * <p>Get historical tick data for global exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server.</p><p>For US market, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
+     * <p>Get historical tick data for global exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server.</p><p>For US market, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
      * @param {String} symbol Symbol.
      * @param {Date} date Date: 2020-04-02.
      * @param {Number} limit Limit number of ticks returned. Maximum value: <code>25000</code>
@@ -3672,7 +3808,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Symbol Change
-     * Get a list of symbol changes for US-listed and EU-listed securities. Limit to 2000 events at a time.
+     * Get a list of symbol changes for US-listed, EU-listed, NSE and ASX securities. Limit to 2000 events at a time.
      * @param {String} from From date <code>YYYY-MM-DD</code>.
      * @param {String} to To date <code>YYYY-MM-DD</code>.
      * @param {module:api/DefaultApi~symbolChangeCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3809,7 +3945,7 @@ var DefaultApi = /*#__PURE__*/function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-      return this.apiClient.callApi('/indicator', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/indicator', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the transcripts operation.
@@ -3821,7 +3957,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Earnings Call Transcripts
-     * <p>Get earnings call transcripts, audio and participants' list. This endpoint is only available for US, UK, and Candian companies. <p>15+ years of data is available with 220,000+ audio which add up to 7TB in size.</p>
+     * <p>Get earnings call transcripts, audio and participants' list. Data is available for US, UK, European, Australian and Canadian companies.<p>15+ years of data is available with 220,000+ audio which add up to 7TB in size.</p>
      * @param {String} id Transcript's id obtained with <a href=\"#transcripts-list\">Transcripts List endpoint</a>.
      * @param {module:api/DefaultApi~transcriptsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EarningsCallTranscripts}

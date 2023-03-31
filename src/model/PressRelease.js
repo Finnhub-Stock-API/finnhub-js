@@ -17,7 +17,7 @@ import Development from './Development';
 /**
  * The PressRelease model module.
  * @module model/PressRelease
- * @version 1.2.16
+ * @version 1.2.17
  */
 class PressRelease {
     /**

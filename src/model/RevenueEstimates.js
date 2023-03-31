@@ -17,7 +17,7 @@ import RevenueEstimatesInfo from './RevenueEstimatesInfo';
 /**
  * The RevenueEstimates model module.
  * @module model/RevenueEstimates
- * @version 1.2.16
+ * @version 1.2.17
  */
 class RevenueEstimates {
     /**

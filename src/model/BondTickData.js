@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BondTickData model module.
  * @module model/BondTickData
- * @version 1.2.16
+ * @version 1.2.17
  */
 class BondTickData {
     /**
@@ -62,6 +62,9 @@ class BondTickData {
             if (data.hasOwnProperty('p')) {
                 obj['p'] = ApiClient.convertToType(data['p'], ['Number']);
             }
+            if (data.hasOwnProperty('y')) {
+                obj['y'] = ApiClient.convertToType(data['y'], ['Number']);
+            }
             if (data.hasOwnProperty('t')) {
                 obj['t'] = ApiClient.convertToType(data['t'], ['Number']);
             }
@@ -70,6 +73,12 @@ class BondTickData {
             }
             if (data.hasOwnProperty('cp')) {
                 obj['cp'] = ApiClient.convertToType(data['cp'], ['String']);
+            }
+            if (data.hasOwnProperty('rp')) {
+                obj['rp'] = ApiClient.convertToType(data['rp'], ['String']);
+            }
+            if (data.hasOwnProperty('ats')) {
+                obj['ats'] = ApiClient.convertToType(data['ats'], ['String']);
             }
             if (data.hasOwnProperty('c')) {
                 obj['c'] = ApiClient.convertToType(data['c'], [['String']]);
@@ -112,6 +121,12 @@ BondTickData.prototype['v'] = undefined;
 BondTickData.prototype['p'] = undefined;
 
 /**
+ * List of yield data.
+ * @member {Array.<Number>} y
+ */
+BondTickData.prototype['y'] = undefined;
+
+/**
  * List of timestamp in UNIX ms.
  * @member {Array.<Number>} t
  */
@@ -128,6 +143,18 @@ BondTickData.prototype['si'] = undefined;
  * @member {Array.<String>} cp
  */
 BondTickData.prototype['cp'] = undefined;
+
+/**
+ * List of values showing the reporting party of each trade. List of supported values: <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1O3aueXSPOqo7Iuyz4PqDG6yZunHsX8BTefZ2kFk5pz4/edit?usp=sharing\",>here</a>
+ * @member {Array.<String>} rp
+ */
+BondTickData.prototype['rp'] = undefined;
+
+/**
+ * ATS flag. Y or empty
+ * @member {Array.<String>} ats
+ */
+BondTickData.prototype['ats'] = undefined;
 
 /**
  * List of trade conditions. A comprehensive list of trade conditions code can be found <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1O3aueXSPOqo7Iuyz4PqDG6yZunHsX8BTefZ2kFk5pz4/edit?usp=sharing\">here</a>

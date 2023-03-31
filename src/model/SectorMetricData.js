@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SectorMetricData model module.
  * @module model/SectorMetricData
- * @version 1.2.16
+ * @version 1.2.17
  */
 class SectorMetricData {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyProfile model module.
  * @module model/CompanyProfile
- * @version 1.2.16
+ * @version 1.2.17
  */
 var CompanyProfile = /*#__PURE__*/function () {
   /**
@@ -68,6 +68,14 @@ var CompanyProfile = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('currency')) {
           obj['currency'] = _ApiClient["default"].convertToType(data['currency'], 'String');
+        }
+
+        if (data.hasOwnProperty('estimateCurrency')) {
+          obj['estimateCurrency'] = _ApiClient["default"].convertToType(data['estimateCurrency'], 'String');
+        }
+
+        if (data.hasOwnProperty('marketCapCurrency')) {
+          obj['marketCapCurrency'] = _ApiClient["default"].convertToType(data['marketCapCurrency'], 'String');
         }
 
         if (data.hasOwnProperty('cusip')) {
@@ -193,11 +201,23 @@ CompanyProfile.prototype['city'] = undefined;
 
 CompanyProfile.prototype['country'] = undefined;
 /**
- * Currency used in company filings.
+ * Currency used in company filings and financials.
  * @member {String} currency
  */
 
 CompanyProfile.prototype['currency'] = undefined;
+/**
+ * Currency used in Estimates data.
+ * @member {String} estimateCurrency
+ */
+
+CompanyProfile.prototype['estimateCurrency'] = undefined;
+/**
+ * Currency used in market capitalization.
+ * @member {String} marketCapCurrency
+ */
+
+CompanyProfile.prototype['marketCapCurrency'] = undefined;
 /**
  * CUSIP number.
  * @member {String} cusip

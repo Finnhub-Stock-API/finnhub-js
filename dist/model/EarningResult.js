@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningResult model module.
  * @module model/EarningResult
- * @version 1.2.16
+ * @version 1.2.17
  */
 var EarningResult = /*#__PURE__*/function () {
   /**
@@ -77,6 +77,14 @@ var EarningResult = /*#__PURE__*/function () {
         if (data.hasOwnProperty('symbol')) {
           obj['symbol'] = _ApiClient["default"].convertToType(data['symbol'], 'String');
         }
+
+        if (data.hasOwnProperty('year')) {
+          obj['year'] = _ApiClient["default"].convertToType(data['year'], 'Number');
+        }
+
+        if (data.hasOwnProperty('quarter')) {
+          obj['quarter'] = _ApiClient["default"].convertToType(data['quarter'], 'Number');
+        }
       }
 
       return obj;
@@ -122,5 +130,17 @@ EarningResult.prototype['period'] = undefined;
  */
 
 EarningResult.prototype['symbol'] = undefined;
+/**
+ * Earnings year.
+ * @member {Number} year
+ */
+
+EarningResult.prototype['year'] = undefined;
+/**
+ * Earnings quarter.
+ * @member {Number} quarter
+ */
+
+EarningResult.prototype['quarter'] = undefined;
 var _default = EarningResult;
 exports["default"] = _default;

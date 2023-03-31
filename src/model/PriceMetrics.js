@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PriceMetrics model module.
  * @module model/PriceMetrics
- * @version 1.2.16
+ * @version 1.2.17
  */
 class PriceMetrics {
     /**
@@ -50,6 +50,9 @@ class PriceMetrics {
             if (data.hasOwnProperty('symbol')) {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
+            if (data.hasOwnProperty('atDate')) {
+                obj['atDate'] = ApiClient.convertToType(data['atDate'], 'String');
+            }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], Object);
             }
@@ -65,6 +68,12 @@ class PriceMetrics {
  * @member {String} symbol
  */
 PriceMetrics.prototype['symbol'] = undefined;
+
+/**
+ * Data date.
+ * @member {String} atDate
+ */
+PriceMetrics.prototype['atDate'] = undefined;
 
 /**
  * @member {Object} data

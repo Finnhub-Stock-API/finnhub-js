@@ -6,6 +6,8 @@ docs/BasicFinancials.md
 docs/BondCandles.md
 docs/BondProfile.md
 docs/BondTickData.md
+docs/BondYieldCurve.md
+docs/BondYieldCurveInfo.md
 docs/BreakdownItem.md
 docs/Company.md
 docs/CompanyESG.md
@@ -16,6 +18,8 @@ docs/CompanyNews.md
 docs/CompanyNewsStatistics.md
 docs/CompanyProfile.md
 docs/CompanyProfile2.md
+docs/CongressionalTrading.md
+docs/CongressionalTransaction.md
 docs/CountryMetadata.md
 docs/CovidInfo.md
 docs/CryptoCandles.md
@@ -26,6 +30,7 @@ docs/Development.md
 docs/Dividends.md
 docs/Dividends2.md
 docs/Dividends2Info.md
+docs/DocumentResponse.md
 docs/ETFCountryExposureData.md
 docs/ETFHoldingsData.md
 docs/ETFProfileData.md
@@ -50,8 +55,10 @@ docs/EconomicCode.md
 docs/EconomicData.md
 docs/EconomicDataInfo.md
 docs/EconomicEvent.md
+docs/ExcerptResponse.md
 docs/FDAComitteeMeeting.md
 docs/Filing.md
+docs/FilingResponse.md
 docs/FilingSentiment.md
 docs/FinancialStatements.md
 docs/FinancialsAsReported.md
@@ -63,6 +70,8 @@ docs/FundOwnershipInfo.md
 docs/HistoricalNBBO.md
 docs/IPOCalendar.md
 docs/IPOEvent.md
+docs/InFilingResponse.md
+docs/InFilingSearchBody.md
 docs/IndexHistoricalConstituent.md
 docs/Indicator.md
 docs/IndicesConstituents.md
@@ -90,6 +99,8 @@ docs/LobbyingResult.md
 docs/MarketNews.md
 docs/MutualFundCountryExposure.md
 docs/MutualFundCountryExposureData.md
+docs/MutualFundEet.md
+docs/MutualFundEetPai.md
 docs/MutualFundHoldings.md
 docs/MutualFundHoldingsData.md
 docs/MutualFundProfile.md
@@ -111,6 +122,9 @@ docs/RevenueBreakdown.md
 docs/RevenueEstimates.md
 docs/RevenueEstimatesInfo.md
 docs/SECSentimentAnalysis.md
+docs/SearchBody.md
+docs/SearchFilter.md
+docs/SearchResponse.md
 docs/SectorMetric.md
 docs/SectorMetricData.md
 docs/Sentiment.md
@@ -152,6 +166,8 @@ src/model/BasicFinancials.js
 src/model/BondCandles.js
 src/model/BondProfile.js
 src/model/BondTickData.js
+src/model/BondYieldCurve.js
+src/model/BondYieldCurveInfo.js
 src/model/BreakdownItem.js
 src/model/Company.js
 src/model/CompanyESG.js
@@ -162,6 +178,8 @@ src/model/CompanyNews.js
 src/model/CompanyNewsStatistics.js
 src/model/CompanyProfile.js
 src/model/CompanyProfile2.js
+src/model/CongressionalTrading.js
+src/model/CongressionalTransaction.js
 src/model/CountryMetadata.js
 src/model/CovidInfo.js
 src/model/CryptoCandles.js
@@ -171,6 +189,7 @@ src/model/Development.js
 src/model/Dividends.js
 src/model/Dividends2.js
 src/model/Dividends2Info.js
+src/model/DocumentResponse.js
 src/model/ETFCountryExposureData.js
 src/model/ETFHoldingsData.js
 src/model/ETFProfileData.js
@@ -195,8 +214,10 @@ src/model/EconomicCode.js
 src/model/EconomicData.js
 src/model/EconomicDataInfo.js
 src/model/EconomicEvent.js
+src/model/ExcerptResponse.js
 src/model/FDAComitteeMeeting.js
 src/model/Filing.js
+src/model/FilingResponse.js
 src/model/FilingSentiment.js
 src/model/FinancialStatements.js
 src/model/FinancialsAsReported.js
@@ -208,6 +229,8 @@ src/model/FundOwnershipInfo.js
 src/model/HistoricalNBBO.js
 src/model/IPOCalendar.js
 src/model/IPOEvent.js
+src/model/InFilingResponse.js
+src/model/InFilingSearchBody.js
 src/model/IndexHistoricalConstituent.js
 src/model/Indicator.js
 src/model/IndicesConstituents.js
@@ -235,6 +258,8 @@ src/model/LobbyingResult.js
 src/model/MarketNews.js
 src/model/MutualFundCountryExposure.js
 src/model/MutualFundCountryExposureData.js
+src/model/MutualFundEet.js
+src/model/MutualFundEetPai.js
 src/model/MutualFundHoldings.js
 src/model/MutualFundHoldingsData.js
 src/model/MutualFundProfile.js
@@ -256,6 +281,9 @@ src/model/RevenueBreakdown.js
 src/model/RevenueEstimates.js
 src/model/RevenueEstimatesInfo.js
 src/model/SECSentimentAnalysis.js
+src/model/SearchBody.js
+src/model/SearchFilter.js
+src/model/SearchResponse.js
 src/model/SectorMetric.js
 src/model/SectorMetricData.js
 src/model/Sentiment.js
@@ -286,3 +314,17 @@ src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
+test/model/BondYieldCurve.spec.js
+test/model/BondYieldCurveInfo.spec.js
+test/model/CongressionalTrading.spec.js
+test/model/CongressionalTransaction.spec.js
+test/model/DocumentResponse.spec.js
+test/model/ExcerptResponse.spec.js
+test/model/FilingResponse.spec.js
+test/model/InFilingResponse.spec.js
+test/model/InFilingSearchBody.spec.js
+test/model/MutualFundEet.spec.js
+test/model/MutualFundEetPai.spec.js
+test/model/SearchBody.spec.js
+test/model/SearchFilter.spec.js
+test/model/SearchResponse.spec.js

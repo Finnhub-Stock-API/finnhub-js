@@ -17,7 +17,7 @@ import IndexHistoricalConstituent from './IndexHistoricalConstituent';
 /**
  * The IndicesHistoricalConstituents model module.
  * @module model/IndicesHistoricalConstituents
- * @version 1.2.16
+ * @version 1.2.17
  */
 class IndicesHistoricalConstituents {
     /**

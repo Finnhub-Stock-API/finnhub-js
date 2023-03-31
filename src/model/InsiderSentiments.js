@@ -17,7 +17,7 @@ import InsiderSentimentsData from './InsiderSentimentsData';
 /**
  * The InsiderSentiments model module.
  * @module model/InsiderSentiments
- * @version 1.2.16
+ * @version 1.2.17
  */
 class InsiderSentiments {
     /**

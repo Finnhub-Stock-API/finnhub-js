@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SectorMetric model module.
  * @module model/SectorMetric
- * @version 1.2.16
+ * @version 1.2.17
  */
 var SectorMetric = /*#__PURE__*/function () {
   /**

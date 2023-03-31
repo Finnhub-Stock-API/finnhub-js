@@ -17,7 +17,7 @@ import BreakdownItem from './BreakdownItem';
 /**
  * The RevenueBreakdown model module.
  * @module model/RevenueBreakdown
- * @version 1.2.16
+ * @version 1.2.17
  */
 class RevenueBreakdown {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SymbolChangeInfo model module.
  * @module model/SymbolChangeInfo
- * @version 1.2.16
+ * @version 1.2.17
  */
 var SymbolChangeInfo = /*#__PURE__*/function () {
   /**
