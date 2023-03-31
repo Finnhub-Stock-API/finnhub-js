@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningResult model module.
  * @module model/EarningResult
- * @version 1.2.16
+ * @version 1.2.17
  */
 class EarningResult {
     /**
@@ -65,6 +65,12 @@ class EarningResult {
             if (data.hasOwnProperty('symbol')) {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
+            if (data.hasOwnProperty('year')) {
+                obj['year'] = ApiClient.convertToType(data['year'], 'Number');
+            }
+            if (data.hasOwnProperty('quarter')) {
+                obj['quarter'] = ApiClient.convertToType(data['quarter'], 'Number');
+            }
         }
         return obj;
     }
@@ -107,6 +113,18 @@ EarningResult.prototype['period'] = undefined;
  * @member {String} symbol
  */
 EarningResult.prototype['symbol'] = undefined;
+
+/**
+ * Earnings year.
+ * @member {Number} year
+ */
+EarningResult.prototype['year'] = undefined;
+
+/**
+ * Earnings quarter.
+ * @member {Number} quarter
+ */
+EarningResult.prototype['quarter'] = undefined;
 
 
 

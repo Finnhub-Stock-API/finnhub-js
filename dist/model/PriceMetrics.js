@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PriceMetrics model module.
  * @module model/PriceMetrics
- * @version 1.2.16
+ * @version 1.2.17
  */
 var PriceMetrics = /*#__PURE__*/function () {
   /**
@@ -58,6 +58,10 @@ var PriceMetrics = /*#__PURE__*/function () {
           obj['symbol'] = _ApiClient["default"].convertToType(data['symbol'], 'String');
         }
 
+        if (data.hasOwnProperty('atDate')) {
+          obj['atDate'] = _ApiClient["default"].convertToType(data['atDate'], 'String');
+        }
+
         if (data.hasOwnProperty('data')) {
           obj['data'] = _ApiClient["default"].convertToType(data['data'], Object);
         }
@@ -76,6 +80,12 @@ var PriceMetrics = /*#__PURE__*/function () {
 
 
 PriceMetrics.prototype['symbol'] = undefined;
+/**
+ * Data date.
+ * @member {String} atDate
+ */
+
+PriceMetrics.prototype['atDate'] = undefined;
 /**
  * @member {Object} data
  */

@@ -17,7 +17,7 @@ import MutualFundProfileData from './MutualFundProfileData';
 /**
  * The MutualFundProfile model module.
  * @module model/MutualFundProfile
- * @version 1.2.16
+ * @version 1.2.17
  */
 class MutualFundProfile {
     /**

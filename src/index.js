@@ -18,6 +18,8 @@ import BasicFinancials from './model/BasicFinancials';
 import BondCandles from './model/BondCandles';
 import BondProfile from './model/BondProfile';
 import BondTickData from './model/BondTickData';
+import BondYieldCurve from './model/BondYieldCurve';
+import BondYieldCurveInfo from './model/BondYieldCurveInfo';
 import BreakdownItem from './model/BreakdownItem';
 import Company from './model/Company';
 import CompanyESG from './model/CompanyESG';
@@ -28,6 +30,8 @@ import CompanyNews from './model/CompanyNews';
 import CompanyNewsStatistics from './model/CompanyNewsStatistics';
 import CompanyProfile from './model/CompanyProfile';
 import CompanyProfile2 from './model/CompanyProfile2';
+import CongressionalTrading from './model/CongressionalTrading';
+import CongressionalTransaction from './model/CongressionalTransaction';
 import CountryMetadata from './model/CountryMetadata';
 import CovidInfo from './model/CovidInfo';
 import CryptoCandles from './model/CryptoCandles';
@@ -37,6 +41,7 @@ import Development from './model/Development';
 import Dividends from './model/Dividends';
 import Dividends2 from './model/Dividends2';
 import Dividends2Info from './model/Dividends2Info';
+import DocumentResponse from './model/DocumentResponse';
 import ETFCountryExposureData from './model/ETFCountryExposureData';
 import ETFHoldingsData from './model/ETFHoldingsData';
 import ETFProfileData from './model/ETFProfileData';
@@ -61,8 +66,10 @@ import EconomicCode from './model/EconomicCode';
 import EconomicData from './model/EconomicData';
 import EconomicDataInfo from './model/EconomicDataInfo';
 import EconomicEvent from './model/EconomicEvent';
+import ExcerptResponse from './model/ExcerptResponse';
 import FDAComitteeMeeting from './model/FDAComitteeMeeting';
 import Filing from './model/Filing';
+import FilingResponse from './model/FilingResponse';
 import FilingSentiment from './model/FilingSentiment';
 import FinancialStatements from './model/FinancialStatements';
 import FinancialsAsReported from './model/FinancialsAsReported';
@@ -74,6 +81,8 @@ import FundOwnershipInfo from './model/FundOwnershipInfo';
 import HistoricalNBBO from './model/HistoricalNBBO';
 import IPOCalendar from './model/IPOCalendar';
 import IPOEvent from './model/IPOEvent';
+import InFilingResponse from './model/InFilingResponse';
+import InFilingSearchBody from './model/InFilingSearchBody';
 import IndexHistoricalConstituent from './model/IndexHistoricalConstituent';
 import Indicator from './model/Indicator';
 import IndicesConstituents from './model/IndicesConstituents';
@@ -101,6 +110,8 @@ import LobbyingResult from './model/LobbyingResult';
 import MarketNews from './model/MarketNews';
 import MutualFundCountryExposure from './model/MutualFundCountryExposure';
 import MutualFundCountryExposureData from './model/MutualFundCountryExposureData';
+import MutualFundEet from './model/MutualFundEet';
+import MutualFundEetPai from './model/MutualFundEetPai';
 import MutualFundHoldings from './model/MutualFundHoldings';
 import MutualFundHoldingsData from './model/MutualFundHoldingsData';
 import MutualFundProfile from './model/MutualFundProfile';
@@ -122,6 +133,9 @@ import RevenueBreakdown from './model/RevenueBreakdown';
 import RevenueEstimates from './model/RevenueEstimates';
 import RevenueEstimatesInfo from './model/RevenueEstimatesInfo';
 import SECSentimentAnalysis from './model/SECSentimentAnalysis';
+import SearchBody from './model/SearchBody';
+import SearchFilter from './model/SearchFilter';
+import SearchResponse from './model/SearchResponse';
 import SectorMetric from './model/SectorMetric';
 import SectorMetricData from './model/SectorMetricData';
 import Sentiment from './model/Sentiment';
@@ -184,7 +198,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.16
+* @version 1.2.17
 */
 export {
     /**
@@ -222,6 +236,18 @@ export {
      * @property {module:model/BondTickData}
      */
     BondTickData,
+
+    /**
+     * The BondYieldCurve model constructor.
+     * @property {module:model/BondYieldCurve}
+     */
+    BondYieldCurve,
+
+    /**
+     * The BondYieldCurveInfo model constructor.
+     * @property {module:model/BondYieldCurveInfo}
+     */
+    BondYieldCurveInfo,
 
     /**
      * The BreakdownItem model constructor.
@@ -284,6 +310,18 @@ export {
     CompanyProfile2,
 
     /**
+     * The CongressionalTrading model constructor.
+     * @property {module:model/CongressionalTrading}
+     */
+    CongressionalTrading,
+
+    /**
+     * The CongressionalTransaction model constructor.
+     * @property {module:model/CongressionalTransaction}
+     */
+    CongressionalTransaction,
+
+    /**
      * The CountryMetadata model constructor.
      * @property {module:model/CountryMetadata}
      */
@@ -336,6 +374,12 @@ export {
      * @property {module:model/Dividends2Info}
      */
     Dividends2Info,
+
+    /**
+     * The DocumentResponse model constructor.
+     * @property {module:model/DocumentResponse}
+     */
+    DocumentResponse,
 
     /**
      * The ETFCountryExposureData model constructor.
@@ -482,6 +526,12 @@ export {
     EconomicEvent,
 
     /**
+     * The ExcerptResponse model constructor.
+     * @property {module:model/ExcerptResponse}
+     */
+    ExcerptResponse,
+
+    /**
      * The FDAComitteeMeeting model constructor.
      * @property {module:model/FDAComitteeMeeting}
      */
@@ -492,6 +542,12 @@ export {
      * @property {module:model/Filing}
      */
     Filing,
+
+    /**
+     * The FilingResponse model constructor.
+     * @property {module:model/FilingResponse}
+     */
+    FilingResponse,
 
     /**
      * The FilingSentiment model constructor.
@@ -558,6 +614,18 @@ export {
      * @property {module:model/IPOEvent}
      */
     IPOEvent,
+
+    /**
+     * The InFilingResponse model constructor.
+     * @property {module:model/InFilingResponse}
+     */
+    InFilingResponse,
+
+    /**
+     * The InFilingSearchBody model constructor.
+     * @property {module:model/InFilingSearchBody}
+     */
+    InFilingSearchBody,
 
     /**
      * The IndexHistoricalConstituent model constructor.
@@ -722,6 +790,18 @@ export {
     MutualFundCountryExposureData,
 
     /**
+     * The MutualFundEet model constructor.
+     * @property {module:model/MutualFundEet}
+     */
+    MutualFundEet,
+
+    /**
+     * The MutualFundEetPai model constructor.
+     * @property {module:model/MutualFundEetPai}
+     */
+    MutualFundEetPai,
+
+    /**
      * The MutualFundHoldings model constructor.
      * @property {module:model/MutualFundHoldings}
      */
@@ -846,6 +926,24 @@ export {
      * @property {module:model/SECSentimentAnalysis}
      */
     SECSentimentAnalysis,
+
+    /**
+     * The SearchBody model constructor.
+     * @property {module:model/SearchBody}
+     */
+    SearchBody,
+
+    /**
+     * The SearchFilter model constructor.
+     * @property {module:model/SearchFilter}
+     */
+    SearchFilter,
+
+    /**
+     * The SearchResponse model constructor.
+     * @property {module:model/SearchResponse}
+     */
+    SearchResponse,
 
     /**
      * The SectorMetric model constructor.

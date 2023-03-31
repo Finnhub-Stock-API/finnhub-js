@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OwnershipInfo model module.
  * @module model/OwnershipInfo
- * @version 1.2.16
+ * @version 1.2.17
  */
 class OwnershipInfo {
     /**

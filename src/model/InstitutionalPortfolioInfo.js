@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstitutionalPortfolioInfo model module.
  * @module model/InstitutionalPortfolioInfo
- * @version 1.2.16
+ * @version 1.2.17
  */
 class InstitutionalPortfolioInfo {
     /**

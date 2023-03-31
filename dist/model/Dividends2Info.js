@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Dividends2Info model module.
  * @module model/Dividends2Info
- * @version 1.2.16
+ * @version 1.2.17
  */
 var Dividends2Info = /*#__PURE__*/function () {
   /**

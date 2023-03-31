@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Quote model module.
  * @module model/Quote
- * @version 1.2.16
+ * @version 1.2.17
  */
 class Quote {
     /**

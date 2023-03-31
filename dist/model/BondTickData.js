@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BondTickData model module.
  * @module model/BondTickData
- * @version 1.2.16
+ * @version 1.2.17
  */
 var BondTickData = /*#__PURE__*/function () {
   /**
@@ -74,6 +74,10 @@ var BondTickData = /*#__PURE__*/function () {
           obj['p'] = _ApiClient["default"].convertToType(data['p'], ['Number']);
         }
 
+        if (data.hasOwnProperty('y')) {
+          obj['y'] = _ApiClient["default"].convertToType(data['y'], ['Number']);
+        }
+
         if (data.hasOwnProperty('t')) {
           obj['t'] = _ApiClient["default"].convertToType(data['t'], ['Number']);
         }
@@ -84,6 +88,14 @@ var BondTickData = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('cp')) {
           obj['cp'] = _ApiClient["default"].convertToType(data['cp'], ['String']);
+        }
+
+        if (data.hasOwnProperty('rp')) {
+          obj['rp'] = _ApiClient["default"].convertToType(data['rp'], ['String']);
+        }
+
+        if (data.hasOwnProperty('ats')) {
+          obj['ats'] = _ApiClient["default"].convertToType(data['ats'], ['String']);
         }
 
         if (data.hasOwnProperty('c')) {
@@ -129,6 +141,12 @@ BondTickData.prototype['v'] = undefined;
 
 BondTickData.prototype['p'] = undefined;
 /**
+ * List of yield data.
+ * @member {Array.<Number>} y
+ */
+
+BondTickData.prototype['y'] = undefined;
+/**
  * List of timestamp in UNIX ms.
  * @member {Array.<Number>} t
  */
@@ -146,6 +164,18 @@ BondTickData.prototype['si'] = undefined;
  */
 
 BondTickData.prototype['cp'] = undefined;
+/**
+ * List of values showing the reporting party of each trade. List of supported values: <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1O3aueXSPOqo7Iuyz4PqDG6yZunHsX8BTefZ2kFk5pz4/edit?usp=sharing\",>here</a>
+ * @member {Array.<String>} rp
+ */
+
+BondTickData.prototype['rp'] = undefined;
+/**
+ * ATS flag. Y or empty
+ * @member {Array.<String>} ats
+ */
+
+BondTickData.prototype['ats'] = undefined;
 /**
  * List of trade conditions. A comprehensive list of trade conditions code can be found <a target=\"_blank\" href=\"https://docs.google.com/spreadsheets/d/1O3aueXSPOqo7Iuyz4PqDG6yZunHsX8BTefZ2kFk5pz4/edit?usp=sharing\">here</a>
  * @member {Array.<Array.<String>>} c

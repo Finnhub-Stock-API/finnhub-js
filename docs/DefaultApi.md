@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**bondPrice**](DefaultApi.md#bondPrice) | **GET** /bond/price | Bond price data
 [**bondProfile**](DefaultApi.md#bondProfile) | **GET** /bond/profile | Bond Profile
 [**bondTick**](DefaultApi.md#bondTick) | **GET** /bond/tick | Bond Tick Data
+[**bondYieldCurve**](DefaultApi.md#bondYieldCurve) | **GET** /bond/yield-curve | Bond Yield Curve
 [**companyBasicFinancials**](DefaultApi.md#companyBasicFinancials) | **GET** /stock/metric | Basic Financials
 [**companyEarnings**](DefaultApi.md#companyEarnings) | **GET** /stock/earnings | Earnings Surprises
 [**companyEarningsQualityScore**](DefaultApi.md#companyEarningsQualityScore) | **GET** /stock/earnings-quality-score | Company Earnings Quality Score
@@ -21,6 +22,7 @@ Method | HTTP request | Description
 [**companyProfile**](DefaultApi.md#companyProfile) | **GET** /stock/profile | Company Profile
 [**companyProfile2**](DefaultApi.md#companyProfile2) | **GET** /stock/profile2 | Company Profile 2
 [**companyRevenueEstimates**](DefaultApi.md#companyRevenueEstimates) | **GET** /stock/revenue-estimate | Revenue Estimates
+[**congressionalTrading**](DefaultApi.md#congressionalTrading) | **GET** /stock/congressional-trading | Congressional Trading
 [**country**](DefaultApi.md#country) | **GET** /country | Country Metadata
 [**covid19**](DefaultApi.md#covid19) | **GET** /covid19/us | COVID-19
 [**cryptoCandles**](DefaultApi.md#cryptoCandles) | **GET** /crypto/candle | Crypto Candles
@@ -52,12 +54,13 @@ Method | HTTP request | Description
 [**institutionalOwnership**](DefaultApi.md#institutionalOwnership) | **GET** /institutional/ownership | Institutional Ownership
 [**institutionalPortfolio**](DefaultApi.md#institutionalPortfolio) | **GET** /institutional/portfolio | Institutional Portfolio
 [**institutionalProfile**](DefaultApi.md#institutionalProfile) | **GET** /institutional/profile | Institutional Profile
-[**internationalFilings**](DefaultApi.md#internationalFilings) | **GET** /stock/international-filings | International Filings
 [**investmentThemes**](DefaultApi.md#investmentThemes) | **GET** /stock/investment-theme | Investment Themes (Thematic Investing)
 [**ipoCalendar**](DefaultApi.md#ipoCalendar) | **GET** /calendar/ipo | IPO Calendar
 [**isinChange**](DefaultApi.md#isinChange) | **GET** /ca/isin-change | ISIN Change
 [**marketNews**](DefaultApi.md#marketNews) | **GET** /news | Market News
 [**mutualFundCountryExposure**](DefaultApi.md#mutualFundCountryExposure) | **GET** /mutual-fund/country | Mutual Funds Country Exposure
+[**mutualFundEet**](DefaultApi.md#mutualFundEet) | **GET** /mutual-fund/eet | Mutual Funds EET
+[**mutualFundEetPai**](DefaultApi.md#mutualFundEetPai) | **GET** /mutual-fund/eet-pai | Mutual Funds EET PAI
 [**mutualFundHoldings**](DefaultApi.md#mutualFundHoldings) | **GET** /mutual-fund/holdings | Mutual Funds Holdings
 [**mutualFundProfile**](DefaultApi.md#mutualFundProfile) | **GET** /mutual-fund/profile | Mutual Funds Profile
 [**mutualFundSectorExposure**](DefaultApi.md#mutualFundSectorExposure) | **GET** /mutual-fund/sector | Mutual Funds Sector Exposure
@@ -89,7 +92,7 @@ Method | HTTP request | Description
 [**supportResistance**](DefaultApi.md#supportResistance) | **GET** /scan/support-resistance | Support/Resistance
 [**symbolChange**](DefaultApi.md#symbolChange) | **GET** /ca/symbol-change | Symbol Change
 [**symbolSearch**](DefaultApi.md#symbolSearch) | **GET** /search | Symbol Lookup
-[**technicalIndicator**](DefaultApi.md#technicalIndicator) | **POST** /indicator | Technical Indicators
+[**technicalIndicator**](DefaultApi.md#technicalIndicator) | **GET** /indicator | Technical Indicators
 [**transcripts**](DefaultApi.md#transcripts) | **GET** /stock/transcripts | Earnings Call Transcripts
 [**transcriptsList**](DefaultApi.md#transcriptsList) | **GET** /stock/transcripts/list | Earnings Call Transcripts List
 [**upgradeDowngrade**](DefaultApi.md#upgradeDowngrade) | **GET** /stock/upgrade-downgrade | Stock Upgrade/Downgrade
@@ -102,7 +105,7 @@ Method | HTTP request | Description
 
 Aggregate Indicators
 
-Get aggregate signal of multiple technical indicators such as MACD, RSI, Moving Average v.v.
+Get aggregate signal of multiple technical indicators such as MACD, RSI, Moving Average v.v. A full list of indicators can be found &lt;a href&#x3D;\&quot;https://docs.google.com/spreadsheets/d/1MWuy0WuT2yVlxr1KbPdggVygMZtJfunDnhe-C0GEXYM/edit?usp&#x3D;sharing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -210,7 +213,7 @@ Name | Type | Description  | Notes
 
 Bond Profile
 
-Get general information of a bond. You can query by FIGI, ISIN or CUSIP
+Get general information of a bond. You can query by FIGI, ISIN or CUSIP. A list of supported bonds can be found &lt;a href&#x3D;\&quot;/api/v1/bond/list?token&#x3D;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -309,6 +312,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BondTickData**](BondTickData.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## bondYieldCurve
+
+> BondYieldCurve bondYieldCurve(code)
+
+Bond Yield Curve
+
+Get yield curve data for Treasury bonds.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let code = "code_example"; // String | Bond's code. You can find the list of supported code <a href=\"https://docs.google.com/spreadsheets/d/1iA-lM0Kht7lsQZ7Uu_s6r2i1BbQNUNO9eGkO5-zglHg/edit?usp=sharing\" target=\"_blank\" rel=\"noopener\">here</a>.
+apiInstance.bondYieldCurve(code, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **String**| Bond&#39;s code. You can find the list of supported code &lt;a href&#x3D;\&quot;https://docs.google.com/spreadsheets/d/1iA-lM0Kht7lsQZ7Uu_s6r2i1BbQNUNO9eGkO5-zglHg/edit?usp&#x3D;sharing\&quot; target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener\&quot;&gt;here&lt;/a&gt;. | 
+
+### Return type
+
+[**BondYieldCurve**](BondYieldCurve.md)
 
 ### Authorization
 
@@ -1027,6 +1081,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## congressionalTrading
+
+> CongressionalTrading congressionalTrading(symbol, from, to)
+
+Congressional Trading
+
+Get stock trades data disclosed by members of congress.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol of the company: AAPL.
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>.
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>.
+apiInstance.congressionalTrading(symbol, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol of the company: AAPL. | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**CongressionalTrading**](CongressionalTrading.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## country
 
 > [CountryMetadata] country()
@@ -1596,7 +1705,7 @@ Name | Type | Description  | Notes
 
 ETFs Holdings
 
-Get full ETF holdings/constituents. This endpoint has global coverage. Widget only shows top 10 holdings.
+Get full ETF holdings/constituents. This endpoint has global coverage. Widget only shows top 10 holdings. A list of supported ETFs can be found &lt;a href&#x3D;\&quot;/api/v1/etf/list?token&#x3D;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -1655,7 +1764,7 @@ Name | Type | Description  | Notes
 
 ETFs Profile
 
-Get ETF profile information. This endpoint has global coverage.
+Get ETF profile information. This endpoint has global coverage. A list of supported ETFs can be found &lt;a href&#x3D;\&quot;/api/v1/etf/list?token&#x3D;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -2462,7 +2571,7 @@ Name | Type | Description  | Notes
 
 Insider Transactions
 
-Company insider transactions data sourced from &lt;code&gt;Form 3,4,5&lt;/code&gt;. This endpoint only covers US companies at the moment. Limit to 100 transactions per API call.
+Company insider transactions data sourced from &lt;code&gt;Form 3,4,5&lt;/code&gt;, SEDI and relevant companies&#39; filings. This endpoint covers US, Canada, Australia, and selected EU companies. Limit to 100 transactions per API call.
 
 ### Example
 
@@ -2576,7 +2685,7 @@ Name | Type | Description  | Notes
 
 Institutional Portfolio
 
-Get the holdings/portfolio data of institutional investors from 13-F filings. Limit to 1 year of data at a time.
+Get the holdings/portfolio data of institutional investors from 13-F filings. Limit to 1 year of data at a time. You can get a list of supported CIK &lt;a href&#x3D;\&quot;/api/v1/institutional/list?token&#x3D;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -2667,61 +2776,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InstitutionalProfile**](InstitutionalProfile.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## internationalFilings
-
-> [InternationalFiling] internationalFilings(opts)
-
-International Filings
-
-List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
-
-### Example
-
-```javascript
-import finnhub from 'finnhub';
-let defaultClient = finnhub.ApiClient.instance;
-// Configure API key authorization: api_key
-let api_key = defaultClient.authentications['api_key'];
-api_key.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.apiKeyPrefix = 'Token';
-
-let apiInstance = new finnhub.DefaultApi();
-let opts = {
-  'symbol': "symbol_example", // String | Symbol. Leave empty to list latest filings.
-  'country': "country_example" // String | Filter by country using country's 2-letter code.
-};
-apiInstance.internationalFilings(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **symbol** | **String**| Symbol. Leave empty to list latest filings. | [optional] 
- **country** | **String**| Filter by country using country&#39;s 2-letter code. | [optional] 
-
-### Return type
-
-[**[InternationalFiling]**](InternationalFiling.md)
 
 ### Authorization
 
@@ -2996,13 +3050,115 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## mutualFundEet
+
+> MutualFundEet mutualFundEet(isin)
+
+Mutual Funds EET
+
+Get EET data for EU funds. For PAIs data, please see the EET PAI endpoint.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let isin = "isin_example"; // String | ISIN.
+apiInstance.mutualFundEet(isin, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isin** | **String**| ISIN. | 
+
+### Return type
+
+[**MutualFundEet**](MutualFundEet.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## mutualFundEetPai
+
+> MutualFundEetPai mutualFundEetPai(isin)
+
+Mutual Funds EET PAI
+
+Get EET PAI data for EU funds.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let isin = "isin_example"; // String | ISIN.
+apiInstance.mutualFundEetPai(isin, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isin** | **String**| ISIN. | 
+
+### Return type
+
+[**MutualFundEetPai**](MutualFundEetPai.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## mutualFundHoldings
 
 > MutualFundHoldings mutualFundHoldings(opts)
 
 Mutual Funds Holdings
 
-Get full Mutual Funds holdings/constituents. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
+Get full Mutual Funds holdings/constituents. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN. A list of supported funds can be found &lt;a href&#x3D;\&quot;/api/v1/mutual-fund/list?token&#x3D;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -3059,7 +3215,7 @@ Name | Type | Description  | Notes
 
 Mutual Funds Profile
 
-Get mutual funds profile information. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN.
+Get mutual funds profile information. This endpoint covers both US and global mutual funds. For international funds, you must query the data using ISIN. A list of supported funds can be found &lt;a href&#x3D;\&quot;/api/v1/mutual-fund/list?token&#x3D;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -3377,7 +3533,7 @@ Name | Type | Description  | Notes
 
 ## priceMetrics
 
-> PriceMetrics priceMetrics(symbol)
+> PriceMetrics priceMetrics(symbol, opts)
 
 Price Metrics
 
@@ -3396,7 +3552,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let symbol = "symbol_example"; // String | Symbol of the company: AAPL.
-apiInstance.priceMetrics(symbol, (error, data, response) => {
+let opts = {
+  'date': "date_example" // String | Get data on a specific date in the past. The data is available weekly so your date will be automatically adjusted to the last day of that week.
+};
+apiInstance.priceMetrics(symbol, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3411,6 +3570,7 @@ apiInstance.priceMetrics(symbol, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Symbol of the company: AAPL. | 
+ **date** | **String**| Get data on a specific date in the past. The data is available weekly so your date will be automatically adjusted to the last day of that week. | [optional] 
 
 ### Return type
 
@@ -4245,7 +4405,7 @@ Name | Type | Description  | Notes
 
 Tick Data
 
-&lt;p&gt;Get historical tick data for global exchanges. You can send the request directly to our tick server at &lt;a href&#x3D;\&quot;https://tick.finnhub.io/\&quot;&gt;https://tick.finnhub.io/&lt;/a&gt; with the same path and parameters or get redirected there if you call our main server.&lt;/p&gt;&lt;p&gt;For US market, you can visit our bulk download page in the Dashboard &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;/dashboard/download\&quot;,&gt;here&lt;/a&gt; to speed up the download process.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;US CTA/UTP&lt;/th&gt;       &lt;td&gt;Full SIP&lt;/td&gt;       &lt;td&gt;15 minute&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;TSX&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;TSX&lt;/li&gt;&lt;li&gt;TSX Venture&lt;/li&gt;&lt;li&gt;Index&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;LSE&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;London Stock Exchange (L)&lt;/li&gt;&lt;li&gt;LSE International (L)&lt;/li&gt;&lt;li&gt;LSE European (L)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;15 minute&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Euronext&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Euronext Paris (PA)&lt;/li&gt; &lt;li&gt;Euronext Amsterdam (AS)&lt;/li&gt; &lt;li&gt;Euronext Lisbon (LS)&lt;/li&gt; &lt;li&gt;Euronext Brussels (BR)&lt;/li&gt; &lt;li&gt;Euronext Oslo (OL)&lt;/li&gt; &lt;li&gt;Euronext London (LN)&lt;/li&gt; &lt;li&gt;Euronext Dublin (IR)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Deutsche Börse&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Frankfurt (F)&lt;/li&gt; &lt;li&gt;Xetra (DE)&lt;/li&gt; &lt;li&gt;Duesseldorf (DU)&lt;/li&gt; &lt;li&gt;Hamburg (HM)&lt;/li&gt; &lt;li&gt;Berlin (BE)&lt;/li&gt; &lt;li&gt;Hanover (HA)&lt;/li&gt; &lt;li&gt;Stoxx (SX)&lt;/li&gt; &lt;li&gt;TradeGate (TG)&lt;/li&gt; &lt;li&gt;Zertifikate (SC)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
+&lt;p&gt;Get historical tick data for global exchanges. You can send the request directly to our tick server at &lt;a href&#x3D;\&quot;https://tick.finnhub.io/\&quot;&gt;https://tick.finnhub.io/&lt;/a&gt; with the same path and parameters or get redirected there if you call our main server.&lt;/p&gt;&lt;p&gt;For US market, you can visit our bulk download page in the Dashboard &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;/dashboard/download\&quot;,&gt;here&lt;/a&gt; to speed up the download process.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;US CTA/UTP&lt;/th&gt;       &lt;td&gt;Full SIP&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;TSX&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;TSX&lt;/li&gt;&lt;li&gt;TSX Venture&lt;/li&gt;&lt;li&gt;Index&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;LSE&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;London Stock Exchange (L)&lt;/li&gt;&lt;li&gt;LSE International (L)&lt;/li&gt;&lt;li&gt;LSE European (L)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;15 minute&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Euronext&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Euronext Paris (PA)&lt;/li&gt; &lt;li&gt;Euronext Amsterdam (AS)&lt;/li&gt; &lt;li&gt;Euronext Lisbon (LS)&lt;/li&gt; &lt;li&gt;Euronext Brussels (BR)&lt;/li&gt; &lt;li&gt;Euronext Oslo (OL)&lt;/li&gt; &lt;li&gt;Euronext London (LN)&lt;/li&gt; &lt;li&gt;Euronext Dublin (IR)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Deutsche Börse&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Frankfurt (F)&lt;/li&gt; &lt;li&gt;Xetra (DE)&lt;/li&gt; &lt;li&gt;Duesseldorf (DU)&lt;/li&gt; &lt;li&gt;Hamburg (HM)&lt;/li&gt; &lt;li&gt;Berlin (BE)&lt;/li&gt; &lt;li&gt;Hanover (HA)&lt;/li&gt; &lt;li&gt;Stoxx (SX)&lt;/li&gt; &lt;li&gt;TradeGate (TG)&lt;/li&gt; &lt;li&gt;Zertifikate (SC)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
 
 ### Example
 
@@ -4571,7 +4731,7 @@ Name | Type | Description  | Notes
 
 Symbol Change
 
-Get a list of symbol changes for US-listed and EU-listed securities. Limit to 2000 events at a time.
+Get a list of symbol changes for US-listed, EU-listed, NSE and ASX securities. Limit to 2000 events at a time.
 
 ### Example
 
@@ -4738,7 +4898,7 @@ Name | Type | Description  | Notes
 
 Earnings Call Transcripts
 
-&lt;p&gt;Get earnings call transcripts, audio and participants&#39; list. This endpoint is only available for US, UK, and Candian companies. &lt;p&gt;15+ years of data is available with 220,000+ audio which add up to 7TB in size.&lt;/p&gt;
+&lt;p&gt;Get earnings call transcripts, audio and participants&#39; list. Data is available for US, UK, European, Australian and Canadian companies.&lt;p&gt;15+ years of data is available with 220,000+ audio which add up to 7TB in size.&lt;/p&gt;
 
 ### Example
 

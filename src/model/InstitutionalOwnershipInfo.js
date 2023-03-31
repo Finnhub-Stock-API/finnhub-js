@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstitutionalOwnershipInfo model module.
  * @module model/InstitutionalOwnershipInfo
- * @version 1.2.16
+ * @version 1.2.17
  */
 class InstitutionalOwnershipInfo {
     /**

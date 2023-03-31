@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ETFHoldingsData model module.
  * @module model/ETFHoldingsData
- * @version 1.2.16
+ * @version 1.2.17
  */
 var ETFHoldingsData = /*#__PURE__*/function () {
   /**
@@ -81,6 +81,10 @@ var ETFHoldingsData = /*#__PURE__*/function () {
         if (data.hasOwnProperty('value')) {
           obj['value'] = _ApiClient["default"].convertToType(data['value'], 'Number');
         }
+
+        if (data.hasOwnProperty('assetType')) {
+          obj['assetType'] = _ApiClient["default"].convertToType(data['assetType'], 'String');
+        }
       }
 
       return obj;
@@ -132,5 +136,11 @@ ETFHoldingsData.prototype['percent'] = undefined;
  */
 
 ETFHoldingsData.prototype['value'] = undefined;
+/**
+ * Asset type. Can be 1 of the following values: <code>Equity</code>, <code>ETP</code>, <code>Fund</code>, <code>Bond</code>, <code>Other</code> or empty.
+ * @member {String} assetType
+ */
+
+ETFHoldingsData.prototype['assetType'] = undefined;
 var _default = ETFHoldingsData;
 exports["default"] = _default;

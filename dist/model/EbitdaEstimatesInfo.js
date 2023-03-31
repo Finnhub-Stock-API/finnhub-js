@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EbitdaEstimatesInfo model module.
  * @module model/EbitdaEstimatesInfo
- * @version 1.2.16
+ * @version 1.2.17
  */
 var EbitdaEstimatesInfo = /*#__PURE__*/function () {
   /**

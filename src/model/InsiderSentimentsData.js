@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InsiderSentimentsData model module.
  * @module model/InsiderSentimentsData
- * @version 1.2.16
+ * @version 1.2.17
  */
 class InsiderSentimentsData {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualFundHoldingsData model module.
  * @module model/MutualFundHoldingsData
- * @version 1.2.16
+ * @version 1.2.17
  */
 class MutualFundHoldingsData {
     /**
@@ -68,6 +68,9 @@ class MutualFundHoldingsData {
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number');
             }
+            if (data.hasOwnProperty('assetType')) {
+                obj['assetType'] = ApiClient.convertToType(data['assetType'], 'String');
+            }
         }
         return obj;
     }
@@ -116,6 +119,12 @@ MutualFundHoldingsData.prototype['percent'] = undefined;
  * @member {Number} value
  */
 MutualFundHoldingsData.prototype['value'] = undefined;
+
+/**
+ * Asset type. Can be 1 of the following values: <code>Equity</code>, <code>ETP</code>, <code>Fund</code>, <code>Bond</code>, <code>Other</code> or empty.
+ * @member {String} assetType
+ */
+MutualFundHoldingsData.prototype['assetType'] = undefined;
 
 
 

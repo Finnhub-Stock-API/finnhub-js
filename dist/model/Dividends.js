@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Dividends model module.
  * @module model/Dividends
- * @version 1.2.16
+ * @version 1.2.17
  */
 var Dividends = /*#__PURE__*/function () {
   /**
@@ -85,6 +85,10 @@ var Dividends = /*#__PURE__*/function () {
         if (data.hasOwnProperty('currency')) {
           obj['currency'] = _ApiClient["default"].convertToType(data['currency'], 'String');
         }
+
+        if (data.hasOwnProperty('freq')) {
+          obj['freq'] = _ApiClient["default"].convertToType(data['freq'], 'String');
+        }
       }
 
       return obj;
@@ -142,5 +146,11 @@ Dividends.prototype['declarationDate'] = undefined;
  */
 
 Dividends.prototype['currency'] = undefined;
+/**
+ * <p>Dividend frequency. Can be 1 of the following values:</p><ul> <li><code>0: Annually</code></li> <li><code>1: Monthly</code></li> <li><code>2: Quarterly</code></li> <li><code>3: Semi-annually</code></li> <li><code>4: Other/Unknown</code></li> <li><code>5: Bimonthly</code></li> <li><code>6: Trimesterly</code></li> <li><code>7: Weekly</code></li> </ul>
+ * @member {String} freq
+ */
+
+Dividends.prototype['freq'] = undefined;
 var _default = Dividends;
 exports["default"] = _default;

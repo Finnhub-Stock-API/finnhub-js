@@ -17,7 +17,7 @@ import ETFSectorExposureData from './ETFSectorExposureData';
 /**
  * The ETFsSectorExposure model module.
  * @module model/ETFsSectorExposure
- * @version 1.2.16
+ * @version 1.2.17
  */
 class ETFsSectorExposure {
     /**

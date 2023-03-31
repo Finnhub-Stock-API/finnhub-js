@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Sentiment model module.
  * @module model/Sentiment
- * @version 1.2.16
+ * @version 1.2.17
  */
 var Sentiment = /*#__PURE__*/function () {
   /**
