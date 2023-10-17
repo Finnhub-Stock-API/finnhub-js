@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningResult model module.
  * @module model/EarningResult
- * @version 1.2.17
+ * @version 1.2.18
  */
 var EarningResult = /*#__PURE__*/function () {
   /**
@@ -131,13 +131,13 @@ EarningResult.prototype['period'] = undefined;
 
 EarningResult.prototype['symbol'] = undefined;
 /**
- * Earnings year.
+ * Fiscal year.
  * @member {Number} year
  */
 
 EarningResult.prototype['year'] = undefined;
 /**
- * Earnings quarter.
+ * Fiscal quarter.
  * @member {Number} quarter
  */
 

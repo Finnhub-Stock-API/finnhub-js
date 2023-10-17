@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EbitdaEstimatesInfo model module.
  * @module model/EbitdaEstimatesInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 var EbitdaEstimatesInfo = /*#__PURE__*/function () {
   /**
@@ -73,6 +73,14 @@ var EbitdaEstimatesInfo = /*#__PURE__*/function () {
         if (data.hasOwnProperty('period')) {
           obj['period'] = _ApiClient["default"].convertToType(data['period'], 'Date');
         }
+
+        if (data.hasOwnProperty('year')) {
+          obj['year'] = _ApiClient["default"].convertToType(data['year'], 'Number');
+        }
+
+        if (data.hasOwnProperty('quarter')) {
+          obj['quarter'] = _ApiClient["default"].convertToType(data['quarter'], 'Number');
+        }
       }
 
       return obj;
@@ -112,5 +120,17 @@ EbitdaEstimatesInfo.prototype['numberAnalysts'] = undefined;
  */
 
 EbitdaEstimatesInfo.prototype['period'] = undefined;
+/**
+ * Fiscal year.
+ * @member {Number} year
+ */
+
+EbitdaEstimatesInfo.prototype['year'] = undefined;
+/**
+ * Fiscal quarter.
+ * @member {Number} quarter
+ */
+
+EbitdaEstimatesInfo.prototype['quarter'] = undefined;
 var _default = EbitdaEstimatesInfo;
 exports["default"] = _default;

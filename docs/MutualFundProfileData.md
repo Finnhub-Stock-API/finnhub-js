@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **inceptionDate** | **Date** | Inception date. | [optional] 
 **description** | **String** | Fund&#39;s description. | [optional] 
 **fundFamily** | **String** | Fund Family. | [optional] 
+**fundCompany** | **String** | Fund Company. | [optional] 
 **manager** | **String** | Fund&#39;s managers. | [optional] 
 **status** | **String** | Status. | [optional] 
 **beta** | **Number** | Beta. | [optional] 

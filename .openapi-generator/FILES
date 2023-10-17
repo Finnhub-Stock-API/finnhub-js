@@ -75,6 +75,7 @@ docs/InFilingSearchBody.md
 docs/IndexHistoricalConstituent.md
 docs/Indicator.md
 docs/IndicesConstituents.md
+docs/IndicesConstituentsBreakdown.md
 docs/IndicesHistoricalConstituents.md
 docs/InsiderSentiments.md
 docs/InsiderSentimentsData.md
@@ -96,7 +97,10 @@ docs/KeyCustomersSuppliers.md
 docs/LastBidAsk.md
 docs/LobbyingData.md
 docs/LobbyingResult.md
+docs/MarketHoliday.md
+docs/MarketHolidayData.md
 docs/MarketNews.md
+docs/MarketStatus.md
 docs/MutualFundCountryExposure.md
 docs/MutualFundCountryExposureData.md
 docs/MutualFundEet.md
@@ -116,7 +120,6 @@ docs/PriceMetrics.md
 docs/PriceTarget.md
 docs/Quote.md
 docs/RecommendationTrend.md
-docs/RedditSentimentContent.md
 docs/Report.md
 docs/RevenueBreakdown.md
 docs/RevenueEstimates.md
@@ -128,6 +131,7 @@ docs/SearchResponse.md
 docs/SectorMetric.md
 docs/SectorMetricData.md
 docs/Sentiment.md
+docs/SentimentContent.md
 docs/SimilarityIndex.md
 docs/SimilarityIndexInfo.md
 docs/SocialSentiment.md
@@ -147,7 +151,6 @@ docs/Transactions.md
 docs/TranscriptContent.md
 docs/TranscriptParticipant.md
 docs/Trend.md
-docs/TwitterSentimentContent.md
 docs/UpgradeDowngrade.md
 docs/UsaSpending.md
 docs/UsaSpendingResult.md
@@ -234,6 +237,7 @@ src/model/InFilingSearchBody.js
 src/model/IndexHistoricalConstituent.js
 src/model/Indicator.js
 src/model/IndicesConstituents.js
+src/model/IndicesConstituentsBreakdown.js
 src/model/IndicesHistoricalConstituents.js
 src/model/InsiderSentiments.js
 src/model/InsiderSentimentsData.js
@@ -255,7 +259,10 @@ src/model/KeyCustomersSuppliers.js
 src/model/LastBidAsk.js
 src/model/LobbyingData.js
 src/model/LobbyingResult.js
+src/model/MarketHoliday.js
+src/model/MarketHolidayData.js
 src/model/MarketNews.js
+src/model/MarketStatus.js
 src/model/MutualFundCountryExposure.js
 src/model/MutualFundCountryExposureData.js
 src/model/MutualFundEet.js
@@ -275,7 +282,6 @@ src/model/PriceMetrics.js
 src/model/PriceTarget.js
 src/model/Quote.js
 src/model/RecommendationTrend.js
-src/model/RedditSentimentContent.js
 src/model/Report.js
 src/model/RevenueBreakdown.js
 src/model/RevenueEstimates.js
@@ -287,6 +293,7 @@ src/model/SearchResponse.js
 src/model/SectorMetric.js
 src/model/SectorMetricData.js
 src/model/Sentiment.js
+src/model/SentimentContent.js
 src/model/SimilarityIndex.js
 src/model/SimilarityIndexInfo.js
 src/model/SocialSentiment.js
@@ -306,7 +313,6 @@ src/model/Transactions.js
 src/model/TranscriptContent.js
 src/model/TranscriptParticipant.js
 src/model/Trend.js
-src/model/TwitterSentimentContent.js
 src/model/UpgradeDowngrade.js
 src/model/UsaSpending.js
 src/model/UsaSpendingResult.js
@@ -314,17 +320,8 @@ src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
-test/model/BondYieldCurve.spec.js
-test/model/BondYieldCurveInfo.spec.js
-test/model/CongressionalTrading.spec.js
-test/model/CongressionalTransaction.spec.js
-test/model/DocumentResponse.spec.js
-test/model/ExcerptResponse.spec.js
-test/model/FilingResponse.spec.js
-test/model/InFilingResponse.spec.js
-test/model/InFilingSearchBody.spec.js
-test/model/MutualFundEet.spec.js
-test/model/MutualFundEetPai.spec.js
-test/model/SearchBody.spec.js
-test/model/SearchFilter.spec.js
-test/model/SearchResponse.spec.js
+test/model/IndicesConstituentsBreakdown.spec.js
+test/model/MarketHoliday.spec.js
+test/model/MarketHolidayData.spec.js
+test/model/MarketStatus.spec.js
+test/model/SentimentContent.spec.js

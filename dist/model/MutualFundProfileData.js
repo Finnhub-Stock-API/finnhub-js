@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MutualFundProfileData model module.
  * @module model/MutualFundProfileData
- * @version 1.2.17
+ * @version 1.2.18
  */
 var MutualFundProfileData = /*#__PURE__*/function () {
   /**
@@ -88,6 +88,10 @@ var MutualFundProfileData = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('fundFamily')) {
           obj['fundFamily'] = _ApiClient["default"].convertToType(data['fundFamily'], 'String');
+        }
+
+        if (data.hasOwnProperty('fundCompany')) {
+          obj['fundCompany'] = _ApiClient["default"].convertToType(data['fundCompany'], 'String');
         }
 
         if (data.hasOwnProperty('manager')) {
@@ -224,6 +228,12 @@ MutualFundProfileData.prototype['description'] = undefined;
  */
 
 MutualFundProfileData.prototype['fundFamily'] = undefined;
+/**
+ * Fund Company.
+ * @member {String} fundCompany
+ */
+
+MutualFundProfileData.prototype['fundCompany'] = undefined;
 /**
  * Fund's managers.
  * @member {String} manager

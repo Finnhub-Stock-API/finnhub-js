@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _IndicesConstituentsBreakdown = _interopRequireDefault(require("./IndicesConstituentsBreakdown"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IndicesConstituents model module.
  * @module model/IndicesConstituents
- * @version 1.2.17
+ * @version 1.2.18
  */
 var IndicesConstituents = /*#__PURE__*/function () {
   /**
@@ -61,6 +63,10 @@ var IndicesConstituents = /*#__PURE__*/function () {
         if (data.hasOwnProperty('constituents')) {
           obj['constituents'] = _ApiClient["default"].convertToType(data['constituents'], ['String']);
         }
+
+        if (data.hasOwnProperty('constituentsBreakdown')) {
+          obj['constituentsBreakdown'] = _ApiClient["default"].convertToType(data['constituentsBreakdown'], [_IndicesConstituentsBreakdown["default"]]);
+        }
       }
 
       return obj;
@@ -82,5 +88,11 @@ IndicesConstituents.prototype['symbol'] = undefined;
  */
 
 IndicesConstituents.prototype['constituents'] = undefined;
+/**
+ * Array of constituents' details.
+ * @member {Array.<module:model/IndicesConstituentsBreakdown>} constituentsBreakdown
+ */
+
+IndicesConstituents.prototype['constituentsBreakdown'] = undefined;
 var _default = IndicesConstituents;
 exports["default"] = _default;

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyProfile model module.
  * @module model/CompanyProfile
- * @version 1.2.17
+ * @version 1.2.18
  */
 var CompanyProfile = /*#__PURE__*/function () {
   /**
@@ -53,6 +53,10 @@ var CompanyProfile = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new CompanyProfile();
+
+        if (data.hasOwnProperty('alias')) {
+          obj['alias'] = _ApiClient["default"].convertToType(data['alias'], ['String']);
+        }
 
         if (data.hasOwnProperty('address')) {
           obj['address'] = _ApiClient["default"].convertToType(data['address'], 'String');
@@ -112,6 +116,10 @@ var CompanyProfile = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('isin')) {
           obj['isin'] = _ApiClient["default"].convertToType(data['isin'], 'String');
+        }
+
+        if (data.hasOwnProperty('lei')) {
+          obj['lei'] = _ApiClient["default"].convertToType(data['lei'], 'String');
         }
 
         if (data.hasOwnProperty('naicsNationalIndustry')) {
@@ -182,10 +190,16 @@ var CompanyProfile = /*#__PURE__*/function () {
   return CompanyProfile;
 }();
 /**
+ * Company name alias.
+ * @member {Array.<String>} alias
+ */
+
+
+CompanyProfile.prototype['alias'] = undefined;
+/**
  * Address of company's headquarter.
  * @member {String} address
  */
-
 
 CompanyProfile.prototype['address'] = undefined;
 /**
@@ -272,6 +286,12 @@ CompanyProfile.prototype['gsubind'] = undefined;
  */
 
 CompanyProfile.prototype['isin'] = undefined;
+/**
+ * LEI number.
+ * @member {String} lei
+ */
+
+CompanyProfile.prototype['lei'] = undefined;
 /**
  * NAICS national industry.
  * @member {String} naicsNationalIndustry

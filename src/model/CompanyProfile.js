@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyProfile model module.
  * @module model/CompanyProfile
- * @version 1.2.17
+ * @version 1.2.18
  */
 class CompanyProfile {
     /**
@@ -47,6 +47,9 @@ class CompanyProfile {
         if (data) {
             obj = obj || new CompanyProfile();
 
+            if (data.hasOwnProperty('alias')) {
+                obj['alias'] = ApiClient.convertToType(data['alias'], ['String']);
+            }
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
             }
@@ -91,6 +94,9 @@ class CompanyProfile {
             }
             if (data.hasOwnProperty('isin')) {
                 obj['isin'] = ApiClient.convertToType(data['isin'], 'String');
+            }
+            if (data.hasOwnProperty('lei')) {
+                obj['lei'] = ApiClient.convertToType(data['lei'], 'String');
             }
             if (data.hasOwnProperty('naicsNationalIndustry')) {
                 obj['naicsNationalIndustry'] = ApiClient.convertToType(data['naicsNationalIndustry'], 'String');
@@ -143,6 +149,12 @@ class CompanyProfile {
 
 
 }
+
+/**
+ * Company name alias.
+ * @member {Array.<String>} alias
+ */
+CompanyProfile.prototype['alias'] = undefined;
 
 /**
  * Address of company's headquarter.
@@ -233,6 +245,12 @@ CompanyProfile.prototype['gsubind'] = undefined;
  * @member {String} isin
  */
 CompanyProfile.prototype['isin'] = undefined;
+
+/**
+ * LEI number.
+ * @member {String} lei
+ */
+CompanyProfile.prototype['lei'] = undefined;
 
 /**
  * NAICS national industry.

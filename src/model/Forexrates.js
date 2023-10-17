@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Forexrates model module.
  * @module model/Forexrates
- * @version 1.2.17
+ * @version 1.2.18
  */
 class Forexrates {
     /**

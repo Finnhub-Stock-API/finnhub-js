@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningsEstimatesInfo model module.
  * @module model/EarningsEstimatesInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 class EarningsEstimatesInfo {
     /**
@@ -62,6 +62,12 @@ class EarningsEstimatesInfo {
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Date');
             }
+            if (data.hasOwnProperty('year')) {
+                obj['year'] = ApiClient.convertToType(data['year'], 'Number');
+            }
+            if (data.hasOwnProperty('quarter')) {
+                obj['quarter'] = ApiClient.convertToType(data['quarter'], 'Number');
+            }
         }
         return obj;
     }
@@ -98,6 +104,18 @@ EarningsEstimatesInfo.prototype['numberAnalysts'] = undefined;
  * @member {Date} period
  */
 EarningsEstimatesInfo.prototype['period'] = undefined;
+
+/**
+ * Fiscal year.
+ * @member {Number} year
+ */
+EarningsEstimatesInfo.prototype['year'] = undefined;
+
+/**
+ * Fiscal quarter.
+ * @member {Number} quarter
+ */
+EarningsEstimatesInfo.prototype['quarter'] = undefined;
 
 
 

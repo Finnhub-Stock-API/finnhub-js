@@ -17,7 +17,7 @@ import DocumentResponse from './DocumentResponse';
 /**
  * The InFilingResponse model module.
  * @module model/InFilingResponse
- * @version 1.2.17
+ * @version 1.2.18
  */
 class InFilingResponse {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EbitdaEstimatesInfo model module.
  * @module model/EbitdaEstimatesInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 class EbitdaEstimatesInfo {
     /**
@@ -62,6 +62,12 @@ class EbitdaEstimatesInfo {
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Date');
             }
+            if (data.hasOwnProperty('year')) {
+                obj['year'] = ApiClient.convertToType(data['year'], 'Number');
+            }
+            if (data.hasOwnProperty('quarter')) {
+                obj['quarter'] = ApiClient.convertToType(data['quarter'], 'Number');
+            }
         }
         return obj;
     }
@@ -98,6 +104,18 @@ EbitdaEstimatesInfo.prototype['numberAnalysts'] = undefined;
  * @member {Date} period
  */
 EbitdaEstimatesInfo.prototype['period'] = undefined;
+
+/**
+ * Fiscal year.
+ * @member {Number} year
+ */
+EbitdaEstimatesInfo.prototype['year'] = undefined;
+
+/**
+ * Fiscal quarter.
+ * @member {Number} quarter
+ */
+EbitdaEstimatesInfo.prototype['quarter'] = undefined;
 
 
 

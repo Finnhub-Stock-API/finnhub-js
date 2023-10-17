@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CountryMetadata model module.
  * @module model/CountryMetadata
- * @version 1.2.17
+ * @version 1.2.18
  */
 var CountryMetadata = /*#__PURE__*/function () {
   /**
@@ -85,6 +85,22 @@ var CountryMetadata = /*#__PURE__*/function () {
         if (data.hasOwnProperty('subRegion')) {
           obj['subRegion'] = _ApiClient["default"].convertToType(data['subRegion'], 'String');
         }
+
+        if (data.hasOwnProperty('rating')) {
+          obj['rating'] = _ApiClient["default"].convertToType(data['rating'], 'String');
+        }
+
+        if (data.hasOwnProperty('defaultSpread')) {
+          obj['defaultSpread'] = _ApiClient["default"].convertToType(data['defaultSpread'], 'Number');
+        }
+
+        if (data.hasOwnProperty('countryRiskPremium')) {
+          obj['countryRiskPremium'] = _ApiClient["default"].convertToType(data['countryRiskPremium'], 'Number');
+        }
+
+        if (data.hasOwnProperty('equityRiskPremium')) {
+          obj['equityRiskPremium'] = _ApiClient["default"].convertToType(data['equityRiskPremium'], 'Number');
+        }
       }
 
       return obj;
@@ -142,5 +158,29 @@ CountryMetadata.prototype['region'] = undefined;
  */
 
 CountryMetadata.prototype['subRegion'] = undefined;
+/**
+ * Moody's credit risk rating.
+ * @member {String} rating
+ */
+
+CountryMetadata.prototype['rating'] = undefined;
+/**
+ * Default spread
+ * @member {Number} defaultSpread
+ */
+
+CountryMetadata.prototype['defaultSpread'] = undefined;
+/**
+ * Country risk premium
+ * @member {Number} countryRiskPremium
+ */
+
+CountryMetadata.prototype['countryRiskPremium'] = undefined;
+/**
+ * Equity risk premium
+ * @member {Number} equityRiskPremium
+ */
+
+CountryMetadata.prototype['equityRiskPremium'] = undefined;
 var _default = CountryMetadata;
 exports["default"] = _default;

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchFilter model module.
  * @module model/SearchFilter
- * @version 1.2.17
+ * @version 1.2.18
  */
 var SearchFilter = /*#__PURE__*/function () {
   /**

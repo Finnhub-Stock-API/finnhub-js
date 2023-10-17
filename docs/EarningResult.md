@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **surprisePercent** | **Number** | Surprise percent. | [optional] 
 **period** | **Date** | Reported period. | [optional] 
 **symbol** | **String** | Company symbol. | [optional] 
-**year** | **Number** | Earnings year. | [optional] 
-**quarter** | **Number** | Earnings quarter. | [optional] 
+**year** | **Number** | Fiscal year. | [optional] 
+**quarter** | **Number** | Fiscal quarter. | [optional] 
 
 

@@ -447,6 +447,12 @@ Object.defineProperty(exports, "IndicesConstituents", {
     return _IndicesConstituents["default"];
   }
 });
+Object.defineProperty(exports, "IndicesConstituentsBreakdown", {
+  enumerable: true,
+  get: function get() {
+    return _IndicesConstituentsBreakdown["default"];
+  }
+});
 Object.defineProperty(exports, "IndicesHistoricalConstituents", {
   enumerable: true,
   get: function get() {
@@ -573,10 +579,28 @@ Object.defineProperty(exports, "LobbyingResult", {
     return _LobbyingResult["default"];
   }
 });
+Object.defineProperty(exports, "MarketHoliday", {
+  enumerable: true,
+  get: function get() {
+    return _MarketHoliday["default"];
+  }
+});
+Object.defineProperty(exports, "MarketHolidayData", {
+  enumerable: true,
+  get: function get() {
+    return _MarketHolidayData["default"];
+  }
+});
 Object.defineProperty(exports, "MarketNews", {
   enumerable: true,
   get: function get() {
     return _MarketNews["default"];
+  }
+});
+Object.defineProperty(exports, "MarketStatus", {
+  enumerable: true,
+  get: function get() {
+    return _MarketStatus["default"];
   }
 });
 Object.defineProperty(exports, "MutualFundCountryExposure", {
@@ -693,12 +717,6 @@ Object.defineProperty(exports, "RecommendationTrend", {
     return _RecommendationTrend["default"];
   }
 });
-Object.defineProperty(exports, "RedditSentimentContent", {
-  enumerable: true,
-  get: function get() {
-    return _RedditSentimentContent["default"];
-  }
-});
 Object.defineProperty(exports, "Report", {
   enumerable: true,
   get: function get() {
@@ -763,6 +781,12 @@ Object.defineProperty(exports, "Sentiment", {
   enumerable: true,
   get: function get() {
     return _Sentiment["default"];
+  }
+});
+Object.defineProperty(exports, "SentimentContent", {
+  enumerable: true,
+  get: function get() {
+    return _SentimentContent["default"];
   }
 });
 Object.defineProperty(exports, "SimilarityIndex", {
@@ -877,12 +901,6 @@ Object.defineProperty(exports, "Trend", {
   enumerable: true,
   get: function get() {
     return _Trend["default"];
-  }
-});
-Object.defineProperty(exports, "TwitterSentimentContent", {
-  enumerable: true,
-  get: function get() {
-    return _TwitterSentimentContent["default"];
   }
 });
 Object.defineProperty(exports, "UpgradeDowngrade", {
@@ -1082,6 +1100,8 @@ var _Indicator = _interopRequireDefault(require("./model/Indicator"));
 
 var _IndicesConstituents = _interopRequireDefault(require("./model/IndicesConstituents"));
 
+var _IndicesConstituentsBreakdown = _interopRequireDefault(require("./model/IndicesConstituentsBreakdown"));
+
 var _IndicesHistoricalConstituents = _interopRequireDefault(require("./model/IndicesHistoricalConstituents"));
 
 var _InsiderSentiments = _interopRequireDefault(require("./model/InsiderSentiments"));
@@ -1124,7 +1144,13 @@ var _LobbyingData = _interopRequireDefault(require("./model/LobbyingData"));
 
 var _LobbyingResult = _interopRequireDefault(require("./model/LobbyingResult"));
 
+var _MarketHoliday = _interopRequireDefault(require("./model/MarketHoliday"));
+
+var _MarketHolidayData = _interopRequireDefault(require("./model/MarketHolidayData"));
+
 var _MarketNews = _interopRequireDefault(require("./model/MarketNews"));
+
+var _MarketStatus = _interopRequireDefault(require("./model/MarketStatus"));
 
 var _MutualFundCountryExposure = _interopRequireDefault(require("./model/MutualFundCountryExposure"));
 
@@ -1164,8 +1190,6 @@ var _Quote = _interopRequireDefault(require("./model/Quote"));
 
 var _RecommendationTrend = _interopRequireDefault(require("./model/RecommendationTrend"));
 
-var _RedditSentimentContent = _interopRequireDefault(require("./model/RedditSentimentContent"));
-
 var _Report = _interopRequireDefault(require("./model/Report"));
 
 var _RevenueBreakdown = _interopRequireDefault(require("./model/RevenueBreakdown"));
@@ -1187,6 +1211,8 @@ var _SectorMetric = _interopRequireDefault(require("./model/SectorMetric"));
 var _SectorMetricData = _interopRequireDefault(require("./model/SectorMetricData"));
 
 var _Sentiment = _interopRequireDefault(require("./model/Sentiment"));
+
+var _SentimentContent = _interopRequireDefault(require("./model/SentimentContent"));
 
 var _SimilarityIndex = _interopRequireDefault(require("./model/SimilarityIndex"));
 
@@ -1225,8 +1251,6 @@ var _TranscriptContent = _interopRequireDefault(require("./model/TranscriptConte
 var _TranscriptParticipant = _interopRequireDefault(require("./model/TranscriptParticipant"));
 
 var _Trend = _interopRequireDefault(require("./model/Trend"));
-
-var _TwitterSentimentContent = _interopRequireDefault(require("./model/TwitterSentimentContent"));
 
 var _UpgradeDowngrade = _interopRequireDefault(require("./model/UpgradeDowngrade"));
 

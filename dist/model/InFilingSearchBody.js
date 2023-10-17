@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InFilingSearchBody model module.
  * @module model/InFilingSearchBody
- * @version 1.2.17
+ * @version 1.2.18
  */
 var InFilingSearchBody = /*#__PURE__*/function () {
   /**

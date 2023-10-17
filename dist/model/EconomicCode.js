@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EconomicCode model module.
  * @module model/EconomicCode
- * @version 1.2.17
+ * @version 1.2.18
  */
 var EconomicCode = /*#__PURE__*/function () {
   /**

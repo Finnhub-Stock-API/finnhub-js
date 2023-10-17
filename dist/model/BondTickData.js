@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BondTickData model module.
  * @module model/BondTickData
- * @version 1.2.17
+ * @version 1.2.18
  */
 var BondTickData = /*#__PURE__*/function () {
   /**

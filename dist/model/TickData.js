@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TickData model module.
  * @module model/TickData
- * @version 1.2.17
+ * @version 1.2.18
  */
 var TickData = /*#__PURE__*/function () {
   /**

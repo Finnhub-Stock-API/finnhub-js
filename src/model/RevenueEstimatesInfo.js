@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RevenueEstimatesInfo model module.
  * @module model/RevenueEstimatesInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 class RevenueEstimatesInfo {
     /**
@@ -62,6 +62,12 @@ class RevenueEstimatesInfo {
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Date');
             }
+            if (data.hasOwnProperty('year')) {
+                obj['year'] = ApiClient.convertToType(data['year'], 'Number');
+            }
+            if (data.hasOwnProperty('quarter')) {
+                obj['quarter'] = ApiClient.convertToType(data['quarter'], 'Number');
+            }
         }
         return obj;
     }
@@ -98,6 +104,18 @@ RevenueEstimatesInfo.prototype['numberAnalysts'] = undefined;
  * @member {Date} period
  */
 RevenueEstimatesInfo.prototype['period'] = undefined;
+
+/**
+ * Fiscal year.
+ * @member {Number} year
+ */
+RevenueEstimatesInfo.prototype['year'] = undefined;
+
+/**
+ * Fiscal quarter.
+ * @member {Number} quarter
+ */
+RevenueEstimatesInfo.prototype['quarter'] = undefined;
 
 
 

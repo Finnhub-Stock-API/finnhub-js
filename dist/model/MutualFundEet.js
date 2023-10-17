@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MutualFundEet model module.
  * @module model/MutualFundEet
- * @version 1.2.17
+ * @version 1.2.18
  */
 var MutualFundEet = /*#__PURE__*/function () {
   /**

@@ -9,5 +9,7 @@ Name | Type | Description | Notes
 **ebitdaLow** | **Number** | Lowest estimate. | [optional] 
 **numberAnalysts** | **Number** | Number of Analysts. | [optional] 
 **period** | **Date** | Period. | [optional] 
+**year** | **Number** | Fiscal year. | [optional] 
+**quarter** | **Number** | Fiscal quarter. | [optional] 
 
 

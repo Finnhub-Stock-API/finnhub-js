@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EarningResult model module.
  * @module model/EarningResult
- * @version 1.2.17
+ * @version 1.2.18
  */
 class EarningResult {
     /**
@@ -115,13 +115,13 @@ EarningResult.prototype['period'] = undefined;
 EarningResult.prototype['symbol'] = undefined;
 
 /**
- * Earnings year.
+ * Fiscal year.
  * @member {Number} year
  */
 EarningResult.prototype['year'] = undefined;
 
 /**
- * Earnings quarter.
+ * Fiscal quarter.
  * @member {Number} quarter
  */
 EarningResult.prototype['quarter'] = undefined;
