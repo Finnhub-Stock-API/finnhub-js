@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SymbolChange model module.
  * @module model/SymbolChange
- * @version 1.2.17
+ * @version 1.2.18
  */
 var SymbolChange = /*#__PURE__*/function () {
   /**

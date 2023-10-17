@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IsinChangeInfo model module.
  * @module model/IsinChangeInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 class IsinChangeInfo {
     /**

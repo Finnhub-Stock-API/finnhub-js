@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstitutionalProfile model module.
  * @module model/InstitutionalProfile
- * @version 1.2.17
+ * @version 1.2.18
  */
 var InstitutionalProfile = /*#__PURE__*/function () {
   /**

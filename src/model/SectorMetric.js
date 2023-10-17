@@ -17,7 +17,7 @@ import SectorMetricData from './SectorMetricData';
 /**
  * The SectorMetric model module.
  * @module model/SectorMetric
- * @version 1.2.17
+ * @version 1.2.18
  */
 class SectorMetric {
     /**

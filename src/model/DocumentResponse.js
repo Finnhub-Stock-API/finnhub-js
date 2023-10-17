@@ -17,7 +17,7 @@ import ExcerptResponse from './ExcerptResponse';
 /**
  * The DocumentResponse model module.
  * @module model/DocumentResponse
- * @version 1.2.17
+ * @version 1.2.18
  */
 class DocumentResponse {
     /**

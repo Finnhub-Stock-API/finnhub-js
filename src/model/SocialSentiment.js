@@ -12,13 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RedditSentimentContent from './RedditSentimentContent';
-import TwitterSentimentContent from './TwitterSentimentContent';
+import SentimentContent from './SentimentContent';
 
 /**
  * The SocialSentiment model module.
  * @module model/SocialSentiment
- * @version 1.2.17
+ * @version 1.2.18
  */
 class SocialSentiment {
     /**
@@ -52,11 +51,8 @@ class SocialSentiment {
             if (data.hasOwnProperty('symbol')) {
                 obj['symbol'] = ApiClient.convertToType(data['symbol'], 'String');
             }
-            if (data.hasOwnProperty('reddit')) {
-                obj['reddit'] = ApiClient.convertToType(data['reddit'], [RedditSentimentContent]);
-            }
-            if (data.hasOwnProperty('twitter')) {
-                obj['twitter'] = ApiClient.convertToType(data['twitter'], [TwitterSentimentContent]);
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [SentimentContent]);
             }
         }
         return obj;
@@ -72,16 +68,10 @@ class SocialSentiment {
 SocialSentiment.prototype['symbol'] = undefined;
 
 /**
- * Reddit sentiment.
- * @member {Array.<module:model/RedditSentimentContent>} reddit
+ * Sentiment data.
+ * @member {Array.<module:model/SentimentContent>} data
  */
-SocialSentiment.prototype['reddit'] = undefined;
-
-/**
- * Twitter sentiment.
- * @member {Array.<module:model/TwitterSentimentContent>} twitter
- */
-SocialSentiment.prototype['twitter'] = undefined;
+SocialSentiment.prototype['data'] = undefined;
 
 
 

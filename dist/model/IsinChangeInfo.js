@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IsinChangeInfo model module.
  * @module model/IsinChangeInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 var IsinChangeInfo = /*#__PURE__*/function () {
   /**

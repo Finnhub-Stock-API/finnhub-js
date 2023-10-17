@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EarningsEstimatesInfo model module.
  * @module model/EarningsEstimatesInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 var EarningsEstimatesInfo = /*#__PURE__*/function () {
   /**
@@ -73,6 +73,14 @@ var EarningsEstimatesInfo = /*#__PURE__*/function () {
         if (data.hasOwnProperty('period')) {
           obj['period'] = _ApiClient["default"].convertToType(data['period'], 'Date');
         }
+
+        if (data.hasOwnProperty('year')) {
+          obj['year'] = _ApiClient["default"].convertToType(data['year'], 'Number');
+        }
+
+        if (data.hasOwnProperty('quarter')) {
+          obj['quarter'] = _ApiClient["default"].convertToType(data['quarter'], 'Number');
+        }
       }
 
       return obj;
@@ -112,5 +120,17 @@ EarningsEstimatesInfo.prototype['numberAnalysts'] = undefined;
  */
 
 EarningsEstimatesInfo.prototype['period'] = undefined;
+/**
+ * Fiscal year.
+ * @member {Number} year
+ */
+
+EarningsEstimatesInfo.prototype['year'] = undefined;
+/**
+ * Fiscal quarter.
+ * @member {Number} quarter
+ */
+
+EarningsEstimatesInfo.prototype['quarter'] = undefined;
 var _default = EarningsEstimatesInfo;
 exports["default"] = _default;

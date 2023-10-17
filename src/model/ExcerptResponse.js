@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExcerptResponse model module.
  * @module model/ExcerptResponse
- * @version 1.2.17
+ * @version 1.2.18
  */
 class ExcerptResponse {
     /**

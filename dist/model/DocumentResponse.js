@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DocumentResponse model module.
  * @module model/DocumentResponse
- * @version 1.2.17
+ * @version 1.2.18
  */
 var DocumentResponse = /*#__PURE__*/function () {
   /**

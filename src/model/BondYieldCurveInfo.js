@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BondYieldCurveInfo model module.
  * @module model/BondYieldCurveInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 class BondYieldCurveInfo {
     /**

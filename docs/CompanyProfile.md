@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**alias** | **[String]** | Company name alias. | [optional] 
 **address** | **String** | Address of company&#39;s headquarter. | [optional] 
 **city** | **String** | City of company&#39;s headquarter. | [optional] 
 **country** | **String** | Country of company&#39;s headquarter. | [optional] 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **gsector** | **String** | Sector. | [optional] 
 **gsubind** | **String** | Sub-industry. | [optional] 
 **isin** | **String** | ISIN number. | [optional] 
+**lei** | **String** | LEI number. | [optional] 
 **naicsNationalIndustry** | **String** | NAICS national industry. | [optional] 
 **naics** | **String** | NAICS industry. | [optional] 
 **naicsSector** | **String** | NAICS sector. | [optional] 

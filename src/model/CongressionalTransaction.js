@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CongressionalTransaction model module.
  * @module model/CongressionalTransaction
- * @version 1.2.17
+ * @version 1.2.18
  */
 class CongressionalTransaction {
     /**

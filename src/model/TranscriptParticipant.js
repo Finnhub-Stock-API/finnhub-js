@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TranscriptParticipant model module.
  * @module model/TranscriptParticipant
- * @version 1.2.17
+ * @version 1.2.18
  */
 class TranscriptParticipant {
     /**

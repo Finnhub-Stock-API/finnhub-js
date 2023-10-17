@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualFundProfileData model module.
  * @module model/MutualFundProfileData
- * @version 1.2.17
+ * @version 1.2.18
  */
 class MutualFundProfileData {
     /**
@@ -73,6 +73,9 @@ class MutualFundProfileData {
             }
             if (data.hasOwnProperty('fundFamily')) {
                 obj['fundFamily'] = ApiClient.convertToType(data['fundFamily'], 'String');
+            }
+            if (data.hasOwnProperty('fundCompany')) {
+                obj['fundCompany'] = ApiClient.convertToType(data['fundCompany'], 'String');
             }
             if (data.hasOwnProperty('manager')) {
                 obj['manager'] = ApiClient.convertToType(data['manager'], 'String');
@@ -188,6 +191,12 @@ MutualFundProfileData.prototype['description'] = undefined;
  * @member {String} fundFamily
  */
 MutualFundProfileData.prototype['fundFamily'] = undefined;
+
+/**
+ * Fund Company.
+ * @member {String} fundCompany
+ */
+MutualFundProfileData.prototype['fundCompany'] = undefined;
 
 /**
  * Fund's managers.

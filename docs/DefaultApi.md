@@ -54,10 +54,13 @@ Method | HTTP request | Description
 [**institutionalOwnership**](DefaultApi.md#institutionalOwnership) | **GET** /institutional/ownership | Institutional Ownership
 [**institutionalPortfolio**](DefaultApi.md#institutionalPortfolio) | **GET** /institutional/portfolio | Institutional Portfolio
 [**institutionalProfile**](DefaultApi.md#institutionalProfile) | **GET** /institutional/profile | Institutional Profile
+[**internationalFilings**](DefaultApi.md#internationalFilings) | **GET** /stock/international-filings | International Filings
 [**investmentThemes**](DefaultApi.md#investmentThemes) | **GET** /stock/investment-theme | Investment Themes (Thematic Investing)
 [**ipoCalendar**](DefaultApi.md#ipoCalendar) | **GET** /calendar/ipo | IPO Calendar
 [**isinChange**](DefaultApi.md#isinChange) | **GET** /ca/isin-change | ISIN Change
+[**marketHoliday**](DefaultApi.md#marketHoliday) | **GET** /stock/market-holiday | Market Holiday
 [**marketNews**](DefaultApi.md#marketNews) | **GET** /news | Market News
+[**marketStatus**](DefaultApi.md#marketStatus) | **GET** /stock/market-status | Market Status
 [**mutualFundCountryExposure**](DefaultApi.md#mutualFundCountryExposure) | **GET** /mutual-fund/country | Mutual Funds Country Exposure
 [**mutualFundEet**](DefaultApi.md#mutualFundEet) | **GET** /mutual-fund/eet | Mutual Funds EET
 [**mutualFundEetPai**](DefaultApi.md#mutualFundEetPai) | **GET** /mutual-fund/eet-pai | Mutual Funds EET PAI
@@ -706,7 +709,7 @@ Name | Type | Description  | Notes
 
 Company ESG Scores
 
-&lt;p&gt;This endpoint provides ESG scores and important indicators for 1000+ global companies. The data is collected through company&#39;s public ESG disclosure and public sources.&lt;/p&gt;&lt;p&gt;Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.&lt;/p&gt;
+&lt;p&gt;This endpoint provides ESG scores and important indicators for 7000+ global companies. The data is collected through company&#39;s public ESG disclosure and public sources.&lt;/p&gt;&lt;p&gt;Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.&lt;/p&gt;&lt;p&gt;Historical ESG data is available for Enterprise users. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact us&lt;/a&gt; to learn more.&lt;/p&gt;
 
 ### Example
 
@@ -1650,7 +1653,7 @@ Name | Type | Description  | Notes
 
 ## etfsCountryExposure
 
-> ETFsCountryExposure etfsCountryExposure(symbol)
+> ETFsCountryExposure etfsCountryExposure(opts)
 
 ETFs Country Exposure
 
@@ -1668,8 +1671,11 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new finnhub.DefaultApi();
-let symbol = "symbol_example"; // String | ETF symbol.
-apiInstance.etfsCountryExposure(symbol, (error, data, response) => {
+let opts = {
+  'symbol': "symbol_example", // String | ETF symbol.
+  'isin': "isin_example" // String | ETF isin.
+};
+apiInstance.etfsCountryExposure(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1683,7 +1689,8 @@ apiInstance.etfsCountryExposure(symbol, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **String**| ETF symbol. | 
+ **symbol** | **String**| ETF symbol. | [optional] 
+ **isin** | **String**| ETF isin. | [optional] 
 
 ### Return type
 
@@ -1815,7 +1822,7 @@ Name | Type | Description  | Notes
 
 ## etfsSectorExposure
 
-> ETFsSectorExposure etfsSectorExposure(symbol)
+> ETFsSectorExposure etfsSectorExposure(opts)
 
 ETFs Sector Exposure
 
@@ -1833,8 +1840,11 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new finnhub.DefaultApi();
-let symbol = "symbol_example"; // String | ETF symbol.
-apiInstance.etfsSectorExposure(symbol, (error, data, response) => {
+let opts = {
+  'symbol': "symbol_example", // String | ETF symbol.
+  'isin': "isin_example" // String | ETF isin.
+};
+apiInstance.etfsSectorExposure(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1848,7 +1858,8 @@ apiInstance.etfsSectorExposure(symbol, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **String**| ETF symbol. | 
+ **symbol** | **String**| ETF symbol. | [optional] 
+ **isin** | **String**| ETF isin. | [optional] 
 
 ### Return type
 
@@ -2414,7 +2425,7 @@ Name | Type | Description  | Notes
 
 Indices Constituents
 
-Get a list of index&#39;s constituents. A list of supported indices for this endpoint can be found &lt;a href&#x3D;\&quot;https://docs.google.com/spreadsheets/d/1Syr2eLielHWsorxkDEZXyc55d6bNx1M3ZeI4vdn7Qzo/edit?usp&#x3D;sharing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
+Get a list of index&#39;s constituents. A list of supported indices for this endpoint can be found &lt;a href&#x3D;\&quot;/api/v1/index/list?token&#x3D;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
 
 ### Example
 
@@ -2787,6 +2798,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## internationalFilings
+
+> [InternationalFiling] internationalFilings(opts)
+
+International Filings
+
+List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let opts = {
+  'symbol': "symbol_example", // String | Symbol. Leave empty to list latest filings.
+  'country': "country_example" // String | Filter by country using country's 2-letter code.
+};
+apiInstance.internationalFilings(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. Leave empty to list latest filings. | [optional] 
+ **country** | **String**| Filter by country using country&#39;s 2-letter code. | [optional] 
+
+### Return type
+
+[**[InternationalFiling]**](InternationalFiling.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## investmentThemes
 
 > InvestmentThemes investmentThemes(theme)
@@ -2944,6 +3010,57 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## marketHoliday
+
+> MarketHoliday marketHoliday(exchange)
+
+Market Holiday
+
+Get a list of holidays for global exchanges.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let exchange = "exchange_example"; // String | Exchange code.
+apiInstance.marketHoliday(exchange, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchange** | **String**| Exchange code. | 
+
+### Return type
+
+[**MarketHoliday**](MarketHoliday.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## marketNews
 
 > [MarketNews] marketNews(category, opts)
@@ -2999,9 +3116,60 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## marketStatus
+
+> MarketStatus marketStatus(exchange)
+
+Market Status
+
+Get current market status for global exchanges (whether exchanges are open or close).
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let exchange = "exchange_example"; // String | Exchange code.
+apiInstance.marketStatus(exchange, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchange** | **String**| Exchange code. | 
+
+### Return type
+
+[**MarketStatus**](MarketStatus.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## mutualFundCountryExposure
 
-> MutualFundCountryExposure mutualFundCountryExposure(symbol)
+> MutualFundCountryExposure mutualFundCountryExposure(opts)
 
 Mutual Funds Country Exposure
 
@@ -3019,8 +3187,11 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new finnhub.DefaultApi();
-let symbol = "symbol_example"; // String | Symbol.
-apiInstance.mutualFundCountryExposure(symbol, (error, data, response) => {
+let opts = {
+  'symbol': "symbol_example", // String | Symbol.
+  'isin': "isin_example" // String | Fund's isin.
+};
+apiInstance.mutualFundCountryExposure(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3034,7 +3205,8 @@ apiInstance.mutualFundCountryExposure(symbol, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **String**| Symbol. | 
+ **symbol** | **String**| Symbol. | [optional] 
+ **isin** | **String**| Fund&#39;s isin. | [optional] 
 
 ### Return type
 
@@ -3266,7 +3438,7 @@ Name | Type | Description  | Notes
 
 ## mutualFundSectorExposure
 
-> MutualFundSectorExposure mutualFundSectorExposure(symbol)
+> MutualFundSectorExposure mutualFundSectorExposure(opts)
 
 Mutual Funds Sector Exposure
 
@@ -3284,8 +3456,11 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new finnhub.DefaultApi();
-let symbol = "symbol_example"; // String | Mutual Fund symbol.
-apiInstance.mutualFundSectorExposure(symbol, (error, data, response) => {
+let opts = {
+  'symbol': "symbol_example", // String | Mutual Fund symbol.
+  'isin': "isin_example" // String | Fund's isin.
+};
+apiInstance.mutualFundSectorExposure(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3299,7 +3474,8 @@ apiInstance.mutualFundSectorExposure(symbol, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **symbol** | **String**| Mutual Fund symbol. | 
+ **symbol** | **String**| Mutual Fund symbol. | [optional] 
+ **isin** | **String**| Fund&#39;s isin. | [optional] 
 
 ### Return type
 
@@ -3908,7 +4084,7 @@ Name | Type | Description  | Notes
 
 Social Sentiment
 
-&lt;p&gt;Get social sentiment for stocks on Reddit and Twitter. This endpoint is currently in Beta.&lt;/p&gt;
+&lt;p&gt;Get social sentiment for stocks on Reddit and Twitter.&lt;/p&gt;
 
 ### Example
 
@@ -4067,7 +4243,7 @@ Name | Type | Description  | Notes
 
 Stock Candles
 
-&lt;p&gt;Get candlestick data (OHLCV) for stocks.&lt;/p&gt;&lt;p&gt;Daily data will be adjusted for Splits. Intraday data will remain unadjusted.&lt;/p&gt;
+&lt;p&gt;Get candlestick data (OHLCV) for stocks.&lt;/p&gt;&lt;p&gt;Daily data will be adjusted for Splits. Intraday data will remain unadjusted. Only 1 month of intraday will be returned at a time. If you need more historical intraday data, please use the from and to params iteratively to request more data.&lt;/p&gt;
 
 ### Example
 
@@ -4405,7 +4581,7 @@ Name | Type | Description  | Notes
 
 Tick Data
 
-&lt;p&gt;Get historical tick data for global exchanges. You can send the request directly to our tick server at &lt;a href&#x3D;\&quot;https://tick.finnhub.io/\&quot;&gt;https://tick.finnhub.io/&lt;/a&gt; with the same path and parameters or get redirected there if you call our main server.&lt;/p&gt;&lt;p&gt;For US market, you can visit our bulk download page in the Dashboard &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;/dashboard/download\&quot;,&gt;here&lt;/a&gt; to speed up the download process.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;US CTA/UTP&lt;/th&gt;       &lt;td&gt;Full SIP&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;TSX&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;TSX&lt;/li&gt;&lt;li&gt;TSX Venture&lt;/li&gt;&lt;li&gt;Index&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;LSE&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;London Stock Exchange (L)&lt;/li&gt;&lt;li&gt;LSE International (L)&lt;/li&gt;&lt;li&gt;LSE European (L)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;15 minute&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Euronext&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Euronext Paris (PA)&lt;/li&gt; &lt;li&gt;Euronext Amsterdam (AS)&lt;/li&gt; &lt;li&gt;Euronext Lisbon (LS)&lt;/li&gt; &lt;li&gt;Euronext Brussels (BR)&lt;/li&gt; &lt;li&gt;Euronext Oslo (OL)&lt;/li&gt; &lt;li&gt;Euronext London (LN)&lt;/li&gt; &lt;li&gt;Euronext Dublin (IR)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Deutsche Börse&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Frankfurt (F)&lt;/li&gt; &lt;li&gt;Xetra (DE)&lt;/li&gt; &lt;li&gt;Duesseldorf (DU)&lt;/li&gt; &lt;li&gt;Hamburg (HM)&lt;/li&gt; &lt;li&gt;Berlin (BE)&lt;/li&gt; &lt;li&gt;Hanover (HA)&lt;/li&gt; &lt;li&gt;Stoxx (SX)&lt;/li&gt; &lt;li&gt;TradeGate (TG)&lt;/li&gt; &lt;li&gt;Zertifikate (SC)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
+&lt;p&gt;Get historical tick data for global exchanges. You can send the request directly to our tick server at &lt;a href&#x3D;\&quot;https://tick.finnhub.io/\&quot;&gt;https://tick.finnhub.io/&lt;/a&gt; with the same path and parameters or get redirected there if you call our main server.&lt;/p&gt;&lt;p&gt;For more historical tick data, you can visit our bulk download page in the Dashboard &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;/dashboard/download\&quot;,&gt;here&lt;/a&gt; to speed up the download process.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;US CTA/UTP&lt;/th&gt;       &lt;td&gt;Full SIP&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;TSX&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;TSX&lt;/li&gt;&lt;li&gt;TSX Venture&lt;/li&gt;&lt;li&gt;Index&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;LSE&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;London Stock Exchange (L)&lt;/li&gt;&lt;li&gt;LSE International (L)&lt;/li&gt;&lt;li&gt;LSE European (L)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;15 minute&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Euronext&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Euronext Paris (PA)&lt;/li&gt; &lt;li&gt;Euronext Amsterdam (AS)&lt;/li&gt; &lt;li&gt;Euronext Lisbon (LS)&lt;/li&gt; &lt;li&gt;Euronext Brussels (BR)&lt;/li&gt; &lt;li&gt;Euronext Oslo (OL)&lt;/li&gt; &lt;li&gt;Euronext London (LN)&lt;/li&gt; &lt;li&gt;Euronext Dublin (IR)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Deutsche Börse&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Frankfurt (F)&lt;/li&gt; &lt;li&gt;Xetra (DE)&lt;/li&gt; &lt;li&gt;Duesseldorf (DU)&lt;/li&gt; &lt;li&gt;Hamburg (HM)&lt;/li&gt; &lt;li&gt;Berlin (BE)&lt;/li&gt; &lt;li&gt;Hanover (HA)&lt;/li&gt; &lt;li&gt;Stoxx (SX)&lt;/li&gt; &lt;li&gt;TradeGate (TG)&lt;/li&gt; &lt;li&gt;Zertifikate (SC)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
 
 ### Example
 

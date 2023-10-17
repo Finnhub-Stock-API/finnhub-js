@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstitutionalPortfolioInfo model module.
  * @module model/InstitutionalPortfolioInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 var InstitutionalPortfolioInfo = /*#__PURE__*/function () {
   /**

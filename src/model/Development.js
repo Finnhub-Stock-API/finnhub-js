@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Development model module.
  * @module model/Development
- * @version 1.2.17
+ * @version 1.2.18
  */
 class Development {
     /**

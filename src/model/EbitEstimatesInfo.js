@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EbitEstimatesInfo model module.
  * @module model/EbitEstimatesInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 class EbitEstimatesInfo {
     /**
@@ -62,6 +62,12 @@ class EbitEstimatesInfo {
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Date');
             }
+            if (data.hasOwnProperty('year')) {
+                obj['year'] = ApiClient.convertToType(data['year'], 'Number');
+            }
+            if (data.hasOwnProperty('quarter')) {
+                obj['quarter'] = ApiClient.convertToType(data['quarter'], 'Number');
+            }
         }
         return obj;
     }
@@ -98,6 +104,18 @@ EbitEstimatesInfo.prototype['numberAnalysts'] = undefined;
  * @member {Date} period
  */
 EbitEstimatesInfo.prototype['period'] = undefined;
+
+/**
+ * Fiscal year.
+ * @member {Number} year
+ */
+EbitEstimatesInfo.prototype['year'] = undefined;
+
+/**
+ * Fiscal quarter.
+ * @member {Number} quarter
+ */
+EbitEstimatesInfo.prototype['quarter'] = undefined;
 
 
 

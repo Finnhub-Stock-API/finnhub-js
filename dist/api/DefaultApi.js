@@ -109,6 +109,8 @@ var _InstitutionalPortfolio = _interopRequireDefault(require("../model/Instituti
 
 var _InstitutionalProfile = _interopRequireDefault(require("../model/InstitutionalProfile"));
 
+var _InternationalFiling = _interopRequireDefault(require("../model/InternationalFiling"));
+
 var _InvestmentThemes = _interopRequireDefault(require("../model/InvestmentThemes"));
 
 var _IsinChange = _interopRequireDefault(require("../model/IsinChange"));
@@ -117,7 +119,11 @@ var _LastBidAsk = _interopRequireDefault(require("../model/LastBidAsk"));
 
 var _LobbyingResult = _interopRequireDefault(require("../model/LobbyingResult"));
 
+var _MarketHoliday = _interopRequireDefault(require("../model/MarketHoliday"));
+
 var _MarketNews = _interopRequireDefault(require("../model/MarketNews"));
+
+var _MarketStatus = _interopRequireDefault(require("../model/MarketStatus"));
 
 var _MutualFundCountryExposure = _interopRequireDefault(require("../model/MutualFundCountryExposure"));
 
@@ -194,7 +200,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.17
+* @version 1.2.18
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -707,7 +713,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Company ESG Scores
-     * <p>This endpoint provides ESG scores and important indicators for 1000+ global companies. The data is collected through company's public ESG disclosure and public sources.</p><p>Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.</p>
+     * <p>This endpoint provides ESG scores and important indicators for 7000+ global companies. The data is collected through company's public ESG disclosure and public sources.</p><p>Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.</p><p>Historical ESG data is available for Enterprise users. <a href=\"mailto:support@finnhub.io\">Contact us</a> to learn more.</p>
      * @param {String} symbol Symbol.
      * @param {module:api/DefaultApi~companyEsgScoreCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompanyESG}
@@ -1403,23 +1409,22 @@ var DefaultApi = /*#__PURE__*/function () {
     /**
      * ETFs Country Exposure
      * Get ETF country exposure data.
-     * @param {String} symbol ETF symbol.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.symbol ETF symbol.
+     * @param {String} opts.isin ETF isin.
      * @param {module:api/DefaultApi~etfsCountryExposureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ETFsCountryExposure}
      */
 
   }, {
     key: "etfsCountryExposure",
-    value: function etfsCountryExposure(symbol, callback) {
-      var postBody = null; // verify the required parameter 'symbol' is set
-
-      if (symbol === undefined || symbol === null) {
-        throw new Error("Missing the required parameter 'symbol' when calling etfsCountryExposure");
-      }
-
+    value: function etfsCountryExposure(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
       var pathParams = {};
       var queryParams = {
-        'symbol': symbol
+        'symbol': opts['symbol'],
+        'isin': opts['isin']
       };
       var headerParams = {};
       var formParams = {};
@@ -1516,23 +1521,22 @@ var DefaultApi = /*#__PURE__*/function () {
     /**
      * ETFs Sector Exposure
      * Get ETF sector exposure data.
-     * @param {String} symbol ETF symbol.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.symbol ETF symbol.
+     * @param {String} opts.isin ETF isin.
      * @param {module:api/DefaultApi~etfsSectorExposureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ETFsSectorExposure}
      */
 
   }, {
     key: "etfsSectorExposure",
-    value: function etfsSectorExposure(symbol, callback) {
-      var postBody = null; // verify the required parameter 'symbol' is set
-
-      if (symbol === undefined || symbol === null) {
-        throw new Error("Missing the required parameter 'symbol' when calling etfsSectorExposure");
-      }
-
+    value: function etfsSectorExposure(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
       var pathParams = {};
       var queryParams = {
-        'symbol': symbol
+        'symbol': opts['symbol'],
+        'isin': opts['isin']
       };
       var headerParams = {};
       var formParams = {};
@@ -1958,7 +1962,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Indices Constituents
-     * Get a list of index's constituents. A list of supported indices for this endpoint can be found <a href=\"https://docs.google.com/spreadsheets/d/1Syr2eLielHWsorxkDEZXyc55d6bNx1M3ZeI4vdn7Qzo/edit?usp=sharing\" target=\"_blank\">here</a>.
+     * Get a list of index's constituents. A list of supported indices for this endpoint can be found <a href=\"/api/v1/index/list?token=\" target=\"_blank\">here</a>.
      * @param {String} symbol symbol
      * @param {module:api/DefaultApi~indicesConstituentsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/IndicesConstituents}
@@ -2260,6 +2264,42 @@ var DefaultApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/institutional/profile', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the internationalFilings operation.
+     * @callback module:api/DefaultApi~internationalFilingsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InternationalFiling>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * International Filings
+     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.symbol Symbol. Leave empty to list latest filings.
+     * @param {String} opts.country Filter by country using country's 2-letter code.
+     * @param {module:api/DefaultApi~internationalFilingsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InternationalFiling>}
+     */
+
+  }, {
+    key: "internationalFilings",
+    value: function internationalFilings(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {
+        'symbol': opts['symbol'],
+        'country': opts['country']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [_InternationalFiling["default"]];
+      return this.apiClient.callApi('/stock/international-filings', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the investmentThemes operation.
      * @callback module:api/DefaultApi~investmentThemesCallback
      * @param {String} error Error message, if any.
@@ -2385,6 +2425,43 @@ var DefaultApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/ca/isin-change', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the marketHoliday operation.
+     * @callback module:api/DefaultApi~marketHolidayCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MarketHoliday} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Market Holiday
+     * Get a list of holidays for global exchanges.
+     * @param {String} exchange Exchange code.
+     * @param {module:api/DefaultApi~marketHolidayCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MarketHoliday}
+     */
+
+  }, {
+    key: "marketHoliday",
+    value: function marketHoliday(exchange, callback) {
+      var postBody = null; // verify the required parameter 'exchange' is set
+
+      if (exchange === undefined || exchange === null) {
+        throw new Error("Missing the required parameter 'exchange' when calling marketHoliday");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'exchange': exchange
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _MarketHoliday["default"];
+      return this.apiClient.callApi('/stock/market-holiday', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the marketNews operation.
      * @callback module:api/DefaultApi~marketNewsCallback
      * @param {String} error Error message, if any.
@@ -2426,6 +2503,43 @@ var DefaultApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/news', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the marketStatus operation.
+     * @callback module:api/DefaultApi~marketStatusCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/MarketStatus} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Market Status
+     * Get current market status for global exchanges (whether exchanges are open or close).
+     * @param {String} exchange Exchange code.
+     * @param {module:api/DefaultApi~marketStatusCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/MarketStatus}
+     */
+
+  }, {
+    key: "marketStatus",
+    value: function marketStatus(exchange, callback) {
+      var postBody = null; // verify the required parameter 'exchange' is set
+
+      if (exchange === undefined || exchange === null) {
+        throw new Error("Missing the required parameter 'exchange' when calling marketStatus");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'exchange': exchange
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _MarketStatus["default"];
+      return this.apiClient.callApi('/stock/market-status', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the mutualFundCountryExposure operation.
      * @callback module:api/DefaultApi~mutualFundCountryExposureCallback
      * @param {String} error Error message, if any.
@@ -2436,23 +2550,22 @@ var DefaultApi = /*#__PURE__*/function () {
     /**
      * Mutual Funds Country Exposure
      * Get Mutual Funds country exposure data.
-     * @param {String} symbol Symbol.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.symbol Symbol.
+     * @param {String} opts.isin Fund's isin.
      * @param {module:api/DefaultApi~mutualFundCountryExposureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MutualFundCountryExposure}
      */
 
   }, {
     key: "mutualFundCountryExposure",
-    value: function mutualFundCountryExposure(symbol, callback) {
-      var postBody = null; // verify the required parameter 'symbol' is set
-
-      if (symbol === undefined || symbol === null) {
-        throw new Error("Missing the required parameter 'symbol' when calling mutualFundCountryExposure");
-      }
-
+    value: function mutualFundCountryExposure(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
       var pathParams = {};
       var queryParams = {
-        'symbol': symbol
+        'symbol': opts['symbol'],
+        'isin': opts['isin']
       };
       var headerParams = {};
       var formParams = {};
@@ -2621,23 +2734,22 @@ var DefaultApi = /*#__PURE__*/function () {
     /**
      * Mutual Funds Sector Exposure
      * Get Mutual Funds sector exposure data.
-     * @param {String} symbol Mutual Fund symbol.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.symbol Mutual Fund symbol.
+     * @param {String} opts.isin Fund's isin.
      * @param {module:api/DefaultApi~mutualFundSectorExposureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/MutualFundSectorExposure}
      */
 
   }, {
     key: "mutualFundSectorExposure",
-    value: function mutualFundSectorExposure(symbol, callback) {
-      var postBody = null; // verify the required parameter 'symbol' is set
-
-      if (symbol === undefined || symbol === null) {
-        throw new Error("Missing the required parameter 'symbol' when calling mutualFundSectorExposure");
-      }
-
+    value: function mutualFundSectorExposure(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
       var pathParams = {};
       var queryParams = {
-        'symbol': symbol
+        'symbol': opts['symbol'],
+        'isin': opts['isin']
       };
       var headerParams = {};
       var formParams = {};
@@ -3085,7 +3197,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Social Sentiment
-     * <p>Get social sentiment for stocks on Reddit and Twitter. This endpoint is currently in Beta.</p>
+     * <p>Get social sentiment for stocks on Reddit and Twitter.</p>
      * @param {String} symbol Company symbol.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.from From date <code>YYYY-MM-DD</code>.
@@ -3202,7 +3314,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Stock Candles
-     * <p>Get candlestick data (OHLCV) for stocks.</p><p>Daily data will be adjusted for Splits. Intraday data will remain unadjusted.</p>
+     * <p>Get candlestick data (OHLCV) for stocks.</p><p>Daily data will be adjusted for Splits. Intraday data will remain unadjusted. Only 1 month of intraday will be returned at a time. If you need more historical intraday data, please use the from and to params iteratively to request more data.</p>
      * @param {String} symbol Symbol.
      * @param {String} resolution Supported resolution includes <code>1, 5, 15, 30, 60, D, W, M </code>.Some timeframes might not be available depending on the exchange.
      * @param {Number} from UNIX timestamp. Interval initial value.
@@ -3516,7 +3628,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Tick Data
-     * <p>Get historical tick data for global exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server.</p><p>For US market, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
+     * <p>Get historical tick data for global exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server.</p><p>For more historical tick data, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
      * @param {String} symbol Symbol.
      * @param {Date} date Date: 2020-04-02.
      * @param {Number} limit Limit number of ticks returned. Maximum value: <code>25000</code>

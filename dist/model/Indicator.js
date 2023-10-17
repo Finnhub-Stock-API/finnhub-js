@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Indicator model module.
  * @module model/Indicator
- * @version 1.2.17
+ * @version 1.2.18
  */
 var Indicator = /*#__PURE__*/function () {
   /**

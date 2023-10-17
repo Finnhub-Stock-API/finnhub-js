@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BondProfile model module.
  * @module model/BondProfile
- * @version 1.2.17
+ * @version 1.2.18
  */
 class BondProfile {
     /**

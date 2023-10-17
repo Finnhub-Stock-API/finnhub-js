@@ -12,5 +12,9 @@ Name | Type | Description | Notes
 **currencyCode** | **String** | Currency code | [optional] 
 **region** | **String** | Region | [optional] 
 **subRegion** | **String** | Sub-Region | [optional] 
+**rating** | **String** | Moody&#39;s credit risk rating. | [optional] 
+**defaultSpread** | **Number** | Default spread | [optional] 
+**countryRiskPremium** | **Number** | Country risk premium | [optional] 
+**equityRiskPremium** | **Number** | Equity risk premium | [optional] 
 
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LastBidAsk model module.
  * @module model/LastBidAsk
- * @version 1.2.17
+ * @version 1.2.18
  */
 class LastBidAsk {
     /**

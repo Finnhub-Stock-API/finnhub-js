@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SymbolChangeInfo model module.
  * @module model/SymbolChangeInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 class SymbolChangeInfo {
     /**

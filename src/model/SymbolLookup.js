@@ -17,7 +17,7 @@ import SymbolLookupInfo from './SymbolLookupInfo';
 /**
  * The SymbolLookup model module.
  * @module model/SymbolLookup
- * @version 1.2.17
+ * @version 1.2.18
  */
 class SymbolLookup {
     /**

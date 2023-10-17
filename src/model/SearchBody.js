@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchBody model module.
  * @module model/SearchBody
- * @version 1.2.17
+ * @version 1.2.18
  */
 class SearchBody {
     /**

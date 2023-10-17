@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyNewsStatistics model module.
  * @module model/CompanyNewsStatistics
- * @version 1.2.17
+ * @version 1.2.18
  */
 class CompanyNewsStatistics {
     /**

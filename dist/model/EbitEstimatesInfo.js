@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EbitEstimatesInfo model module.
  * @module model/EbitEstimatesInfo
- * @version 1.2.17
+ * @version 1.2.18
  */
 var EbitEstimatesInfo = /*#__PURE__*/function () {
   /**
@@ -73,6 +73,14 @@ var EbitEstimatesInfo = /*#__PURE__*/function () {
         if (data.hasOwnProperty('period')) {
           obj['period'] = _ApiClient["default"].convertToType(data['period'], 'Date');
         }
+
+        if (data.hasOwnProperty('year')) {
+          obj['year'] = _ApiClient["default"].convertToType(data['year'], 'Number');
+        }
+
+        if (data.hasOwnProperty('quarter')) {
+          obj['quarter'] = _ApiClient["default"].convertToType(data['quarter'], 'Number');
+        }
       }
 
       return obj;
@@ -112,5 +120,17 @@ EbitEstimatesInfo.prototype['numberAnalysts'] = undefined;
  */
 
 EbitEstimatesInfo.prototype['period'] = undefined;
+/**
+ * Fiscal year.
+ * @member {Number} year
+ */
+
+EbitEstimatesInfo.prototype['year'] = undefined;
+/**
+ * Fiscal quarter.
+ * @member {Number} quarter
+ */
+
+EbitEstimatesInfo.prototype['quarter'] = undefined;
 var _default = EbitEstimatesInfo;
 exports["default"] = _default;

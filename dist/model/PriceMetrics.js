@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PriceMetrics model module.
  * @module model/PriceMetrics
- * @version 1.2.17
+ * @version 1.2.18
  */
 var PriceMetrics = /*#__PURE__*/function () {
   /**

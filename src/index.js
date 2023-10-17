@@ -86,6 +86,7 @@ import InFilingSearchBody from './model/InFilingSearchBody';
 import IndexHistoricalConstituent from './model/IndexHistoricalConstituent';
 import Indicator from './model/Indicator';
 import IndicesConstituents from './model/IndicesConstituents';
+import IndicesConstituentsBreakdown from './model/IndicesConstituentsBreakdown';
 import IndicesHistoricalConstituents from './model/IndicesHistoricalConstituents';
 import InsiderSentiments from './model/InsiderSentiments';
 import InsiderSentimentsData from './model/InsiderSentimentsData';
@@ -107,7 +108,10 @@ import KeyCustomersSuppliers from './model/KeyCustomersSuppliers';
 import LastBidAsk from './model/LastBidAsk';
 import LobbyingData from './model/LobbyingData';
 import LobbyingResult from './model/LobbyingResult';
+import MarketHoliday from './model/MarketHoliday';
+import MarketHolidayData from './model/MarketHolidayData';
 import MarketNews from './model/MarketNews';
+import MarketStatus from './model/MarketStatus';
 import MutualFundCountryExposure from './model/MutualFundCountryExposure';
 import MutualFundCountryExposureData from './model/MutualFundCountryExposureData';
 import MutualFundEet from './model/MutualFundEet';
@@ -127,7 +131,6 @@ import PriceMetrics from './model/PriceMetrics';
 import PriceTarget from './model/PriceTarget';
 import Quote from './model/Quote';
 import RecommendationTrend from './model/RecommendationTrend';
-import RedditSentimentContent from './model/RedditSentimentContent';
 import Report from './model/Report';
 import RevenueBreakdown from './model/RevenueBreakdown';
 import RevenueEstimates from './model/RevenueEstimates';
@@ -139,6 +142,7 @@ import SearchResponse from './model/SearchResponse';
 import SectorMetric from './model/SectorMetric';
 import SectorMetricData from './model/SectorMetricData';
 import Sentiment from './model/Sentiment';
+import SentimentContent from './model/SentimentContent';
 import SimilarityIndex from './model/SimilarityIndex';
 import SimilarityIndexInfo from './model/SimilarityIndexInfo';
 import SocialSentiment from './model/SocialSentiment';
@@ -158,7 +162,6 @@ import Transactions from './model/Transactions';
 import TranscriptContent from './model/TranscriptContent';
 import TranscriptParticipant from './model/TranscriptParticipant';
 import Trend from './model/Trend';
-import TwitterSentimentContent from './model/TwitterSentimentContent';
 import UpgradeDowngrade from './model/UpgradeDowngrade';
 import UsaSpending from './model/UsaSpending';
 import UsaSpendingResult from './model/UsaSpendingResult';
@@ -198,7 +201,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.17
+* @version 1.2.18
 */
 export {
     /**
@@ -646,6 +649,12 @@ export {
     IndicesConstituents,
 
     /**
+     * The IndicesConstituentsBreakdown model constructor.
+     * @property {module:model/IndicesConstituentsBreakdown}
+     */
+    IndicesConstituentsBreakdown,
+
+    /**
      * The IndicesHistoricalConstituents model constructor.
      * @property {module:model/IndicesHistoricalConstituents}
      */
@@ -772,10 +781,28 @@ export {
     LobbyingResult,
 
     /**
+     * The MarketHoliday model constructor.
+     * @property {module:model/MarketHoliday}
+     */
+    MarketHoliday,
+
+    /**
+     * The MarketHolidayData model constructor.
+     * @property {module:model/MarketHolidayData}
+     */
+    MarketHolidayData,
+
+    /**
      * The MarketNews model constructor.
      * @property {module:model/MarketNews}
      */
     MarketNews,
+
+    /**
+     * The MarketStatus model constructor.
+     * @property {module:model/MarketStatus}
+     */
+    MarketStatus,
 
     /**
      * The MutualFundCountryExposure model constructor.
@@ -892,12 +919,6 @@ export {
     RecommendationTrend,
 
     /**
-     * The RedditSentimentContent model constructor.
-     * @property {module:model/RedditSentimentContent}
-     */
-    RedditSentimentContent,
-
-    /**
      * The Report model constructor.
      * @property {module:model/Report}
      */
@@ -962,6 +983,12 @@ export {
      * @property {module:model/Sentiment}
      */
     Sentiment,
+
+    /**
+     * The SentimentContent model constructor.
+     * @property {module:model/SentimentContent}
+     */
+    SentimentContent,
 
     /**
      * The SimilarityIndex model constructor.
@@ -1076,12 +1103,6 @@ export {
      * @property {module:model/Trend}
      */
     Trend,
-
-    /**
-     * The TwitterSentimentContent model constructor.
-     * @property {module:model/TwitterSentimentContent}
-     */
-    TwitterSentimentContent,
 
     /**
      * The UpgradeDowngrade model constructor.

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import IndicesConstituentsBreakdown from './IndicesConstituentsBreakdown';
 
 /**
  * The IndicesConstituents model module.
  * @module model/IndicesConstituents
- * @version 1.2.17
+ * @version 1.2.18
  */
 class IndicesConstituents {
     /**
@@ -53,6 +54,9 @@ class IndicesConstituents {
             if (data.hasOwnProperty('constituents')) {
                 obj['constituents'] = ApiClient.convertToType(data['constituents'], ['String']);
             }
+            if (data.hasOwnProperty('constituentsBreakdown')) {
+                obj['constituentsBreakdown'] = ApiClient.convertToType(data['constituentsBreakdown'], [IndicesConstituentsBreakdown]);
+            }
         }
         return obj;
     }
@@ -71,6 +75,12 @@ IndicesConstituents.prototype['symbol'] = undefined;
  * @member {Array.<String>} constituents
  */
 IndicesConstituents.prototype['constituents'] = undefined;
+
+/**
+ * Array of constituents' details.
+ * @member {Array.<module:model/IndicesConstituentsBreakdown>} constituentsBreakdown
+ */
+IndicesConstituents.prototype['constituentsBreakdown'] = undefined;
 
 
 

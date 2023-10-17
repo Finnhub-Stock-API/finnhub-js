@@ -7,9 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RedditSentimentContent = _interopRequireDefault(require("./RedditSentimentContent"));
-
-var _TwitterSentimentContent = _interopRequireDefault(require("./TwitterSentimentContent"));
+var _SentimentContent = _interopRequireDefault(require("./SentimentContent"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -22,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SocialSentiment model module.
  * @module model/SocialSentiment
- * @version 1.2.17
+ * @version 1.2.18
  */
 var SocialSentiment = /*#__PURE__*/function () {
   /**
@@ -62,12 +60,8 @@ var SocialSentiment = /*#__PURE__*/function () {
           obj['symbol'] = _ApiClient["default"].convertToType(data['symbol'], 'String');
         }
 
-        if (data.hasOwnProperty('reddit')) {
-          obj['reddit'] = _ApiClient["default"].convertToType(data['reddit'], [_RedditSentimentContent["default"]]);
-        }
-
-        if (data.hasOwnProperty('twitter')) {
-          obj['twitter'] = _ApiClient["default"].convertToType(data['twitter'], [_TwitterSentimentContent["default"]]);
+        if (data.hasOwnProperty('data')) {
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_SentimentContent["default"]]);
         }
       }
 
@@ -85,16 +79,10 @@ var SocialSentiment = /*#__PURE__*/function () {
 
 SocialSentiment.prototype['symbol'] = undefined;
 /**
- * Reddit sentiment.
- * @member {Array.<module:model/RedditSentimentContent>} reddit
+ * Sentiment data.
+ * @member {Array.<module:model/SentimentContent>} data
  */
 
-SocialSentiment.prototype['reddit'] = undefined;
-/**
- * Twitter sentiment.
- * @member {Array.<module:model/TwitterSentimentContent>} twitter
- */
-
-SocialSentiment.prototype['twitter'] = undefined;
+SocialSentiment.prototype['data'] = undefined;
 var _default = SocialSentiment;
 exports["default"] = _default;

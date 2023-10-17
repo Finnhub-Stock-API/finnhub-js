@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyEarningsQualityScoreData model module.
  * @module model/CompanyEarningsQualityScoreData
- * @version 1.2.17
+ * @version 1.2.18
  */
 class CompanyEarningsQualityScoreData {
     /**
