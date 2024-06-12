@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **pc** | **Number** | Previous close price | [optional] 
 **d** | **Number** | Change | [optional] 
 **dp** | **Number** | Percent change | [optional] 
+**t** | **Number** | Reference UNIX timestamp in ms. | [optional] 
 
 
