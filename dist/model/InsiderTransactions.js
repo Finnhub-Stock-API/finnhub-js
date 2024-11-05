@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InsiderTransactions model module.
  * @module model/InsiderTransactions
- * @version 1.2.18
+ * @version 1.2.19
  */
 var InsiderTransactions = /*#__PURE__*/function () {
   /**

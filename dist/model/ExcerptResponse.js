@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ExcerptResponse model module.
  * @module model/ExcerptResponse
- * @version 1.2.18
+ * @version 1.2.19
  */
 var ExcerptResponse = /*#__PURE__*/function () {
   /**

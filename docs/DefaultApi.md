@@ -5,6 +5,7 @@ All URIs are relative to *https://finnhub.io/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**aggregateIndicator**](DefaultApi.md#aggregateIndicator) | **GET** /scan/technical-indicator | Aggregate Indicators
+[**airlinePriceIndex**](DefaultApi.md#airlinePriceIndex) | **GET** /airline/price-index | Airline Price Index
 [**bondPrice**](DefaultApi.md#bondPrice) | **GET** /bond/price | Bond price data
 [**bondProfile**](DefaultApi.md#bondProfile) | **GET** /bond/profile | Bond Profile
 [**bondTick**](DefaultApi.md#bondTick) | **GET** /bond/tick | Bond Tick Data
@@ -17,6 +18,7 @@ Method | HTTP request | Description
 [**companyEpsEstimates**](DefaultApi.md#companyEpsEstimates) | **GET** /stock/eps-estimate | Earnings Estimates
 [**companyEsgScore**](DefaultApi.md#companyEsgScore) | **GET** /stock/esg | Company ESG Scores
 [**companyExecutive**](DefaultApi.md#companyExecutive) | **GET** /stock/executive | Company Executive
+[**companyHistoricalEsgScore**](DefaultApi.md#companyHistoricalEsgScore) | **GET** /stock/historical-esg | Historical ESG Scores
 [**companyNews**](DefaultApi.md#companyNews) | **GET** /company-news | Company News
 [**companyPeers**](DefaultApi.md#companyPeers) | **GET** /stock/peers | Peers
 [**companyProfile**](DefaultApi.md#companyProfile) | **GET** /stock/profile | Company Profile
@@ -47,6 +49,8 @@ Method | HTTP request | Description
 [**forexRates**](DefaultApi.md#forexRates) | **GET** /forex/rates | Forex rates
 [**forexSymbols**](DefaultApi.md#forexSymbols) | **GET** /forex/symbol | Forex Symbol
 [**fundOwnership**](DefaultApi.md#fundOwnership) | **GET** /stock/fund-ownership | Fund Ownership
+[**historicalEmployeeCount**](DefaultApi.md#historicalEmployeeCount) | **GET** /stock/historical-employee-count | Historical Employee Count
+[**historicalMarketCap**](DefaultApi.md#historicalMarketCap) | **GET** /stock/historical-market-cap | Historical Market Cap
 [**indicesConstituents**](DefaultApi.md#indicesConstituents) | **GET** /index/constituents | Indices Constituents
 [**indicesHistoricalConstituents**](DefaultApi.md#indicesHistoricalConstituents) | **GET** /index/historical-constituents | Indices Historical Constituents
 [**insiderSentiment**](DefaultApi.md#insiderSentiment) | **GET** /stock/insider-sentiment | Insider Sentiment
@@ -144,6 +148,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AggregateIndicators**](AggregateIndicators.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## airlinePriceIndex
+
+> AirlinePriceIndexData airlinePriceIndex(airline, from, to)
+
+Airline Price Index
+
+&lt;p&gt;The Flight Ticket Price Index API provides comprehensive data on airline ticket prices, including the average daily ticket price and its percentage change (price index). This data, collected weekly and projected two weeks ahead, aggregates daily prices and indexes from the 50 busiest and largest airports across the USA. The dataset includes detailed information on airlines, dates, and average ticket prices, offering valuable insights for market analysis and pricing strategies.&lt;/p&gt;&lt;p&gt;The price index is calculated as percentage change of average daily ticket price from the previous weekly reading. Raw ticket prices data is available for Enterprise users. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact us&lt;/a&gt; to inquire about the raw price data.&lt;/p&gt;
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let airline = "airline_example"; // String | Filter data by airline. Accepted values: <code>united</code>,<code>delta</code>,<code>american_airlines</code>,<code>southwest</code>,<code>southern_airways_express</code>,<code>alaska_airlines</code>,<code>frontier_airlines</code>,<code>jetblue_airways</code>,<code>spirit_airlines</code>,<code>sun_country_airlines</code>,<code>breeze_airways</code>,<code>hawaiian_airlines</code>
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>.
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>.
+apiInstance.airlinePriceIndex(airline, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **airline** | **String**| Filter data by airline. Accepted values: &lt;code&gt;united&lt;/code&gt;,&lt;code&gt;delta&lt;/code&gt;,&lt;code&gt;american_airlines&lt;/code&gt;,&lt;code&gt;southwest&lt;/code&gt;,&lt;code&gt;southern_airways_express&lt;/code&gt;,&lt;code&gt;alaska_airlines&lt;/code&gt;,&lt;code&gt;frontier_airlines&lt;/code&gt;,&lt;code&gt;jetblue_airways&lt;/code&gt;,&lt;code&gt;spirit_airlines&lt;/code&gt;,&lt;code&gt;sun_country_airlines&lt;/code&gt;,&lt;code&gt;breeze_airways&lt;/code&gt;,&lt;code&gt;hawaiian_airlines&lt;/code&gt; | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**AirlinePriceIndexData**](AirlinePriceIndexData.md)
 
 ### Authorization
 
@@ -709,7 +768,7 @@ Name | Type | Description  | Notes
 
 Company ESG Scores
 
-&lt;p&gt;This endpoint provides ESG scores and important indicators for 7000+ global companies. The data is collected through company&#39;s public ESG disclosure and public sources.&lt;/p&gt;&lt;p&gt;Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.&lt;/p&gt;&lt;p&gt;Historical ESG data is available for Enterprise users. &lt;a href&#x3D;\&quot;mailto:support@finnhub.io\&quot;&gt;Contact us&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;p&gt;This endpoint provides the latest ESG scores and important indicators for 7000+ global companies. The data is collected through company&#39;s public ESG disclosure and public sources.&lt;/p&gt;&lt;p&gt;Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.&lt;/p&gt;
 
 ### Example
 
@@ -794,6 +853,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CompanyExecutive**](CompanyExecutive.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## companyHistoricalEsgScore
+
+> HistoricalCompanyESG companyHistoricalEsgScore(symbol)
+
+Historical ESG Scores
+
+&lt;p&gt;This endpoint provides historical ESG scores and important indicators for 7000+ global companies. The data is collected through company&#39;s public ESG disclosure and public sources.&lt;/p&gt;&lt;p&gt;Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.&lt;/p&gt;
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Symbol.
+apiInstance.companyHistoricalEsgScore(symbol, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Symbol. | 
+
+### Return type
+
+[**HistoricalCompanyESG**](HistoricalCompanyESG.md)
 
 ### Authorization
 
@@ -1947,8 +2057,8 @@ let opts = {
   'cik': "cik_example", // String | CIK.
   'accessNumber': "accessNumber_example", // String | Access number of a specific report you want to retrieve data from.
   'form': "form_example", // String | Filter by form. You can use this value <code>NT 10-K</code> to find non-timely filings for a company.
-  'from': new Date("2013-10-20"), // Date | From date: 2020-03-15.
-  'to': new Date("2013-10-20") // Date | To date: 2020-03-16.
+  'from': new Date("2013-10-20"), // Date | From date: 2023-03-15.
+  'to': new Date("2013-10-20") // Date | To date: 2023-03-16.
 };
 apiInstance.filings(opts, (error, data, response) => {
   if (error) {
@@ -1968,8 +2078,8 @@ Name | Type | Description  | Notes
  **cik** | **String**| CIK. | [optional] 
  **accessNumber** | **String**| Access number of a specific report you want to retrieve data from. | [optional] 
  **form** | **String**| Filter by form. You can use this value &lt;code&gt;NT 10-K&lt;/code&gt; to find non-timely filings for a company. | [optional] 
- **from** | **Date**| From date: 2020-03-15. | [optional] 
- **to** | **Date**| To date: 2020-03-16. | [optional] 
+ **from** | **Date**| From date: 2023-03-15. | [optional] 
+ **to** | **Date**| To date: 2023-03-16. | [optional] 
 
 ### Return type
 
@@ -2419,6 +2529,116 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## historicalEmployeeCount
+
+> HistoricalEmployeeCount historicalEmployeeCount(symbol, from, to)
+
+Historical Employee Count
+
+Get historical employee count for global companies.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Company symbol.
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>.
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>.
+apiInstance.historicalEmployeeCount(symbol, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Company symbol. | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**HistoricalEmployeeCount**](HistoricalEmployeeCount.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## historicalMarketCap
+
+> HistoricalMarketCapData historicalMarketCap(symbol, from, to)
+
+Historical Market Cap
+
+Get historical market cap data for global companies.
+
+### Example
+
+```javascript
+import finnhub from 'finnhub';
+let defaultClient = finnhub.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new finnhub.DefaultApi();
+let symbol = "symbol_example"; // String | Company symbol.
+let from = new Date("2013-10-20"); // Date | From date <code>YYYY-MM-DD</code>.
+let to = new Date("2013-10-20"); // Date | To date <code>YYYY-MM-DD</code>.
+apiInstance.historicalMarketCap(symbol, from, to, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**| Company symbol. | 
+ **from** | **Date**| From date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+ **to** | **Date**| To date &lt;code&gt;YYYY-MM-DD&lt;/code&gt;. | 
+
+### Return type
+
+[**HistoricalMarketCapData**](HistoricalMarketCapData.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## indicesConstituents
 
 > IndicesConstituents indicesConstituents(symbol)
@@ -2582,7 +2802,7 @@ Name | Type | Description  | Notes
 
 Insider Transactions
 
-Company insider transactions data sourced from &lt;code&gt;Form 3,4,5&lt;/code&gt;, SEDI and relevant companies&#39; filings. This endpoint covers US, Canada, Australia, and selected EU companies. Limit to 100 transactions per API call.
+Company insider transactions data sourced from &lt;code&gt;Form 3,4,5&lt;/code&gt;, SEDI and relevant companies&#39; filings. This endpoint covers US, UK, Canada, Australia, India, and all major EU markets. Limit to 100 transactions per API call.
 
 ### Example
 
@@ -2804,7 +3024,7 @@ Name | Type | Description  | Notes
 
 International Filings
 
-List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
+List filings for international companies. Limit to 500 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
 
 ### Example
 
@@ -2820,7 +3040,9 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new finnhub.DefaultApi();
 let opts = {
   'symbol': "symbol_example", // String | Symbol. Leave empty to list latest filings.
-  'country': "country_example" // String | Filter by country using country's 2-letter code.
+  'country': "country_example", // String | Filter by country using country's 2-letter code.
+  'from': new Date("2013-10-20"), // Date | From date: 2023-01-15.
+  'to': new Date("2013-10-20") // Date | To date: 2023-12-16.
 };
 apiInstance.internationalFilings(opts, (error, data, response) => {
   if (error) {
@@ -2838,6 +3060,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| Symbol. Leave empty to list latest filings. | [optional] 
  **country** | **String**| Filter by country using country&#39;s 2-letter code. | [optional] 
+ **from** | **Date**| From date: 2023-01-15. | [optional] 
+ **to** | **Date**| To date: 2023-12-16. | [optional] 
 
 ### Return type
 
@@ -4581,7 +4805,7 @@ Name | Type | Description  | Notes
 
 Tick Data
 
-&lt;p&gt;Get historical tick data for global exchanges. You can send the request directly to our tick server at &lt;a href&#x3D;\&quot;https://tick.finnhub.io/\&quot;&gt;https://tick.finnhub.io/&lt;/a&gt; with the same path and parameters or get redirected there if you call our main server.&lt;/p&gt;&lt;p&gt;For more historical tick data, you can visit our bulk download page in the Dashboard &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;/dashboard/download\&quot;,&gt;here&lt;/a&gt; to speed up the download process.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;US CTA/UTP&lt;/th&gt;       &lt;td&gt;Full SIP&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;TSX&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;TSX&lt;/li&gt;&lt;li&gt;TSX Venture&lt;/li&gt;&lt;li&gt;Index&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;LSE&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;London Stock Exchange (L)&lt;/li&gt;&lt;li&gt;LSE International (L)&lt;/li&gt;&lt;li&gt;LSE European (L)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;15 minute&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Euronext&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Euronext Paris (PA)&lt;/li&gt; &lt;li&gt;Euronext Amsterdam (AS)&lt;/li&gt; &lt;li&gt;Euronext Lisbon (LS)&lt;/li&gt; &lt;li&gt;Euronext Brussels (BR)&lt;/li&gt; &lt;li&gt;Euronext Oslo (OL)&lt;/li&gt; &lt;li&gt;Euronext London (LN)&lt;/li&gt; &lt;li&gt;Euronext Dublin (IR)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Deutsche Börse&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Frankfurt (F)&lt;/li&gt; &lt;li&gt;Xetra (DE)&lt;/li&gt; &lt;li&gt;Duesseldorf (DU)&lt;/li&gt; &lt;li&gt;Hamburg (HM)&lt;/li&gt; &lt;li&gt;Berlin (BE)&lt;/li&gt; &lt;li&gt;Hanover (HA)&lt;/li&gt; &lt;li&gt;Stoxx (SX)&lt;/li&gt; &lt;li&gt;TradeGate (TG)&lt;/li&gt; &lt;li&gt;Zertifikate (SC)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
+&lt;p&gt;Get historical tick data for global exchanges.&lt;/p&gt;&lt;p&gt;For more historical tick data, you can visit our bulk download page in the Dashboard &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;/dashboard/download\&quot;,&gt;here&lt;/a&gt; to speed up the download process.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-hover\&quot;&gt;   &lt;thead&gt;     &lt;tr&gt;       &lt;th&gt;Exchange&lt;/th&gt;       &lt;th&gt;Segment&lt;/th&gt;       &lt;th&gt;Delay&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;US CTA/UTP&lt;/th&gt;       &lt;td&gt;Full SIP&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;TSX&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;TSX&lt;/li&gt;&lt;li&gt;TSX Venture&lt;/li&gt;&lt;li&gt;Index&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;LSE&lt;/th&gt;       &lt;td&gt;&lt;ul&gt;&lt;li&gt;London Stock Exchange (L)&lt;/li&gt;&lt;li&gt;LSE International (L)&lt;/li&gt;&lt;li&gt;LSE European (L)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;15 minute&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Euronext&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Euronext Paris (PA)&lt;/li&gt; &lt;li&gt;Euronext Amsterdam (AS)&lt;/li&gt; &lt;li&gt;Euronext Lisbon (LS)&lt;/li&gt; &lt;li&gt;Euronext Brussels (BR)&lt;/li&gt; &lt;li&gt;Euronext Oslo (OL)&lt;/li&gt; &lt;li&gt;Euronext London (LN)&lt;/li&gt; &lt;li&gt;Euronext Dublin (IR)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;td class&#x3D;\&quot;text-blue\&quot;&gt;Deutsche Börse&lt;/th&gt;       &lt;td&gt;&lt;ul&gt; &lt;li&gt;Frankfurt (F)&lt;/li&gt; &lt;li&gt;Xetra (DE)&lt;/li&gt; &lt;li&gt;Duesseldorf (DU)&lt;/li&gt; &lt;li&gt;Hamburg (HM)&lt;/li&gt; &lt;li&gt;Berlin (BE)&lt;/li&gt; &lt;li&gt;Hanover (HA)&lt;/li&gt; &lt;li&gt;Stoxx (SX)&lt;/li&gt; &lt;li&gt;TradeGate (TG)&lt;/li&gt; &lt;li&gt;Zertifikate (SC)&lt;/li&gt; &lt;li&gt;Index&lt;/li&gt; &lt;li&gt;Warrant&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;       &lt;td&gt;End-of-day&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;
 
 ### Example
 
@@ -4956,7 +5180,7 @@ Name | Type | Description  | Notes
 
 ## symbolSearch
 
-> SymbolLookup symbolSearch(q)
+> SymbolLookup symbolSearch(q, opts)
 
 Symbol Lookup
 
@@ -4975,7 +5199,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new finnhub.DefaultApi();
 let q = "q_example"; // String | Query text can be symbol, name, isin, or cusip.
-apiInstance.symbolSearch(q, (error, data, response) => {
+let opts = {
+  'exchange': "exchange_example" // String | Exchange limit.
+};
+apiInstance.symbolSearch(q, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4990,6 +5217,7 @@ apiInstance.symbolSearch(q, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **q** | **String**| Query text can be symbol, name, isin, or cusip. | 
+ **exchange** | **String**| Exchange limit. | [optional] 
 
 ### Return type
 

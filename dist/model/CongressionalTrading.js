@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CongressionalTrading model module.
  * @module model/CongressionalTrading
- * @version 1.2.18
+ * @version 1.2.19
  */
 var CongressionalTrading = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import ETFCountryExposureData from './ETFCountryExposureData';
 /**
  * The ETFsCountryExposure model module.
  * @module model/ETFsCountryExposure
- * @version 1.2.18
+ * @version 1.2.19
  */
 class ETFsCountryExposure {
     /**

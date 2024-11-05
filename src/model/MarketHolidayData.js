@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MarketHolidayData model module.
  * @module model/MarketHolidayData
- * @version 1.2.18
+ * @version 1.2.19
  */
 class MarketHolidayData {
     /**

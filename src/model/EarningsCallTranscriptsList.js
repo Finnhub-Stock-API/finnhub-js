@@ -17,7 +17,7 @@ import StockTranscripts from './StockTranscripts';
 /**
  * The EarningsCallTranscriptsList model module.
  * @module model/EarningsCallTranscriptsList
- * @version 1.2.18
+ * @version 1.2.19
  */
 class EarningsCallTranscriptsList {
     /**

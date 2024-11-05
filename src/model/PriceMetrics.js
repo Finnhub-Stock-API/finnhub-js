@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PriceMetrics model module.
  * @module model/PriceMetrics
- * @version 1.2.18
+ * @version 1.2.19
  */
 class PriceMetrics {
     /**

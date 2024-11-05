@@ -17,7 +17,7 @@ import EbitdaEstimatesInfo from './EbitdaEstimatesInfo';
 /**
  * The EbitdaEstimates model module.
  * @module model/EbitdaEstimates
- * @version 1.2.18
+ * @version 1.2.19
  */
 class EbitdaEstimates {
     /**

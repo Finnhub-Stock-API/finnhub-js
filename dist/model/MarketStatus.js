@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MarketStatus model module.
  * @module model/MarketStatus
- * @version 1.2.18
+ * @version 1.2.19
  */
 var MarketStatus = /*#__PURE__*/function () {
   /**
@@ -99,7 +99,7 @@ MarketStatus.prototype['exchange'] = undefined;
 
 MarketStatus.prototype['timezone'] = undefined;
 /**
- * Market session.
+ * Market session. Can be 1 of the following values: <code>pre-market</code>,<code>regular</code>,<code>post-market</code> or <code>null</code> if the market is closed.
  * @member {String} session
  */
 

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **gsubind** | **String** | Sub-industry. | [optional] 
 **isin** | **String** | ISIN number. | [optional] 
 **lei** | **String** | LEI number. | [optional] 
+**irUrl** | **String** | Investor relations website. | [optional] 
 **naicsNationalIndustry** | **String** | NAICS national industry. | [optional] 
 **naics** | **String** | NAICS industry. | [optional] 
 **naicsSector** | **String** | NAICS sector. | [optional] 

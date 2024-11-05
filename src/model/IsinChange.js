@@ -17,7 +17,7 @@ import IsinChangeInfo from './IsinChangeInfo';
 /**
  * The IsinChange model module.
  * @module model/IsinChange
- * @version 1.2.18
+ * @version 1.2.19
  */
 class IsinChange {
     /**

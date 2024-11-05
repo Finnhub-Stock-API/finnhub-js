@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _AggregateIndicators = _interopRequireDefault(require("../model/AggregateIndicators"));
 
+var _AirlinePriceIndexData = _interopRequireDefault(require("../model/AirlinePriceIndexData"));
+
 var _BasicFinancials = _interopRequireDefault(require("../model/BasicFinancials"));
 
 var _BondCandles = _interopRequireDefault(require("../model/BondCandles"));
@@ -90,6 +92,12 @@ var _ForexSymbol = _interopRequireDefault(require("../model/ForexSymbol"));
 var _Forexrates = _interopRequireDefault(require("../model/Forexrates"));
 
 var _FundOwnership = _interopRequireDefault(require("../model/FundOwnership"));
+
+var _HistoricalCompanyESG = _interopRequireDefault(require("../model/HistoricalCompanyESG"));
+
+var _HistoricalEmployeeCount = _interopRequireDefault(require("../model/HistoricalEmployeeCount"));
+
+var _HistoricalMarketCapData = _interopRequireDefault(require("../model/HistoricalMarketCapData"));
 
 var _HistoricalNBBO = _interopRequireDefault(require("../model/HistoricalNBBO"));
 
@@ -200,7 +208,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.2.18
+* @version 1.2.19
 */
 var DefaultApi = /*#__PURE__*/function () {
   /**
@@ -259,6 +267,57 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _AggregateIndicators["default"];
       return this.apiClient.callApi('/scan/technical-indicator', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the airlinePriceIndex operation.
+     * @callback module:api/DefaultApi~airlinePriceIndexCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AirlinePriceIndexData} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Airline Price Index
+     * <p>The Flight Ticket Price Index API provides comprehensive data on airline ticket prices, including the average daily ticket price and its percentage change (price index). This data, collected weekly and projected two weeks ahead, aggregates daily prices and indexes from the 50 busiest and largest airports across the USA. The dataset includes detailed information on airlines, dates, and average ticket prices, offering valuable insights for market analysis and pricing strategies.</p><p>The price index is calculated as percentage change of average daily ticket price from the previous weekly reading. Raw ticket prices data is available for Enterprise users. <a href=\"mailto:support@finnhub.io\">Contact us</a> to inquire about the raw price data.</p>
+     * @param {String} airline Filter data by airline. Accepted values: <code>united</code>,<code>delta</code>,<code>american_airlines</code>,<code>southwest</code>,<code>southern_airways_express</code>,<code>alaska_airlines</code>,<code>frontier_airlines</code>,<code>jetblue_airways</code>,<code>spirit_airlines</code>,<code>sun_country_airlines</code>,<code>breeze_airways</code>,<code>hawaiian_airlines</code>
+     * @param {Date} from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>.
+     * @param {module:api/DefaultApi~airlinePriceIndexCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AirlinePriceIndexData}
+     */
+
+  }, {
+    key: "airlinePriceIndex",
+    value: function airlinePriceIndex(airline, from, to, callback) {
+      var postBody = null; // verify the required parameter 'airline' is set
+
+      if (airline === undefined || airline === null) {
+        throw new Error("Missing the required parameter 'airline' when calling airlinePriceIndex");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling airlinePriceIndex");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling airlinePriceIndex");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'airline': airline,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _AirlinePriceIndexData["default"];
+      return this.apiClient.callApi('/airline/price-index', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the bondPrice operation.
@@ -713,7 +772,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Company ESG Scores
-     * <p>This endpoint provides ESG scores and important indicators for 7000+ global companies. The data is collected through company's public ESG disclosure and public sources.</p><p>Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.</p><p>Historical ESG data is available for Enterprise users. <a href=\"mailto:support@finnhub.io\">Contact us</a> to learn more.</p>
+     * <p>This endpoint provides the latest ESG scores and important indicators for 7000+ global companies. The data is collected through company's public ESG disclosure and public sources.</p><p>Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.</p>
      * @param {String} symbol Symbol.
      * @param {module:api/DefaultApi~companyEsgScoreCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompanyESG}
@@ -776,6 +835,43 @@ var DefaultApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _CompanyExecutive["default"];
       return this.apiClient.callApi('/stock/executive', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the companyHistoricalEsgScore operation.
+     * @callback module:api/DefaultApi~companyHistoricalEsgScoreCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/HistoricalCompanyESG} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Historical ESG Scores
+     * <p>This endpoint provides historical ESG scores and important indicators for 7000+ global companies. The data is collected through company's public ESG disclosure and public sources.</p><p>Our ESG scoring models takes into account more than 150 different inputs to calculate the level of ESG risks and how well a company is managing them. A higher score means lower ESG risk or better ESG management. ESG scores are in the the range of 0-100. Some key indicators might contain letter-grade score from C- to A+ with C- is the lowest score and A+ is the highest score.</p>
+     * @param {String} symbol Symbol.
+     * @param {module:api/DefaultApi~companyHistoricalEsgScoreCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/HistoricalCompanyESG}
+     */
+
+  }, {
+    key: "companyHistoricalEsgScore",
+    value: function companyHistoricalEsgScore(symbol, callback) {
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling companyHistoricalEsgScore");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _HistoricalCompanyESG["default"];
+      return this.apiClient.callApi('/stock/historical-esg', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the companyNews operation.
@@ -1591,8 +1687,8 @@ var DefaultApi = /*#__PURE__*/function () {
      * @param {String} opts.cik CIK.
      * @param {String} opts.accessNumber Access number of a specific report you want to retrieve data from.
      * @param {String} opts.form Filter by form. You can use this value <code>NT 10-K</code> to find non-timely filings for a company.
-     * @param {Date} opts.from From date: 2020-03-15.
-     * @param {Date} opts.to To date: 2020-03-16.
+     * @param {Date} opts.from From date: 2023-03-15.
+     * @param {Date} opts.to To date: 2023-03-16.
      * @param {module:api/DefaultApi~filingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Filing>}
      */
@@ -1953,6 +2049,108 @@ var DefaultApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/stock/fund-ownership', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the historicalEmployeeCount operation.
+     * @callback module:api/DefaultApi~historicalEmployeeCountCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/HistoricalEmployeeCount} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Historical Employee Count
+     * Get historical employee count for global companies.
+     * @param {String} symbol Company symbol.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>.
+     * @param {module:api/DefaultApi~historicalEmployeeCountCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/HistoricalEmployeeCount}
+     */
+
+  }, {
+    key: "historicalEmployeeCount",
+    value: function historicalEmployeeCount(symbol, from, to, callback) {
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling historicalEmployeeCount");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling historicalEmployeeCount");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling historicalEmployeeCount");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _HistoricalEmployeeCount["default"];
+      return this.apiClient.callApi('/stock/historical-employee-count', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the historicalMarketCap operation.
+     * @callback module:api/DefaultApi~historicalMarketCapCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/HistoricalMarketCapData} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Historical Market Cap
+     * Get historical market cap data for global companies.
+     * @param {String} symbol Company symbol.
+     * @param {Date} from From date <code>YYYY-MM-DD</code>.
+     * @param {Date} to To date <code>YYYY-MM-DD</code>.
+     * @param {module:api/DefaultApi~historicalMarketCapCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/HistoricalMarketCapData}
+     */
+
+  }, {
+    key: "historicalMarketCap",
+    value: function historicalMarketCap(symbol, from, to, callback) {
+      var postBody = null; // verify the required parameter 'symbol' is set
+
+      if (symbol === undefined || symbol === null) {
+        throw new Error("Missing the required parameter 'symbol' when calling historicalMarketCap");
+      } // verify the required parameter 'from' is set
+
+
+      if (from === undefined || from === null) {
+        throw new Error("Missing the required parameter 'from' when calling historicalMarketCap");
+      } // verify the required parameter 'to' is set
+
+
+      if (to === undefined || to === null) {
+        throw new Error("Missing the required parameter 'to' when calling historicalMarketCap");
+      }
+
+      var pathParams = {};
+      var queryParams = {
+        'symbol': symbol,
+        'from': from,
+        'to': to
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _HistoricalMarketCapData["default"];
+      return this.apiClient.callApi('/stock/historical-market-cap', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the indicesConstituents operation.
      * @callback module:api/DefaultApi~indicesConstituentsCallback
      * @param {String} error Error message, if any.
@@ -2087,7 +2285,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Insider Transactions
-     * Company insider transactions data sourced from <code>Form 3,4,5</code>, SEDI and relevant companies' filings. This endpoint covers US, Canada, Australia, and selected EU companies. Limit to 100 transactions per API call.
+     * Company insider transactions data sourced from <code>Form 3,4,5</code>, SEDI and relevant companies' filings. This endpoint covers US, UK, Canada, Australia, India, and all major EU markets. Limit to 100 transactions per API call.
      * @param {String} symbol Symbol of the company: AAPL. Leave this param blank to get the latest transactions.
      * @param {Object} opts Optional parameters
      * @param {Date} opts.from From date: 2020-03-15.
@@ -2273,10 +2471,12 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * International Filings
-     * List filings for international companies. Limit to 250 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
+     * List filings for international companies. Limit to 500 documents at a time. These are the documents we use to source our fundamental data. Only support SEDAR and UK Companies House for normal usage. Enterprise clients who need access to the full filings for global markets should contact us for the access.
      * @param {Object} opts Optional parameters
      * @param {String} opts.symbol Symbol. Leave empty to list latest filings.
      * @param {String} opts.country Filter by country using country's 2-letter code.
+     * @param {Date} opts.from From date: 2023-01-15.
+     * @param {Date} opts.to To date: 2023-12-16.
      * @param {module:api/DefaultApi~internationalFilingsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InternationalFiling>}
      */
@@ -2289,7 +2489,9 @@ var DefaultApi = /*#__PURE__*/function () {
       var pathParams = {};
       var queryParams = {
         'symbol': opts['symbol'],
-        'country': opts['country']
+        'country': opts['country'],
+        'from': opts['from'],
+        'to': opts['to']
       };
       var headerParams = {};
       var formParams = {};
@@ -3628,7 +3830,7 @@ var DefaultApi = /*#__PURE__*/function () {
 
     /**
      * Tick Data
-     * <p>Get historical tick data for global exchanges. You can send the request directly to our tick server at <a href=\"https://tick.finnhub.io/\">https://tick.finnhub.io/</a> with the same path and parameters or get redirected there if you call our main server.</p><p>For more historical tick data, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
+     * <p>Get historical tick data for global exchanges.</p><p>For more historical tick data, you can visit our bulk download page in the Dashboard <a target=\"_blank\" href=\"/dashboard/download\",>here</a> to speed up the download process.</p><table class=\"table table-hover\">   <thead>     <tr>       <th>Exchange</th>       <th>Segment</th>       <th>Delay</th>     </tr>   </thead>   <tbody>     <tr>       <td class=\"text-blue\">US CTA/UTP</th>       <td>Full SIP</td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">TSX</th>       <td><ul><li>TSX</li><li>TSX Venture</li><li>Index</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">LSE</th>       <td><ul><li>London Stock Exchange (L)</li><li>LSE International (L)</li><li>LSE European (L)</li></ul></td>       <td>15 minute</td>     </tr>     <tr>       <td class=\"text-blue\">Euronext</th>       <td><ul> <li>Euronext Paris (PA)</li> <li>Euronext Amsterdam (AS)</li> <li>Euronext Lisbon (LS)</li> <li>Euronext Brussels (BR)</li> <li>Euronext Oslo (OL)</li> <li>Euronext London (LN)</li> <li>Euronext Dublin (IR)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>     <tr>       <td class=\"text-blue\">Deutsche Börse</th>       <td><ul> <li>Frankfurt (F)</li> <li>Xetra (DE)</li> <li>Duesseldorf (DU)</li> <li>Hamburg (HM)</li> <li>Berlin (BE)</li> <li>Hanover (HA)</li> <li>Stoxx (SX)</li> <li>TradeGate (TG)</li> <li>Zertifikate (SC)</li> <li>Index</li> <li>Warrant</li></ul></td>       <td>End-of-day</td>     </tr>   </tbody> </table>
      * @param {String} symbol Symbol.
      * @param {Date} date Date: 2020-04-02.
      * @param {Number} limit Limit number of ticks returned. Maximum value: <code>25000</code>
@@ -3966,13 +4168,16 @@ var DefaultApi = /*#__PURE__*/function () {
      * Symbol Lookup
      * Search for best-matching symbols based on your query. You can input anything from symbol, security's name to ISIN and Cusip.
      * @param {String} q Query text can be symbol, name, isin, or cusip.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.exchange Exchange limit.
      * @param {module:api/DefaultApi~symbolSearchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SymbolLookup}
      */
 
   }, {
     key: "symbolSearch",
-    value: function symbolSearch(q, callback) {
+    value: function symbolSearch(q, opts, callback) {
+      opts = opts || {};
       var postBody = null; // verify the required parameter 'q' is set
 
       if (q === undefined || q === null) {
@@ -3981,7 +4186,8 @@ var DefaultApi = /*#__PURE__*/function () {
 
       var pathParams = {};
       var queryParams = {
-        'q': q
+        'q': q,
+        'exchange': opts['exchange']
       };
       var headerParams = {};
       var formParams = {};

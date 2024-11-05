@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BondCandles model module.
  * @module model/BondCandles
- * @version 1.2.18
+ * @version 1.2.19
  */
 class BondCandles {
     /**

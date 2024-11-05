@@ -17,7 +17,7 @@ import LobbyingData from './LobbyingData';
 /**
  * The LobbyingResult model module.
  * @module model/LobbyingResult
- * @version 1.2.18
+ * @version 1.2.19
  */
 class LobbyingResult {
     /**

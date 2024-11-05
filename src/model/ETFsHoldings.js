@@ -17,7 +17,7 @@ import ETFHoldingsData from './ETFHoldingsData';
 /**
  * The ETFsHoldings model module.
  * @module model/ETFsHoldings
- * @version 1.2.18
+ * @version 1.2.19
  */
 class ETFsHoldings {
     /**

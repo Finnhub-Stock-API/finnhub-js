@@ -17,7 +17,7 @@ import InstitutionalProfileInfo from './InstitutionalProfileInfo';
 /**
  * The InstitutionalProfile model module.
  * @module model/InstitutionalProfile
- * @version 1.2.18
+ * @version 1.2.19
  */
 class InstitutionalProfile {
     /**

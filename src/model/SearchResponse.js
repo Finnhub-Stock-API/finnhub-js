@@ -17,7 +17,7 @@ import FilingResponse from './FilingResponse';
 /**
  * The SearchResponse model module.
  * @module model/SearchResponse
- * @version 1.2.18
+ * @version 1.2.19
  */
 class SearchResponse {
     /**

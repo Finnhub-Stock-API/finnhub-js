@@ -14,6 +14,8 @@
 
 import ApiClient from './ApiClient';
 import AggregateIndicators from './model/AggregateIndicators';
+import AirlinePriceIndex from './model/AirlinePriceIndex';
+import AirlinePriceIndexData from './model/AirlinePriceIndexData';
 import BasicFinancials from './model/BasicFinancials';
 import BondCandles from './model/BondCandles';
 import BondProfile from './model/BondProfile';
@@ -23,6 +25,7 @@ import BondYieldCurveInfo from './model/BondYieldCurveInfo';
 import BreakdownItem from './model/BreakdownItem';
 import Company from './model/Company';
 import CompanyESG from './model/CompanyESG';
+import CompanyESG2 from './model/CompanyESG2';
 import CompanyEarningsQualityScore from './model/CompanyEarningsQualityScore';
 import CompanyEarningsQualityScoreData from './model/CompanyEarningsQualityScoreData';
 import CompanyExecutive from './model/CompanyExecutive';
@@ -66,6 +69,7 @@ import EconomicCode from './model/EconomicCode';
 import EconomicData from './model/EconomicData';
 import EconomicDataInfo from './model/EconomicDataInfo';
 import EconomicEvent from './model/EconomicEvent';
+import EmployeeCount from './model/EmployeeCount';
 import ExcerptResponse from './model/ExcerptResponse';
 import FDAComitteeMeeting from './model/FDAComitteeMeeting';
 import Filing from './model/Filing';
@@ -78,6 +82,9 @@ import ForexSymbol from './model/ForexSymbol';
 import Forexrates from './model/Forexrates';
 import FundOwnership from './model/FundOwnership';
 import FundOwnershipInfo from './model/FundOwnershipInfo';
+import HistoricalCompanyESG from './model/HistoricalCompanyESG';
+import HistoricalEmployeeCount from './model/HistoricalEmployeeCount';
+import HistoricalMarketCapData from './model/HistoricalMarketCapData';
 import HistoricalNBBO from './model/HistoricalNBBO';
 import IPOCalendar from './model/IPOCalendar';
 import IPOEvent from './model/IPOEvent';
@@ -108,6 +115,7 @@ import KeyCustomersSuppliers from './model/KeyCustomersSuppliers';
 import LastBidAsk from './model/LastBidAsk';
 import LobbyingData from './model/LobbyingData';
 import LobbyingResult from './model/LobbyingResult';
+import MarketCapData from './model/MarketCapData';
 import MarketHoliday from './model/MarketHoliday';
 import MarketHolidayData from './model/MarketHolidayData';
 import MarketNews from './model/MarketNews';
@@ -201,7 +209,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.2.18
+* @version 1.2.19
 */
 export {
     /**
@@ -215,6 +223,18 @@ export {
      * @property {module:model/AggregateIndicators}
      */
     AggregateIndicators,
+
+    /**
+     * The AirlinePriceIndex model constructor.
+     * @property {module:model/AirlinePriceIndex}
+     */
+    AirlinePriceIndex,
+
+    /**
+     * The AirlinePriceIndexData model constructor.
+     * @property {module:model/AirlinePriceIndexData}
+     */
+    AirlinePriceIndexData,
 
     /**
      * The BasicFinancials model constructor.
@@ -269,6 +289,12 @@ export {
      * @property {module:model/CompanyESG}
      */
     CompanyESG,
+
+    /**
+     * The CompanyESG2 model constructor.
+     * @property {module:model/CompanyESG2}
+     */
+    CompanyESG2,
 
     /**
      * The CompanyEarningsQualityScore model constructor.
@@ -529,6 +555,12 @@ export {
     EconomicEvent,
 
     /**
+     * The EmployeeCount model constructor.
+     * @property {module:model/EmployeeCount}
+     */
+    EmployeeCount,
+
+    /**
      * The ExcerptResponse model constructor.
      * @property {module:model/ExcerptResponse}
      */
@@ -599,6 +631,24 @@ export {
      * @property {module:model/FundOwnershipInfo}
      */
     FundOwnershipInfo,
+
+    /**
+     * The HistoricalCompanyESG model constructor.
+     * @property {module:model/HistoricalCompanyESG}
+     */
+    HistoricalCompanyESG,
+
+    /**
+     * The HistoricalEmployeeCount model constructor.
+     * @property {module:model/HistoricalEmployeeCount}
+     */
+    HistoricalEmployeeCount,
+
+    /**
+     * The HistoricalMarketCapData model constructor.
+     * @property {module:model/HistoricalMarketCapData}
+     */
+    HistoricalMarketCapData,
 
     /**
      * The HistoricalNBBO model constructor.
@@ -779,6 +829,12 @@ export {
      * @property {module:model/LobbyingResult}
      */
     LobbyingResult,
+
+    /**
+     * The MarketCapData model constructor.
+     * @property {module:model/MarketCapData}
+     */
+    MarketCapData,
 
     /**
      * The MarketHoliday model constructor.

@@ -17,7 +17,7 @@ import BondYieldCurveInfo from './BondYieldCurveInfo';
 /**
  * The BondYieldCurve model module.
  * @module model/BondYieldCurve
- * @version 1.2.18
+ * @version 1.2.19
  */
 class BondYieldCurve {
     /**

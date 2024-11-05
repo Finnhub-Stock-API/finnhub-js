@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InvestmentThemePortfolio model module.
  * @module model/InvestmentThemePortfolio
- * @version 1.2.18
+ * @version 1.2.19
  */
 var InvestmentThemePortfolio = /*#__PURE__*/function () {
   /**

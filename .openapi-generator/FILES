@@ -2,6 +2,8 @@
 .gitignore
 .travis.yml
 docs/AggregateIndicators.md
+docs/AirlinePriceIndex.md
+docs/AirlinePriceIndexData.md
 docs/BasicFinancials.md
 docs/BondCandles.md
 docs/BondProfile.md
@@ -11,6 +13,7 @@ docs/BondYieldCurveInfo.md
 docs/BreakdownItem.md
 docs/Company.md
 docs/CompanyESG.md
+docs/CompanyESG2.md
 docs/CompanyEarningsQualityScore.md
 docs/CompanyEarningsQualityScoreData.md
 docs/CompanyExecutive.md
@@ -55,6 +58,7 @@ docs/EconomicCode.md
 docs/EconomicData.md
 docs/EconomicDataInfo.md
 docs/EconomicEvent.md
+docs/EmployeeCount.md
 docs/ExcerptResponse.md
 docs/FDAComitteeMeeting.md
 docs/Filing.md
@@ -67,6 +71,9 @@ docs/ForexSymbol.md
 docs/Forexrates.md
 docs/FundOwnership.md
 docs/FundOwnershipInfo.md
+docs/HistoricalCompanyESG.md
+docs/HistoricalEmployeeCount.md
+docs/HistoricalMarketCapData.md
 docs/HistoricalNBBO.md
 docs/IPOCalendar.md
 docs/IPOEvent.md
@@ -97,6 +104,7 @@ docs/KeyCustomersSuppliers.md
 docs/LastBidAsk.md
 docs/LobbyingData.md
 docs/LobbyingResult.md
+docs/MarketCapData.md
 docs/MarketHoliday.md
 docs/MarketHolidayData.md
 docs/MarketNews.md
@@ -165,6 +173,8 @@ src/ApiClient.js
 src/api/DefaultApi.js
 src/index.js
 src/model/AggregateIndicators.js
+src/model/AirlinePriceIndex.js
+src/model/AirlinePriceIndexData.js
 src/model/BasicFinancials.js
 src/model/BondCandles.js
 src/model/BondProfile.js
@@ -174,6 +184,7 @@ src/model/BondYieldCurveInfo.js
 src/model/BreakdownItem.js
 src/model/Company.js
 src/model/CompanyESG.js
+src/model/CompanyESG2.js
 src/model/CompanyEarningsQualityScore.js
 src/model/CompanyEarningsQualityScoreData.js
 src/model/CompanyExecutive.js
@@ -217,6 +228,7 @@ src/model/EconomicCode.js
 src/model/EconomicData.js
 src/model/EconomicDataInfo.js
 src/model/EconomicEvent.js
+src/model/EmployeeCount.js
 src/model/ExcerptResponse.js
 src/model/FDAComitteeMeeting.js
 src/model/Filing.js
@@ -229,6 +241,9 @@ src/model/ForexSymbol.js
 src/model/Forexrates.js
 src/model/FundOwnership.js
 src/model/FundOwnershipInfo.js
+src/model/HistoricalCompanyESG.js
+src/model/HistoricalEmployeeCount.js
+src/model/HistoricalMarketCapData.js
 src/model/HistoricalNBBO.js
 src/model/IPOCalendar.js
 src/model/IPOEvent.js
@@ -259,6 +274,7 @@ src/model/KeyCustomersSuppliers.js
 src/model/LastBidAsk.js
 src/model/LobbyingData.js
 src/model/LobbyingResult.js
+src/model/MarketCapData.js
 src/model/MarketHoliday.js
 src/model/MarketHolidayData.js
 src/model/MarketNews.js
@@ -320,8 +336,11 @@ src/model/UsptoPatent.js
 src/model/UsptoPatentResult.js
 src/model/VisaApplication.js
 src/model/VisaApplicationResult.js
-test/model/IndicesConstituentsBreakdown.spec.js
-test/model/MarketHoliday.spec.js
-test/model/MarketHolidayData.spec.js
-test/model/MarketStatus.spec.js
-test/model/SentimentContent.spec.js
+test/model/AirlinePriceIndex.spec.js
+test/model/AirlinePriceIndexData.spec.js
+test/model/CompanyESG2.spec.js
+test/model/EmployeeCount.spec.js
+test/model/HistoricalCompanyESG.spec.js
+test/model/HistoricalEmployeeCount.spec.js
+test/model/HistoricalMarketCapData.spec.js
+test/model/MarketCapData.spec.js
