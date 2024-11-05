@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FilingResponse model module.
  * @module model/FilingResponse
- * @version 1.2.18
+ * @version 1.2.19
  */
 var FilingResponse = /*#__PURE__*/function () {
   /**
@@ -151,7 +151,7 @@ FilingResponse.prototype['name'] = undefined;
 
 FilingResponse.prototype['acceptanceDate'] = undefined;
 /**
- * Date the filing is make available to the public
+ * Date the filing is made available to the public
  * @member {String} filedDate
  */
 

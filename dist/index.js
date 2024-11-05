@@ -15,6 +15,18 @@ Object.defineProperty(exports, "AggregateIndicators", {
     return _AggregateIndicators["default"];
   }
 });
+Object.defineProperty(exports, "AirlinePriceIndex", {
+  enumerable: true,
+  get: function get() {
+    return _AirlinePriceIndex["default"];
+  }
+});
+Object.defineProperty(exports, "AirlinePriceIndexData", {
+  enumerable: true,
+  get: function get() {
+    return _AirlinePriceIndexData["default"];
+  }
+});
 Object.defineProperty(exports, "BasicFinancials", {
   enumerable: true,
   get: function get() {
@@ -67,6 +79,12 @@ Object.defineProperty(exports, "CompanyESG", {
   enumerable: true,
   get: function get() {
     return _CompanyESG["default"];
+  }
+});
+Object.defineProperty(exports, "CompanyESG2", {
+  enumerable: true,
+  get: function get() {
+    return _CompanyESG2["default"];
   }
 });
 Object.defineProperty(exports, "CompanyEarningsQualityScore", {
@@ -327,6 +345,12 @@ Object.defineProperty(exports, "EconomicEvent", {
     return _EconomicEvent["default"];
   }
 });
+Object.defineProperty(exports, "EmployeeCount", {
+  enumerable: true,
+  get: function get() {
+    return _EmployeeCount["default"];
+  }
+});
 Object.defineProperty(exports, "ExcerptResponse", {
   enumerable: true,
   get: function get() {
@@ -397,6 +421,24 @@ Object.defineProperty(exports, "FundOwnershipInfo", {
   enumerable: true,
   get: function get() {
     return _FundOwnershipInfo["default"];
+  }
+});
+Object.defineProperty(exports, "HistoricalCompanyESG", {
+  enumerable: true,
+  get: function get() {
+    return _HistoricalCompanyESG["default"];
+  }
+});
+Object.defineProperty(exports, "HistoricalEmployeeCount", {
+  enumerable: true,
+  get: function get() {
+    return _HistoricalEmployeeCount["default"];
+  }
+});
+Object.defineProperty(exports, "HistoricalMarketCapData", {
+  enumerable: true,
+  get: function get() {
+    return _HistoricalMarketCapData["default"];
   }
 });
 Object.defineProperty(exports, "HistoricalNBBO", {
@@ -577,6 +619,12 @@ Object.defineProperty(exports, "LobbyingResult", {
   enumerable: true,
   get: function get() {
     return _LobbyingResult["default"];
+  }
+});
+Object.defineProperty(exports, "MarketCapData", {
+  enumerable: true,
+  get: function get() {
+    return _MarketCapData["default"];
   }
 });
 Object.defineProperty(exports, "MarketHoliday", {
@@ -956,6 +1004,10 @@ var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
 var _AggregateIndicators = _interopRequireDefault(require("./model/AggregateIndicators"));
 
+var _AirlinePriceIndex = _interopRequireDefault(require("./model/AirlinePriceIndex"));
+
+var _AirlinePriceIndexData = _interopRequireDefault(require("./model/AirlinePriceIndexData"));
+
 var _BasicFinancials = _interopRequireDefault(require("./model/BasicFinancials"));
 
 var _BondCandles = _interopRequireDefault(require("./model/BondCandles"));
@@ -973,6 +1025,8 @@ var _BreakdownItem = _interopRequireDefault(require("./model/BreakdownItem"));
 var _Company = _interopRequireDefault(require("./model/Company"));
 
 var _CompanyESG = _interopRequireDefault(require("./model/CompanyESG"));
+
+var _CompanyESG2 = _interopRequireDefault(require("./model/CompanyESG2"));
 
 var _CompanyEarningsQualityScore = _interopRequireDefault(require("./model/CompanyEarningsQualityScore"));
 
@@ -1060,6 +1114,8 @@ var _EconomicDataInfo = _interopRequireDefault(require("./model/EconomicDataInfo
 
 var _EconomicEvent = _interopRequireDefault(require("./model/EconomicEvent"));
 
+var _EmployeeCount = _interopRequireDefault(require("./model/EmployeeCount"));
+
 var _ExcerptResponse = _interopRequireDefault(require("./model/ExcerptResponse"));
 
 var _FDAComitteeMeeting = _interopRequireDefault(require("./model/FDAComitteeMeeting"));
@@ -1083,6 +1139,12 @@ var _Forexrates = _interopRequireDefault(require("./model/Forexrates"));
 var _FundOwnership = _interopRequireDefault(require("./model/FundOwnership"));
 
 var _FundOwnershipInfo = _interopRequireDefault(require("./model/FundOwnershipInfo"));
+
+var _HistoricalCompanyESG = _interopRequireDefault(require("./model/HistoricalCompanyESG"));
+
+var _HistoricalEmployeeCount = _interopRequireDefault(require("./model/HistoricalEmployeeCount"));
+
+var _HistoricalMarketCapData = _interopRequireDefault(require("./model/HistoricalMarketCapData"));
 
 var _HistoricalNBBO = _interopRequireDefault(require("./model/HistoricalNBBO"));
 
@@ -1143,6 +1205,8 @@ var _LastBidAsk = _interopRequireDefault(require("./model/LastBidAsk"));
 var _LobbyingData = _interopRequireDefault(require("./model/LobbyingData"));
 
 var _LobbyingResult = _interopRequireDefault(require("./model/LobbyingResult"));
+
+var _MarketCapData = _interopRequireDefault(require("./model/MarketCapData"));
 
 var _MarketHoliday = _interopRequireDefault(require("./model/MarketHoliday"));
 

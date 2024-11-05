@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LobbyingResult model module.
  * @module model/LobbyingResult
- * @version 1.2.18
+ * @version 1.2.19
  */
 var LobbyingResult = /*#__PURE__*/function () {
   /**

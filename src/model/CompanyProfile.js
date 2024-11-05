@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompanyProfile model module.
  * @module model/CompanyProfile
- * @version 1.2.18
+ * @version 1.2.19
  */
 class CompanyProfile {
     /**
@@ -97,6 +97,9 @@ class CompanyProfile {
             }
             if (data.hasOwnProperty('lei')) {
                 obj['lei'] = ApiClient.convertToType(data['lei'], 'String');
+            }
+            if (data.hasOwnProperty('irUrl')) {
+                obj['irUrl'] = ApiClient.convertToType(data['irUrl'], 'String');
             }
             if (data.hasOwnProperty('naicsNationalIndustry')) {
                 obj['naicsNationalIndustry'] = ApiClient.convertToType(data['naicsNationalIndustry'], 'String');
@@ -251,6 +254,12 @@ CompanyProfile.prototype['isin'] = undefined;
  * @member {String} lei
  */
 CompanyProfile.prototype['lei'] = undefined;
+
+/**
+ * Investor relations website.
+ * @member {String} irUrl
+ */
+CompanyProfile.prototype['irUrl'] = undefined;
 
 /**
  * NAICS national industry.

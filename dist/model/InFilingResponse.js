@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InFilingResponse model module.
  * @module model/InFilingResponse
- * @version 1.2.18
+ * @version 1.2.19
  */
 var InFilingResponse = /*#__PURE__*/function () {
   /**

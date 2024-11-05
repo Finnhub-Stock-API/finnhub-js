@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CongressionalTransaction model module.
  * @module model/CongressionalTransaction
- * @version 1.2.18
+ * @version 1.2.19
  */
 var CongressionalTransaction = /*#__PURE__*/function () {
   /**

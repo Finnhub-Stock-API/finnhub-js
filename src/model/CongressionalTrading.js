@@ -17,7 +17,7 @@ import CongressionalTransaction from './CongressionalTransaction';
 /**
  * The CongressionalTrading model module.
  * @module model/CongressionalTrading
- * @version 1.2.18
+ * @version 1.2.19
  */
 class CongressionalTrading {
     /**

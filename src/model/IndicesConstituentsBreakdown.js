@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IndicesConstituentsBreakdown model module.
  * @module model/IndicesConstituentsBreakdown
- * @version 1.2.18
+ * @version 1.2.19
  */
 class IndicesConstituentsBreakdown {
     /**

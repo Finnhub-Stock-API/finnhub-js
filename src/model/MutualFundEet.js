@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualFundEet model module.
  * @module model/MutualFundEet
- * @version 1.2.18
+ * @version 1.2.19
  */
 class MutualFundEet {
     /**

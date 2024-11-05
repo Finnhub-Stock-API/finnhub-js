@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstitutionalPortfolioGroup model module.
  * @module model/InstitutionalPortfolioGroup
- * @version 1.2.18
+ * @version 1.2.19
  */
 var InstitutionalPortfolioGroup = /*#__PURE__*/function () {
   /**

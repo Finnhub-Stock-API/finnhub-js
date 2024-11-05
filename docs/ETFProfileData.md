@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **domicile** | **String** | ETF domicile. | [optional] 
 **inceptionDate** | **Date** | Inception date. | [optional] 
 **website** | **String** | ETF&#39;s website. | [optional] 
+**logo** | **String** | Logo. | [optional] 
 **isin** | **String** | ISIN. | [optional] 
 **cusip** | **String** | CUSIP. | [optional] 
 **priceToEarnings** | **Number** | P/E. | [optional] 

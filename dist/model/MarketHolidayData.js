@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MarketHolidayData model module.
  * @module model/MarketHolidayData
- * @version 1.2.18
+ * @version 1.2.19
  */
 var MarketHolidayData = /*#__PURE__*/function () {
   /**

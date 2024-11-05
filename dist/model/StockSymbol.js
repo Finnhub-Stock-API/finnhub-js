@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StockSymbol model module.
  * @module model/StockSymbol
- * @version 1.2.18
+ * @version 1.2.19
  */
 var StockSymbol = /*#__PURE__*/function () {
   /**

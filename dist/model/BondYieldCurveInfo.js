@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BondYieldCurveInfo model module.
  * @module model/BondYieldCurveInfo
- * @version 1.2.18
+ * @version 1.2.19
  */
 var BondYieldCurveInfo = /*#__PURE__*/function () {
   /**

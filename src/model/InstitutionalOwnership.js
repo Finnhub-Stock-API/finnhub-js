@@ -17,7 +17,7 @@ import InstitutionalOwnershipGroup from './InstitutionalOwnershipGroup';
 /**
  * The InstitutionalOwnership model module.
  * @module model/InstitutionalOwnership
- * @version 1.2.18
+ * @version 1.2.19
  */
 class InstitutionalOwnership {
     /**

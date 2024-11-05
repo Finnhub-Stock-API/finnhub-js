@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **symbol** | **Object** | List of symbol associate with this filing | [optional] 
 **name** | **String** | Filer name | [optional] 
 **acceptanceDate** | **String** | Date the filing is submitted. | [optional] 
-**filedDate** | **String** | Date the filing is make available to the public | [optional] 
+**filedDate** | **String** | Date the filing is made available to the public | [optional] 
 **reportDate** | **String** | Date as which the filing is reported | [optional] 
 **form** | **String** | Filing Form | [optional] 
 **amend** | **Boolean** | Amendment | [optional] 

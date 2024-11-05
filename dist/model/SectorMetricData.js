@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SectorMetricData model module.
  * @module model/SectorMetricData
- * @version 1.2.18
+ * @version 1.2.19
  */
 var SectorMetricData = /*#__PURE__*/function () {
   /**

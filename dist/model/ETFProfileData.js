@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ETFProfileData model module.
  * @module model/ETFProfileData
- * @version 1.2.18
+ * @version 1.2.19
  */
 var ETFProfileData = /*#__PURE__*/function () {
   /**
@@ -100,6 +100,10 @@ var ETFProfileData = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('website')) {
           obj['website'] = _ApiClient["default"].convertToType(data['website'], 'String');
+        }
+
+        if (data.hasOwnProperty('logo')) {
+          obj['logo'] = _ApiClient["default"].convertToType(data['logo'], 'String');
         }
 
         if (data.hasOwnProperty('isin')) {
@@ -218,6 +222,12 @@ ETFProfileData.prototype['inceptionDate'] = undefined;
  */
 
 ETFProfileData.prototype['website'] = undefined;
+/**
+ * Logo.
+ * @member {String} logo
+ */
+
+ETFProfileData.prototype['logo'] = undefined;
 /**
  * ISIN.
  * @member {String} isin

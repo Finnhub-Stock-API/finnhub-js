@@ -17,7 +17,7 @@ import SentimentContent from './SentimentContent';
 /**
  * The SocialSentiment model module.
  * @module model/SocialSentiment
- * @version 1.2.18
+ * @version 1.2.19
  */
 class SocialSentiment {
     /**

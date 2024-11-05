@@ -17,7 +17,7 @@ import UsaSpending from './UsaSpending';
 /**
  * The UsaSpendingResult model module.
  * @module model/UsaSpendingResult
- * @version 1.2.18
+ * @version 1.2.19
  */
 class UsaSpendingResult {
     /**

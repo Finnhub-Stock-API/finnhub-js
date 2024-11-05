@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchFilter model module.
  * @module model/SearchFilter
- * @version 1.2.18
+ * @version 1.2.19
  */
 class SearchFilter {
     /**

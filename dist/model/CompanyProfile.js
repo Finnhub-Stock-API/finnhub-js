@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompanyProfile model module.
  * @module model/CompanyProfile
- * @version 1.2.18
+ * @version 1.2.19
  */
 var CompanyProfile = /*#__PURE__*/function () {
   /**
@@ -120,6 +120,10 @@ var CompanyProfile = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('lei')) {
           obj['lei'] = _ApiClient["default"].convertToType(data['lei'], 'String');
+        }
+
+        if (data.hasOwnProperty('irUrl')) {
+          obj['irUrl'] = _ApiClient["default"].convertToType(data['irUrl'], 'String');
         }
 
         if (data.hasOwnProperty('naicsNationalIndustry')) {
@@ -292,6 +296,12 @@ CompanyProfile.prototype['isin'] = undefined;
  */
 
 CompanyProfile.prototype['lei'] = undefined;
+/**
+ * Investor relations website.
+ * @member {String} irUrl
+ */
+
+CompanyProfile.prototype['irUrl'] = undefined;
 /**
  * NAICS national industry.
  * @member {String} naicsNationalIndustry

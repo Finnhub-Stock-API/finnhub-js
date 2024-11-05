@@ -17,7 +17,7 @@ import IndicesConstituentsBreakdown from './IndicesConstituentsBreakdown';
 /**
  * The IndicesConstituents model module.
  * @module model/IndicesConstituents
- * @version 1.2.18
+ * @version 1.2.19
  */
 class IndicesConstituents {
     /**

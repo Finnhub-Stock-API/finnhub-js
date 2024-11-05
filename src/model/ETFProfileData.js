@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ETFProfileData model module.
  * @module model/ETFProfileData
- * @version 1.2.18
+ * @version 1.2.19
  */
 class ETFProfileData {
     /**
@@ -82,6 +82,9 @@ class ETFProfileData {
             }
             if (data.hasOwnProperty('website')) {
                 obj['website'] = ApiClient.convertToType(data['website'], 'String');
+            }
+            if (data.hasOwnProperty('logo')) {
+                obj['logo'] = ApiClient.convertToType(data['logo'], 'String');
             }
             if (data.hasOwnProperty('isin')) {
                 obj['isin'] = ApiClient.convertToType(data['isin'], 'String');
@@ -188,6 +191,12 @@ ETFProfileData.prototype['inceptionDate'] = undefined;
  * @member {String} website
  */
 ETFProfileData.prototype['website'] = undefined;
+
+/**
+ * Logo.
+ * @member {String} logo
+ */
+ETFProfileData.prototype['logo'] = undefined;
 
 /**
  * ISIN.

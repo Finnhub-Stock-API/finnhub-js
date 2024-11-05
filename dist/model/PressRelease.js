@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PressRelease model module.
  * @module model/PressRelease
- * @version 1.2.18
+ * @version 1.2.19
  */
 var PressRelease = /*#__PURE__*/function () {
   /**

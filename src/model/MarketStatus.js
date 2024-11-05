@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MarketStatus model module.
  * @module model/MarketStatus
- * @version 1.2.18
+ * @version 1.2.19
  */
 class MarketStatus {
     /**
@@ -85,7 +85,7 @@ MarketStatus.prototype['exchange'] = undefined;
 MarketStatus.prototype['timezone'] = undefined;
 
 /**
- * Market session.
+ * Market session. Can be 1 of the following values: <code>pre-market</code>,<code>regular</code>,<code>post-market</code> or <code>null</code> if the market is closed.
  * @member {String} session
  */
 MarketStatus.prototype['session'] = undefined;

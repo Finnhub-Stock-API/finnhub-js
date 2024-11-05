@@ -17,7 +17,7 @@ import MarketHolidayData from './MarketHolidayData';
 /**
  * The MarketHoliday model module.
  * @module model/MarketHoliday
- * @version 1.2.18
+ * @version 1.2.19
  */
 class MarketHoliday {
     /**
