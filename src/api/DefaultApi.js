@@ -39,7 +39,6 @@ const BASE_URL = 'https://finnhub.io/api/v1';
 * @version 1.2.19
 */
 
-
 export default class DefaultApi {
 
     constructor(apiKey) {
