@@ -45,4 +45,4 @@ import DefaultApi from './api/DefaultApi.js';
 * @module index
 * @version 2.0.0
 */
-export default { DefaultApi};
+export { DefaultApi};
