@@ -273,7 +273,15 @@ export class DefaultApi {
     }
 
 
-    financials(symbol, statement, freq, preliminary=false, callback) {
+    financials(symbol, statement, freq, callbackOrPreliminary, callbackMaybe) {
+        let preliminary = false;
+        let callback;
+        if (typeof callbackOrPreliminary === 'function') {
+            callback = callbackOrPreliminary;
+        } else {
+            preliminary = callbackOrPreliminary === undefined ? false : callbackOrPreliminary;
+            callback = callbackMaybe;
+        }
         this._callApi('/stock/financials', { symbol, statement, freq, preliminary }, callback);
     }
 

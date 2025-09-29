@@ -420,9 +420,15 @@ var DefaultApi = exports.DefaultApi = /*#__PURE__*/function () {
     }
   }, {
     key: "financials",
-    value: function financials(symbol, statement, freq) {
-      var preliminary = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-      var callback = arguments.length > 4 ? arguments[4] : undefined;
+    value: function financials(symbol, statement, freq, callbackOrPreliminary, callbackMaybe) {
+      var preliminary = false;
+      var callback;
+      if (typeof callbackOrPreliminary === 'function') {
+        callback = callbackOrPreliminary;
+      } else {
+        preliminary = callbackOrPreliminary === undefined ? false : callbackOrPreliminary;
+        callback = callbackMaybe;
+      }
       this._callApi('/stock/financials', {
         symbol: symbol,
         statement: statement,
