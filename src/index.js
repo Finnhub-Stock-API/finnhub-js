@@ -273,8 +273,8 @@ export class DefaultApi {
     }
 
 
-    financials(symbol, statement, freq, callback) {
-        this._callApi('/stock/financials', { symbol, statement, freq }, callback);
+    financials(symbol, statement, freq, preliminary=false, callback) {
+        this._callApi('/stock/financials', { symbol, statement, freq, preliminary }, callback);
     }
 
 
@@ -562,6 +562,10 @@ export class DefaultApi {
 
     upgradeDowngrade(opts, callback) {
         this._callApi('/stock/upgrade-downgrade', { ...opts }, callback);
+    }
+
+    bankBranch(symbol, callback) {
+        this._callApi('/bank-branch', { symbol }, callback);
     }
 }
 

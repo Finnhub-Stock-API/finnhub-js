@@ -80,28 +80,26 @@ function simpleRequest(url, params, callback) {
   fetchFn(fullUrl).then(/*#__PURE__*/function () {
     var _ref5 = (0, _asyncToGenerator2["default"])(/*#__PURE__*/_regenerator["default"].mark(function _callee(res) {
       var text, data;
-      return _regenerator["default"].wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return res.text();
-            case 2:
-              text = _context.sent;
-              try {
-                data = JSON.parse(text);
-              } catch (e) {
-                data = text;
-              }
-              if (!res.ok) {
-                callback(data || text || res.statusText, null, res);
-              } else {
-                callback(null, data, res);
-              }
-            case 5:
-            case "end":
-              return _context.stop();
-          }
+      return _regenerator["default"].wrap(function (_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 1;
+            return res.text();
+          case 1:
+            text = _context.sent;
+            try {
+              data = JSON.parse(text);
+            } catch (e) {
+              data = text;
+            }
+            if (!res.ok) {
+              callback(data || text || res.statusText, null, res);
+            } else {
+              callback(null, data, res);
+            }
+          case 2:
+          case "end":
+            return _context.stop();
         }
       }, _callee);
     }));
@@ -119,12 +117,12 @@ var BASE_URL = 'https://finnhub.io/api/v1';
 * @module api/DefaultApi
 * @version 1.2.19
 */
-var DefaultApi = /*#__PURE__*/function () {
+var DefaultApi = exports.DefaultApi = /*#__PURE__*/function () {
   function DefaultApi(apiKey) {
     (0, _classCallCheck2["default"])(this, DefaultApi);
     this.apiKey = apiKey;
   }
-  (0, _createClass2["default"])(DefaultApi, [{
+  return (0, _createClass2["default"])(DefaultApi, [{
     key: "_callApi",
     value: function _callApi(path, params, callback) {
       simpleRequest(BASE_URL + path, _objectSpread(_objectSpread({}, params), {}, {
@@ -422,11 +420,14 @@ var DefaultApi = /*#__PURE__*/function () {
     }
   }, {
     key: "financials",
-    value: function financials(symbol, statement, freq, callback) {
+    value: function financials(symbol, statement, freq) {
+      var preliminary = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+      var callback = arguments.length > 4 ? arguments[4] : undefined;
       this._callApi('/stock/financials', {
         symbol: symbol,
         statement: statement,
-        freq: freq
+        freq: freq,
+        preliminary: preliminary
       }, callback);
     }
   }, {
@@ -578,6 +579,7 @@ var DefaultApi = /*#__PURE__*/function () {
         to: to
       }, callback);
     }
+
     /**
      * ISIN Change
      * Get a list of ISIN changes for EU-listed securities. Limit to 2000 events at a time.
@@ -894,10 +896,15 @@ var DefaultApi = /*#__PURE__*/function () {
     value: function upgradeDowngrade(opts, callback) {
       this._callApi('/stock/upgrade-downgrade', _objectSpread({}, opts), callback);
     }
+  }, {
+    key: "bankBranch",
+    value: function bankBranch(symbol, callback) {
+      this._callApi('/bank-branch', {
+        symbol: symbol
+      }, callback);
+    }
   }]);
-  return DefaultApi;
 }(); // For CommonJS compatibility
-exports.DefaultApi = DefaultApi;
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = {
     DefaultApi: DefaultApi

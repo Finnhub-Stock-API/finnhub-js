@@ -1,6 +1,6 @@
 {
   "name": "finnhub",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "JS API Client for Finnhub",
   "main": "dist/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
+    "finnhub": "^2.0.7",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
