@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
-    "finnhub": "^2.0.7",
+    "finnhub": "^2.0.8",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
