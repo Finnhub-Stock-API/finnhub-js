@@ -257,6 +257,15 @@ var DefaultApi = exports.DefaultApi = /*#__PURE__*/function () {
       }, callback);
     }
   }, {
+    key: "stockNewsroom",
+    value: function stockNewsroom(symbol, from, to, callback) {
+      this._callApi('/stock/newsroom', {
+        symbol: symbol,
+        from: from,
+        to: to
+      }, callback);
+    }
+  }, {
     key: "companyPeers",
     value: function companyPeers(symbol, opts, callback) {
       this._callApi('/stock/peers', {

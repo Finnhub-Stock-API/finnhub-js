@@ -169,6 +169,10 @@ export class DefaultApi {
     }
 
 
+    stockNewsroom(symbol, from, to, callback) {
+        this._callApi('/stock/newsroom', { symbol, from, to }, callback);
+    }
+
     companyPeers(symbol, opts, callback) {
         this._callApi('/stock/peers', { symbol, grouping: opts['grouping'] }, callback);
     }
