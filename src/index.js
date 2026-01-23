@@ -262,6 +262,10 @@ export class DefaultApi {
         this._callApi('/etf/sector', { symbol: opts['symbol'], isin: opts['isin'] }, callback);
     }
 
+    etfsAllocation(opts, callback) {
+        this._callApi('/etf/allocation', { symbol: opts['symbol'], isin: opts['isin'] }, callback);
+    }
+
     fdaCommitteeMeetingCalendar(callback) {
         this._callApi('/fda-advisory-committee-calendar', {}, callback);
     }
