@@ -404,6 +404,14 @@ var DefaultApi = exports.DefaultApi = /*#__PURE__*/function () {
       }, callback);
     }
   }, {
+    key: "etfsAllocation",
+    value: function etfsAllocation(opts, callback) {
+      this._callApi('/etf/allocation', {
+        symbol: opts['symbol'],
+        isin: opts['isin']
+      }, callback);
+    }
+  }, {
     key: "fdaCommitteeMeetingCalendar",
     value: function fdaCommitteeMeetingCalendar(callback) {
       this._callApi('/fda-advisory-committee-calendar', {}, callback);
