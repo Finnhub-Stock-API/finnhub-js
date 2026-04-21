@@ -292,6 +292,46 @@ var DefaultApi = exports.DefaultApi = /*#__PURE__*/function () {
       }, callback);
     }
   }, {
+    key: "companyNetIncomeEstimates",
+    value: function companyNetIncomeEstimates(symbol, opts, callback) {
+      var o = opts || {};
+      var freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+      this._callApi('/stock/net-income-estimate', {
+        symbol: symbol,
+        freq: freq
+      }, callback);
+    }
+  }, {
+    key: "companyPretaxIncomeEstimates",
+    value: function companyPretaxIncomeEstimates(symbol, opts, callback) {
+      var o = opts || {};
+      var freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+      this._callApi('/stock/pretax-income-estimate', {
+        symbol: symbol,
+        freq: freq
+      }, callback);
+    }
+  }, {
+    key: "companyGrossIncomeEstimates",
+    value: function companyGrossIncomeEstimates(symbol, opts, callback) {
+      var o = opts || {};
+      var freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+      this._callApi('/stock/gross-income-estimate', {
+        symbol: symbol,
+        freq: freq
+      }, callback);
+    }
+  }, {
+    key: "companyDpsEstimates",
+    value: function companyDpsEstimates(symbol, opts, callback) {
+      var o = opts || {};
+      var freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+      this._callApi('/stock/dps-estimate', {
+        symbol: symbol,
+        freq: freq
+      }, callback);
+    }
+  }, {
     key: "congressionalTrading",
     value: function congressionalTrading(symbol, from, to, callback) {
       this._callApi('/stock/congressional-trading', {

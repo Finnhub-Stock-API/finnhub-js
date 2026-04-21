@@ -193,6 +193,34 @@ export class DefaultApi {
     }
 
 
+    companyNetIncomeEstimates(symbol, opts, callback) {
+        const o = opts || {};
+        const freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+        this._callApi('/stock/net-income-estimate', { symbol, freq }, callback);
+    }
+
+
+    companyPretaxIncomeEstimates(symbol, opts, callback) {
+        const o = opts || {};
+        const freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+        this._callApi('/stock/pretax-income-estimate', { symbol, freq }, callback);
+    }
+
+
+    companyGrossIncomeEstimates(symbol, opts, callback) {
+        const o = opts || {};
+        const freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+        this._callApi('/stock/gross-income-estimate', { symbol, freq }, callback);
+    }
+
+
+    companyDpsEstimates(symbol, opts, callback) {
+        const o = opts || {};
+        const freq = o.freq != null && o.freq !== '' ? o.freq : 'quarterly';
+        this._callApi('/stock/dps-estimate', { symbol, freq }, callback);
+    }
+
+
     congressionalTrading(symbol, from, to, callback) {
         this._callApi('/stock/congressional-trading', { symbol, from, to }, callback);
     }

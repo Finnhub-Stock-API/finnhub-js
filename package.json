@@ -1,15 +1,15 @@
 {
   "name": "finnhub",
-  "version": "2.0.13",
+  "version": "2.0.14",
   "description": "JS API Client for Finnhub",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "test": "mocha --require @babel/register --recursive"
+    "test": "mocha --require @babel/register test.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
-    "finnhub": "^2.0.12",
+    "finnhub": "^2.0.13",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
