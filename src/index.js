@@ -147,6 +147,18 @@ export class DefaultApi {
         this._callApi('/stock/ebitda-estimate', { symbol, freq: opts['freq'] }, callback);
     }
 
+    companyCapexEstimates(symbol, opts, callback) {
+        this._callApi('/stock/capex-estimate', { symbol, freq: opts['freq'] }, callback);
+    }
+
+    companyFcfEstimates(symbol, opts, callback) {
+        this._callApi('/stock/fcf-estimate', { symbol, freq: opts['freq'] }, callback);
+    }
+
+    companyOcfEstimates(symbol, opts, callback) {
+        this._callApi('/stock/ocf-estimate', { symbol, freq: opts['freq'] }, callback);
+    }
+
     companyEpsEstimates(symbol, opts, callback) {
         this._callApi('/stock/eps-estimate', { symbol, freq: opts['freq'] }, callback);
     }

@@ -219,6 +219,30 @@ var DefaultApi = exports.DefaultApi = /*#__PURE__*/function () {
       }, callback);
     }
   }, {
+    key: "companyCapexEstimates",
+    value: function companyCapexEstimates(symbol, opts, callback) {
+      this._callApi('/stock/capex-estimate', {
+        symbol: symbol,
+        freq: opts['freq']
+      }, callback);
+    }
+  }, {
+    key: "companyFcfEstimates",
+    value: function companyFcfEstimates(symbol, opts, callback) {
+      this._callApi('/stock/fcf-estimate', {
+        symbol: symbol,
+        freq: opts['freq']
+      }, callback);
+    }
+  }, {
+    key: "companyOcfEstimates",
+    value: function companyOcfEstimates(symbol, opts, callback) {
+      this._callApi('/stock/ocf-estimate', {
+        symbol: symbol,
+        freq: opts['freq']
+      }, callback);
+    }
+  }, {
     key: "companyEpsEstimates",
     value: function companyEpsEstimates(symbol, opts, callback) {
       this._callApi('/stock/eps-estimate', {
