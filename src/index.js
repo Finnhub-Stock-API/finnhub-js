@@ -509,6 +509,11 @@ export class DefaultApi {
     }
 
 
+    historicalPriceTarget(symbol, callback) {
+        this._callApi('/stock/historical-price-target', { symbol }, callback);
+    }
+
+
     quote(symbol, callback) {
         this._callApi('/quote', { symbol }, callback);
     }

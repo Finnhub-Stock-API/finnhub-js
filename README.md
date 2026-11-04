@@ -3,7 +3,7 @@
 Official JavaScript client for Finnhub https://finnhub.io/
 
 - API version: 1.0.0
-- Package version: 2.0.15
+- Package version: 2.0.16
 
 ## Installation
 
@@ -221,6 +221,11 @@ finnhubClient.patternRecognition("AAPL", "D", (error, data, response) => {
 
 // Price target
 finnhubClient.priceTarget("AAPL", (error, data, response) => {
+    console.log(data)
+});
+
+// Historical price target
+finnhubClient.historicalPriceTarget("AAPL", (error, data, response) => {
     console.log(data)
 });
 

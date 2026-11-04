@@ -1,8 +1,13 @@
 {
   "name": "finnhub",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "description": "JS API Client for Finnhub",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
   "scripts": {
     "build": "babel src -d dist",
     "test": "mocha --require @babel/register --recursive"

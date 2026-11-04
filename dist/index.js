@@ -793,6 +793,13 @@ var DefaultApi = exports.DefaultApi = /*#__PURE__*/function () {
       }, callback);
     }
   }, {
+    key: "historicalPriceTarget",
+    value: function historicalPriceTarget(symbol, callback) {
+      this._callApi('/stock/historical-price-target', {
+        symbol: symbol
+      }, callback);
+    }
+  }, {
     key: "quote",
     value: function quote(symbol, callback) {
       this._callApi('/quote', {
